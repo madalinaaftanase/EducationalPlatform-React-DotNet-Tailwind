@@ -1,21 +1,38 @@
 import Blockly from "blockly";
 
+Blockly.Blocks["div"] = {
+  init: function () {
+    this.appendDummyInput().appendField("div");
+    this.appendStatementInput("Content").setCheck(null);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setInputsInline(true);
+    this.setColour(215);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  },
+};
+
+Blockly.JavaScript["div"] = function (block) {
+  var content = Blockly.JavaScript.statementToCode(block, "Content");
+  return `<div> ${content} </div>`;
+};
+
 Blockly.Blocks["regexInput"] = {
   init: function () {
     this.appendDummyInput()
-      .appendField("regex with ignored case")
+      .appendField("text:")
       .appendField("/")
-      .appendField(new Blockly.FieldTextInput("stub"), "regex")
+      .appendField(new Blockly.FieldTextInput("default"), "regex")
       .appendField("/i");
     this.setColour(205);
     this.setOutput(true, "String");
-  }
+  },
 };
 
 Blockly.JavaScript["regexInput"] = function (block) {
   let value_regex = block.getFieldValue("regex");
-  var code = `/${value_regex}/i`;
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+  return value_regex;
 };
 
 Blockly.Blocks["simplebot"] = {
@@ -28,7 +45,7 @@ Blockly.Blocks["simplebot"] = {
     this.setColour(0);
     this.setTooltip("");
     this.setHelpUrl("");
-  }
+  },
 };
 
 Blockly.JavaScript["simplebot"] = function (block) {
@@ -60,7 +77,7 @@ Blockly.Blocks["responceontext"] = {
     this.setColour(230);
     this.setTooltip("");
     this.setHelpUrl("");
-  }
+  },
 };
 
 Blockly.JavaScript["responceontext"] = function (block) {
@@ -79,61 +96,24 @@ Blockly.JavaScript["responceontext"] = function (block) {
   return code;
 };
 
-Blockly.Blocks['document'] = {
-    init: function () {
-        this.appendDummyInput()
-            .appendField("document");
-        this.appendStatementInput("Content")
-            .setCheck(null);
-        this.setInputsInline(true);
-        this.setColour(315);
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
+Blockly.Blocks["return"] = {
+  init: function () {
+    this.appendValueInput("NAME").setCheck(null).appendField("return");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setColour(330);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  },
 };
 
-Blockly.JavaScript['document'] = function (block) {
-    var content = Blockly.JavaScript.statementToCode(block, 'Content');
-    return `<html> ${content} </html>`;
-};
-
-
-Blockly.Blocks['div'] = {
-    init: function () {
-        this.appendDummyInput()
-            .appendField("div");
-        this.appendStatementInput("Content")
-            .setCheck(null);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setInputsInline(true);
-        this.setColour(215);
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
-
-Blockly.JavaScript['div'] = function (block) {
-    var content = Blockly.JavaScript.statementToCode(block, 'Content');
-    return `<div> ${content} </div>`;
-};
-
-Blockly.Blocks['return'] = {
-    init: function () {
-        this.appendValueInput("NAME")
-            .setCheck(null)
-            .appendField("return");
-        this.setInputsInline(false);
-        this.setPreviousStatement(true, null);
-        this.setColour(330);
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
-
-Blockly.JavaScript['return'] = function (block) {
-    var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
-    var code = 'return ' + value_name + '\n';
-    return code;
+Blockly.JavaScript["return"] = function (block) {
+  var value_name = Blockly.JavaScript.valueToCode(
+    block,
+    "NAME",
+    Blockly.JavaScript.ORDER_ATOMIC
+  );
+  // TODO: Assemble Python into code variable.
+  var code = "return " + value_name + "\n";
+  return code;
 };

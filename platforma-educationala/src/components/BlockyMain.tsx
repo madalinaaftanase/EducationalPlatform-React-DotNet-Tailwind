@@ -1,6 +1,7 @@
 import "./App.css";
 import "./blocky/CustomBlock"
-import React, { useState } from "react";
+import "./blocky/html/BaseFrame"
+import { useState } from "react";
 import { BlocklyWorkspace } from "react-blockly";
 import Blockly from "blockly";
 
@@ -23,6 +24,14 @@ export default function BlockyMain() {
             kind: "block",
             type: "document",
           }, 
+          {
+            kind: "block",
+            type: "header",
+          },
+          {
+            kind: "block",
+            type: "content",
+          }, 
         ],
       },
       {
@@ -33,6 +42,17 @@ export default function BlockyMain() {
           {
             kind: "block",
             type: "div",
+          }, 
+        ],
+      },
+      {
+        kind: "category",
+        name: "text",
+        colour: "#7FFF00",
+        contents: [ 
+          {
+            kind: "block",
+            type: "regexInput",
           }, 
         ],
       },
