@@ -59,7 +59,7 @@ export default function BlockyMain() {
       {
         kind: "category",
         name: "style",
-        colour: "#7FFF00",
+        colour: "#dc143c",
         contents: [ 
           {
             kind: "block",
@@ -70,7 +70,7 @@ export default function BlockyMain() {
       {
         kind: "category",
         name: "simple bot",
-        colour: "#7FFF00",
+        colour: "#00FFFF",
         contents: [ 
           {
             kind: "block",
@@ -86,6 +86,17 @@ export default function BlockyMain() {
           {
             kind: "block",
             type: "responceontext",
+          }, 
+        ],
+      },
+      {
+        kind: "category",
+        name: "drop down",
+        colour: "#FFFF00",
+        contents: [ 
+          {
+            kind: "block",
+            type: "emoji",
           }, 
         ],
       },

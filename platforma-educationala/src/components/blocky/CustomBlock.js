@@ -17,8 +17,33 @@ Blockly.Blocks["style"] = {
     this.appendStatementInput("Content").setCheck(null);
     this.setOutput(true);
     this.setColour(455);
-    this.setTooltip("ceva");
   },
+};
+
+Blockly.Blocks["emoji"] = {
+  init: function () {
+    this.appendDummyInput().appendField(
+      new Blockly.FieldDropdown([
+        ["h1", "h3"],
+        ["h2", "h1"],
+        ["h3", "h2"],
+        ["Qualquer um", "h0"],
+      ]),
+      "optEmoji"
+    );
+    this.setPreviousStatement(true, null);
+    this.appendStatementInput("Content").setCheck(null);
+
+    this.setNextStatement(true, null);
+    this.setOutput(true, null); // nu merge fara asta
+    this.setColour(65);
+  },
+};
+
+Blockly.JavaScript["emoji"] = function (block) {
+  var dropdown_optemoji = block.getFieldValue("optEmoji");
+  var code = dropdown_optemoji;
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
 Blockly.JavaScript["style"] = function (block) {
@@ -51,11 +76,13 @@ Blockly.JavaScript["regexInput"] = function (block) {
 
 Blockly.Blocks["simplebot"] = {
   init: function () {
-    this.appendValueInput("botToken").setCheck(null).appendField("nume ce vrei");
+    this.appendValueInput("botToken")
+      .setCheck(null)
+      .appendField("nume ce vrei");
     this.appendStatementInput("simpleActions").setCheck(null);
     this.setInputsInline(false);
-    this.setPreviousStatement(true,null)
-    this.setNextStatement(true,null)
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
     this.setColour(0);
     this.setTooltip("");
     this.setHelpUrl("");
@@ -99,4 +126,3 @@ Blockly.JavaScript["responceontext"] = function (block) {
   var code = `bot.onText(\n\t${value_ontext},\n\tasync (msg) => {\n\t\tconst chatId = msg.chat.id;\n\t\treturn await bot.sendMessage(chatId, ${value_responcetext});\n\t}\n);\n`;
   return code;
 };
-
