@@ -24,16 +24,15 @@ Blockly.Blocks["emoji"] = {
   init: function () {
     this.appendDummyInput().appendField(
       new Blockly.FieldDropdown([
-        ["h1", "h3"],
-        ["h2", "h1"],
-        ["h3", "h2"],
+        ["h1", "h1"],
+        ["h2", "h2"],
+        ["h3", "h3"],
         ["Qualquer um", "h0"],
       ]),
       "optEmoji"
     );
     this.setPreviousStatement(true, null);
     this.appendStatementInput("Content").setCheck(null);
-
     this.setNextStatement(true, null);
     this.setOutput(true, null); // nu merge fara asta
     this.setColour(65);
@@ -41,9 +40,9 @@ Blockly.Blocks["emoji"] = {
 };
 
 Blockly.JavaScript["emoji"] = function (block) {
-  var dropdown_optemoji = block.getFieldValue("optEmoji");
-  var code = dropdown_optemoji;
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+  var option = block.getFieldValue("optEmoji");
+  var content = Blockly.JavaScript.statementToCode(block, "Content");
+  return `<${option}> ${content} </${option}>`
 };
 
 Blockly.JavaScript["style"] = function (block) {
