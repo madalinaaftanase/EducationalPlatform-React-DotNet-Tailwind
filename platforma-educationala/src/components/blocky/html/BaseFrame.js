@@ -22,6 +22,7 @@ let contentFunction = generateFunction("content", "body");
 let header = generateBaseFrameComponent("header");
 let headerFunction = generateFunction("header", "head");
 
+
 function generateFunction(id, tag) {
   Blockly.JavaScript[id] = function (block) {
     var content = Blockly.JavaScript.statementToCode(block, "Content");
@@ -36,7 +37,6 @@ function generateBaseFrameComponent(id) {
       this.appendStatementInput("Content").setCheck(null);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setInputsInline(true);
       this.setColour(315);
       this.setTooltip("");
       this.setHelpUrl("");

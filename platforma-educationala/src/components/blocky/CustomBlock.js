@@ -6,11 +6,24 @@ Blockly.Blocks["div"] = {
     this.appendStatementInput("Content").setCheck(null);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setInputsInline(true);
     this.setColour(215);
-    this.setTooltip("");
-    this.setHelpUrl("");
+    this.setTooltip("div");
   },
+};
+
+Blockly.Blocks["style"] = {
+  init: function () {
+    this.appendDummyInput().appendField("style");
+    this.appendStatementInput("Content").setCheck(null);
+    this.setOutput(true);
+    this.setColour(455);
+    this.setTooltip("ceva");
+  },
+};
+
+Blockly.JavaScript["style"] = function (block) {
+  var content = Blockly.JavaScript.statementToCode(block, "Content");
+  return `<style> ${content} </style>`;
 };
 
 Blockly.JavaScript["div"] = function (block) {
@@ -26,7 +39,8 @@ Blockly.Blocks["regexInput"] = {
       .appendField(new Blockly.FieldTextInput("default"), "regex")
       .appendField("/i");
     this.setColour(205);
-    this.setOutput(true, "String");
+    this.setNextStatement(true, null);
+    this.setPreviousStatement(true, null);
   },
 };
 
@@ -37,11 +51,11 @@ Blockly.JavaScript["regexInput"] = function (block) {
 
 Blockly.Blocks["simplebot"] = {
   init: function () {
-    this.appendDummyInput().appendField("Simple bot");
-    this.appendValueInput("botToken").setCheck(null).appendField("bot token");
-    this.appendDummyInput().appendField("do");
+    this.appendValueInput("botToken").setCheck(null).appendField("nume ce vrei");
     this.appendStatementInput("simpleActions").setCheck(null);
     this.setInputsInline(false);
+    this.setPreviousStatement(true,null)
+    this.setNextStatement(true,null)
     this.setColour(0);
     this.setTooltip("");
     this.setHelpUrl("");
@@ -49,18 +63,8 @@ Blockly.Blocks["simplebot"] = {
 };
 
 Blockly.JavaScript["simplebot"] = function (block) {
-  var value_bottoken = Blockly.JavaScript.valueToCode(
-    block,
-    "botToken",
-    Blockly.JavaScript.ORDER_ATOMIC
-  );
-  var statements_simpleactions = Blockly.JavaScript.statementToCode(
-    block,
-    "simpleActions"
-  );
-
-  var code = `import TelegramBot from "node-telegram-bot-api";\nconst token = ${value_bottoken}\nconst bot = new TelegramBot(token, { polling: true});\napp = async () => {\n${statements_simpleactions}\n};\napp().then(() => console.log("started"));`;
-  return code;
+  var content = Blockly.JavaScript.statementToCode(block, "Content");
+  return `<div> ${content} </div>`;
 };
 
 Blockly.Blocks["responceontext"] = {
@@ -96,24 +100,3 @@ Blockly.JavaScript["responceontext"] = function (block) {
   return code;
 };
 
-Blockly.Blocks["return"] = {
-  init: function () {
-    this.appendValueInput("NAME").setCheck(null).appendField("return");
-    this.setInputsInline(false);
-    this.setPreviousStatement(true, null);
-    this.setColour(330);
-    this.setTooltip("");
-    this.setHelpUrl("");
-  },
-};
-
-Blockly.JavaScript["return"] = function (block) {
-  var value_name = Blockly.JavaScript.valueToCode(
-    block,
-    "NAME",
-    Blockly.JavaScript.ORDER_ATOMIC
-  );
-  // TODO: Assemble Python into code variable.
-  var code = "return " + value_name + "\n";
-  return code;
-};

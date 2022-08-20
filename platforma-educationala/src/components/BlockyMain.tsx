@@ -56,6 +56,39 @@ export default function BlockyMain() {
           }, 
         ],
       },
+      {
+        kind: "category",
+        name: "style",
+        colour: "#7FFF00",
+        contents: [ 
+          {
+            kind: "block",
+            type: "style",
+          }, 
+        ],
+      },
+      {
+        kind: "category",
+        name: "simple bot",
+        colour: "#7FFF00",
+        contents: [ 
+          {
+            kind: "block",
+            type: "simplebot",
+          }, 
+        ],
+      },
+      {
+        kind: "category",
+        name: "another",
+        colour: "#7FFF00",
+        contents: [ 
+          {
+            kind: "block",
+            type: "responceontext",
+          }, 
+        ],
+      },
     ],
   };
 
