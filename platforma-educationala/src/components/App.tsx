@@ -1,16 +1,17 @@
+import { Route, Routes } from "react-router-dom";
+import Game from "../pages/Game";
 import BlockyMain from "./BlockyMain";
 import Result from "./compiler/Result";
+import {Navbar} from "./navbar/Navbar";
 
 function App() {
   return (
-    <main className="grid grid-cols-2">
-      <section>
-        <BlockyMain />
-      </section>
-      <section className="bg-gray-200">
-        <Result />
-      </section>
-    </main>
+    <>
+    <Navbar />
+    <Routes>
+      <Route path ="/" element={<Game />}/>
+    </Routes>
+    </>
   );
 }
 

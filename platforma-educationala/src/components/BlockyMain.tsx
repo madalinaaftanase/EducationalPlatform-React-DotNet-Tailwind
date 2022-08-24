@@ -104,7 +104,7 @@ export default function BlockyMain() {
   };
 
   function workspaceDidChange(workspace: any) {
-    const code = Blockly.JavaScript.workspaceToCode(workspace);
+    const code = (Blockly as any).JavaScript.workspaceToCode(workspace);
     setJavascriptCode(code);
   }
 
