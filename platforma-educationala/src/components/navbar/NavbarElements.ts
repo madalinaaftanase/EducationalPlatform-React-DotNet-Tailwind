@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
-import logoImg from "./dog-logo.png";
+import logoImg from "../../images/dog-logo.png";
+import code from "../../images/code.png"
 
 export const Nav = styled.nav`
   background: #53bf9d;
@@ -91,4 +92,10 @@ export const Logo = styled.img.attrs({
   src: `${logoImg}`,
 })`
   width: 100px;
+`;
+
+export const LogoCode = styled.img.attrs({
+  src: `${code}`,
+})`
+  width: 110px;
 `;

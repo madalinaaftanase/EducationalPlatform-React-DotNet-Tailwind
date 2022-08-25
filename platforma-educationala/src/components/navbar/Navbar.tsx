@@ -6,13 +6,14 @@ import {
   NavBtn,
   NavBtnLink,
   Logo,
+  LogoCode,
 } from "./NavbarElements";
 
 export function Navbar() {
   return (
     <Nav>
       <NavLink to="/dsfdsf">
-        <Logo />
+        <LogoCode />
         <Logo />
       </NavLink>
       <Bars />
