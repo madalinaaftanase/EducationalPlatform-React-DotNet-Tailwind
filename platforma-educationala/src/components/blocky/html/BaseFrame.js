@@ -1,4 +1,5 @@
 import Blockly from "blockly";
+// head , title, meta , body, footer , top nav 
 
 Blockly.Blocks["document"] = {
   init: function () {
@@ -19,6 +20,7 @@ Blockly.JavaScript["document"] = function (block) {
 
 let content = generateBaseFrameComponent("content");
 let contentFunction = generateFunction("content", "body");
+
 let header = generateBaseFrameComponent("header");
 let headerFunction = generateFunction("header", "head");
 

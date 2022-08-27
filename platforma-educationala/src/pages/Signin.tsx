@@ -1,5 +1,3 @@
-import logo from "../images/dog-logo.png"
-
 function Signin() {
     return ( 
         <main className="flex bg-red-200">

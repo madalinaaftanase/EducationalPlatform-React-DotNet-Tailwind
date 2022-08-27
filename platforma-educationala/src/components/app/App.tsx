@@ -1,7 +1,8 @@
 import { Route, Routes } from "react-router-dom";
-import Game from "../pages/Game";
-import Signin from "../pages/Signin";
-import {Navbar} from "./navbar/Navbar";
+import Game from "../../pages/Game";
+import Signin from "../../pages/Signin";
+import {Navbar} from "../navbar/Navbar";
+import "./App.css";
 
 function App() {
   return (
