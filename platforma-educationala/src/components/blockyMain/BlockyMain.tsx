@@ -33,12 +33,12 @@ export default function BlockyMain({ setHtml }: { setHtml: Function }) {
         onWorkspaceChange={workspaceDidChange}
         onXmlChange={setXml}
       />
-      {/* <textarea
+      <textarea
         id="code"
         style={{ height: "200px", width: "400px" }}
         value={javascriptCode}
         readOnly
-      ></textarea> */}
+      ></textarea>
     </>
   );
 }
