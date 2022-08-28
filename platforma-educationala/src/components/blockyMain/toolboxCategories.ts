@@ -54,7 +54,7 @@ export const toolboxCategories = {
         {
           kind: "category",
           name: "Lists",
-          colour: "#f0f255",
+          colour: "#4fc488",
           contents: [
             {
               kind: "block",
@@ -111,7 +111,7 @@ export const toolboxCategories = {
             },
             {
               kind: "block",
-              type: "background-color", //nu merge
+              type: "background-color",
             },
             {
               kind: "block",
@@ -120,6 +120,41 @@ export const toolboxCategories = {
             {
               kind: "block",
               type: "display",
+            },
+            {
+              kind: "block",
+              type: "border",
+            },
+            {
+              kind: "block",
+              type: "borderStyle",
+            },
+            {
+              kind: "block",
+              type: "borderWidth",
+            },
+          ],
+        },
+        {
+          kind: "category",
+          name: "Flex",
+          colour: "#4fc0c4",
+          contents: [
+            {
+              kind: "block",
+              type: "display",
+            },
+            {
+              kind: "block",
+              type: "flex-direction",
+            },
+            {
+              kind: "block",
+              type: "flex-flow",
+            },
+            {
+              kind: "block",
+              type: "flex-wrap",
             },
           ],
         },

@@ -1,5 +1,5 @@
 import "./Basics"
-
+import "./Flex"
 import Blockly from "blockly";
 
 Blockly.Blocks["style"] = {

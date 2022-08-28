@@ -27,7 +27,7 @@ function generateGeneralBlock(id) {
       this.setInputsInline(false);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(112);
+      this.setColour('#4fc488');
     },
   };
 }
