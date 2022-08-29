@@ -12,13 +12,13 @@ import {
 export function Navbar() {
   return (
     <Nav>
-      <NavLink to="/dsfdsf">
+      <NavLink to="/">
         <LogoCode />
         <Logo />
       </NavLink>
       <Bars />
       <NavMenu>
-        <NavLink to="/about">About</NavLink>
+        <NavLink to="/about">Pagina</NavLink>
         <NavLink to="/">Game</NavLink>
         <NavLink to="/contact">Pagina</NavLink>
         <NavLink to="/pagina">Pagina</NavLink>

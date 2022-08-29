@@ -6,7 +6,7 @@ function Game() {
   const [html, setHtml] = useState("");
 
   return (
-    <main className="grid grid-cols-2">
+    <main className="grid grid-rows-2 md:grid-cols-2">
       <section>
         <BlockyMain setHtml={setHtml} />
       </section>
