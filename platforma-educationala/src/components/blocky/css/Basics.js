@@ -18,6 +18,14 @@ generateInputsBlocksJS("font-size");
 generateInputsBlocks("border", text);
 generateInputsBlocksJS("border");
 
+//border-color
+generateInputsBlocks("border-color", text);
+generateInputsBlocksJS("border-color");
+
+//border-radius
+generateInputsBlocks("border-radius", text);
+generateInputsBlocksJS("border-radius");
+
 function generateInputsBlocks(id, tooltips) {
   Blockly.Blocks[id] = {
     init: function () {
@@ -55,7 +63,7 @@ function generateDropDown(id, options) {
       this.appendDummyInput()
         .appendField(`${id}:`)
         .appendField(new Blockly.FieldDropdown(options), "option");
-      this.setColour('#e32db6');
+      this.setColour("#e32db6");
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
     },
@@ -77,7 +85,7 @@ let borderStyleTypes = [
   ["border-bottom-style", "border-bottom-style"],
 ];
 
-let borderStyleOptions =[
+let borderStyleOptions = [
   ["none", "none"],
   ["hidden", "hidden"],
   ["dotted", "dotted"],
@@ -90,7 +98,7 @@ let borderStyleOptions =[
   ["outset", "outset"],
   ["initial", "initial"],
   ["inherit", "inherit"],
-]
+];
 
 let borderWidthTypes = [
   ["border-width", "border-width"],
@@ -111,13 +119,13 @@ generateDoubleDropDownJS("borderStyle");
 generateDoubleDropDown("borderWidth", borderWidthTypes, borderWidthOptions);
 generateDoubleDropDownJS("borderWidth");
 
-function generateDoubleDropDown(id,borderOption, options) {
+function generateDoubleDropDown(id, firstOption, options) {
   Blockly.Blocks[`${id}`] = {
     init: function () {
       this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown(borderOption), "borderOption")
+        .appendField(new Blockly.FieldDropdown(firstOption), "firstOption")
         .appendField(new Blockly.FieldDropdown(options), "option");
-      this.setColour('#e32db6');
+      this.setColour("#e32db6");
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
     },
@@ -126,11 +134,49 @@ function generateDoubleDropDown(id,borderOption, options) {
 
 function generateDoubleDropDownJS(id) {
   Blockly.JavaScript[`${id}`] = function (block) {
-    var borderOption = block.getFieldValue("borderOption");
+    var borderOption = block.getFieldValue("firstOption");
     var opt = block.getFieldValue("option");
     return `${borderOption}: ${opt}; `;
   };
 }
 
+let marginOptions = [
+  ["margin", "margin"],
+  ["margin-top", "margin-top"],
+  ["margin-left", "margin-left"],
+  ["margin-right", "margin-right"],
+];
+let paddingOptions = [
+  ["padding", "padding"],
+  ["padding-top", "padding-top"],
+  ["padding-left", "padding-left"],
+  ["padding-right", "padding-right"],
+];
 
+dropDownAndInput("margin", marginOptions);
+dropDownAndInputJS("margin");
 
+dropDownAndInput("padding", paddingOptions);
+dropDownAndInputJS("padding");
+
+function dropDownAndInput(id, options) {
+  Blockly.Blocks[`${id}`] = {
+    init: function () {
+      this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown(options), "option")
+        .appendField(new Blockly.FieldTextInput("scrie aici"), "value");
+      this.setColour("#e32db6");
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+    },
+  };
+}
+
+function dropDownAndInputJS(id) {
+  Blockly.JavaScript[`${id}`] = function (block) {
+    var opt = block.getFieldValue("option");
+    let value = block.getFieldValue("value");
+
+    return `${opt}: ${value}; `;
+  };
+}

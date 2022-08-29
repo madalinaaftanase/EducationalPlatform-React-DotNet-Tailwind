@@ -123,7 +123,23 @@ export const toolboxCategories = {
             },
             {
               kind: "block",
+              type: "margin",
+            },
+            {
+              kind: "block",
+              type: "padding",
+            },
+            {
+              kind: "block",
               type: "border",
+            },
+            {
+              kind: "block",
+              type: "border-color",
+            },
+            {
+              kind: "block",
+              type: "border-radius",
             },
             {
               kind: "block",
