@@ -103,6 +103,10 @@ export const toolboxCategories = {
           contents: [
             {
               kind: "block",
+              type: "any",
+            },
+            {
+              kind: "block",
               type: "style",
             },
             {
@@ -123,12 +127,101 @@ export const toolboxCategories = {
             },
             {
               kind: "block",
+              type: "gap",
+            },
+            {
+              kind: "block",
               type: "margin",
             },
             {
               kind: "block",
               type: "padding",
             },
+            {
+              kind: "block",
+              type: "border",
+            },
+          ],
+        },
+        {
+          kind: "category",
+          name: "Grid",
+          colour: "#66eda1",
+          contents: [
+            {
+              kind: "block",
+              type: "display",
+            },
+            {
+              kind: "block",
+              type: "gap",
+            },
+            {
+              kind:"block",
+              type:"grid-gap"
+            },
+            {
+              kind:"block",
+              type:"grid-template-rows"
+            },
+            {
+              kind:"block",
+              type:"grid-template-columns"
+            },
+            {
+              kind:"label",
+              text:"Pozitionare"
+            },
+            {
+              kind:"block",
+              type:"grid-area"
+            },
+            {
+              kind:"block",
+              type:"grid-row"
+            },
+            {
+              kind:"block",
+              type:"grid-column"
+            },
+            {
+              kind:"block",
+              type:"grid-position"
+            },
+          ],
+        },
+        {
+          kind: "category",
+          name: "Flex",
+          colour: "#4fc0c4",
+          contents: [
+            {
+              kind: "block",
+              type: "display",
+            },
+            {
+              kind: "block",
+              type: "gap",
+            },
+            {
+              kind: "block",
+              type: "flex-direction",
+            },
+            {
+              kind: "block",
+              type: "flex-flow",
+            },
+            {
+              kind: "block",
+              type: "flex-wrap",
+            },
+          ],
+        },
+        {
+          kind: "category",
+          name: "Border",
+          colour: "#d266ed",
+          contents: [
             {
               kind: "block",
               type: "border",
@@ -148,29 +241,6 @@ export const toolboxCategories = {
             {
               kind: "block",
               type: "borderWidth",
-            },
-          ],
-        },
-        {
-          kind: "category",
-          name: "Flex",
-          colour: "#4fc0c4",
-          contents: [
-            {
-              kind: "block",
-              type: "display",
-            },
-            {
-              kind: "block",
-              type: "flex-direction",
-            },
-            {
-              kind: "block",
-              type: "flex-flow",
-            },
-            {
-              kind: "block",
-              type: "flex-wrap",
             },
           ],
         },
