@@ -22,6 +22,11 @@ let gapOptions =[
 generateDropDownAndInputBlock("grid-gap", gapOptions, gridColor);
 generateDropDownAndInputBlockJS("grid-gap");
 
+generateInputsBlock("grid-auto-rows", text, gridColor);
+generateInputsBlockJS("grid-auto-rows");
+
+generateInputsBlock("grid-auto-flow", text, gridColor);
+generateInputsBlockJS("grid-auto-flow");
 //pozitionare
 generateInputsBlock("grid-template-rows", text, gridColor);
 generateInputsBlockJS("grid-template-rows");

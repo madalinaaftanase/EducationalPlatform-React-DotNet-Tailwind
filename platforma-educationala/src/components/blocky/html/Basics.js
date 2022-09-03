@@ -1,14 +1,13 @@
 // div , h, p, br,
 import Blockly from "blockly";
+import { generateGeneralBlock, generateGeneralBlockJS } from "./functionsBlocks";
 
-function getColor(){
-  return '#f26110';
-}
+const basicColor='#f26110';
 
-generateGeneralBlock("paragraph");
+generateGeneralBlock("paragraph", basicColor);
 generateGeneralBlockJS("paragraph", "p");
 
-generateGeneralBlock("div");
+generateGeneralBlock("div", basicColor);
 generateGeneralBlockJS("div", "div");
 
 //text
@@ -17,7 +16,7 @@ Blockly.Blocks["regexInput"] = {
     this.appendDummyInput()
       .appendField("text:")
       .appendField(new Blockly.FieldTextInput("default"), "regex");
-    this.setColour(getColor());
+    this.setColour(basicColor);
     this.setNextStatement(true, null);
     this.setPreviousStatement(true, null);
   },
@@ -47,7 +46,7 @@ Blockly.Blocks["h"] = {
     this.appendStatementInput("Content").setCheck(null);
     this.setNextStatement(true, null);
     this.setPreviousStatement(true, null);
-    this.setColour(getColor());
+    this.setColour(basicColor);
   },
 };
 
@@ -70,7 +69,7 @@ Blockly.Blocks["br"] = {
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(getColor());
+    this.setColour(basicColor);
   },
 };
 
@@ -79,32 +78,5 @@ Blockly.JavaScript["br"] = function (block) {
   <br />`;
 };
 
-// functions
 
-function generateGeneralBlock(id) {
-  Blockly.Blocks[id] = {
-    init: function () {
-      this.appendValueInput("style").setCheck(null).appendField(id);
-      this.appendStatementInput("Content").setCheck(null);
-      this.setInputsInline(false);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour(getColor());
-    },
-  };
-}
 
-function generateGeneralBlockJS(id, tag) {
-  Blockly.JavaScript[id] = function (block) {
-    var content = Blockly.JavaScript.statementToCode(block, "Content");
-    var styleBlock = block.getInputTargetBlock("style");
-    var style = Blockly.JavaScript.blockToCode(styleBlock);
-    if (style) {
-      return `<${tag} style=${style}> ${content} </${tag}>`;
-    }
-    return `
-    <${tag}>
-     ${content} 
-    </${tag}>`;
-  };
-}

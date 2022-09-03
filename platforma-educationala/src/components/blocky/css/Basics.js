@@ -28,6 +28,18 @@ generateInputsBlockJS("background-color");
 generateInputsBlock("font-size", text, basicColor);
 generateInputsBlockJS("font-size");
 
+//height
+generateInputsBlock("height", text, basicColor);
+generateInputsBlockJS("height");
+
+//width
+generateInputsBlock("width", text, basicColor);
+generateInputsBlockJS("width");
+
+//z-index
+generateInputsBlock("z-index", text, basicColor);
+generateInputsBlockJS("z-index");
+
 //border
 generateInputsBlock("border", text, basicColor);
 generateInputsBlockJS("border");
@@ -55,6 +67,7 @@ let marginOptions = [
   ["margin-left", "margin-left"],
   ["margin-right", "margin-right"],
 ];
+
 let paddingOptions = [
   ["padding", "padding"],
   ["padding-top", "padding-top"],
@@ -67,3 +80,39 @@ generateDropDownAndInputBlockJS("margin");
 
 generateDropDownAndInputBlock("padding", paddingOptions, basicColor);
 generateDropDownAndInputBlockJS("padding");
+
+
+//justify and align self
+let alignOptions = [
+  ["auto", "auto"],
+  ["normal", "normal"],
+  ["start", "start"],
+  ["end", "end"],
+  ["center", "center"],
+  ["stretch", "stretch"],
+  ["baseline", "baseline"],
+];
+generateDropDownBlock("justify-self", alignOptions,basicColor);
+generateDropDownBlockJS("justify-self");
+
+generateDropDownBlock("align-self", alignOptions,basicColor);
+generateDropDownBlockJS("align-self");
+
+//justify and align content
+let alignContentOptions = [
+  ["baseline", "baseline"],
+  ["space-between", "space-between"],
+  ["space-around", "space-around"],
+  ["auto", "auto"],
+  ["normal", "normal"],
+  ["start", "start"],
+  ["end", "end"],
+  ["center", "center"],
+  ["stretch", "stretch"],
+];
+generateDropDownBlock("justify-content", alignContentOptions,basicColor);
+generateDropDownBlockJS("justify-content");
+
+generateDropDownBlock("align-content", alignContentOptions,basicColor);
+generateDropDownBlockJS("align-content");
+

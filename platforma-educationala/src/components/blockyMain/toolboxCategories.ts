@@ -86,6 +86,53 @@ export const toolboxCategories = {
             },
           ],
         },
+        {
+          kind: "category",
+          name: "Forms",
+          colour: "#dedb2c",
+          contents: [
+            {
+              kind: "block",
+              type: "form",
+            },
+            {
+              kind: "block",
+              type: "input",
+            },
+            {
+              kind: "block",
+              type: "label",
+            },
+            {
+              kind: "label",
+              text: "Attributes"
+            },
+            {
+              kind: "block",
+              type: "attributes",
+            },
+            {
+              kind: "block",
+              type: "type",
+            },
+            {
+              kind: "block",
+              type: "parameter",
+            },
+            {
+              kind: "block",
+              type: "form-height",
+            },
+            {
+              kind: "block",
+              type: "src-form",
+            },
+            {
+              kind: "block",
+              type: "alt-form",
+            },
+          ],
+        },
       ],
     },
     {
@@ -139,7 +186,35 @@ export const toolboxCategories = {
             },
             {
               kind: "block",
+              type: "height",
+            },
+            {
+              kind: "block",
+              type: "width",
+            },
+            {
+              kind: "block",
+              type: "z-index",
+            },
+            {
+              kind: "block",
               type: "border",
+            },
+            {
+              kind: "block",
+              type: "justify-self",
+            },
+            {
+              kind: "block",
+              type: "align-self",
+            },
+            {
+              kind: "block",
+              type: "justify-content",
+            },
+            {
+              kind: "block",
+              type: "align-content",
             },
           ],
         },
@@ -167,6 +242,14 @@ export const toolboxCategories = {
             {
               kind:"block",
               type:"grid-template-columns"
+            },
+            {
+              kind:"block",
+              type:"grid-auto-rows"
+            },
+            {
+              kind:"block",
+              type:"grid-auto-flow"
             },
             {
               kind:"label",
