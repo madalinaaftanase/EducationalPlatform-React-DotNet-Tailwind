@@ -1,0 +1,330 @@
+2022-09-04 10:51:22.633 +03:00 [INF] Now listening on: http://localhost:5055
+2022-09-04 10:51:22.683 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-04 10:51:22.687 +03:00 [INF] Hosting environment: Development
+2022-09-04 10:51:22.691 +03:00 [INF] Content root path: C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\
+2022-09-04 10:51:23.286 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/index.html - -
+2022-09-04 10:51:23.358 +03:00 [WRN] Failed to determine the https port for redirect.
+2022-09-04 10:51:23.613 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - -
+2022-09-04 10:51:23.619 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_vs/browserLink - -
+2022-09-04 10:51:23.624 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - - - 200 12020 application/javascript;+charset=utf-8 8.6270ms
+2022-09-04 10:51:23.624 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/index.html - - - 200 - text/html;charset=utf-8 343.1460ms
+2022-09-04 10:51:23.718 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 99.1043ms
+2022-09-04 10:51:23.836 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - -
+2022-09-04 10:51:24.005 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 169.3612ms
+2022-09-04 10:51:29.845 +03:00 [INF] Now listening on: http://localhost:5055
+2022-09-04 10:51:29.880 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-04 10:51:29.881 +03:00 [INF] Hosting environment: Development
+2022-09-04 10:51:29.882 +03:00 [INF] Content root path: C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\
+2022-09-04 10:51:31.561 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/index.html - -
+2022-09-04 10:51:31.639 +03:00 [WRN] Failed to determine the https port for redirect.
+2022-09-04 10:51:31.915 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - -
+2022-09-04 10:51:31.915 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_vs/browserLink - -
+2022-09-04 10:51:31.921 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - - - 200 12020 application/javascript;+charset=utf-8 5.4779ms
+2022-09-04 10:51:31.921 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/index.html - - - 200 - text/html;charset=utf-8 364.7372ms
+2022-09-04 10:51:31.968 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 53.1090ms
+2022-09-04 10:51:32.100 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - -
+2022-09-04 10:51:32.228 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 127.7174ms
+2022-09-04 10:58:07.243 +03:00 [INF] Now listening on: http://localhost:5055
+2022-09-04 10:58:07.288 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-04 10:58:07.289 +03:00 [INF] Hosting environment: Development
+2022-09-04 10:58:07.291 +03:00 [INF] Content root path: C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\
+2022-09-04 10:58:08.264 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/index.html - -
+2022-09-04 10:58:08.391 +03:00 [WRN] Failed to determine the https port for redirect.
+2022-09-04 10:58:08.696 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_vs/browserLink - -
+2022-09-04 10:58:08.697 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - -
+2022-09-04 10:58:08.716 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/index.html - - - 200 - text/html;charset=utf-8 462.5487ms
+2022-09-04 10:58:08.718 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - - - 200 12020 application/javascript;+charset=utf-8 21.0887ms
+2022-09-04 10:58:08.770 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 73.6734ms
+2022-09-04 10:58:09.111 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - -
+2022-09-04 10:58:09.258 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 147.3623ms
+2022-09-04 10:58:18.282 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/Users - -
+2022-09-04 10:58:18.312 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-04 10:58:18.347 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-04 10:58:18.624 +03:00 [INF] Exemplu logging
+2022-09-04 10:58:19.497 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-04 10:58:20.396 +03:00 [INF] Executed DbCommand (52ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-04 10:58:20.522 +03:00 [INF] Executing OkObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2022-09-04 10:58:20.542 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 2186.5566ms
+2022-09-04 10:58:20.546 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-04 10:58:20.553 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/Users - - - 200 - application/json;+charset=utf-8 2270.5486ms
+2022-09-04 13:10:06.476 +03:00 [INF] Now listening on: http://localhost:5055
+2022-09-04 13:10:06.491 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-04 13:10:06.491 +03:00 [INF] Hosting environment: Development
+2022-09-04 13:10:06.492 +03:00 [INF] Content root path: C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\
+2022-09-04 13:10:06.952 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/index.html - -
+2022-09-04 13:10:07.026 +03:00 [WRN] Failed to determine the https port for redirect.
+2022-09-04 13:10:07.279 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - -
+2022-09-04 13:10:07.279 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_vs/browserLink - -
+2022-09-04 13:10:07.299 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - - - 200 12020 application/javascript;+charset=utf-8 10.5016ms
+2022-09-04 13:10:07.299 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/index.html - - - 200 - text/html;charset=utf-8 342.5775ms
+2022-09-04 13:10:07.311 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 32.6038ms
+2022-09-04 13:10:07.457 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - -
+2022-09-04 13:10:07.552 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 95.5733ms
+2022-09-04 14:01:13.457 +03:00 [INF] Now listening on: http://localhost:5055
+2022-09-04 14:01:13.472 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-04 14:01:13.473 +03:00 [INF] Hosting environment: Development
+2022-09-04 14:01:13.473 +03:00 [INF] Content root path: C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\
+2022-09-04 14:01:14.113 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/index.html - -
+2022-09-04 14:01:14.184 +03:00 [WRN] Failed to determine the https port for redirect.
+2022-09-04 14:01:14.331 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_vs/browserLink - -
+2022-09-04 14:01:14.331 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - -
+2022-09-04 14:01:14.334 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/index.html - - - 200 - text/html;charset=utf-8 227.1796ms
+2022-09-04 14:01:14.334 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - - - 200 12020 application/javascript;+charset=utf-8 3.1695ms
+2022-09-04 14:01:14.361 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 30.0424ms
+2022-09-04 14:01:14.420 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - -
+2022-09-04 14:01:14.508 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 87.9667ms
+2022-09-04 14:01:34.981 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/users - -
+2022-09-04 14:01:34.984 +03:00 [INF] CORS policy execution successful.
+2022-09-04 14:01:34.986 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/users - - - 404 0 - 5.4922ms
+2022-09-04 14:01:35.695 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/users - -
+2022-09-04 14:01:35.697 +03:00 [INF] CORS policy execution successful.
+2022-09-04 14:01:35.698 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/users - - - 404 0 - 3.0283ms
+2022-09-04 14:01:40.786 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/users - -
+2022-09-04 14:01:40.788 +03:00 [INF] CORS policy execution successful.
+2022-09-04 14:01:40.788 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/users - - - 404 0 - 2.9117ms
+2022-09-04 14:01:45.813 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/users - -
+2022-09-04 14:01:45.813 +03:00 [INF] CORS policy execution successful.
+2022-09-04 14:01:45.814 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/users - - - 404 0 - 1.2334ms
+2022-09-04 14:02:06.007 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/users - -
+2022-09-04 14:02:06.010 +03:00 [INF] CORS policy execution successful.
+2022-09-04 14:02:06.011 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/users - - - 404 0 - 3.7303ms
+2022-09-04 14:02:50.768 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/users - -
+2022-09-04 14:02:50.769 +03:00 [INF] CORS policy execution successful.
+2022-09-04 14:02:50.770 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/users - - - 404 0 - 1.9328ms
+2022-09-04 14:02:55.988 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/users - -
+2022-09-04 14:02:55.989 +03:00 [INF] CORS policy execution successful.
+2022-09-04 14:02:55.990 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/users - - - 404 0 - 1.7013ms
+2022-09-04 14:06:33.526 +03:00 [INF] Now listening on: http://localhost:5055
+2022-09-04 14:06:33.542 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-04 14:06:33.543 +03:00 [INF] Hosting environment: Development
+2022-09-04 14:06:33.543 +03:00 [INF] Content root path: C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\
+2022-09-04 14:06:34.220 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/index.html - -
+2022-09-04 14:06:34.295 +03:00 [WRN] Failed to determine the https port for redirect.
+2022-09-04 14:06:34.526 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - -
+2022-09-04 14:06:34.526 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_vs/browserLink - -
+2022-09-04 14:06:34.528 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/index.html - - - 200 - text/html;charset=utf-8 315.8660ms
+2022-09-04 14:06:34.529 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - - - 200 12020 application/javascript;+charset=utf-8 2.6751ms
+2022-09-04 14:06:34.574 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 48.5358ms
+2022-09-04 14:06:34.639 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - -
+2022-09-04 14:06:34.788 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 148.4477ms
+2022-09-04 14:06:42.656 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/Users - -
+2022-09-04 14:06:42.674 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-04 14:06:42.692 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-04 14:06:50.710 +03:00 [INF] Exemplu logging
+2022-09-04 14:06:51.104 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-04 14:06:52.127 +03:00 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-04 14:06:52.189 +03:00 [INF] Executing OkObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2022-09-04 14:06:52.200 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 9503.4879ms
+2022-09-04 14:06:52.202 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-04 14:06:52.206 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/Users - - - 200 - application/json;+charset=utf-8 9549.1394ms
+2022-09-04 14:07:51.290 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/users - -
+2022-09-04 14:07:51.296 +03:00 [INF] CORS policy execution successful.
+2022-09-04 14:07:51.297 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/users - - - 404 0 - 7.8771ms
+2022-09-04 14:08:01.322 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/users - -
+2022-09-04 14:08:01.323 +03:00 [INF] CORS policy execution successful.
+2022-09-04 14:08:01.324 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/users - - - 404 0 - 1.7820ms
+2022-09-04 14:08:21.992 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/users - -
+2022-09-04 14:08:21.996 +03:00 [INF] CORS policy execution successful.
+2022-09-04 14:08:21.996 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/users - - - 404 0 - 4.5043ms
+2022-09-04 14:08:22.984 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api//users - -
+2022-09-04 14:08:22.985 +03:00 [INF] CORS policy execution successful.
+2022-09-04 14:08:22.986 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api//users - - - 404 0 - 1.8712ms
+2022-09-04 14:08:26.975 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-04 14:08:26.976 +03:00 [INF] CORS policy execution successful.
+2022-09-04 14:08:26.977 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-04 14:08:26.979 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-04 14:08:32.390 +03:00 [INF] Exemplu logging
+2022-09-04 14:08:32.400 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-04 14:08:32.407 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-04 14:08:32.409 +03:00 [INF] Executing OkObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2022-09-04 14:08:32.410 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 5428.6034ms
+2022-09-04 14:08:32.411 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-04 14:08:32.412 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 200 - application/json;+charset=utf-8 5436.9884ms
+2022-09-04 14:08:47.064 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-04 14:08:47.065 +03:00 [INF] CORS policy execution successful.
+2022-09-04 14:08:47.066 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-04 14:08:47.066 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-04 14:08:55.972 +03:00 [INF] Exemplu logging
+2022-09-04 14:08:56.003 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-04 14:08:56.006 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-04 14:08:56.011 +03:00 [INF] Executing OkObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2022-09-04 14:08:56.012 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 8943.9049ms
+2022-09-04 14:08:56.013 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-04 14:08:56.014 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 200 - application/json;+charset=utf-8 8949.5992ms
+2022-09-04 14:09:59.057 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-04 14:09:59.063 +03:00 [INF] CORS policy execution successful.
+2022-09-04 14:09:59.064 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-04 14:09:59.065 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-04 14:10:03.847 +03:00 [INF] Exemplu logging
+2022-09-04 14:10:03.848 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-04 14:10:03.862 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-04 14:10:03.864 +03:00 [INF] Executing OkObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2022-09-04 14:10:03.865 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 4797.4854ms
+2022-09-04 14:10:03.866 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-04 14:10:03.866 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 200 - application/json;+charset=utf-8 4815.0362ms
+2022-09-04 14:10:07.275 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-04 14:10:07.277 +03:00 [INF] CORS policy execution successful.
+2022-09-04 14:10:07.278 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-04 14:10:07.280 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-04 14:10:07.283 +03:00 [INF] Exemplu logging
+2022-09-04 14:10:07.284 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-04 14:10:07.288 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-04 14:10:07.292 +03:00 [INF] Executing OkObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2022-09-04 14:10:07.294 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 12.0967ms
+2022-09-04 14:10:07.297 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-04 14:10:07.298 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 200 - application/json;+charset=utf-8 23.4217ms
+2022-09-04 14:10:13.183 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-04 14:10:13.184 +03:00 [INF] CORS policy execution successful.
+2022-09-04 14:10:13.185 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-04 14:10:13.187 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-04 14:10:13.189 +03:00 [INF] Exemplu logging
+2022-09-04 14:10:13.190 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-04 14:10:13.192 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-04 14:10:13.195 +03:00 [INF] Executing OkObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2022-09-04 14:10:13.196 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 7.1752ms
+2022-09-04 14:10:13.198 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-04 14:10:13.198 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 200 - application/json;+charset=utf-8 14.9347ms
+2022-09-04 14:12:01.919 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-04 14:12:01.921 +03:00 [INF] CORS policy execution successful.
+2022-09-04 14:12:01.923 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-04 14:12:01.926 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-04 14:12:01.931 +03:00 [INF] Exemplu logging
+2022-09-04 14:12:01.934 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-04 14:12:01.946 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-04 14:12:01.949 +03:00 [INF] Executing OkObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2022-09-04 14:12:01.954 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 23.8981ms
+2022-09-04 14:12:01.956 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-04 14:12:01.957 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 200 - application/json;+charset=utf-8 38.0990ms
+2022-09-04 14:12:06.774 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-04 14:12:06.775 +03:00 [INF] CORS policy execution successful.
+2022-09-04 14:12:06.776 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-04 14:12:06.777 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-04 14:12:06.780 +03:00 [INF] Exemplu logging
+2022-09-04 14:12:06.782 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-04 14:12:06.785 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-04 14:12:06.789 +03:00 [INF] Executing OkObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2022-09-04 14:12:06.791 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 10.9321ms
+2022-09-04 14:12:06.792 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-04 14:12:06.793 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 200 - application/json;+charset=utf-8 19.1559ms
+2022-09-04 14:13:33.475 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-04 14:13:33.483 +03:00 [INF] CORS policy execution successful.
+2022-09-04 14:13:33.484 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-04 14:13:33.486 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-04 14:13:33.491 +03:00 [INF] Exemplu logging
+2022-09-04 14:13:33.492 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-04 14:13:33.497 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-04 14:13:33.505 +03:00 [INF] Executing OkObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2022-09-04 14:13:33.506 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 15.9549ms
+2022-09-04 14:13:33.508 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-04 14:13:33.509 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 200 - application/json;+charset=utf-8 35.7260ms
+2022-09-04 14:15:00.095 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-04 14:15:00.104 +03:00 [INF] CORS policy execution successful.
+2022-09-04 14:15:00.106 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-04 14:15:00.107 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-04 14:15:00.109 +03:00 [INF] Exemplu logging
+2022-09-04 14:15:00.110 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-04 14:15:00.115 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-04 14:15:00.122 +03:00 [INF] Executing OkObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2022-09-04 14:15:00.123 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 14.2398ms
+2022-09-04 14:15:00.124 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-04 14:15:00.125 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 200 - application/json;+charset=utf-8 30.3623ms
+2022-09-04 14:15:09.773 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-04 14:15:09.775 +03:00 [INF] CORS policy execution successful.
+2022-09-04 14:15:09.780 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-04 14:15:09.783 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-04 14:15:09.796 +03:00 [INF] Exemplu logging
+2022-09-04 14:15:09.798 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-04 14:15:09.804 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-04 14:15:09.807 +03:00 [INF] Executing OkObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2022-09-04 14:15:09.808 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 12.3615ms
+2022-09-04 14:15:09.810 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-04 14:15:09.811 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 200 - application/json;+charset=utf-8 38.1521ms
+2022-09-04 14:17:55.656 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-04 14:17:55.662 +03:00 [INF] CORS policy execution successful.
+2022-09-04 14:17:55.664 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-04 14:17:55.665 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-04 14:17:55.668 +03:00 [INF] Exemplu logging
+2022-09-04 14:17:55.669 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-04 14:17:55.674 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-04 14:17:55.682 +03:00 [INF] Executing OkObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2022-09-04 14:17:55.683 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 15.1094ms
+2022-09-04 14:17:55.684 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-04 14:17:55.685 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 200 - application/json;+charset=utf-8 29.4954ms
+2022-09-04 14:22:57.822 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-04 14:22:57.824 +03:00 [INF] CORS policy execution successful.
+2022-09-04 14:22:57.826 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-04 14:22:57.827 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-04 14:22:57.833 +03:00 [INF] Exemplu logging
+2022-09-04 14:22:57.835 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-04 14:22:57.858 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-04 14:22:57.861 +03:00 [INF] Executing OkObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2022-09-04 14:22:57.863 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 30.1033ms
+2022-09-04 14:22:57.865 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-04 14:22:57.866 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 200 - application/json;+charset=utf-8 43.9628ms
+2022-09-04 14:22:59.669 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-04 14:22:59.671 +03:00 [INF] CORS policy execution successful.
+2022-09-04 14:22:59.671 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-04 14:22:59.673 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-04 14:22:59.676 +03:00 [INF] Exemplu logging
+2022-09-04 14:22:59.677 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-04 14:22:59.682 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-04 14:22:59.688 +03:00 [INF] Executing OkObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2022-09-04 14:22:59.690 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 14.3523ms
+2022-09-04 14:22:59.691 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-04 14:22:59.692 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 200 - application/json;+charset=utf-8 23.3965ms
+2022-09-04 14:23:15.477 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-04 14:23:15.479 +03:00 [INF] CORS policy execution successful.
+2022-09-04 14:23:15.480 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-04 14:23:15.481 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-04 14:23:15.483 +03:00 [INF] Exemplu logging
+2022-09-04 14:23:15.484 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-04 14:23:15.489 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-04 14:23:15.495 +03:00 [INF] Executing OkObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2022-09-04 14:23:15.497 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 14.1299ms
+2022-09-04 14:23:15.499 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-04 14:23:15.501 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 200 - application/json;+charset=utf-8 23.5327ms
+2022-09-04 14:23:22.088 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-04 14:23:22.089 +03:00 [INF] CORS policy execution successful.
+2022-09-04 14:23:22.089 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-04 14:23:22.090 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-04 14:23:22.093 +03:00 [INF] Exemplu logging
+2022-09-04 14:23:22.094 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-04 14:23:22.096 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-04 14:23:22.098 +03:00 [INF] Executing OkObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2022-09-04 14:23:22.099 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 6.5197ms
+2022-09-04 14:23:22.102 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-04 14:23:22.103 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 200 - application/json;+charset=utf-8 14.5256ms
