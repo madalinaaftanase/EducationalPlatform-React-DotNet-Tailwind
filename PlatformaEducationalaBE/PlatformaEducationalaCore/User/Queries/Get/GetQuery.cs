@@ -32,8 +32,6 @@ public class GetQueryHndler : IRequestHandler<GetQuery, GetResponse>
                 UserName = user.UserName,
             }).ToList(),
         };
-        result.ResponseStatus = Enums.ResultStatus.InternalError;
-        result.Errors.Add("Ceva eroare");
 
         return result;
     }
