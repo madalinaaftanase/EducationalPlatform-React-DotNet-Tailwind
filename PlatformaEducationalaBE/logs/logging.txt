@@ -328,3 +328,596 @@ FROM [Users] AS [u]
 2022-09-04 14:23:22.099 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 6.5197ms
 2022-09-04 14:23:22.102 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
 2022-09-04 14:23:22.103 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 200 - application/json;+charset=utf-8 14.5256ms
+2022-09-05 07:32:32.973 +03:00 [INF] Now listening on: http://localhost:5055
+2022-09-05 07:32:33.011 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-05 07:32:33.012 +03:00 [INF] Hosting environment: Development
+2022-09-05 07:32:33.013 +03:00 [INF] Content root path: C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\
+2022-09-05 07:32:33.953 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/index.html - -
+2022-09-05 07:32:34.053 +03:00 [WRN] Failed to determine the https port for redirect.
+2022-09-05 07:32:34.468 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - -
+2022-09-05 07:32:34.468 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_vs/browserLink - -
+2022-09-05 07:32:34.488 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - - - 200 12020 application/javascript;+charset=utf-8 18.5784ms
+2022-09-05 07:32:34.497 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/index.html - - - 200 - text/html;charset=utf-8 553.7061ms
+2022-09-05 07:32:34.817 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 348.8691ms
+2022-09-05 07:32:36.047 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - -
+2022-09-05 07:32:36.234 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 186.6793ms
+2022-09-05 07:33:06.003 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-05 07:33:06.014 +03:00 [INF] CORS policy execution successful.
+2022-09-05 07:33:06.022 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:33:06.055 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-05 07:33:06.379 +03:00 [INF] Exemplu logging
+2022-09-05 07:33:07.386 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-05 07:33:09.995 +03:00 [INF] Executed DbCommand (64ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-05 07:33:10.133 +03:00 [INF] Executing ObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2022-09-05 07:33:10.162 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 4095.048ms
+2022-09-05 07:33:10.165 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:33:10.175 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 500 - application/json;+charset=utf-8 4171.1944ms
+2022-09-05 07:33:32.642 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-05 07:33:32.648 +03:00 [INF] CORS policy execution successful.
+2022-09-05 07:33:32.712 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:33:32.714 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-05 07:33:32.718 +03:00 [INF] Exemplu logging
+2022-09-05 07:33:32.735 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-05 07:33:32.767 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-05 07:33:32.773 +03:00 [INF] Executing ObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2022-09-05 07:33:32.775 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 57.8645ms
+2022-09-05 07:33:32.780 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:33:32.782 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 500 - application/json;+charset=utf-8 140.0708ms
+2022-09-05 07:33:37.610 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-05 07:33:37.613 +03:00 [INF] CORS policy execution successful.
+2022-09-05 07:33:37.614 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:33:37.616 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-05 07:33:37.623 +03:00 [INF] Exemplu logging
+2022-09-05 07:33:37.706 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-05 07:33:37.713 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-05 07:33:37.718 +03:00 [INF] Executing ObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2022-09-05 07:33:37.720 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 100.6616ms
+2022-09-05 07:33:37.723 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:33:37.725 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 500 - application/json;+charset=utf-8 114.9722ms
+2022-09-05 07:33:41.789 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-05 07:33:41.795 +03:00 [INF] CORS policy execution successful.
+2022-09-05 07:33:41.796 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:33:41.798 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-05 07:33:41.807 +03:00 [INF] Exemplu logging
+2022-09-05 07:33:41.809 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-05 07:33:41.815 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-05 07:33:41.822 +03:00 [INF] Executing ObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2022-09-05 07:33:41.824 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 17.2723ms
+2022-09-05 07:33:41.826 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:33:41.829 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 500 - application/json;+charset=utf-8 40.1205ms
+2022-09-05 07:33:47.441 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-05 07:33:47.443 +03:00 [INF] CORS policy execution successful.
+2022-09-05 07:33:47.444 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:33:47.447 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-05 07:33:47.452 +03:00 [INF] Exemplu logging
+2022-09-05 07:33:47.454 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-05 07:33:47.459 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-05 07:33:47.465 +03:00 [INF] Executing ObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2022-09-05 07:33:47.468 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 16.4044ms
+2022-09-05 07:33:47.470 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:33:47.472 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 500 - application/json;+charset=utf-8 31.3454ms
+2022-09-05 07:35:57.658 +03:00 [INF] Now listening on: http://localhost:5055
+2022-09-05 07:35:57.692 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-05 07:35:57.693 +03:00 [INF] Hosting environment: Development
+2022-09-05 07:35:57.694 +03:00 [INF] Content root path: C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\
+2022-09-05 07:35:58.435 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/index.html - -
+2022-09-05 07:35:58.548 +03:00 [WRN] Failed to determine the https port for redirect.
+2022-09-05 07:35:58.771 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_vs/browserLink - -
+2022-09-05 07:35:58.772 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - -
+2022-09-05 07:35:58.773 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/index.html - - - 200 - text/html;charset=utf-8 351.3765ms
+2022-09-05 07:35:58.778 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - - - 200 12020 application/javascript;+charset=utf-8 5.8449ms
+2022-09-05 07:35:58.806 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 34.9366ms
+2022-09-05 07:35:58.981 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - -
+2022-09-05 07:35:59.154 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 173.2127ms
+2022-09-05 07:36:24.828 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-05 07:36:24.838 +03:00 [INF] CORS policy execution successful.
+2022-09-05 07:36:24.845 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:36:24.872 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-05 07:36:25.074 +03:00 [INF] Exemplu logging
+2022-09-05 07:36:25.822 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-05 07:36:26.622 +03:00 [INF] Executed DbCommand (51ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-05 07:36:26.728 +03:00 [INF] Executing ForbidResult with authentication schemes ([]).
+2022-09-05 07:36:26.779 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 1898.8359ms
+2022-09-05 07:36:26.783 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:36:26.785 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultForbidScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ForbidAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Mvc.ForbidResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-09-05 07:36:27.047 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 500 - text/plain;+charset=utf-8 2218.5002ms
+2022-09-05 07:36:30.900 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-05 07:36:30.904 +03:00 [INF] CORS policy execution successful.
+2022-09-05 07:36:30.907 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:36:30.912 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-05 07:36:30.918 +03:00 [INF] Exemplu logging
+2022-09-05 07:36:30.922 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-05 07:36:30.933 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-05 07:36:30.938 +03:00 [INF] Executing ForbidResult with authentication schemes ([]).
+2022-09-05 07:36:30.941 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 24.8581ms
+2022-09-05 07:36:30.943 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:36:30.945 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultForbidScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ForbidAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Mvc.ForbidResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-09-05 07:36:30.959 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 500 - text/plain;+charset=utf-8 58.8915ms
+2022-09-05 07:36:40.962 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-05 07:36:40.966 +03:00 [INF] CORS policy execution successful.
+2022-09-05 07:36:40.968 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:36:40.970 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-05 07:36:40.979 +03:00 [INF] Exemplu logging
+2022-09-05 07:36:41.064 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-05 07:36:41.070 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-05 07:36:41.074 +03:00 [INF] Executing ForbidResult with authentication schemes ([]).
+2022-09-05 07:36:41.078 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 103.8623ms
+2022-09-05 07:36:41.080 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:36:41.082 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultForbidScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ForbidAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Mvc.ForbidResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-09-05 07:36:41.098 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 500 - text/plain;+charset=utf-8 136.2760ms
+2022-09-05 07:36:49.504 +03:00 [INF] Now listening on: http://localhost:5055
+2022-09-05 07:36:49.541 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-05 07:36:49.544 +03:00 [INF] Hosting environment: Development
+2022-09-05 07:36:49.546 +03:00 [INF] Content root path: C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\
+2022-09-05 07:36:50.240 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/index.html - -
+2022-09-05 07:36:50.315 +03:00 [WRN] Failed to determine the https port for redirect.
+2022-09-05 07:36:50.585 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - -
+2022-09-05 07:36:50.586 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_vs/browserLink - -
+2022-09-05 07:36:50.599 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/index.html - - - 200 - text/html;charset=utf-8 355.5581ms
+2022-09-05 07:36:50.602 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - - - 200 12020 application/javascript;+charset=utf-8 17.1115ms
+2022-09-05 07:36:50.654 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 68.4579ms
+2022-09-05 07:36:50.794 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - -
+2022-09-05 07:36:50.930 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 136.2434ms
+2022-09-05 07:36:55.751 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-05 07:36:55.763 +03:00 [INF] CORS policy execution successful.
+2022-09-05 07:36:55.771 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:36:55.803 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-05 07:36:56.133 +03:00 [INF] Exemplu logging
+2022-09-05 07:36:57.020 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-05 07:36:58.143 +03:00 [INF] Executed DbCommand (51ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-05 07:36:58.296 +03:00 [INF] Executing ForbidResult with authentication schemes ([]).
+2022-09-05 07:36:58.317 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 2501.6791ms
+2022-09-05 07:36:58.321 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:36:58.325 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultForbidScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ForbidAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Mvc.ForbidResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-09-05 07:36:58.404 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 500 - text/plain;+charset=utf-8 2652.9259ms
+2022-09-05 07:36:58.960 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-05 07:36:58.968 +03:00 [INF] CORS policy execution successful.
+2022-09-05 07:36:58.969 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:36:58.974 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-05 07:36:58.978 +03:00 [INF] Exemplu logging
+2022-09-05 07:36:58.982 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-05 07:36:59.001 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-05 07:36:59.004 +03:00 [INF] Executing ForbidResult with authentication schemes ([]).
+2022-09-05 07:36:59.007 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 29.7619ms
+2022-09-05 07:36:59.009 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:36:59.012 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultForbidScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ForbidAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Mvc.ForbidResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-09-05 07:36:59.027 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 500 - text/plain;+charset=utf-8 66.7391ms
+2022-09-05 07:37:01.255 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-05 07:37:01.261 +03:00 [INF] CORS policy execution successful.
+2022-09-05 07:37:01.262 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:37:01.265 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-05 07:37:01.274 +03:00 [INF] Exemplu logging
+2022-09-05 07:37:01.351 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-05 07:37:01.359 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-05 07:37:01.364 +03:00 [INF] Executing ForbidResult with authentication schemes ([]).
+2022-09-05 07:37:01.370 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 100.9806ms
+2022-09-05 07:37:01.372 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:37:01.375 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultForbidScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ForbidAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Mvc.ForbidResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-09-05 07:37:01.391 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 500 - text/plain;+charset=utf-8 135.5928ms
+2022-09-05 07:37:11.258 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-05 07:37:11.261 +03:00 [INF] CORS policy execution successful.
+2022-09-05 07:37:11.262 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:37:11.263 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-05 07:37:11.267 +03:00 [INF] Exemplu logging
+2022-09-05 07:37:11.269 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-05 07:37:11.274 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-05 07:37:11.280 +03:00 [INF] Executing ForbidResult with authentication schemes ([]).
+2022-09-05 07:37:11.284 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 17.2891ms
+2022-09-05 07:37:11.286 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:37:11.288 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultForbidScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ForbidAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Mvc.ForbidResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-09-05 07:37:11.303 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 500 - text/plain;+charset=utf-8 44.7633ms
+2022-09-05 07:37:13.003 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-05 07:37:13.006 +03:00 [INF] CORS policy execution successful.
+2022-09-05 07:37:13.008 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:37:13.010 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-05 07:37:13.013 +03:00 [INF] Exemplu logging
+2022-09-05 07:37:13.015 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-05 07:37:13.024 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-05 07:37:13.029 +03:00 [INF] Executing ForbidResult with authentication schemes ([]).
+2022-09-05 07:37:13.031 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 18.3335ms
+2022-09-05 07:37:13.034 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:37:13.037 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultForbidScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ForbidAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Mvc.ForbidResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-09-05 07:37:13.051 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 500 - text/plain;+charset=utf-8 48.0469ms
+2022-09-05 07:37:25.541 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-05 07:37:25.545 +03:00 [INF] CORS policy execution successful.
+2022-09-05 07:37:25.547 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:37:25.550 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-05 07:37:25.559 +03:00 [INF] Exemplu logging
+2022-09-05 07:37:25.562 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-05 07:37:25.571 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-05 07:37:25.581 +03:00 [INF] Executing ForbidResult with authentication schemes ([]).
+2022-09-05 07:37:25.585 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 27.2157ms
+2022-09-05 07:37:25.588 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:37:25.591 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultForbidScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ForbidAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Mvc.ForbidResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-09-05 07:37:25.608 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 500 - text/plain;+charset=utf-8 66.7139ms
+2022-09-05 07:37:33.965 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-05 07:37:33.967 +03:00 [INF] CORS policy execution successful.
+2022-09-05 07:37:33.968 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:37:33.970 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-05 07:37:33.974 +03:00 [INF] Exemplu logging
+2022-09-05 07:37:33.975 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-05 07:37:33.981 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-05 07:37:33.987 +03:00 [INF] Executing ForbidResult with authentication schemes ([]).
+2022-09-05 07:37:33.991 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 17.2865ms
+2022-09-05 07:37:33.994 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:37:33.997 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultForbidScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ForbidAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Mvc.ForbidResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-09-05 07:37:34.023 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 500 - text/plain;+charset=utf-8 57.9966ms
+2022-09-05 07:37:43.801 +03:00 [INF] Now listening on: http://localhost:5055
+2022-09-05 07:37:43.887 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-05 07:37:43.889 +03:00 [INF] Hosting environment: Development
+2022-09-05 07:37:43.891 +03:00 [INF] Content root path: C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\
+2022-09-05 07:37:44.275 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-05 07:37:44.331 +03:00 [WRN] Failed to determine the https port for redirect.
+2022-09-05 07:37:44.405 +03:00 [INF] CORS policy execution successful.
+2022-09-05 07:37:44.415 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:37:44.455 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-05 07:37:44.624 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/index.html - -
+2022-09-05 07:37:44.834 +03:00 [INF] Exemplu logging
+2022-09-05 07:37:44.877 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - -
+2022-09-05 07:37:44.877 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_vs/browserLink - -
+2022-09-05 07:37:44.882 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - - - 200 12020 application/javascript;+charset=utf-8 4.4213ms
+2022-09-05 07:37:44.882 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/index.html - - - 200 - text/html;charset=utf-8 257.8150ms
+2022-09-05 07:37:44.935 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 57.4614ms
+2022-09-05 07:37:45.063 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - -
+2022-09-05 07:37:45.229 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 165.8633ms
+2022-09-05 07:37:45.737 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-05 07:37:46.785 +03:00 [INF] Executed DbCommand (56ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-05 07:37:46.903 +03:00 [INF] Executing ForbidResult with authentication schemes ([]).
+2022-09-05 07:37:46.921 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 2455.143ms
+2022-09-05 07:37:46.926 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:37:46.930 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultForbidScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ForbidAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Mvc.ForbidResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-09-05 07:37:47.004 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 500 - text/plain;+charset=utf-8 2734.5248ms
+2022-09-05 07:37:54.277 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/Users - -
+2022-09-05 07:37:54.280 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:37:54.283 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-05 07:37:54.289 +03:00 [INF] Exemplu logging
+2022-09-05 07:37:54.294 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-05 07:37:54.307 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-05 07:37:54.313 +03:00 [INF] Executing ForbidResult with authentication schemes ([]).
+2022-09-05 07:37:54.318 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 30.093ms
+2022-09-05 07:37:54.321 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:37:54.325 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultForbidScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ForbidAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Mvc.ForbidResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-09-05 07:37:54.347 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/Users - - - 500 - text/plain;+charset=utf-8 70.4155ms
+2022-09-05 07:38:43.657 +03:00 [INF] Now listening on: http://localhost:5055
+2022-09-05 07:38:43.702 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-05 07:38:43.704 +03:00 [INF] Hosting environment: Development
+2022-09-05 07:38:43.705 +03:00 [INF] Content root path: C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\
+2022-09-05 07:38:44.190 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/index.html - -
+2022-09-05 07:38:44.281 +03:00 [WRN] Failed to determine the https port for redirect.
+2022-09-05 07:38:44.545 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - -
+2022-09-05 07:38:44.553 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_vs/browserLink - -
+2022-09-05 07:38:44.565 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - - - 200 12020 application/javascript;+charset=utf-8 12.3311ms
+2022-09-05 07:38:44.565 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/index.html - - - 200 - text/html;charset=utf-8 382.1177ms
+2022-09-05 07:38:44.604 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 51.2101ms
+2022-09-05 07:38:44.733 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - -
+2022-09-05 07:38:44.910 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 177.0234ms
+2022-09-05 07:38:49.736 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-05 07:38:49.755 +03:00 [INF] CORS policy execution successful.
+2022-09-05 07:38:49.763 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:38:49.797 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-05 07:38:50.115 +03:00 [INF] Exemplu logging
+2022-09-05 07:38:50.987 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-05 07:38:52.034 +03:00 [INF] Executed DbCommand (57ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-05 07:38:52.168 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2022-09-05 07:38:52.197 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 2386.6522ms
+2022-09-05 07:38:52.200 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:38:52.209 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 400 - application/json;+charset=utf-8 2472.5336ms
+2022-09-05 07:38:55.515 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-05 07:38:55.519 +03:00 [INF] CORS policy execution successful.
+2022-09-05 07:38:55.521 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:38:55.526 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-05 07:38:55.539 +03:00 [INF] Exemplu logging
+2022-09-05 07:38:55.553 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-05 07:38:55.577 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-05 07:38:55.581 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2022-09-05 07:38:55.584 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 46.5741ms
+2022-09-05 07:38:55.586 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:38:55.588 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 400 - application/json;+charset=utf-8 72.8457ms
+2022-09-05 07:39:05.636 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-05 07:39:05.639 +03:00 [INF] CORS policy execution successful.
+2022-09-05 07:39:05.641 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:39:05.643 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-05 07:39:05.652 +03:00 [INF] Exemplu logging
+2022-09-05 07:39:05.729 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-05 07:39:05.737 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-05 07:39:05.742 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2022-09-05 07:39:05.744 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 96.9789ms
+2022-09-05 07:39:05.746 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:39:05.748 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 400 - application/json;+charset=utf-8 112.1265ms
+2022-09-05 07:39:15.789 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-05 07:39:15.791 +03:00 [INF] CORS policy execution successful.
+2022-09-05 07:39:15.792 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:39:15.794 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-05 07:39:15.799 +03:00 [INF] Exemplu logging
+2022-09-05 07:39:15.802 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-05 07:39:15.809 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-05 07:39:15.815 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2022-09-05 07:39:15.818 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 19.7016ms
+2022-09-05 07:39:15.826 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:39:15.828 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 400 - application/json;+charset=utf-8 39.1551ms
+2022-09-05 07:39:40.959 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-05 07:39:40.969 +03:00 [INF] CORS policy execution successful.
+2022-09-05 07:39:40.970 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:39:40.972 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-05 07:39:40.975 +03:00 [INF] Exemplu logging
+2022-09-05 07:39:40.977 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-05 07:39:40.984 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-05 07:39:40.997 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2022-09-05 07:39:40.998 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 23.5805ms
+2022-09-05 07:39:41.002 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:39:41.004 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 400 - application/json;+charset=utf-8 44.6046ms
+2022-09-05 07:39:57.335 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-05 07:39:57.345 +03:00 [INF] CORS policy execution successful.
+2022-09-05 07:39:57.347 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:39:57.350 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-05 07:39:57.355 +03:00 [INF] Exemplu logging
+2022-09-05 07:39:57.357 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-05 07:39:57.368 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-05 07:39:57.375 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2022-09-05 07:39:57.379 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 24.7309ms
+2022-09-05 07:39:57.382 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:39:57.384 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 400 - application/json;+charset=utf-8 49.6721ms
+2022-09-05 07:40:02.420 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-05 07:40:02.423 +03:00 [INF] CORS policy execution successful.
+2022-09-05 07:40:02.424 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:40:02.426 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-05 07:40:02.430 +03:00 [INF] Exemplu logging
+2022-09-05 07:40:02.432 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-05 07:40:02.438 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-05 07:40:02.455 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2022-09-05 07:40:02.458 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 28.4978ms
+2022-09-05 07:40:02.461 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:40:02.463 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 400 - application/json;+charset=utf-8 43.1059ms
+2022-09-05 07:40:08.481 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/users - -
+2022-09-05 07:40:08.483 +03:00 [INF] CORS policy execution successful.
+2022-09-05 07:40:08.485 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:40:08.487 +03:00 [INF] Route matched with {action = "Get", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.Models.UserDto]]] Get() on controller PlatformaEducationala.Api.Controllers.UsersController (PlatformaEducationala.Api).
+2022-09-05 07:40:08.490 +03:00 [INF] Exemplu logging
+2022-09-05 07:40:08.492 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-05 07:40:08.497 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[UserName]
+FROM [Users] AS [u]
+2022-09-05 07:40:08.502 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2022-09-05 07:40:08.504 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api) in 14.3909ms
+2022-09-05 07:40:08.507 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.UsersController.Get (PlatformaEducationala.Api)'
+2022-09-05 07:40:08.509 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/users - - - 400 - application/json;+charset=utf-8 27.6341ms
