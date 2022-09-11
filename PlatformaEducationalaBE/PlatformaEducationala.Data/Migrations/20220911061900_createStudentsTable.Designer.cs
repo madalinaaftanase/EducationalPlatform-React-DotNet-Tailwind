@@ -12,8 +12,8 @@ using PlatformaEducationala.Data.Context;
 namespace PlatformaEducationala.Data.Migrations
 {
     [DbContext(typeof(PlatformDBContext))]
-    [Migration("20220703105104_create-users")]
-    partial class createusers
+    [Migration("20220911061900_createStudentsTable")]
+    partial class createStudentsTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,20 +24,32 @@ namespace PlatformaEducationala.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("PlatformaEducationala.Core.Entities.User", b =>
+            modelBuilder.Entity("PlatformaEducationala.Core.Entities.Student", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("UserName")
+                    b.Property<string>("Email")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Students");
                 });
 #pragma warning restore 612, 618
         }

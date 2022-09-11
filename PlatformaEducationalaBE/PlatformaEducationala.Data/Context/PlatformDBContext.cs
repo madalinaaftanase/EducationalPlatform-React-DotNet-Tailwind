@@ -7,7 +7,7 @@ namespace PlatformaEducationala.Data.Context;
 
 public class PlatformDBContext : DbContext
 {
-    public DbSet<User> Users { get; set; }
+    public DbSet<Student> Students { get; set; }
     public PlatformDBContext(DbContextOptions<PlatformDBContext> options) : base(options)
     {
     }

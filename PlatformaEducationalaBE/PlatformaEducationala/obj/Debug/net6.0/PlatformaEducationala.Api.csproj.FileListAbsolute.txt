@@ -180,3 +180,4 @@ C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\bin\Deb
 C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\bin\Debug\net6.0\Serilog.Sinks.Console.dll
 C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
 C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\bin\Debug\net6.0\Serilog.Sinks.File.dll
+C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\bin\Debug\net6.0\FluentValidation.dll

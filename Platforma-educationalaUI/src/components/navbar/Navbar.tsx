@@ -18,7 +18,7 @@ export function Navbar() {
       </NavLink>
       <Bars />
       <NavMenu>
-        <NavLink to="/users">Students</NavLink>
+        <NavLink to="/students">Students</NavLink>
         <NavLink to="/">Game</NavLink>
         <NavLink to="/contact">Pagina</NavLink>
         <NavLink to="/pagina">Pagina</NavLink>

@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "iYjPwcFgd6NdU5945YMa55CoBhPX3TuSUHVjthVQeVq2Ctajm9zI+ba5/fume1unr+kQRVOepxCVWincyFfyrw==",
+  "dgSpecHash": "FZ6WPDDJ4FqBPcMWyF6N2UItNVsylCCd0jlSq3L6MgN1gibG4f1FhXlKqJRNTcPVUUan4e3Jkn29YblaHFmPgw==",
   "success": true,
   "projectFilePath": "C:\\facultate\\anul3\\licenta\\PlatformaEducationalaBE\\PlatformaEducationala\\PlatformaEducationala.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MadalinaVarga\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
+    "C:\\Users\\MadalinaVarga\\.nuget\\packages\\fluentvalidation\\11.2.1\\fluentvalidation.11.2.1.nupkg.sha512",
     "C:\\Users\\MadalinaVarga\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\MadalinaVarga\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
     "C:\\Users\\MadalinaVarga\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",

@@ -15,8 +15,8 @@ namespace PlatformaEducationala.Data;
         {
             var connectionString = configuration.GetConnectionString("Main");
 
-            services.AddDbContext<PlatformDBContext>(options => options.UseSqlServer(connectionString)); // de modificat?
-            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddDbContext<PlatformDBContext>(options => options.UseSqlServer(connectionString)); 
+            services.AddScoped<IStudentRepository, StudentsRepository>();
         }
     }
 

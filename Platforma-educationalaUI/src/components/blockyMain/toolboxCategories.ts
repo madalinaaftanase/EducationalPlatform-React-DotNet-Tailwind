@@ -4,11 +4,13 @@ export const toolboxCategories = {
     {
       kind: "category",
       name: "HTML",
+      expanded: "true",
       contents: [
         {
           kind: "category",
           name: "Base Frame",
           colour: "#f22010",
+          expanded: "true",
           contents: [
             {
               kind: "block",
@@ -28,6 +30,7 @@ export const toolboxCategories = {
           kind: "category",
           name: "Basics",
           colour: "#f26110",
+          expanded: "true",
           contents: [
             {
               kind: "block",
@@ -55,6 +58,7 @@ export const toolboxCategories = {
           kind: "category",
           name: "Lists",
           colour: "#4fc488",
+          expanded: "true",
           contents: [
             {
               kind: "block",
@@ -90,6 +94,7 @@ export const toolboxCategories = {
           kind: "category",
           name: "Forms",
           colour: "#dedb2c",
+          expanded: "true",
           contents: [
             {
               kind: "block",
@@ -105,7 +110,7 @@ export const toolboxCategories = {
             },
             {
               kind: "label",
-              text: "Attributes"
+              text: "Attributes",
             },
             {
               kind: "block",
@@ -142,11 +147,13 @@ export const toolboxCategories = {
     {
       kind: "category",
       name: "CSS",
+      expanded: "true",
       contents: [
         {
           kind: "category",
           name: "Basic",
           colour: "#e32db6",
+          expanded: "true",
           contents: [
             {
               kind: "block",
@@ -222,6 +229,7 @@ export const toolboxCategories = {
           kind: "category",
           name: "Grid",
           colour: "#66eda1",
+          expanded: "true",
           contents: [
             {
               kind: "block",
@@ -232,44 +240,44 @@ export const toolboxCategories = {
               type: "gap",
             },
             {
-              kind:"block",
-              type:"grid-gap"
+              kind: "block",
+              type: "grid-gap",
             },
             {
-              kind:"block",
-              type:"grid-template-rows"
+              kind: "block",
+              type: "grid-template-rows",
             },
             {
-              kind:"block",
-              type:"grid-template-columns"
+              kind: "block",
+              type: "grid-template-columns",
             },
             {
-              kind:"block",
-              type:"grid-auto-rows"
+              kind: "block",
+              type: "grid-auto-rows",
             },
             {
-              kind:"block",
-              type:"grid-auto-flow"
+              kind: "block",
+              type: "grid-auto-flow",
             },
             {
-              kind:"label",
-              text:"Pozitionare"
+              kind: "label",
+              text: "Pozitionare",
             },
             {
-              kind:"block",
-              type:"grid-area"
+              kind: "block",
+              type: "grid-area",
             },
             {
-              kind:"block",
-              type:"grid-row"
+              kind: "block",
+              type: "grid-row",
             },
             {
-              kind:"block",
-              type:"grid-column"
+              kind: "block",
+              type: "grid-column",
             },
             {
-              kind:"block",
-              type:"grid-position"
+              kind: "block",
+              type: "grid-position",
             },
           ],
         },
@@ -277,6 +285,7 @@ export const toolboxCategories = {
           kind: "category",
           name: "Flex",
           colour: "#4fc0c4",
+          expanded: "true",
           contents: [
             {
               kind: "block",
@@ -304,6 +313,7 @@ export const toolboxCategories = {
           kind: "category",
           name: "Border",
           colour: "#d266ed",
+          expanded: "true",
           contents: [
             {
               kind: "block",

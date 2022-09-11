@@ -1,7 +1,14 @@
-import { UsersResponse } from "../models/user/User";
+import { StudentSigninRequest, StudentsResponse } from "../models/user/Student";
 import axios from "axios";
 
 const GetAll = (url: string) =>
-  axios.get<UsersResponse>(url).then((res) => res.data);
+  axios.get<StudentsResponse>(url).then((res) => res.data);
 
-export { GetAll };
+const CreateAccount = (url: string, accountData: StudentSigninRequest) =>
+  axios.post(url, accountData).then((res) => {
+    if (res.status === 200 || res.status === 201) {
+      window.location.href = "/login";
+    }
+  });
+
+export { GetAll, CreateAccount };
