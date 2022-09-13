@@ -2,8 +2,8 @@
 using MediatR;
 using PlatformaEducationala.Core.Entities;
 using PlatformaEducationala.Core.Repositories;
-using PlatformaEducationala.Core.User.Models;
 using Serilog;
+using System.Security.Cryptography;
 
 namespace PlatformaEducationala.Core.User.Commands.CreateAccount;
 
@@ -50,13 +50,13 @@ public class CreateAccountCommandHandler : IRequestHandler<CreateAccountCommand,
         //    result.ResponseStatus = Enums.ResultStatus.BadRequest;
         //    return result;
         //}
-
+        var passwordHash = BCrypt.Net.BCrypt.HashPassword(command.Password);
         var entity = new Student
         {
             Email = command.Email,
             FirstName = command.FirstName,
             LastName = command.LastName,
-            Password = command.Password,
+            Password = passwordHash
         };
 
         try

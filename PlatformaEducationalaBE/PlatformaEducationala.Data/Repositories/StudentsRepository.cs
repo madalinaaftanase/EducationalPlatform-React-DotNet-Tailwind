@@ -22,13 +22,12 @@ public class StudentsRepository : IStudentRepository
         await _platformDbContext.SaveChangesAsync();
     }
 
-    public Task<string> GetByEmail(string email)
+    public async Task<Student> GetByEmail(string email)
     {
-      var result= _platformDbContext.Students.Where(s => s.Email == email).Select(s=>s.Email);
-      return (Task<string>)result;
+      return await _platformDbContext.Students.Where(s => s.Email == email).FirstOrDefaultAsync();
     }
 
-    async Task<List<StudentDto>> IStudentRepository.GetAll()
+    public async Task<List<StudentDto>> GetAll()
     {
         return await _platformDbContext.Students.Select(u => new StudentDto { Email = u.Email}).ToListAsync();
     }

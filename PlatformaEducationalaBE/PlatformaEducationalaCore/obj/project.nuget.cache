@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "pPGmMU2HcpjmIWa+6chlwktGeoFFG0jSZqBGDMx8PJVsB9vAJo1AZ4rrUOjzZFHPs++6lqJjvUrsQRzr7SVMdA==",
+  "dgSpecHash": "oABTZwgO/mXNc8KAz3F5ibJzN2LO7DQ0KwXu97H61qY2t7YYNyPCp2o/e8LORYW5qt7HbrjbY5jGAtGYTk2/cw==",
   "success": true,
   "projectFilePath": "C:\\facultate\\anul3\\licenta\\PlatformaEducationalaBE\\PlatformaEducationalaCore\\PlatformaEducationala.Core.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\MadalinaVarga\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\MadalinaVarga\\.nuget\\packages\\fluentvalidation\\11.2.1\\fluentvalidation.11.2.1.nupkg.sha512",
     "C:\\Users\\MadalinaVarga\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
     "C:\\Users\\MadalinaVarga\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",

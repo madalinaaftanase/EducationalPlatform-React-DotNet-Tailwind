@@ -7,6 +7,6 @@ namespace PlatformaEducationala.Core.Repositories;
 public interface IStudentRepository
 {
     Task<List<StudentDto>> GetAll();
-    Task<string> GetByEmail(string email);
+    Task<Student> GetByEmail(string email);
     Task AddAsync(Student account);
 }

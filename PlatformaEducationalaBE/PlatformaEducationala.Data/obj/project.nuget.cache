@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "tg3JqFFM+hEAOxRVXH4kZ4S08PFNWBOY7uIjjdBBQdPHRKC7y5Z/66Ecbocx4xWkktPCUJQFV4liP/QDKKkuMA==",
+  "dgSpecHash": "vOHB4DNgym7Jkj0lFgzNdmTsAzheFH3DqNfxEnmf/1VPdH9OlhgBbHFRqZJShsmy+SB83FW09dkjHfYdoKUkSA==",
   "success": true,
   "projectFilePath": "C:\\facultate\\anul3\\licenta\\PlatformaEducationalaBE\\PlatformaEducationala.Data\\PlatformaEducationala.Data.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\MadalinaVarga\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\MadalinaVarga\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\MadalinaVarga\\.nuget\\packages\\fluentvalidation\\11.2.1\\fluentvalidation.11.2.1.nupkg.sha512",
     "C:\\Users\\MadalinaVarga\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

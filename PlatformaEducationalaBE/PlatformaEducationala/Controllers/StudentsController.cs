@@ -24,11 +24,4 @@ public class StudentsController: ApiController
 
         return HandleMediatorResponse(result);
     }
-
-    [HttpPost]
-    public async Task<ActionResult> Post([FromBody] CreateAccountCommand command)
-    {
-        var result = await _mediator.Send(command);
-        return HandleMediatorResponse(result);
-    }
 }

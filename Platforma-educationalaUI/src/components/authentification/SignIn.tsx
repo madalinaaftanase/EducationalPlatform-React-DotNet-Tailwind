@@ -25,7 +25,7 @@ function SignIn() {
       return setErrors("Parola si Confirma parola nu corespund");
     if (formInput.password.length < 8)
       return setErrors("Parola trebuie sa aibe cel putin 8 caractere");
-    CreateAccount(`${config.baseApiUrl}/students`, { ...formInput });
+    CreateAccount(`${config.baseApiUrl}/auth/register`, { ...formInput });
   };
 
   const onChangeInput = (e: any) => {
@@ -103,6 +103,7 @@ function SignIn() {
               <a
                 href="#!"
                 className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
+                onClick={()=>window.location.href = "/login"}
               >
                 Logheaza-te acum!
               </a>

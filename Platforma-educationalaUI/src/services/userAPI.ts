@@ -1,5 +1,10 @@
-import { StudentSigninRequest, StudentsResponse } from "../models/user/Student";
+import {
+  StudentSigninRequest,
+  StudentsResponse,
+} from "../models/student/Student";
 import axios from "axios";
+import { LoginRequest } from "../models/user/User";
+import { LoginResponse } from "../models/student/LoginResponse";
 
 const GetAll = (url: string) =>
   axios.get<StudentsResponse>(url).then((res) => res.data);
@@ -11,4 +16,12 @@ const CreateAccount = (url: string, accountData: StudentSigninRequest) =>
     }
   });
 
-export { GetAll, CreateAccount };
+const LoginAccount = (url: string, loginData: LoginRequest) =>
+  axios.post<LoginResponse>(url, loginData).then((res) => {
+    if (res.status === 200) {
+      console.log("AICI: ", res.data);
+      window.location.href = "/";
+    }
+  });
+
+export { GetAll, CreateAccount, LoginAccount };
