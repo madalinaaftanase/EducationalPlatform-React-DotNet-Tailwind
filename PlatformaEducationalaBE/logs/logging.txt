@@ -2207,3 +2207,869 @@ System.ArgumentOutOfRangeException: IDX10653: The encryption algorithm 'System.S
    at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
 2022-09-13 21:45:51.493 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/Auth/login application/json 63 - 500 - text/plain;+charset=utf-8 1912.8937ms
+2022-09-13 21:47:17.442 +03:00 [INF] Now listening on: http://localhost:5055
+2022-09-13 21:47:17.475 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-13 21:47:17.477 +03:00 [INF] Hosting environment: Development
+2022-09-13 21:47:17.478 +03:00 [INF] Content root path: C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\
+2022-09-13 21:47:17.915 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/index.html - -
+2022-09-13 21:47:17.979 +03:00 [WRN] Failed to determine the https port for redirect.
+2022-09-13 21:47:18.189 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_vs/browserLink - -
+2022-09-13 21:47:18.190 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - -
+2022-09-13 21:47:18.195 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/index.html - - - 200 - text/html;charset=utf-8 284.6860ms
+2022-09-13 21:47:18.195 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - - - 200 12020 application/javascript;+charset=utf-8 5.5085ms
+2022-09-13 21:47:18.217 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 28.0197ms
+2022-09-13 21:47:18.405 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - -
+2022-09-13 21:47:18.575 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 170.3855ms
+2022-09-13 21:47:50.020 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/Auth/login application/json 63
+2022-09-13 21:47:50.036 +03:00 [INF] CORS policy execution failed.
+2022-09-13 21:47:50.038 +03:00 [INF] Request origin http://localhost:5055 does not have permission to access the resource.
+2022-09-13 21:47:50.046 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2022-09-13 21:47:50.087 +03:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginAccountResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginAccountCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2022-09-13 21:47:51.128 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-13 21:47:51.964 +03:00 [INF] Executed DbCommand (71ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2022-09-13 21:47:52.582 +03:00 [INF] Executing OkObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.LoginAccount.LoginAccountResponse'.
+2022-09-13 21:47:52.596 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 2499.9489ms
+2022-09-13 21:47:52.599 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2022-09-13 21:47:52.607 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/Auth/login application/json 63 - 200 - application/json;+charset=utf-8 2587.6064ms
+2022-09-14 08:23:23.360 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-14 08:23:36.746 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-14 08:25:36.275 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-14 08:26:13.132 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-14 08:26:13.776 +03:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-09-14 08:26:13.818 +03:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-09-14 08:26:13.839 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-09-14 08:26:28.161 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-14 08:26:59.393 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-14 08:26:59.820 +03:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-09-14 08:26:59.862 +03:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-09-14 08:26:59.867 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-09-14 08:26:59.868 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-09-14 08:26:59.893 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-09-14 08:26:59.918 +03:00 [INF] Applying migration '20220914052628_AddTables'.
+2022-09-14 08:27:00.038 +03:00 [ERR] Failed executing DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Students] (
+    [Id] uniqueidentifier NOT NULL,
+    [FirstName] nvarchar(max) NOT NULL,
+    [LastName] nvarchar(max) NOT NULL,
+    [Password] nvarchar(max) NOT NULL,
+    [Email] uniqueidentifier NOT NULL,
+    CONSTRAINT [PK_Students] PRIMARY KEY ([Id])
+);
+2022-09-14 08:27:41.828 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-14 08:27:42.252 +03:00 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-09-14 08:27:42.297 +03:00 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-09-14 08:27:42.302 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-09-14 08:27:42.303 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-09-14 08:27:42.328 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-09-14 08:27:42.352 +03:00 [INF] Applying migration '20220914052628_AddTables'.
+2022-09-14 08:27:42.428 +03:00 [ERR] Failed executing DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Students] (
+    [Id] uniqueidentifier NOT NULL,
+    [FirstName] nvarchar(max) NOT NULL,
+    [LastName] nvarchar(max) NOT NULL,
+    [Password] nvarchar(max) NOT NULL,
+    [Email] uniqueidentifier NOT NULL,
+    CONSTRAINT [PK_Students] PRIMARY KEY ([Id])
+);
+2022-09-15 08:27:59.850 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-15 08:28:01.211 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-09-15 08:28:01.230 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-09-15 08:28:01.242 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-09-15 08:29:55.244 +03:00 [INF] Now listening on: http://localhost:5055
+2022-09-15 08:29:55.258 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-15 08:29:55.259 +03:00 [INF] Hosting environment: Development
+2022-09-15 08:29:55.259 +03:00 [INF] Content root path: C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\
+2022-09-15 08:29:55.479 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/index.html - -
+2022-09-15 08:29:55.517 +03:00 [WRN] Failed to determine the https port for redirect.
+2022-09-15 08:29:55.750 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - -
+2022-09-15 08:29:55.751 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_vs/browserLink - -
+2022-09-15 08:29:55.752 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - - - 200 12020 application/javascript;+charset=utf-8 1.8039ms
+2022-09-15 08:29:55.753 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/index.html - - - 200 - text/html;charset=utf-8 277.5945ms
+2022-09-15 08:29:55.786 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 35.0089ms
+2022-09-15 08:29:55.826 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - -
+2022-09-15 08:29:55.915 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 89.0682ms
+2022-09-15 08:30:30.490 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-15 08:30:39.019 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-15 08:30:39.250 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-09-15 08:30:39.270 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-09-15 08:30:39.272 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-09-15 08:30:39.272 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-09-15 08:30:39.285 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-09-15 08:30:39.297 +03:00 [INF] Applying migration '20220915053030_addedTables'.
+2022-09-15 08:30:39.332 +03:00 [ERR] Failed executing DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Students] (
+    [Id] uniqueidentifier NOT NULL,
+    [FirstName] nvarchar(max) NOT NULL,
+    [LastName] nvarchar(max) NOT NULL,
+    [Password] nvarchar(max) NOT NULL,
+    [Email] nvarchar(50) NOT NULL,
+    CONSTRAINT [PK_Students] PRIMARY KEY ([Id])
+);
+2022-09-15 08:31:45.400 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-15 08:31:45.649 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-09-15 08:31:45.668 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-09-15 08:31:45.670 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-09-15 08:31:45.670 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-09-15 08:31:45.683 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-09-15 08:31:45.695 +03:00 [INF] Applying migration '20220915053030_addedTables'.
+2022-09-15 08:31:45.729 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Students] (
+    [Id] uniqueidentifier NOT NULL,
+    [FirstName] nvarchar(max) NOT NULL,
+    [LastName] nvarchar(max) NOT NULL,
+    [Password] nvarchar(max) NOT NULL,
+    [Email] nvarchar(50) NOT NULL,
+    CONSTRAINT [PK_Students] PRIMARY KEY ([Id])
+);
+2022-09-15 08:31:45.730 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Teachers] (
+    [Id] uniqueidentifier NOT NULL,
+    [FirstName] nvarchar(max) NOT NULL,
+    [LastName] nvarchar(max) NOT NULL,
+    [Password] nvarchar(max) NOT NULL,
+    [Email] nvarchar(50) NOT NULL,
+    CONSTRAINT [PK_Teachers] PRIMARY KEY ([Id])
+);
+2022-09-15 08:31:45.731 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20220915053030_addedTables', N'6.0.6');
+2022-09-15 08:35:09.763 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-15 08:35:09.996 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-09-15 08:35:10.013 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-09-15 08:35:10.016 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-09-15 08:35:10.016 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-09-15 08:35:10.027 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-09-15 08:35:10.037 +03:00 [INF] No migrations were applied. The database is already up to date.
+2022-09-15 08:35:21.341 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-15 08:35:21.630 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-09-15 08:35:21.648 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-09-15 08:35:21.657 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-09-15 08:35:42.404 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-15 08:36:10.912 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-15 08:36:11.204 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-09-15 08:36:11.222 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-09-15 08:36:11.231 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-09-15 08:38:03.347 +03:00 [INF] Now listening on: http://localhost:5055
+2022-09-15 08:38:03.362 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-15 08:38:03.363 +03:00 [INF] Hosting environment: Development
+2022-09-15 08:38:03.363 +03:00 [INF] Content root path: C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\
+2022-09-15 08:38:03.846 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/index.html - -
+2022-09-15 08:38:03.885 +03:00 [WRN] Failed to determine the https port for redirect.
+2022-09-15 08:38:03.945 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/index.html - - - 200 - text/html;charset=utf-8 101.3664ms
+2022-09-15 08:38:03.952 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - -
+2022-09-15 08:38:03.954 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - - - 200 12020 application/javascript;+charset=utf-8 1.9599ms
+2022-09-15 08:38:04.009 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - -
+2022-09-15 08:38:04.096 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 87.2793ms
+2022-09-15 08:38:17.396 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-15 08:38:22.852 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-15 08:38:44.783 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-15 08:38:45.030 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-09-15 08:38:45.049 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-09-15 08:38:45.051 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-09-15 08:38:45.051 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-09-15 08:38:45.064 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-09-15 08:38:45.076 +03:00 [INF] Applying migration '20220915053822_addtables'.
+2022-09-15 08:38:45.108 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Students] (
+    [Id] uniqueidentifier NOT NULL,
+    [FirstName] nvarchar(max) NOT NULL,
+    [LastName] nvarchar(max) NOT NULL,
+    [Email] nvarchar(50) NOT NULL,
+    [Password] uniqueidentifier NOT NULL,
+    CONSTRAINT [PK_Students] PRIMARY KEY ([Id])
+);
+2022-09-15 08:38:45.109 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Teachers] (
+    [Id] uniqueidentifier NOT NULL,
+    [FirstName] nvarchar(max) NOT NULL,
+    [LastName] nvarchar(max) NOT NULL,
+    [Email] nvarchar(50) NOT NULL,
+    [Password] uniqueidentifier NOT NULL,
+    CONSTRAINT [PK_Teachers] PRIMARY KEY ([Id])
+);
+2022-09-15 08:38:45.110 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20220915053822_addtables', N'6.0.6');
+2022-09-15 09:52:45.503 +03:00 [INF] User profile is available. Using 'C:\Users\MadalinaVarga\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-09-15 09:52:45.585 +03:00 [INF] Now listening on: http://localhost:5055
+2022-09-15 09:52:45.588 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-15 09:52:45.588 +03:00 [INF] Hosting environment: Development
+2022-09-15 09:52:45.589 +03:00 [INF] Content root path: C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\
+2022-09-15 09:52:46.226 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/index.html - -
+2022-09-15 09:52:46.271 +03:00 [WRN] Failed to determine the https port for redirect.
+2022-09-15 09:52:46.438 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/index.html - - - 200 - text/html;charset=utf-8 214.0293ms
+2022-09-15 09:52:46.445 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - -
+2022-09-15 09:52:46.445 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_vs/browserLink - -
+2022-09-15 09:52:46.448 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - - - 200 12020 application/javascript;+charset=utf-8 2.5642ms
+2022-09-15 09:52:46.499 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 53.5284ms
+2022-09-15 09:52:46.588 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - -
+2022-09-15 09:52:46.657 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 68.8364ms
+2022-09-15 09:52:54.332 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/Students - -
+2022-09-15 09:52:54.604 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.StudentsController.Get (PlatformaEducationala.Api)'
+2022-09-15 09:52:54.618 +03:00 [INF] Route matched with {action = "Get", controller = "Students"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.User.Models.StudentDto]]] Get() on controller PlatformaEducationala.Api.Controllers.StudentsController (PlatformaEducationala.Api).
+2022-09-15 09:52:54.812 +03:00 [INF] Exemplu logging
+2022-09-15 09:52:55.192 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-15 09:52:56.387 +03:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Email]
+FROM [Students] AS [s]
+2022-09-15 09:52:56.409 +03:00 [INF] Executing OkObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2022-09-15 09:52:56.415 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.StudentsController.Get (PlatformaEducationala.Api) in 1793.3045ms
+2022-09-15 09:52:56.416 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.StudentsController.Get (PlatformaEducationala.Api)'
+2022-09-15 09:52:56.419 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/Students - - - 200 - application/json;+charset=utf-8 2087.5966ms
+2022-09-15 09:53:07.684 +03:00 [INF] User profile is available. Using 'C:\Users\MadalinaVarga\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-09-15 09:53:07.825 +03:00 [INF] Now listening on: http://localhost:5055
+2022-09-15 09:53:07.827 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-15 09:53:07.828 +03:00 [INF] Hosting environment: Development
+2022-09-15 09:53:07.828 +03:00 [INF] Content root path: C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\
+2022-09-15 09:53:08.198 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/index.html - -
+2022-09-15 09:53:08.237 +03:00 [WRN] Failed to determine the https port for redirect.
+2022-09-15 09:53:08.393 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - -
+2022-09-15 09:53:08.393 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_vs/browserLink - -
+2022-09-15 09:53:08.402 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/index.html - - - 200 - text/html;charset=utf-8 204.9053ms
+2022-09-15 09:53:08.402 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - - - 200 12020 application/javascript;+charset=utf-8 7.9289ms
+2022-09-15 09:53:08.438 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 45.5036ms
+2022-09-15 09:53:08.496 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - -
+2022-09-15 09:53:08.588 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 92.4381ms
+2022-09-15 09:53:18.110 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/Students - -
+2022-09-15 09:53:18.163 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.StudentsController.Get (PlatformaEducationala.Api)'
+2022-09-15 09:53:18.177 +03:00 [INF] Route matched with {action = "Get", controller = "Students"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.User.Models.StudentDto]]] Get() on controller PlatformaEducationala.Api.Controllers.StudentsController (PlatformaEducationala.Api).
+2022-09-15 09:53:18.310 +03:00 [INF] Exemplu logging
+2022-09-15 09:53:18.674 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-15 09:53:19.136 +03:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Email]
+FROM [Students] AS [s]
+2022-09-15 09:53:19.161 +03:00 [INF] Executing OkObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2022-09-15 09:53:19.168 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.StudentsController.Get (PlatformaEducationala.Api) in 987.0319ms
+2022-09-15 09:53:19.169 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.StudentsController.Get (PlatformaEducationala.Api)'
+2022-09-15 09:53:19.173 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/Students - - - 200 - application/json;+charset=utf-8 1063.1553ms
+2022-09-15 09:54:33.735 +03:00 [INF] User profile is available. Using 'C:\Users\MadalinaVarga\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-09-15 09:54:33.900 +03:00 [INF] Now listening on: http://localhost:5055
+2022-09-15 09:54:33.903 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-15 09:54:33.903 +03:00 [INF] Hosting environment: Development
+2022-09-15 09:54:33.904 +03:00 [INF] Content root path: C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\
+2022-09-15 09:54:34.384 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/index.html - -
+2022-09-15 09:54:34.432 +03:00 [WRN] Failed to determine the https port for redirect.
+2022-09-15 09:54:34.564 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - -
+2022-09-15 09:54:34.564 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_vs/browserLink - -
+2022-09-15 09:54:34.565 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/index.html - - - 200 - text/html;charset=utf-8 184.4707ms
+2022-09-15 09:54:34.566 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - - - 200 12020 application/javascript;+charset=utf-8 2.0858ms
+2022-09-15 09:54:34.591 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 27.6184ms
+2022-09-15 09:54:34.643 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - -
+2022-09-15 09:54:34.743 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 100.6527ms
+2022-09-15 09:54:40.003 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/Students - -
+2022-09-15 09:54:40.057 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-09-15 09:54:40.062 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultChallengeScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-09-15 09:54:40.191 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/Students - - - 500 - text/plain;+charset=utf-8 187.8531ms
+2022-09-15 09:55:40.806 +03:00 [INF] User profile is available. Using 'C:\Users\MadalinaVarga\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-09-15 09:55:40.932 +03:00 [INF] Now listening on: http://localhost:5055
+2022-09-15 09:55:40.935 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-15 09:55:40.935 +03:00 [INF] Hosting environment: Development
+2022-09-15 09:55:40.936 +03:00 [INF] Content root path: C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\
+2022-09-15 09:55:41.431 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/index.html - -
+2022-09-15 09:55:41.482 +03:00 [WRN] Failed to determine the https port for redirect.
+2022-09-15 09:55:41.616 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - -
+2022-09-15 09:55:41.620 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_vs/browserLink - -
+2022-09-15 09:55:41.622 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/index.html - - - 200 - text/html;charset=utf-8 194.9982ms
+2022-09-15 09:55:41.622 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - - - 200 12020 application/javascript;+charset=utf-8 5.5339ms
+2022-09-15 09:55:41.643 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 23.1291ms
+2022-09-15 09:55:41.693 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - -
+2022-09-15 09:55:41.796 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 103.0414ms
+2022-09-15 09:55:46.180 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/Students - -
+2022-09-15 09:55:46.234 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-09-15 09:55:46.237 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2022-09-15 09:55:46.238 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/Students - - - 401 0 - 57.7731ms
+2022-09-15 20:40:37.136 +03:00 [INF] User profile is available. Using 'C:\Users\MadalinaVarga\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-09-15 20:40:37.643 +03:00 [INF] Now listening on: http://localhost:5055
+2022-09-15 20:40:37.649 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-15 20:40:37.650 +03:00 [INF] Hosting environment: Development
+2022-09-15 20:40:37.652 +03:00 [INF] Content root path: C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\
+2022-09-15 20:40:38.053 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/index.html - -
+2022-09-15 20:40:38.134 +03:00 [WRN] Failed to determine the https port for redirect.
+2022-09-15 20:40:38.608 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - -
+2022-09-15 20:40:38.616 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/index.html - - - 200 - text/html;charset=utf-8 569.4063ms
+2022-09-15 20:40:38.617 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_vs/browserLink - -
+2022-09-15 20:40:38.622 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - - - 200 12020 application/javascript;+charset=utf-8 13.5359ms
+2022-09-15 20:40:38.649 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 32.4046ms
+2022-09-15 20:40:38.795 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - -
+2022-09-15 20:40:38.976 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 180.9149ms
+2022-09-15 21:06:27.532 +03:00 [INF] User profile is available. Using 'C:\Users\MadalinaVarga\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-09-15 21:06:27.828 +03:00 [INF] Now listening on: http://localhost:5055
+2022-09-15 21:06:27.834 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-15 21:06:27.835 +03:00 [INF] Hosting environment: Development
+2022-09-15 21:06:27.836 +03:00 [INF] Content root path: C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\
+2022-09-15 21:06:28.969 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/index.html - -
+2022-09-15 21:06:29.067 +03:00 [WRN] Failed to determine the https port for redirect.
+2022-09-15 21:06:29.456 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_vs/browserLink - -
+2022-09-15 21:06:29.456 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - -
+2022-09-15 21:06:29.465 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - - - 200 12020 application/javascript;+charset=utf-8 6.9013ms
+2022-09-15 21:06:29.516 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/index.html - - - 200 - text/html;charset=utf-8 557.6418ms
+2022-09-15 21:06:29.669 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 213.2674ms
+2022-09-15 21:06:29.811 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - -
+2022-09-15 21:06:30.105 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 293.6190ms
+2022-09-15 21:07:46.954 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/register - -
+2022-09-15 21:07:47.777 +03:00 [INF] CORS policy execution successful.
+2022-09-15 21:07:47.780 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/register - - - 204 - - 826.5061ms
+2022-09-15 21:07:47.788 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/register application/json 144
+2022-09-15 21:07:47.791 +03:00 [INF] CORS policy execution successful.
+2022-09-15 21:07:47.798 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2022-09-15 21:07:47.846 +03:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Post(PlatformaEducationala.Core.User.Commands.CreateAccount.CreateAccountCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2022-09-15 21:07:52.180 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-15 21:07:55.171 +03:00 [INF] Executed DbCommand (76ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2022-09-15 21:07:55.848 +03:00 [ERR] Failed executing DbCommand (18ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 50), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Students] ([Id], [Email], [FirstName], [LastName], [Password])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2022-09-15 21:07:56.137 +03:00 [ERR] An exception occurred in the database while saving changes for context type 'PlatformaEducationala.Data.Context.PlatformDBContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Conversion failed when converting from a character string to uniqueidentifier.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:0fdf4c12-c7b8-4be2-9681-3ae8b619146c
+Error Number:8169,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Conversion failed when converting from a character string to uniqueidentifier.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:0fdf4c12-c7b8-4be2-9681-3ae8b619146c
+Error Number:8169,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2022-09-15 21:07:56.425 +03:00 [ERR] AddAsync failed.Account creation failed. Errors: Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Conversion failed when converting from a character string to uniqueidentifier.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:0fdf4c12-c7b8-4be2-9681-3ae8b619146c
+Error Number:8169,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at PlatformaEducationala.Data.Repositories.StudentsRepository.AddAsync(Student account) in C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala.Data\Repositories\StudentsRepository.cs:line 22
+   at PlatformaEducationala.Core.User.Commands.CreateAccount.CreateAccountCommandHandler.Handle(CreateAccountCommand command, CancellationToken cancellationToken) in C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationalaCore\User\Commands\CreateAccount\CreateAccountCommand.cs:line 64
+2022-09-15 21:07:56.449 +03:00 [INF] Executing ObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.CreateAccount.CreateAccountResponse'.
+2022-09-15 21:07:56.466 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 8609.9945ms
+2022-09-15 21:07:56.470 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2022-09-15 21:07:56.481 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/register application/json 144 - 500 - application/json;+charset=utf-8 8693.0335ms
+2022-09-15 21:17:13.489 +03:00 [INF] User profile is available. Using 'C:\Users\MadalinaVarga\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-09-15 21:17:13.633 +03:00 [INF] Now listening on: http://localhost:5055
+2022-09-15 21:17:13.639 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-15 21:17:13.640 +03:00 [INF] Hosting environment: Development
+2022-09-15 21:17:13.641 +03:00 [INF] Content root path: C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\
+2022-09-15 21:17:14.150 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/index.html - -
+2022-09-15 21:17:14.228 +03:00 [WRN] Failed to determine the https port for redirect.
+2022-09-15 21:17:14.431 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - -
+2022-09-15 21:17:14.431 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_vs/browserLink - -
+2022-09-15 21:17:14.435 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/index.html - - - 200 - text/html;charset=utf-8 291.6640ms
+2022-09-15 21:17:14.436 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - - - 200 12020 application/javascript;+charset=utf-8 4.6277ms
+2022-09-15 21:17:14.459 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 27.2302ms
+2022-09-15 21:17:14.603 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - -
+2022-09-15 21:17:14.750 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 147.2128ms
+2022-09-15 21:17:24.971 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/Students - -
+2022-09-15 21:17:25.030 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.StudentsController.Get (PlatformaEducationala.Api)'
+2022-09-15 21:17:25.056 +03:00 [INF] Route matched with {action = "Get", controller = "Students"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.User.Models.StudentDto]]] Get() on controller PlatformaEducationala.Api.Controllers.StudentsController (PlatformaEducationala.Api).
+2022-09-15 21:17:25.264 +03:00 [INF] Exemplu logging
+2022-09-15 21:17:26.122 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-15 21:17:26.960 +03:00 [INF] Executed DbCommand (50ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Email]
+FROM [Students] AS [s]
+2022-09-15 21:17:27.049 +03:00 [INF] Executing OkObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2022-09-15 21:17:27.064 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.StudentsController.Get (PlatformaEducationala.Api) in 1997.7381ms
+2022-09-15 21:17:27.067 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.StudentsController.Get (PlatformaEducationala.Api)'
+2022-09-15 21:17:27.075 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/Students - - - 200 - application/json;+charset=utf-8 2104.5245ms
+2022-09-15 21:17:54.910 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/Auth/register application/json 128
+2022-09-15 21:17:54.915 +03:00 [INF] CORS policy execution failed.
+2022-09-15 21:17:54.916 +03:00 [INF] Request origin http://localhost:5055 does not have permission to access the resource.
+2022-09-15 21:17:54.919 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2022-09-15 21:17:54.941 +03:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Post(PlatformaEducationala.Core.User.Commands.CreateAccount.CreateAccountCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2022-09-15 21:17:55.020 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-15 21:17:55.145 +03:00 [INF] Executed DbCommand (37ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2022-09-15 21:17:55.719 +03:00 [ERR] Failed executing DbCommand (8ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 50), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Students] ([Id], [Email], [FirstName], [LastName], [Password])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2022-09-15 21:17:55.813 +03:00 [ERR] An exception occurred in the database while saving changes for context type 'PlatformaEducationala.Data.Context.PlatformDBContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Conversion failed when converting from a character string to uniqueidentifier.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:b394d139-ae81-443e-ba92-eb231f918aa0
+Error Number:8169,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Conversion failed when converting from a character string to uniqueidentifier.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:b394d139-ae81-443e-ba92-eb231f918aa0
+Error Number:8169,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2022-09-15 21:17:55.863 +03:00 [ERR] AddAsync failed.Account creation failed. Errors: Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Conversion failed when converting from a character string to uniqueidentifier.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:b394d139-ae81-443e-ba92-eb231f918aa0
+Error Number:8169,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at PlatformaEducationala.Data.Repositories.StudentsRepository.AddAsync(Student account) in C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala.Data\Repositories\StudentsRepository.cs:line 22
+   at PlatformaEducationala.Core.User.Commands.CreateAccount.CreateAccountCommandHandler.Handle(CreateAccountCommand command, CancellationToken cancellationToken) in C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationalaCore\User\Commands\CreateAccount\CreateAccountCommand.cs:line 64
+2022-09-15 21:17:55.873 +03:00 [INF] Executing ObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.CreateAccount.CreateAccountResponse'.
+2022-09-15 21:17:55.876 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 931.488ms
+2022-09-15 21:17:55.878 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2022-09-15 21:17:55.880 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/Auth/register application/json 128 - 500 - application/json;+charset=utf-8 970.1277ms
+2022-09-15 21:18:14.800 +03:00 [INF] User profile is available. Using 'C:\Users\MadalinaVarga\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-09-15 21:18:15.122 +03:00 [INF] Now listening on: http://localhost:5055
+2022-09-15 21:18:15.130 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-15 21:18:15.133 +03:00 [INF] Hosting environment: Development
+2022-09-15 21:18:15.135 +03:00 [INF] Content root path: C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\
+2022-09-15 21:18:15.752 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/index.html - -
+2022-09-15 21:18:15.870 +03:00 [WRN] Failed to determine the https port for redirect.
+2022-09-15 21:18:16.159 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_vs/browserLink - -
+2022-09-15 21:18:16.160 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - -
+2022-09-15 21:18:16.185 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - - - 200 12020 application/javascript;+charset=utf-8 19.9383ms
+2022-09-15 21:18:16.185 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/index.html - - - 200 - text/html;charset=utf-8 425.0633ms
+2022-09-15 21:18:16.233 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 74.0341ms
+2022-09-15 21:18:16.336 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - -
+2022-09-15 21:18:16.506 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 170.2172ms
+2022-09-15 21:18:29.918 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/Auth/register application/json 128
+2022-09-15 21:18:30.050 +03:00 [INF] CORS policy execution failed.
+2022-09-15 21:18:30.051 +03:00 [INF] Request origin http://localhost:5055 does not have permission to access the resource.
+2022-09-15 21:18:30.059 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2022-09-15 21:18:30.104 +03:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Post(PlatformaEducationala.Core.User.Commands.CreateAccount.CreateAccountCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2022-09-15 21:18:54.098 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-15 21:19:00.781 +03:00 [INF] Executed DbCommand (88ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2022-09-15 21:19:01.453 +03:00 [ERR] Failed executing DbCommand (13ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 50), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Students] ([Id], [Email], [FirstName], [LastName], [Password])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2022-09-15 21:19:01.538 +03:00 [ERR] An exception occurred in the database while saving changes for context type 'PlatformaEducationala.Data.Context.PlatformDBContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Conversion failed when converting from a character string to uniqueidentifier.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:b2373a3c-3492-4bb5-82fa-4d191afc622d
+Error Number:8169,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Conversion failed when converting from a character string to uniqueidentifier.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:b2373a3c-3492-4bb5-82fa-4d191afc622d
+Error Number:8169,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2022-09-15 21:19:01.715 +03:00 [ERR] AddAsync failed.Account creation failed. Errors: Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Conversion failed when converting from a character string to uniqueidentifier.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:b2373a3c-3492-4bb5-82fa-4d191afc622d
+Error Number:8169,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at PlatformaEducationala.Data.Repositories.StudentsRepository.AddAsync(Student account) in C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala.Data\Repositories\StudentsRepository.cs:line 22
+   at PlatformaEducationala.Core.User.Commands.CreateAccount.CreateAccountCommandHandler.Handle(CreateAccountCommand command, CancellationToken cancellationToken) in C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationalaCore\User\Commands\CreateAccount\CreateAccountCommand.cs:line 64
+2022-09-15 21:19:17.333 +03:00 [INF] Executing ObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.CreateAccount.CreateAccountResponse'.
+2022-09-15 21:19:17.352 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 47236.9953ms
+2022-09-15 21:19:17.357 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2022-09-15 21:19:17.367 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/Auth/register application/json 128 - 500 - application/json;+charset=utf-8 47448.9199ms
+2022-09-15 21:19:19.920 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/Auth/register application/json 128
+2022-09-15 21:19:19.925 +03:00 [INF] CORS policy execution failed.
+2022-09-15 21:19:19.926 +03:00 [INF] Request origin http://localhost:5055 does not have permission to access the resource.
+2022-09-15 21:19:19.927 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2022-09-15 21:19:19.929 +03:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Post(PlatformaEducationala.Core.User.Commands.CreateAccount.CreateAccountCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2022-09-15 21:20:20.291 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-15 21:20:20.301 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2022-09-15 21:21:14.871 +03:00 [ERR] Failed executing DbCommand (33ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 50), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Students] ([Id], [Email], [FirstName], [LastName], [Password])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2022-09-15 21:21:14.884 +03:00 [ERR] An exception occurred in the database while saving changes for context type 'PlatformaEducationala.Data.Context.PlatformDBContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Conversion failed when converting from a character string to uniqueidentifier.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:b2373a3c-3492-4bb5-82fa-4d191afc622d
+Error Number:8169,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Conversion failed when converting from a character string to uniqueidentifier.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:b2373a3c-3492-4bb5-82fa-4d191afc622d
+Error Number:8169,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2022-09-15 21:22:15.656 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-15 21:22:23.601 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-15 21:22:24.209 +03:00 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-09-15 21:22:24.293 +03:00 [INF] Executed DbCommand (64ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-09-15 21:22:24.314 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-09-15 21:24:12.527 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-15 21:24:24.389 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-15 21:24:24.943 +03:00 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-09-15 21:24:24.988 +03:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-09-15 21:24:25.008 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-09-15 21:25:39.216 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-15 21:25:48.094 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-15 21:26:01.379 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-15 21:26:01.920 +03:00 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-09-15 21:26:01.966 +03:00 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-09-15 21:26:01.972 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-09-15 21:26:01.973 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-09-15 21:26:02.001 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-09-15 21:26:02.026 +03:00 [INF] Applying migration '20220915182548_addtables'.
+2022-09-15 21:26:02.107 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Students] (
+    [Id] uniqueidentifier NOT NULL,
+    [FirstName] nvarchar(max) NOT NULL,
+    [LastName] nvarchar(max) NOT NULL,
+    [Email] nvarchar(50) NOT NULL,
+    [Password] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Students] PRIMARY KEY ([Id])
+);
+2022-09-15 21:26:02.109 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Teachers] (
+    [Id] uniqueidentifier NOT NULL,
+    [FirstName] nvarchar(max) NOT NULL,
+    [LastName] nvarchar(max) NOT NULL,
+    [Email] nvarchar(50) NOT NULL,
+    [Password] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Teachers] PRIMARY KEY ([Id])
+);
+2022-09-15 21:26:02.111 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20220915182548_addtables', N'6.0.6');
+2022-09-15 21:26:10.354 +03:00 [INF] User profile is available. Using 'C:\Users\MadalinaVarga\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-09-15 21:26:10.635 +03:00 [INF] Now listening on: http://localhost:5055
+2022-09-15 21:26:10.642 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-15 21:26:10.644 +03:00 [INF] Hosting environment: Development
+2022-09-15 21:26:10.645 +03:00 [INF] Content root path: C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\
+2022-09-15 21:26:11.764 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/index.html - -
+2022-09-15 21:26:11.845 +03:00 [WRN] Failed to determine the https port for redirect.
+2022-09-15 21:26:12.240 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - -
+2022-09-15 21:26:12.241 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_vs/browserLink - -
+2022-09-15 21:26:12.247 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - - - 200 12020 application/javascript;+charset=utf-8 4.8617ms
+2022-09-15 21:26:12.257 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/index.html - - - 200 - text/html;charset=utf-8 499.0551ms
+2022-09-15 21:26:12.331 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 89.6781ms
+2022-09-15 21:26:12.441 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - -
+2022-09-15 21:26:12.642 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 200.2797ms
+2022-09-15 21:26:40.995 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/Auth/register application/json 128
+2022-09-15 21:26:41.111 +03:00 [INF] CORS policy execution failed.
+2022-09-15 21:26:41.113 +03:00 [INF] Request origin http://localhost:5055 does not have permission to access the resource.
+2022-09-15 21:26:41.120 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2022-09-15 21:26:41.170 +03:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Post(PlatformaEducationala.Core.User.Commands.CreateAccount.CreateAccountCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2022-09-15 21:26:44.387 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-15 21:26:45.581 +03:00 [INF] Executed DbCommand (81ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2022-09-15 21:26:46.205 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 50), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Students] ([Id], [Email], [FirstName], [LastName], [Password])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2022-09-15 21:26:46.238 +03:00 [INF] The account was created succesfully
+2022-09-15 21:26:46.257 +03:00 [INF] Executing OkObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.CreateAccount.CreateAccountResponse'.
+2022-09-15 21:26:46.275 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 5092.6141ms
+2022-09-15 21:26:46.279 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2022-09-15 21:26:46.287 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/Auth/register application/json 128 - 200 - application/json;+charset=utf-8 5291.9324ms
+2022-09-15 21:26:59.381 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/Students - -
+2022-09-15 21:26:59.385 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.StudentsController.Get (PlatformaEducationala.Api)'
+2022-09-15 21:26:59.392 +03:00 [INF] Route matched with {action = "Get", controller = "Students"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.User.Models.StudentDto]]] Get() on controller PlatformaEducationala.Api.Controllers.StudentsController (PlatformaEducationala.Api).
+2022-09-15 21:26:59.400 +03:00 [INF] Exemplu logging
+2022-09-15 21:26:59.412 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-15 21:26:59.470 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Email]
+FROM [Students] AS [s]
+2022-09-15 21:26:59.488 +03:00 [INF] Executing OkObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2022-09-15 21:26:59.493 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.StudentsController.Get (PlatformaEducationala.Api) in 97.8568ms
+2022-09-15 21:26:59.496 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.StudentsController.Get (PlatformaEducationala.Api)'
+2022-09-15 21:26:59.499 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/Students - - - 200 - application/json;+charset=utf-8 117.8138ms
+2022-09-15 21:27:11.991 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/Auth/login/student application/json 63
+2022-09-15 21:27:12.049 +03:00 [INF] CORS policy execution failed.
+2022-09-15 21:27:12.050 +03:00 [INF] Request origin http://localhost:5055 does not have permission to access the resource.
+2022-09-15 21:27:12.052 +03:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2022-09-15 21:27:12.061 +03:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginAccountResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginAccountCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2022-09-15 21:27:13.844 +03:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-09-15 21:27:13.853 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2022-09-15 21:27:14.692 +03:00 [INF] Executing OkObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.LoginAccount.LoginAccountResponse'.
+2022-09-15 21:27:14.695 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 2630.5985ms
+2022-09-15 21:27:14.698 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2022-09-15 21:27:14.700 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/Auth/login/student application/json 63 - 200 - application/json;+charset=utf-8 2708.4779ms

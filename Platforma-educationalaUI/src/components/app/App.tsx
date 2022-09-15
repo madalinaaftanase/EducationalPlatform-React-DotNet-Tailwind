@@ -20,7 +20,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Game />} />
           <Route path="/signin" element={<Signin />} />
-          <Route path="/login" element={<LoginPage />} />
+          <Route path="/login/student" element={<LoginPage />} />
+          <Route path="/login/teacher" element={<LoginPage />} />
           <Route path="/students" element={<Students />} />
           <Route path="/error" element={<ErrorResponse />} />
         </Routes>

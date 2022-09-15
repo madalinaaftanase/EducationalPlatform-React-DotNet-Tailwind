@@ -182,3 +182,7 @@ C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\bin\Deb
 C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\bin\Debug\net6.0\Serilog.Sinks.File.dll
 C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\bin\Debug\net6.0\FluentValidation.dll
 C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\bin\Debug\net6.0\BCrypt.Net-Next.dll
+C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\bin\Debug\net6.0\Scrutor.dll
+C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
+C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll

@@ -19,8 +19,7 @@ const CreateAccount = (url: string, accountData: StudentSigninRequest) =>
 const LoginAccount = (url: string, loginData: LoginRequest) =>
   axios.post<LoginResponse>(url, loginData).then((res) => {
     if (res.status === 200) {
-      console.log("AICI: ", res.data);
-      window.location.href = "/";
+      var token = res.data.token;
     }
   });
 

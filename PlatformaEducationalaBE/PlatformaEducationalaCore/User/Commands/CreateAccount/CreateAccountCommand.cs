@@ -41,15 +41,15 @@ public class CreateAccountCommandHandler : IRequestHandler<CreateAccountCommand,
                 ResponseStatus = Enums.ResultStatus.BadRequest
             };
         }
-        //var existingEmail = await _studentRepository.GetByEmail(command.Email);
+        var student = await _studentRepository.GetByEmail(command.Email);
 
-        //if(existingEmail!=null)
-        //{
-        //    _logger.Information("Given Email already exist");
-        //    result.Errors.Add("Email exist already");
-        //    result.ResponseStatus = Enums.ResultStatus.BadRequest;
-        //    return result;
-        //}
+        if (student != null)
+        {
+            _logger.Information("Given Email already exist");
+            result.Errors.Add("Email exist already");
+            result.ResponseStatus = Enums.ResultStatus.BadRequest;
+            return result;
+        }
         var passwordHash = BCrypt.Net.BCrypt.HashPassword(command.Password);
         var entity = new Student
         {

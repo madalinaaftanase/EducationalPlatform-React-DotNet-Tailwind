@@ -103,7 +103,7 @@ function SignIn() {
               <a
                 href="#!"
                 className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
-                onClick={()=>window.location.href = "/login"}
+                onClick={()=>window.location.href = "/login/student"}
               >
                 Logheaza-te acum!
               </a>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import config from "../../config";
 import logoImg from "../../images/dog-logo.png";
 import { LoginAccount } from "../../services/userAPI";
@@ -8,17 +8,28 @@ function Login() {
     email: "",
     password: "",
   });
-
+  const [isStudent, setIsStudent] = useState(false);
   const [errors, setErrors] = useState("");
 
-  const onSubmit = (e: any) => {
-    e.PreventDefault();
+  useEffect(() => {
+    if (window.location.href.includes("student")) {
+      setIsStudent(true);
+    }
+  }, []);
 
+  const onSubmit = (e: any) => {
+    e.preventDefault();
+    setErrors("");
+    
     if (!loginInput.email && !loginInput.password) {
       return setErrors("Toate campurile sunt obligatorii");
     }
 
-    LoginAccount(`${config.baseApiUrl}/auth/login`, { ...loginInput });
+    let url = `${config.baseApiUrl}/auth/login/teacher`;
+    if (isStudent) {
+      url = `${config.baseApiUrl}/auth/login/student`;
+    }
+    LoginAccount(url, { ...loginInput });
   };
 
   const onChange = (e: any) => {
@@ -61,17 +72,44 @@ function Login() {
           </div>
           {errors && <span>{errors}</span>}
           <div className="pt-8">
-            <button className="bg-purple-500 hover:bg-purple-400 text-white py-2 px-4 border-b-4 border-purple-900 hover:border-purple-500 rounded">
+            <button
+              type="submit"
+              value="submit"
+              className="bg-purple-500 hover:bg-purple-400 text-white py-2 px-4 border-b-4 border-purple-900 hover:border-purple-500 rounded"
+            >
               Login
             </button>
+            {isStudent && (
+              <p className="text-sm font-semibold mt-2 pt-1 mb-0">
+                Esti profesor?
+                <a
+                  href="#!"
+                  className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
+                  onClick={() => (window.location.href = "/login/teacher")}
+                >
+                  Login cont profesor
+                </a>
+              </p>
+            )}
+            {!isStudent && (
+              <p className="text-sm font-semibold mt-2 pt-1 mb-0">
+                Esti student?
+                <a
+                  href="#!"
+                  className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
+                  onClick={() => (window.location.href = "/login/student")}
+                >
+                  Login cont student
+                </a>
+              </p>
+            )}
             <p className="text-sm font-semibold mt-2 pt-1 mb-0">
-              Nu ai un cont? 
+              Nu ai un cont?
               <a
                 href="#!"
                 className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
-                onClick={()=>window.location.href = "/sigin"}
+                onClick={() => (window.location.href = "/signin")}
               >
-                {"  "}
                 Inregistreaza-te acum!
               </a>
             </p>

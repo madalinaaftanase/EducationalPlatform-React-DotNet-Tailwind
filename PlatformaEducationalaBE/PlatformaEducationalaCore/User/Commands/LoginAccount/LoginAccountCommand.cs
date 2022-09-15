@@ -35,7 +35,6 @@ public class LoginAccountCommandHandler : IRequestHandler<LoginAccountCommand, L
             response.ResponseStatus = Enums.ResultStatus.BadRequest;
             return response;
         }
-
         bool isValidPassword = BCrypt.Net.BCrypt.Verify(command.Password, user.Password);
         if (!isValidPassword)
         {
@@ -53,17 +52,17 @@ public class LoginAccountCommandHandler : IRequestHandler<LoginAccountCommand, L
         }
 
         response.Token = token;
-
         return response;
     }
-    private string CreateToken(Student user)
+    private string CreateToken(Student student)
     {
         var claims = new[]
         {
-            new Claim(ClaimTypes.NameIdentifier , user.Id.ToString()),
-            new Claim(ClaimTypes.Email, user.Email),
-            new Claim(ClaimTypes.GivenName, user.FirstName),
-            new Claim(ClaimTypes.Surname, user.LastName),
+            new Claim(ClaimTypes.NameIdentifier , student.Id.ToString()),
+            new Claim(ClaimTypes.Email, student.Email),
+            new Claim(ClaimTypes.GivenName, student.FirstName),
+            new Claim(ClaimTypes.Surname, student.LastName),
+            new Claim(ClaimsIdentity.DefaultRoleClaimType,"student")
         };
 
         SecurityKey securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("fb102217-6494-48e2-9d32-b3c068020a87"));

@@ -23,7 +23,8 @@ namespace PlatformaEducationala.Api.Controllers
             var result = await _mediator.Send(command);
             return HandleMediatorResponse(result);
         }
-        [HttpPost("login")]
+
+        [HttpPost("login/student")]
         public async Task<ActionResult<LoginAccountResponse>> Post([FromBody] LoginAccountCommand command)
         {
             var result = await _mediator.Send(command);

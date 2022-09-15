@@ -1,8 +1,12 @@
 using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using PlatformaEducationala.Core.User.Queries.Get;
 using PlatformaEducationala.Data;
 using Serilog;
+using Swashbuckle.AspNetCore.Filters;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +22,16 @@ builder.Services.AddSwaggerGen(options =>
             Title = "Platforma educationala",
             Description = "Aici o sa fie o descriere pt endpoints"
         });
+
+        options.AddSecurityDefinition("oauth", new OpenApiSecurityScheme
+        {
+            Description = "Standard Auth header using Bearer scheme",
+            In = ParameterLocation.Header,
+            Name = "Authorization",
+            Type = SecuritySchemeType.ApiKey
+
+        });
+        options.OperationFilter<SecurityRequirementsOperationFilter>();
     });
 
 builder.Services.AddDB(builder.Configuration);
@@ -36,6 +50,23 @@ builder.Host.UseSerilog((ctx, lc) => lc
     .WriteTo.Console()
     .WriteTo.File("../logs/logging.txt"));
 
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(o =>
+{
+    o.TokenValidationParameters =
+                         new TokenValidationParameters
+                         {
+                             ValidateAudience = false,
+                             ValidateIssuer = false,
+                             ValidateIssuerSigningKey = true,
+                             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+                         };
+});
+
 var app = builder.Build();
 
 app.UseDefaultFiles();
@@ -53,6 +84,7 @@ if (app.Environment.IsDevelopment())
     });
 }
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseCors(p => p.WithOrigins("http://localhost:3000")
