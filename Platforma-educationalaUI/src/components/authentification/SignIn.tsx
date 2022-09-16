@@ -108,15 +108,6 @@ function SignIn() {
                 Logheaza-te acum!
               </a>
             </p>
-            <p className="text-sm font-semibold mt-2 pt-1 mb-0">
-              Esti profesor?
-              <a
-                href="#!"
-                className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
-              >
-                Cont nou de profesor!
-              </a>
-            </p>
           </div>
         </form>
       </div>
