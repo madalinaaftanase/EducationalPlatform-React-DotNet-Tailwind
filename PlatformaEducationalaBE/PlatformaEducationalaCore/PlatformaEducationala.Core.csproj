@@ -11,8 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Teacher\" />
     <Folder Include="Services\" />
+    <Folder Include="Teacher\Models\" />
   </ItemGroup>
 
   <ItemGroup>

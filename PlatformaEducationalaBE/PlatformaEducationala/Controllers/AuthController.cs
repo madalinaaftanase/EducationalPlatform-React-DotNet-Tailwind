@@ -1,8 +1,9 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using PlatformaEducationala.Core.Teacher.Commands.CreateAccount;
+using PlatformaEducationala.Core.Teacher.Commands.Login;
 using PlatformaEducationala.Core.User.Commands.CreateAccount;
 using PlatformaEducationala.Core.User.Commands.LoginAccount;
-using PlatformaEducationala.Core.User.Models;
 
 namespace PlatformaEducationala.Api.Controllers
 {
@@ -17,15 +18,29 @@ namespace PlatformaEducationala.Api.Controllers
             _mediator = mediator;
         }
 
-        [HttpPost("register")]
-        public async Task<ActionResult> Post([FromBody] CreateAccountCommand command)
+        [HttpPost("register/student")]
+        public async Task<ActionResult> Post([FromBody] CreateStudentAccountCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return HandleMediatorResponse(result);
+        }
+
+        [HttpPost("register/teacher")]
+        public async Task<ActionResult> Post([FromBody] CreateTeacherAccountCommand command)
         {
             var result = await _mediator.Send(command);
             return HandleMediatorResponse(result);
         }
 
         [HttpPost("login/student")]
-        public async Task<ActionResult<LoginAccountResponse>> Post([FromBody] LoginAccountCommand command)
+        public async Task<ActionResult<LoginStudentResponse>> Post([FromBody] LoginStudentCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return HandleMediatorResponse(result);
+        }
+        
+        [HttpPost("login/teacher")]
+        public async Task<ActionResult<LoginTeacherResponse>> Post([FromBody] LoginTeacherCommand command)
         {
             var result = await _mediator.Send(command);
             return HandleMediatorResponse(result);
