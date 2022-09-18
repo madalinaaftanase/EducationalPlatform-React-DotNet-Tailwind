@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PlatformaEducationala.Core.Teacher.Commands.CreateAccount;
 using PlatformaEducationala.Core.Teacher.Commands.Login;
@@ -8,7 +9,7 @@ using PlatformaEducationala.Core.User.Commands.LoginAccount;
 namespace PlatformaEducationala.Api.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
+    [AllowAnonymous]
     public class AuthController : ApiController
     {
         private readonly IMediator _mediator;

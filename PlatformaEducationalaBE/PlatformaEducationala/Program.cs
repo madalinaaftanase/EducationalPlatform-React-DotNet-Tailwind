@@ -2,10 +2,12 @@ using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using PlatformaEducationala.Api.Services;
 using PlatformaEducationala.Core.User.Queries.Get;
 using PlatformaEducationala.Data;
 using Serilog;
 using Swashbuckle.AspNetCore.Filters;
+using System.Security.Claims;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,7 +22,7 @@ builder.Services.AddSwaggerGen(options =>
         {
             Version = "v1",
             Title = "Platforma educationala",
-            Description = "Aici o sa fie o descriere pt endpoints"
+            Description = "Foloseste endpoint-ul de login sa obtii jwt-ul necesar autorizarii"
         });
 
         options.AddSecurityDefinition("oauth", new OpenApiSecurityScheme
@@ -43,7 +45,6 @@ builder.Services.AddSpaStaticFiles(Configuration =>
     Configuration.RootPath = " wwwroot/spa";
 });
 
-
 builder.Services.AddCors();
 
 builder.Host.UseSerilog((ctx, lc) => lc
@@ -65,6 +66,14 @@ builder.Services.AddAuthentication(options =>
                              ValidateIssuerSigningKey = true,
                              IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
                          };
+
+    o.Events = new JwtBearerEvents
+    {
+        OnAuthenticationFailed = tokenInvalid =>
+        {
+            return Task.CompletedTask;
+        }
+    };
 });
 
 var app = builder.Build();

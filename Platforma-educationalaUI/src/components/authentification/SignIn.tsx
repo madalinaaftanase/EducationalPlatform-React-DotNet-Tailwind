@@ -13,6 +13,7 @@ function SignIn() {
     checkPassword: "",
   });
   const [errors, setErrors] = useState("");
+  const [isTeacher, setIsTeacher] = useState(true);
 
   const onSubmit = (e: any) => {
     e.preventDefault();
@@ -25,7 +26,12 @@ function SignIn() {
       return setErrors("Parola si Confirma parola nu corespund");
     if (formInput.password.length < 8)
       return setErrors("Parola trebuie sa aibe cel putin 8 caractere");
-    CreateAccount(`${config.baseApiUrl}/auth/register`, { ...formInput });
+
+    var url = `${config.baseApiUrl}/auth/register/student`;
+    if (isTeacher) {
+      url = `${config.baseApiUrl}/auth/register/teacher`;
+    }
+    CreateAccount(url, { ...formInput });
   };
 
   const onChangeInput = (e: any) => {
@@ -34,6 +40,11 @@ function SignIn() {
       [e.target.name]: e.target.value,
     };
     setFormInput(actualFormInput);
+  };
+
+  const onChangeCheckbox = (e: any) => {
+    setIsTeacher(!isTeacher);
+    console.log(isTeacher);
   };
 
   return (
@@ -89,6 +100,14 @@ function SignIn() {
               onChange={onChangeInput}
             />
           </div>
+          <div className="flex gap-2 items-center">
+            <label>Sunt profesor</label>
+            <input
+              type="checkbox"
+              name="teacherCheck"
+              onChange={onChangeCheckbox}
+            />
+          </div>
           {errors && <span className="text-red-500">{errors}</span>}
           <div className="pt-8">
             <button
@@ -103,7 +122,7 @@ function SignIn() {
               <a
                 href="#!"
                 className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
-                onClick={()=>window.location.href = "/login/student"}
+                onClick={() => (window.location.href = "/login/student")}
               >
                 Logheaza-te acum!
               </a>

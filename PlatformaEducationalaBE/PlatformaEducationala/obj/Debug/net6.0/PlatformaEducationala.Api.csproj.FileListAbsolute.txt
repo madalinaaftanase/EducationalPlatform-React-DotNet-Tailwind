@@ -186,3 +186,9 @@ C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\bin\Deb
 C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\bin\Debug\net6.0\Scrutor.dll
 C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
 C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\bin\Debug\net6.0\Azure.Core.dll
+C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\bin\Debug\net6.0\Microsoft.Graph.Core.dll
+C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\bin\Debug\net6.0\System.Memory.Data.dll
+C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\bin\Debug\net6.0\System.Text.Json.dll

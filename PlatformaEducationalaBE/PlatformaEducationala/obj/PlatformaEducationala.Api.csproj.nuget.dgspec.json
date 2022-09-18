@@ -300,6 +300,10 @@
               "target": "Package",
               "version": "[6.0.6, )"
             },
+            "Microsoft.Graph.Core": {
+              "target": "Package",
+              "version": "[2.0.12, )"
+            },
             "Serilog.AspNetCore": {
               "target": "Package",
               "version": "[6.0.1, )"

@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PlatformaEducationala.Core.User.Commands.CreateAccount;
@@ -9,6 +10,8 @@ namespace PlatformaEducationala.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize(Roles = TeacherOrStudent)]
+
 public class StudentsController: ApiController
 {
     private readonly IMediator _mediator;
@@ -18,7 +21,6 @@ public class StudentsController: ApiController
         _mediator = mediator;
     }
 
-    ///[Authorize]
     [HttpGet]
     public async Task<ActionResult<List<StudentDto>>> Get()
     {
