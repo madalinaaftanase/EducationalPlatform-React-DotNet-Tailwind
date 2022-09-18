@@ -1,6 +1,7 @@
 import { useState } from "react";
 import BlockyMain from "../components/blockyMain/BlockyMain";
-import Result from "../components/compiler/Result";
+import Result from "../components/game/ResultCompiler";
+import RightSideLayout from "../components/game/RightSideLayout";
 
 function Game() {
   const [html, setHtml] = useState("");
@@ -11,7 +12,7 @@ function Game() {
         <BlockyMain setHtml={setHtml} />
       </section>
       <section className="bg-gray-200">
-        <Result htmlText={html} />
+        <RightSideLayout htmlText={html} />
       </section>
     </main>
   );

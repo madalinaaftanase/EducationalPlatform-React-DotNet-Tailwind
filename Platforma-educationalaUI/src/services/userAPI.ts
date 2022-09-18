@@ -5,6 +5,7 @@ import {
 import axios from "axios";
 import { LoginRequest } from "../models/user/User";
 import { LoginResponse } from "../models/student/LoginResponse";
+import { getCookie } from "../utilities/cookieFunctions";
 
 const GetAll = (url: string) =>
   axios
@@ -31,8 +32,3 @@ const LoginAccount = (url: string, loginData: LoginRequest) =>
   });
 
 export { GetAll, CreateAccount, LoginAccount };
-
-function getCookie(name: string) {
-  var match = document.cookie.match(new RegExp("(^| )" + name + "=([^;]+)"));
-  if (match) return match[2];
-}
