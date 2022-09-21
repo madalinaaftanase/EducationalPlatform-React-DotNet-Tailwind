@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useSWR from "swr";
 import config from "../../config";
 import logoImg from "../../images/dog-logo.png";
@@ -13,7 +13,7 @@ function SignIn() {
     checkPassword: "",
   });
   const [errors, setErrors] = useState("");
-  const [isTeacher, setIsTeacher] = useState(true);
+  const [isTeacher, setIsTeacher] = useState(false);
 
   const onSubmit = (e: any) => {
     e.preventDefault();
@@ -44,7 +44,6 @@ function SignIn() {
 
   const onChangeCheckbox = (e: any) => {
     setIsTeacher(!isTeacher);
-    console.log(isTeacher);
   };
 
   return (

@@ -6,17 +6,16 @@ import { Navbar } from "../navbar/Navbar";
 import "./App.css";
 import Students from "../../pages/Students";
 import LoginPage from "../../pages/Login";
-import { useState } from "react";
 import Signin from "../../pages/Signin";
 import ErrorResponse from "../ErrorResponse";
+import { useContext } from "react";
+import { UserContext } from "../../hooks/UserContext";
 
 function App() {
-  const [isLogged, setIsLogged] = useState(true);
-
+  const {isAuthentificated} = useContext(UserContext)
   return (
-    <>
       <SWRConfig value={swrConfig}>
-        {isLogged && <Navbar />}
+        {isAuthentificated && <Navbar />}
         <Routes>
           <Route path="/" element={<Game />} />
           <Route path="/signin" element={<Signin />} />
@@ -26,7 +25,6 @@ function App() {
           <Route path="/error" element={<ErrorResponse />} />
         </Routes>
       </SWRConfig>
-    </>
   );
 }
 

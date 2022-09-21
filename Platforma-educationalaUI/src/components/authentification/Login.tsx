@@ -1,15 +1,19 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import config from "../../config";
+import { UserContext } from "../../hooks/UserContext";
 import logoImg from "../../images/dog-logo.png";
 import { LoginAccount } from "../../services/userAPI";
 
 function Login() {
+  const { setToken } = useContext(UserContext);
+  const navigator =useNavigate();
+  const [isStudent, setIsStudent] = useState(false);
+  const [errors, setErrors] = useState("");
   const [loginInput, setLoginInput] = useState({
     email: "",
     password: "",
   });
-  const [isStudent, setIsStudent] = useState(false);
-  const [errors, setErrors] = useState("");
 
   useEffect(() => {
     if (window.location.href.includes("student")) {
@@ -17,10 +21,10 @@ function Login() {
     }
   }, []);
 
-  const onSubmit = (e: any) => {
+  const onSubmit = async (e: any) => {
     e.preventDefault();
     setErrors("");
-    
+
     if (!loginInput.email && !loginInput.password) {
       return setErrors("Toate campurile sunt obligatorii");
     }
@@ -29,7 +33,12 @@ function Login() {
     if (isStudent) {
       url = `${config.baseApiUrl}/auth/login/student`;
     }
-    LoginAccount(url, { ...loginInput });
+    const token = await LoginAccount(url, { ...loginInput });
+
+    if (token) {
+      setToken(token);
+      navigator("/");
+    }
   };
 
   const onChange = (e: any) => {
@@ -40,27 +49,18 @@ function Login() {
 
     setLoginInput(actualLoginInput);
   };
-
+  //maybe create one component for input + label
   return (
     <section className="h-screen bg-try">
       <div className="grid grid-cols-2 p-8 w-[1200px] m-auto">
         <div>
           <img src={logoImg} className="" alt="dog image" />
         </div>
-        <form
-          onSubmit={onSubmit}
-          className="bg-white drop-shadow-md p-8 rounded"
-        >
+        <form onSubmit={onSubmit} className="bg-white drop-shadow-md p-8 rounded">
           <h3>Intra in contul tau</h3>
           <div className="flex flex-col pt-8">
             <label>Email</label>
-            <input
-              className="bg-gray-100"
-              type="email"
-              name="email"
-              onChange={onChange}
-              required
-            />
+            <input className="bg-gray-100" type="email" name="email" onChange={onChange} required />
             <label>Parola</label>
             <input
               className="bg-gray-100"

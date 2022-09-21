@@ -23,11 +23,10 @@ const CreateAccount = (url: string, accountData: StudentSigninRequest) =>
 
 const LoginAccount = (url: string, loginData: LoginRequest) =>
   axios.post<LoginResponse>(url, loginData).then((res) => {
-    console.log("set cookie", res.status);
     if (res.data.responseStatus === 200) {
       var token = res.data.token;
       document.cookie = `token=${token}; path=/;`;
-      window.location.href = "/";
+      return token;
     }
   });
 
