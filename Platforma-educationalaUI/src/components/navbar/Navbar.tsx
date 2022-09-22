@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import {UserContext} from "../../hooks/UserContext";
 import {
   Nav,
   NavLink,
@@ -10,6 +12,7 @@ import {
 } from "./NavbarElements";
 
 export function Navbar() {
+  const { name } = useContext(UserContext);
   return (
     <Nav>
       <NavLink to="/">
@@ -24,7 +27,7 @@ export function Navbar() {
         <NavLink to="/pagina">Pagina</NavLink>
       </NavMenu>
       <NavBtn>
-        <NavBtnLink to="/signin">Sign In</NavBtnLink>
+        <NavBtnLink to="/signin">Bine ai venit,{name}</NavBtnLink>
       </NavBtn>
     </Nav>
   );
