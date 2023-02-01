@@ -1,7 +1,4 @@
-import {
-  StudentSigninRequest,
-  StudentsResponse,
-} from "../models/student/Student";
+import { StudentSigninRequest, StudentsResponse } from "../models/student/Student";
 import axios from "axios";
 import { LoginRequest } from "../models/user/User";
 import { LoginResponse } from "../models/student/LoginResponse";
@@ -22,12 +19,14 @@ const CreateAccount = (url: string, accountData: StudentSigninRequest) =>
   });
 
 const LoginAccount = (url: string, loginData: LoginRequest) =>
-  axios.post<LoginResponse>(url, loginData).then((res) => {
-    if (res.data.responseStatus === 200) {
-      var token = res.data.token;
-      document.cookie = `token=${token}; path=/;`;
-      return token;
-    }
-  });
+  axios
+    .post<LoginResponse>(url, loginData)
+    .then((response) => {
+      console.log(response);
+      return response;
+    })
+    .catch((err) => {
+      return err.response.data;
+    });
 
 export { GetAll, CreateAccount, LoginAccount };

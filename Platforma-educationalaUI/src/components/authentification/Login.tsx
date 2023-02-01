@@ -4,10 +4,11 @@ import config from "../../config";
 import { UserContext } from "../../hooks/UserContext";
 import logoImg from "../../images/dog-logo.png";
 import { LoginAccount } from "../../services/userAPI";
+import FormField from "./FormField";
 
 function Login() {
   const { setToken } = useContext(UserContext);
-  const navigator =useNavigate();
+  const navigator = useNavigate();
   const [isStudent, setIsStudent] = useState(false);
   const [errors, setErrors] = useState("");
   const [loginInput, setLoginInput] = useState({
@@ -33,11 +34,15 @@ function Login() {
     if (isStudent) {
       url = `${config.baseApiUrl}/auth/login/student`;
     }
-    const token = await LoginAccount(url, { ...loginInput });
 
-    if (token) {
-      setToken(token);
+    
+    let response = await LoginAccount(url, { ...loginInput });
+    if(response.status == 200){
+      document.cookie = `token=${response.token}; path=/;`;
+      setToken(response.token);
       navigator("/");
+    } else {
+      setErrors(response.errors[0]);
     }
   };
 
@@ -49,7 +54,7 @@ function Login() {
 
     setLoginInput(actualLoginInput);
   };
-  //maybe create one component for input + label
+  
   return (
     <section className="h-screen bg-try">
       <div className="grid grid-cols-2 p-8 w-[1200px] m-auto">
@@ -59,18 +64,24 @@ function Login() {
         <form onSubmit={onSubmit} className="bg-white drop-shadow-md p-8 rounded">
           <h3>Intra in contul tau</h3>
           <div className="flex flex-col pt-8">
-            <label>Email</label>
-            <input className="bg-gray-100" type="email" name="email" onChange={onChange} required />
-            <label>Parola</label>
-            <input
-              className="bg-gray-100"
-              type="password"
-              name="password"
+            <FormField
+              text={"Email"}
+              type={"email"}
+              name={"email"}
+              required={true}
+              className={"bg-gray-100"}
               onChange={onChange}
-              required
+            />
+            <FormField
+              text={"Parola"}
+              type={"password"}
+              name={"password"}
+              required={true}
+              className={"bg-gray-100"}
+              onChange={onChange}
             />
           </div>
-          {errors && <span>{errors}</span>}
+          {errors && <span className="text-red-600">{errors}</span>}
           <div className="pt-8">
             <button
               type="submit"

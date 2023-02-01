@@ -15,21 +15,29 @@ function App() {
   const navigator = useNavigate();
   const { isAuthentificated } = useContext(UserContext);
 
-  useEffect(() => {
-    if (!isAuthentificated) {
-      navigator("/login/student");
-    }
-  }, [isAuthentificated]);
+  if (isAuthentificated) {
+    return (
+      <SWRConfig value={swrConfig}>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Game />} />
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/login/student" element={<LoginPage />} />
+          <Route path="/login/teacher" element={<LoginPage />} />
+          <Route path="/students" element={<Students />} />
+          <Route path="/error" element={<ErrorResponse />} />
+        </Routes>
+      </SWRConfig>
+    );
+  }
 
   return (
     <SWRConfig value={swrConfig}>
-      {isAuthentificated && <Navbar />}
       <Routes>
-        <Route path="/" element={<Game />} />
+        <Route path="/" element={<Signin />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/login/student" element={<LoginPage />} />
         <Route path="/login/teacher" element={<LoginPage />} />
-        <Route path="/students" element={<Students />} />
         <Route path="/error" element={<ErrorResponse />} />
       </Routes>
     </SWRConfig>

@@ -5661,3 +5661,844 @@ WHERE [s].[Email] = @__email_0
 2022-09-22 08:00:39.830 +03:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 2562.2807ms
 2022-09-22 08:00:39.832 +03:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
 2022-09-22 08:00:39.835 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 54 - 200 - application/json;+charset=utf-8 2594.6368ms
+2023-01-06 21:17:04.758 +02:00 [INF] User profile is available. Using 'C:\Users\MadalinaVarga\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-01-06 21:17:04.827 +02:00 [INF] Creating key {d20a9b2a-90f1-427a-afe7-33b564a80d50} with creation date 2023-01-06 19:17:04Z, activation date 2023-01-06 19:17:04Z, and expiration date 2023-04-06 19:17:04Z.
+2023-01-06 21:17:04.837 +02:00 [INF] Writing data to file 'C:\Users\MadalinaVarga\AppData\Local\ASP.NET\DataProtection-Keys\key-d20a9b2a-90f1-427a-afe7-33b564a80d50.xml'.
+2023-01-06 21:17:04.979 +02:00 [INF] Now listening on: http://localhost:5055
+2023-01-06 21:17:04.983 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-06 21:17:04.984 +02:00 [INF] Hosting environment: Development
+2023-01-06 21:17:04.986 +02:00 [INF] Content root path: C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\
+2023-01-06 21:17:05.434 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/index.html - -
+2023-01-06 21:17:05.486 +02:00 [WRN] Failed to determine the https port for redirect.
+2023-01-06 21:17:05.703 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger-ui.css - -
+2023-01-06 21:17:05.705 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger-ui-bundle.js - -
+2023-01-06 21:17:05.705 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - -
+2023-01-06 21:17:05.716 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger-ui-standalone-preset.js - -
+2023-01-06 21:17:05.724 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_vs/browserLink - -
+2023-01-06 21:17:05.742 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - - - 200 12020 application/javascript;+charset=utf-8 31.5045ms
+2023-01-06 21:17:05.751 +02:00 [INF] The file /swagger-ui-standalone-preset.js was not modified
+2023-01-06 21:17:05.752 +02:00 [INF] The file /swagger-ui.css was not modified
+2023-01-06 21:17:05.753 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/index.html - - - 200 - text/html;charset=utf-8 321.2875ms
+2023-01-06 21:17:05.752 +02:00 [INF] The file /swagger-ui-bundle.js was not modified
+2023-01-06 21:17:05.759 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger-ui-standalone-preset.js - - - 304 - application/javascript 42.7872ms
+2023-01-06 21:17:05.759 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger-ui.css - - - 304 - text/css 56.2250ms
+2023-01-06 21:17:05.761 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger-ui-bundle.js - - - 304 - application/javascript 56.2520ms
+2023-01-06 21:17:05.790 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 65.4201ms
+2023-01-06 21:17:05.930 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - -
+2023-01-06 21:17:05.949 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/favicon-32x32.png - -
+2023-01-06 21:17:05.950 +02:00 [INF] The file /favicon-32x32.png was not modified
+2023-01-06 21:17:05.951 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/favicon-32x32.png - - - 304 - image/png 1.9154ms
+2023-01-06 21:17:06.022 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 92.2321ms
+2023-01-06 21:18:19.079 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/Auth/login/student application/json 43
+2023-01-06 21:18:19.158 +02:00 [INF] CORS policy execution failed.
+2023-01-06 21:18:19.159 +02:00 [INF] Request origin http://localhost:5055 does not have permission to access the resource.
+2023-01-06 21:18:19.163 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 21:18:19.185 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-06 21:18:19.807 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-06 21:18:21.217 +02:00 [INF] Executed DbCommand (35ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-01-06 21:18:21.242 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse'.
+2023-01-06 21:18:21.254 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 2064.542ms
+2023-01-06 21:18:21.256 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 21:18:21.260 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/Auth/login/student application/json 43 - 400 - application/json;+charset=utf-8 2181.0062ms
+2023-01-06 21:21:20.410 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - -
+2023-01-06 21:21:20.423 +02:00 [INF] CORS policy execution successful.
+2023-01-06 21:21:20.430 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - - - 204 - - 21.4322ms
+2023-01-06 21:21:20.433 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 58
+2023-01-06 21:21:20.436 +02:00 [INF] CORS policy execution successful.
+2023-01-06 21:21:20.436 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 21:21:20.437 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-06 21:21:20.441 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-06 21:21:20.450 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-01-06 21:21:20.452 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse'.
+2023-01-06 21:21:20.454 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 14.9206ms
+2023-01-06 21:21:20.455 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 21:21:20.455 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 58 - 400 - application/json;+charset=utf-8 22.1875ms
+2023-01-06 21:21:24.115 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 58
+2023-01-06 21:21:24.117 +02:00 [INF] CORS policy execution successful.
+2023-01-06 21:21:24.118 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 21:21:24.119 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-06 21:21:24.152 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-06 21:21:24.157 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-01-06 21:21:24.160 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse'.
+2023-01-06 21:21:24.161 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 40.1644ms
+2023-01-06 21:21:24.162 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 21:21:24.163 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 58 - 400 - application/json;+charset=utf-8 47.0720ms
+2023-01-06 21:21:42.740 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - -
+2023-01-06 21:21:42.741 +02:00 [INF] CORS policy execution successful.
+2023-01-06 21:21:42.742 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - - - 204 - - 1.6746ms
+2023-01-06 21:21:42.746 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 58
+2023-01-06 21:21:42.747 +02:00 [INF] CORS policy execution successful.
+2023-01-06 21:21:42.747 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 21:21:42.748 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-06 21:21:42.751 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-06 21:21:42.755 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-01-06 21:21:42.758 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse'.
+2023-01-06 21:21:42.759 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 9.3382ms
+2023-01-06 21:21:42.761 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 21:21:42.762 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 58 - 400 - application/json;+charset=utf-8 15.9693ms
+2023-01-06 21:39:08.640 +02:00 [INF] User profile is available. Using 'C:\Users\MadalinaVarga\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-01-06 21:39:08.820 +02:00 [INF] Now listening on: http://localhost:5055
+2023-01-06 21:39:08.824 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-06 21:39:08.826 +02:00 [INF] Hosting environment: Development
+2023-01-06 21:39:08.827 +02:00 [INF] Content root path: C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\
+2023-01-06 21:39:09.243 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/index.html - -
+2023-01-06 21:39:09.298 +02:00 [WRN] Failed to determine the https port for redirect.
+2023-01-06 21:39:09.464 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - -
+2023-01-06 21:39:09.465 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_vs/browserLink - -
+2023-01-06 21:39:09.467 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/index.html - - - 200 - text/html;charset=utf-8 227.3024ms
+2023-01-06 21:39:09.467 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - - - 200 12020 application/javascript;+charset=utf-8 3.1533ms
+2023-01-06 21:39:09.495 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 30.1630ms
+2023-01-06 21:39:09.646 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - -
+2023-01-06 21:39:09.731 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 85.1442ms
+2023-01-06 21:39:18.984 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - -
+2023-01-06 21:39:19.052 +02:00 [INF] CORS policy execution successful.
+2023-01-06 21:39:19.054 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - - - 204 - - 70.0829ms
+2023-01-06 21:39:19.055 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 54
+2023-01-06 21:39:19.060 +02:00 [INF] CORS policy execution successful.
+2023-01-06 21:39:19.064 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 21:39:19.089 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-06 21:39:19.689 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-06 21:39:20.265 +02:00 [INF] Executed DbCommand (37ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-01-06 21:39:20.572 +02:00 [INF] Executing OkObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse'.
+2023-01-06 21:39:20.587 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 1492.2813ms
+2023-01-06 21:39:20.589 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 21:39:20.594 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 54 - 200 - application/json;+charset=utf-8 1538.7829ms
+2023-01-06 21:39:30.092 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/students - -
+2023-01-06 21:39:30.095 +02:00 [INF] CORS policy execution successful.
+2023-01-06 21:39:30.095 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/students - - - 204 - - 3.2167ms
+2023-01-06 21:39:30.105 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/students - -
+2023-01-06 21:39:30.156 +02:00 [INF] CORS policy execution successful.
+2023-01-06 21:39:30.157 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.StudentsController.Get (PlatformaEducationala.Api)'
+2023-01-06 21:39:30.160 +02:00 [INF] Route matched with {action = "Get", controller = "Students"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.User.Models.StudentDto]]] Get() on controller PlatformaEducationala.Api.Controllers.StudentsController (PlatformaEducationala.Api).
+2023-01-06 21:39:35.108 +02:00 [INF] Exemplu logging
+2023-01-06 21:39:35.111 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-06 21:39:35.129 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Email]
+FROM [Students] AS [s]
+2023-01-06 21:39:35.134 +02:00 [INF] Executing OkObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2023-01-06 21:39:35.136 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.StudentsController.Get (PlatformaEducationala.Api) in 4975.3087ms
+2023-01-06 21:39:35.137 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.StudentsController.Get (PlatformaEducationala.Api)'
+2023-01-06 21:39:35.139 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/students - - - 200 - application/json;+charset=utf-8 5034.0291ms
+2023-01-06 21:40:22.483 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/students - -
+2023-01-06 21:40:22.512 +02:00 [INF] CORS policy execution successful.
+2023-01-06 21:40:22.513 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/students - - - 204 - - 30.2077ms
+2023-01-06 21:40:22.516 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/students - -
+2023-01-06 21:40:22.518 +02:00 [INF] CORS policy execution successful.
+2023-01-06 21:40:22.519 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.StudentsController.Get (PlatformaEducationala.Api)'
+2023-01-06 21:40:22.520 +02:00 [INF] Route matched with {action = "Get", controller = "Students"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.User.Models.StudentDto]]] Get() on controller PlatformaEducationala.Api.Controllers.StudentsController (PlatformaEducationala.Api).
+2023-01-06 21:40:22.522 +02:00 [INF] Exemplu logging
+2023-01-06 21:40:22.557 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-06 21:40:22.563 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Email]
+FROM [Students] AS [s]
+2023-01-06 21:40:22.567 +02:00 [INF] Executing OkObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2023-01-06 21:40:22.568 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.StudentsController.Get (PlatformaEducationala.Api) in 46.8852ms
+2023-01-06 21:40:22.570 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.StudentsController.Get (PlatformaEducationala.Api)'
+2023-01-06 21:40:22.572 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/students - - - 200 - application/json;+charset=utf-8 55.8059ms
+2023-01-06 21:50:50.663 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - -
+2023-01-06 21:50:50.664 +02:00 [INF] CORS policy execution successful.
+2023-01-06 21:50:50.665 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - - - 204 - - 1.8190ms
+2023-01-06 21:50:50.672 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 42
+2023-01-06 21:50:50.677 +02:00 [INF] CORS policy execution successful.
+2023-01-06 21:50:50.677 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 21:50:50.678 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-06 21:50:50.681 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-06 21:50:51.280 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-01-06 21:50:51.283 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse'.
+2023-01-06 21:50:51.284 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 604.2208ms
+2023-01-06 21:50:51.285 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 21:50:51.286 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 42 - 400 - application/json;+charset=utf-8 614.7338ms
+2023-01-06 22:24:27.413 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/teacher - -
+2023-01-06 22:24:27.414 +02:00 [INF] CORS policy execution successful.
+2023-01-06 22:24:27.414 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/teacher - - - 204 - - 1.5581ms
+2023-01-06 22:24:27.419 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/teacher application/json 44
+2023-01-06 22:24:27.420 +02:00 [INF] CORS policy execution successful.
+2023-01-06 22:24:27.421 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 22:24:27.424 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherResponse]] Post(PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-06 22:24:27.432 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-06 22:24:28.103 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Email], [t].[FirstName], [t].[LastName], [t].[Password]
+FROM [Teachers] AS [t]
+WHERE [t].[Email] = @__email_0
+2023-01-06 22:24:28.106 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherResponse'.
+2023-01-06 22:24:28.108 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 681.9178ms
+2023-01-06 22:24:28.109 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 22:24:28.110 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/teacher application/json 44 - 400 - application/json;+charset=utf-8 690.7838ms
+2023-01-06 22:24:29.131 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/teacher application/json 44
+2023-01-06 22:24:29.132 +02:00 [INF] CORS policy execution successful.
+2023-01-06 22:24:29.133 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 22:24:29.134 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherResponse]] Post(PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-06 22:24:29.137 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-06 22:24:29.142 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Email], [t].[FirstName], [t].[LastName], [t].[Password]
+FROM [Teachers] AS [t]
+WHERE [t].[Email] = @__email_0
+2023-01-06 22:24:29.148 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherResponse'.
+2023-01-06 22:24:29.149 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 12.3363ms
+2023-01-06 22:24:29.150 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 22:24:29.151 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/teacher application/json 44 - 400 - application/json;+charset=utf-8 20.1469ms
+2023-01-06 22:25:20.048 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/teacher - -
+2023-01-06 22:25:20.054 +02:00 [INF] CORS policy execution successful.
+2023-01-06 22:25:20.055 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/teacher - - - 204 - - 6.9140ms
+2023-01-06 22:25:20.060 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/teacher application/json 44
+2023-01-06 22:25:20.061 +02:00 [INF] CORS policy execution successful.
+2023-01-06 22:25:20.062 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 22:25:20.063 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherResponse]] Post(PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-06 22:25:20.068 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-06 22:25:20.074 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Email], [t].[FirstName], [t].[LastName], [t].[Password]
+FROM [Teachers] AS [t]
+WHERE [t].[Email] = @__email_0
+2023-01-06 22:25:20.083 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherResponse'.
+2023-01-06 22:25:20.085 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 19.3748ms
+2023-01-06 22:25:20.087 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 22:25:20.088 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/teacher application/json 44 - 400 - application/json;+charset=utf-8 28.6602ms
+2023-01-06 22:25:40.278 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/teacher - -
+2023-01-06 22:25:40.281 +02:00 [INF] CORS policy execution successful.
+2023-01-06 22:25:40.282 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/teacher - - - 204 - - 3.8845ms
+2023-01-06 22:25:40.285 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/teacher application/json 42
+2023-01-06 22:25:40.286 +02:00 [INF] CORS policy execution successful.
+2023-01-06 22:25:40.286 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 22:25:40.287 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherResponse]] Post(PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-06 22:25:40.289 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-06 22:25:40.292 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Email], [t].[FirstName], [t].[LastName], [t].[Password]
+FROM [Teachers] AS [t]
+WHERE [t].[Email] = @__email_0
+2023-01-06 22:25:40.295 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherResponse'.
+2023-01-06 22:25:40.296 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 7.5994ms
+2023-01-06 22:25:40.297 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 22:25:40.298 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/teacher application/json 42 - 400 - application/json;+charset=utf-8 13.1195ms
+2023-01-06 22:28:11.057 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/teacher - -
+2023-01-06 22:28:11.060 +02:00 [INF] CORS policy execution successful.
+2023-01-06 22:28:11.061 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/teacher - - - 204 - - 3.6144ms
+2023-01-06 22:28:11.064 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/teacher application/json 45
+2023-01-06 22:28:11.065 +02:00 [INF] CORS policy execution successful.
+2023-01-06 22:28:11.065 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 22:28:11.066 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherResponse]] Post(PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-06 22:28:11.069 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-06 22:28:11.073 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Email], [t].[FirstName], [t].[LastName], [t].[Password]
+FROM [Teachers] AS [t]
+WHERE [t].[Email] = @__email_0
+2023-01-06 22:28:11.209 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherResponse'.
+2023-01-06 22:28:11.210 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 142.7133ms
+2023-01-06 22:28:11.212 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 22:28:11.213 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/teacher application/json 45 - 400 - application/json;+charset=utf-8 148.9031ms
+2023-01-06 22:29:21.606 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/teacher - -
+2023-01-06 22:29:21.609 +02:00 [INF] CORS policy execution successful.
+2023-01-06 22:29:21.610 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/teacher - - - 204 - - 3.7717ms
+2023-01-06 22:29:21.613 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/teacher application/json 45
+2023-01-06 22:29:21.614 +02:00 [INF] CORS policy execution successful.
+2023-01-06 22:29:21.614 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 22:29:21.615 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherResponse]] Post(PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-06 22:29:21.618 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-06 22:29:21.624 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Email], [t].[FirstName], [t].[LastName], [t].[Password]
+FROM [Teachers] AS [t]
+WHERE [t].[Email] = @__email_0
+2023-01-06 22:29:21.752 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherResponse'.
+2023-01-06 22:29:21.754 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 136.8626ms
+2023-01-06 22:29:21.756 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 22:29:21.756 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/teacher application/json 45 - 400 - application/json;+charset=utf-8 143.6434ms
+2023-01-06 22:29:33.633 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/teacher - -
+2023-01-06 22:29:33.634 +02:00 [INF] CORS policy execution successful.
+2023-01-06 22:29:33.635 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/teacher - - - 204 - - 2.2141ms
+2023-01-06 22:29:33.636 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/teacher application/json 43
+2023-01-06 22:29:33.637 +02:00 [INF] CORS policy execution successful.
+2023-01-06 22:29:33.638 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 22:29:33.639 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherResponse]] Post(PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-06 22:29:33.641 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-06 22:29:33.646 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Email], [t].[FirstName], [t].[LastName], [t].[Password]
+FROM [Teachers] AS [t]
+WHERE [t].[Email] = @__email_0
+2023-01-06 22:29:33.790 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherResponse'.
+2023-01-06 22:29:33.791 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 150.2488ms
+2023-01-06 22:29:33.792 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 22:29:33.793 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/teacher application/json 43 - 400 - application/json;+charset=utf-8 157.2637ms
+2023-01-06 22:31:33.304 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/teacher - -
+2023-01-06 22:31:33.307 +02:00 [INF] CORS policy execution successful.
+2023-01-06 22:31:33.308 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/teacher - - - 204 - - 3.7514ms
+2023-01-06 22:31:33.311 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/teacher application/json 46
+2023-01-06 22:31:33.311 +02:00 [INF] CORS policy execution successful.
+2023-01-06 22:31:33.312 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 22:31:33.313 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherResponse]] Post(PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-06 22:31:33.316 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-06 22:31:33.321 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Email], [t].[FirstName], [t].[LastName], [t].[Password]
+FROM [Teachers] AS [t]
+WHERE [t].[Email] = @__email_0
+2023-01-06 22:31:33.445 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherResponse'.
+2023-01-06 22:31:33.447 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 131.7569ms
+2023-01-06 22:31:33.448 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 22:31:33.449 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/teacher application/json 46 - 400 - application/json;+charset=utf-8 138.5179ms
+2023-01-06 22:35:31.936 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/teacher - -
+2023-01-06 22:35:31.970 +02:00 [INF] CORS policy execution successful.
+2023-01-06 22:35:31.971 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/teacher - - - 204 - - 34.6197ms
+2023-01-06 22:35:31.974 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/teacher application/json 45
+2023-01-06 22:35:31.974 +02:00 [INF] CORS policy execution successful.
+2023-01-06 22:35:31.975 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 22:35:31.976 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherResponse]] Post(PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-06 22:35:31.978 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-06 22:35:31.983 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Email], [t].[FirstName], [t].[LastName], [t].[Password]
+FROM [Teachers] AS [t]
+WHERE [t].[Email] = @__email_0
+2023-01-06 22:35:32.111 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherResponse'.
+2023-01-06 22:35:32.112 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 134.3974ms
+2023-01-06 22:35:32.114 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 22:35:32.114 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/teacher application/json 45 - 400 - application/json;+charset=utf-8 140.9038ms
+2023-01-06 22:35:51.610 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/teacher - -
+2023-01-06 22:35:51.611 +02:00 [INF] CORS policy execution successful.
+2023-01-06 22:35:51.611 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/teacher - - - 204 - - 1.5306ms
+2023-01-06 22:35:51.615 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/teacher application/json 45
+2023-01-06 22:35:51.615 +02:00 [INF] CORS policy execution successful.
+2023-01-06 22:35:51.616 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 22:35:51.617 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherResponse]] Post(PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-06 22:35:51.619 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-06 22:35:51.623 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Email], [t].[FirstName], [t].[LastName], [t].[Password]
+FROM [Teachers] AS [t]
+WHERE [t].[Email] = @__email_0
+2023-01-06 22:35:51.747 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherResponse'.
+2023-01-06 22:35:51.749 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 130.02ms
+2023-01-06 22:35:51.750 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 22:35:51.751 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/teacher application/json 45 - 400 - application/json;+charset=utf-8 136.7546ms
+2023-01-06 22:36:34.947 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/teacher - -
+2023-01-06 22:36:34.951 +02:00 [INF] CORS policy execution successful.
+2023-01-06 22:36:34.951 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/teacher - - - 204 - - 4.4551ms
+2023-01-06 22:36:34.954 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/teacher application/json 46
+2023-01-06 22:36:34.955 +02:00 [INF] CORS policy execution successful.
+2023-01-06 22:36:34.956 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 22:36:34.957 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherResponse]] Post(PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-06 22:36:34.960 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-06 22:36:34.964 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Email], [t].[FirstName], [t].[LastName], [t].[Password]
+FROM [Teachers] AS [t]
+WHERE [t].[Email] = @__email_0
+2023-01-06 22:36:35.091 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherResponse'.
+2023-01-06 22:36:35.092 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 133.104ms
+2023-01-06 22:36:35.094 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 22:36:35.095 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/teacher application/json 46 - 400 - application/json;+charset=utf-8 140.8989ms
+2023-01-06 22:37:15.204 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/teacher - -
+2023-01-06 22:37:15.207 +02:00 [INF] CORS policy execution successful.
+2023-01-06 22:37:15.208 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/teacher - - - 204 - - 4.4927ms
+2023-01-06 22:37:15.211 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/teacher application/json 45
+2023-01-06 22:37:15.212 +02:00 [INF] CORS policy execution successful.
+2023-01-06 22:37:15.212 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 22:37:15.214 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherResponse]] Post(PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-06 22:37:15.216 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-06 22:37:15.221 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Email], [t].[FirstName], [t].[LastName], [t].[Password]
+FROM [Teachers] AS [t]
+WHERE [t].[Email] = @__email_0
+2023-01-06 22:37:15.348 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherResponse'.
+2023-01-06 22:37:15.350 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 133.8623ms
+2023-01-06 22:37:15.351 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 22:37:15.352 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/teacher application/json 45 - 400 - application/json;+charset=utf-8 141.2635ms
+2023-01-06 22:37:38.020 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/teacher - -
+2023-01-06 22:37:38.022 +02:00 [INF] CORS policy execution successful.
+2023-01-06 22:37:38.023 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/teacher - - - 204 - - 2.2107ms
+2023-01-06 22:37:38.025 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/teacher application/json 45
+2023-01-06 22:37:38.026 +02:00 [INF] CORS policy execution successful.
+2023-01-06 22:37:38.027 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 22:37:38.028 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherResponse]] Post(PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-06 22:37:38.030 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-06 22:37:38.035 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Email], [t].[FirstName], [t].[LastName], [t].[Password]
+FROM [Teachers] AS [t]
+WHERE [t].[Email] = @__email_0
+2023-01-06 22:37:38.161 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherResponse'.
+2023-01-06 22:37:38.163 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 133.1004ms
+2023-01-06 22:37:38.164 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 22:37:38.165 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/teacher application/json 45 - 400 - application/json;+charset=utf-8 139.5553ms
+2023-01-06 22:58:49.385 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/teacher - -
+2023-01-06 22:58:49.389 +02:00 [INF] CORS policy execution successful.
+2023-01-06 22:58:49.390 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/teacher - - - 204 - - 4.6118ms
+2023-01-06 22:58:49.393 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/teacher application/json 45
+2023-01-06 22:58:49.394 +02:00 [INF] CORS policy execution successful.
+2023-01-06 22:58:49.395 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 22:58:49.396 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherResponse]] Post(PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-06 22:58:49.398 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-06 22:58:50.053 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Email], [t].[FirstName], [t].[LastName], [t].[Password]
+FROM [Teachers] AS [t]
+WHERE [t].[Email] = @__email_0
+2023-01-06 22:58:50.179 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherResponse'.
+2023-01-06 22:58:50.181 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 783.5118ms
+2023-01-06 22:58:50.182 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 22:58:50.183 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/teacher application/json 45 - 400 - application/json;+charset=utf-8 789.6474ms
+2023-01-06 23:00:18.983 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/teacher - -
+2023-01-06 23:00:18.986 +02:00 [INF] CORS policy execution successful.
+2023-01-06 23:00:18.987 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/teacher - - - 204 - - 3.6956ms
+2023-01-06 23:00:18.988 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/teacher application/json 45
+2023-01-06 23:00:18.988 +02:00 [INF] CORS policy execution successful.
+2023-01-06 23:00:18.989 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 23:00:18.990 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherResponse]] Post(PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-06 23:00:18.992 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-06 23:00:19.036 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Email], [t].[FirstName], [t].[LastName], [t].[Password]
+FROM [Teachers] AS [t]
+WHERE [t].[Email] = @__email_0
+2023-01-06 23:00:19.159 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherResponse'.
+2023-01-06 23:00:19.160 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 168.7805ms
+2023-01-06 23:00:19.163 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-06 23:00:19.164 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/teacher application/json 45 - 400 - application/json;+charset=utf-8 176.0883ms
+2023-01-07 20:44:11.220 +02:00 [INF] User profile is available. Using 'C:\Users\MadalinaVarga\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-01-07 20:44:11.655 +02:00 [INF] Now listening on: http://localhost:5055
+2023-01-07 20:44:11.662 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-07 20:44:11.665 +02:00 [INF] Hosting environment: Development
+2023-01-07 20:44:11.666 +02:00 [INF] Content root path: C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\
+2023-01-07 20:44:12.777 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/index.html - -
+2023-01-07 20:44:12.905 +02:00 [WRN] Failed to determine the https port for redirect.
+2023-01-07 20:44:13.377 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_vs/browserLink - -
+2023-01-07 20:44:13.377 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - -
+2023-01-07 20:44:13.407 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/index.html - - - 200 - text/html;charset=utf-8 638.8524ms
+2023-01-07 20:44:13.409 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - - - 200 12020 application/javascript;+charset=utf-8 31.7523ms
+2023-01-07 20:44:13.501 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 123.4514ms
+2023-01-07 20:44:13.629 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - -
+2023-01-07 20:44:13.898 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 268.5685ms
+2023-01-07 20:46:01.950 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - -
+2023-01-07 20:46:02.201 +02:00 [INF] CORS policy execution successful.
+2023-01-07 20:46:02.204 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - - - 204 - - 253.9517ms
+2023-01-07 20:46:02.215 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 45
+2023-01-07 20:46:02.224 +02:00 [INF] CORS policy execution successful.
+2023-01-07 20:46:02.232 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-07 20:46:02.286 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-07 20:46:03.786 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-07 20:46:06.245 +02:00 [INF] Executed DbCommand (97ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-01-07 20:46:06.327 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse'.
+2023-01-07 20:46:06.359 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 4056.2571ms
+2023-01-07 20:46:06.364 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-07 20:46:06.376 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 45 - 400 - application/json;+charset=utf-8 4161.5213ms
+2023-01-07 20:46:10.804 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - -
+2023-01-07 20:46:10.842 +02:00 [INF] CORS policy execution successful.
+2023-01-07 20:46:10.845 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - - - 204 - - 41.1249ms
+2023-01-07 20:46:10.848 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 45
+2023-01-07 20:46:10.853 +02:00 [INF] CORS policy execution successful.
+2023-01-07 20:46:10.855 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-07 20:46:10.858 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-07 20:46:10.868 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-07 20:46:10.891 +02:00 [INF] Executed DbCommand (11ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-01-07 20:46:10.897 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse'.
+2023-01-07 20:46:10.900 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 37.6815ms
+2023-01-07 20:46:10.904 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-07 20:46:10.906 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 45 - 400 - application/json;+charset=utf-8 58.6771ms
+2023-01-07 20:46:15.321 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 45
+2023-01-07 20:46:15.365 +02:00 [INF] CORS policy execution successful.
+2023-01-07 20:46:15.367 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-07 20:46:15.371 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-07 20:46:15.463 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-07 20:46:15.472 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-01-07 20:46:15.483 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse'.
+2023-01-07 20:46:15.485 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 108.5664ms
+2023-01-07 20:46:15.490 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-07 20:46:15.492 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 45 - 400 - application/json;+charset=utf-8 170.2893ms
+2023-01-07 20:46:17.921 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - -
+2023-01-07 20:46:17.929 +02:00 [INF] CORS policy execution successful.
+2023-01-07 20:46:17.932 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - - - 204 - - 11.1651ms
+2023-01-07 20:46:17.941 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 45
+2023-01-07 20:46:17.943 +02:00 [INF] CORS policy execution successful.
+2023-01-07 20:46:17.945 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-07 20:46:17.951 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-07 20:46:17.960 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-07 20:46:17.973 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-01-07 20:46:17.987 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse'.
+2023-01-07 20:46:17.993 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 35.1753ms
+2023-01-07 20:46:17.996 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-07 20:46:17.998 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 45 - 400 - application/json;+charset=utf-8 56.8977ms
+2023-01-07 21:19:31.892 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - -
+2023-01-07 21:19:31.902 +02:00 [INF] CORS policy execution successful.
+2023-01-07 21:19:31.903 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - - - 204 - - 11.3144ms
+2023-01-07 21:19:31.915 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 43
+2023-01-07 21:19:31.917 +02:00 [INF] CORS policy execution successful.
+2023-01-07 21:19:31.919 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-07 21:19:31.922 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-07 21:19:31.928 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-07 21:19:32.796 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 43
+2023-01-07 21:19:32.798 +02:00 [INF] CORS policy execution successful.
+2023-01-07 21:19:32.800 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-07 21:19:32.803 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-07 21:19:32.809 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-07 21:19:33.165 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-01-07 21:19:33.165 +02:00 [INF] Executed DbCommand (18ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-01-07 21:19:33.210 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse'.
+2023-01-07 21:19:33.214 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse'.
+2023-01-07 21:19:33.216 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 408.1736ms
+2023-01-07 21:19:33.219 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 1292.7656ms
+2023-01-07 21:19:33.221 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-07 21:19:33.224 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-07 21:19:33.226 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 43 - 400 - application/json;+charset=utf-8 430.0339ms
+2023-01-07 21:19:33.228 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 43 - 400 - application/json;+charset=utf-8 1313.0725ms
+2023-01-07 21:19:38.537 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - -
+2023-01-07 21:19:38.541 +02:00 [INF] CORS policy execution successful.
+2023-01-07 21:19:38.543 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - - - 204 - - 5.9770ms
+2023-01-07 21:19:38.545 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 43
+2023-01-07 21:19:38.548 +02:00 [INF] CORS policy execution successful.
+2023-01-07 21:19:38.549 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-07 21:19:38.552 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-07 21:19:38.560 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-07 21:19:38.570 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-01-07 21:19:38.581 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse'.
+2023-01-07 21:19:38.584 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 25.6065ms
+2023-01-07 21:19:38.586 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-07 21:19:38.589 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 43 - 400 - application/json;+charset=utf-8 43.5353ms
+2023-01-07 21:19:39.720 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 43
+2023-01-07 21:19:39.723 +02:00 [INF] CORS policy execution successful.
+2023-01-07 21:19:39.725 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-07 21:19:39.728 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-07 21:19:39.735 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-07 21:19:39.744 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-01-07 21:19:39.752 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse'.
+2023-01-07 21:19:39.755 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 21.6854ms
+2023-01-07 21:19:39.760 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-07 21:19:39.762 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 43 - 400 - application/json;+charset=utf-8 41.4667ms
+2023-01-07 21:19:49.539 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - -
+2023-01-07 21:19:49.541 +02:00 [INF] CORS policy execution successful.
+2023-01-07 21:19:49.544 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - - - 204 - - 4.8543ms
+2023-01-07 21:19:49.547 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 43
+2023-01-07 21:19:49.549 +02:00 [INF] CORS policy execution successful.
+2023-01-07 21:19:49.550 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-07 21:19:49.553 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-07 21:19:49.558 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-07 21:19:49.564 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-01-07 21:19:49.573 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse'.
+2023-01-07 21:19:49.576 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 18.8942ms
+2023-01-07 21:19:49.579 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-07 21:19:49.581 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 43 - 400 - application/json;+charset=utf-8 34.1549ms
+2023-01-31 19:06:54.879 +02:00 [INF] User profile is available. Using 'C:\Users\MadalinaVarga\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-01-31 19:06:55.340 +02:00 [INF] Now listening on: http://localhost:5055
+2023-01-31 19:06:55.349 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-31 19:06:55.353 +02:00 [INF] Hosting environment: Development
+2023-01-31 19:06:55.364 +02:00 [INF] Content root path: C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\
+2023-01-31 19:06:57.974 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/index.html - -
+2023-01-31 19:06:58.071 +02:00 [WRN] Failed to determine the https port for redirect.
+2023-01-31 19:06:58.494 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger-ui.css - -
+2023-01-31 19:06:58.544 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - -
+2023-01-31 19:06:58.545 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger-ui-bundle.js - -
+2023-01-31 19:06:58.558 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger-ui-standalone-preset.js - -
+2023-01-31 19:06:58.576 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_vs/browserLink - -
+2023-01-31 19:06:58.585 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - - - 200 12020 application/javascript;+charset=utf-8 36.7319ms
+2023-01-31 19:06:58.591 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/index.html - - - 200 - text/html;charset=utf-8 629.4784ms
+2023-01-31 19:06:58.620 +02:00 [INF] The file /swagger-ui-standalone-preset.js was not modified
+2023-01-31 19:06:58.620 +02:00 [INF] The file /swagger-ui.css was not modified
+2023-01-31 19:06:58.620 +02:00 [INF] The file /swagger-ui-bundle.js was not modified
+2023-01-31 19:06:58.622 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger-ui-standalone-preset.js - - - 304 - application/javascript 64.2344ms
+2023-01-31 19:06:58.623 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger-ui.css - - - 304 - text/css 128.5603ms
+2023-01-31 19:06:58.625 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger-ui-bundle.js - - - 304 - application/javascript 80.5239ms
+2023-01-31 19:06:58.730 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 153.1703ms
+2023-01-31 19:06:59.076 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - -
+2023-01-31 19:06:59.115 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/favicon-32x32.png - -
+2023-01-31 19:06:59.118 +02:00 [INF] The file /favicon-32x32.png was not modified
+2023-01-31 19:06:59.120 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/favicon-32x32.png - - - 304 - image/png 4.6116ms
+2023-01-31 19:06:59.255 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 179.6071ms
+2023-01-31 19:13:33.717 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - -
+2023-01-31 19:13:33.850 +02:00 [INF] CORS policy execution successful.
+2023-01-31 19:13:33.852 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - - - 204 - - 135.9371ms
+2023-01-31 19:13:33.859 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 58
+2023-01-31 19:13:33.867 +02:00 [INF] CORS policy execution successful.
+2023-01-31 19:13:33.874 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-31 19:13:33.928 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-31 19:13:35.272 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-31 19:13:36.086 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 58
+2023-01-31 19:13:36.094 +02:00 [INF] CORS policy execution successful.
+2023-01-31 19:13:36.097 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-31 19:13:36.104 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-31 19:13:36.131 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-31 19:13:37.554 +02:00 [INF] Executed DbCommand (81ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-01-31 19:13:37.554 +02:00 [INF] Executed DbCommand (81ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-01-31 19:13:37.617 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse'.
+2023-01-31 19:13:37.617 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse'.
+2023-01-31 19:13:37.656 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 1535.3603ms
+2023-01-31 19:13:37.656 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 3715.3425ms
+2023-01-31 19:13:37.664 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-31 19:13:37.662 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-31 19:13:37.676 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 58 - 400 - application/json;+charset=utf-8 3816.2323ms
+2023-01-31 19:13:37.676 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 58 - 400 - application/json;+charset=utf-8 1589.9156ms
+2023-01-31 19:14:00.480 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/teacher - -
+2023-01-31 19:14:00.487 +02:00 [INF] CORS policy execution successful.
+2023-01-31 19:14:00.489 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/teacher - - - 204 - - 9.1839ms
+2023-01-31 19:14:00.495 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/teacher application/json 58
+2023-01-31 19:14:00.497 +02:00 [INF] CORS policy execution successful.
+2023-01-31 19:14:00.498 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-31 19:14:00.509 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherResponse]] Post(PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-31 19:14:00.595 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-31 19:14:00.616 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Email], [t].[FirstName], [t].[LastName], [t].[Password]
+FROM [Teachers] AS [t]
+WHERE [t].[Email] = @__email_0
+2023-01-31 19:14:01.045 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.Teacher.Commands.Login.LoginTeacherResponse'.
+2023-01-31 19:14:01.049 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 535.8221ms
+2023-01-31 19:14:01.052 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-31 19:14:01.054 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/teacher application/json 58 - 400 - application/json;+charset=utf-8 559.2589ms
+2023-01-31 19:17:37.342 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - -
+2023-01-31 19:17:37.356 +02:00 [INF] CORS policy execution successful.
+2023-01-31 19:17:37.357 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - - - 204 - - 16.4444ms
+2023-01-31 19:17:37.375 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 53
+2023-01-31 19:17:37.380 +02:00 [INF] CORS policy execution successful.
+2023-01-31 19:17:37.382 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-31 19:17:37.386 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-31 19:17:37.396 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-31 19:17:37.403 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-01-31 19:17:37.412 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse'.
+2023-01-31 19:17:37.414 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 24.3496ms
+2023-01-31 19:17:37.418 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-31 19:17:37.420 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 53 - 400 - application/json;+charset=utf-8 44.9806ms
+2023-01-31 19:18:05.011 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - -
+2023-01-31 19:18:05.022 +02:00 [INF] CORS policy execution successful.
+2023-01-31 19:18:05.024 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - - - 204 - - 12.3358ms
+2023-01-31 19:18:05.026 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 54
+2023-01-31 19:18:05.028 +02:00 [INF] CORS policy execution successful.
+2023-01-31 19:18:05.029 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-31 19:18:05.031 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-31 19:18:05.037 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-31 19:18:05.044 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-01-31 19:18:05.598 +02:00 [INF] Executing OkObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse'.
+2023-01-31 19:18:05.601 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 565.3377ms
+2023-01-31 19:18:05.604 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-31 19:18:05.606 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 54 - 200 - application/json;+charset=utf-8 579.9144ms
+2023-01-31 19:21:26.085 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/students - -
+2023-01-31 19:21:26.087 +02:00 [INF] CORS policy execution successful.
+2023-01-31 19:21:26.089 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/students - - - 204 - - 4.1715ms
+2023-01-31 19:21:26.129 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/students - -
+2023-01-31 19:21:26.251 +02:00 [INF] CORS policy execution successful.
+2023-01-31 19:21:26.253 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.StudentsController.Get (PlatformaEducationala.Api)'
+2023-01-31 19:21:26.259 +02:00 [INF] Route matched with {action = "Get", controller = "Students"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PlatformaEducationala.Core.User.Models.StudentDto]]] Get() on controller PlatformaEducationala.Api.Controllers.StudentsController (PlatformaEducationala.Api).
+2023-01-31 19:21:26.267 +02:00 [INF] Exemplu logging
+2023-01-31 19:21:26.271 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-31 19:21:26.301 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Email]
+FROM [Students] AS [s]
+2023-01-31 19:21:26.310 +02:00 [INF] Executing OkObjectResult, writing value of type 'PlatformaEducationala.Core.User.Queries.Get.GetResponse'.
+2023-01-31 19:21:26.314 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.StudentsController.Get (PlatformaEducationala.Api) in 52.1487ms
+2023-01-31 19:21:26.317 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.StudentsController.Get (PlatformaEducationala.Api)'
+2023-01-31 19:21:26.320 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/students - - - 200 - application/json;+charset=utf-8 190.9063ms
+2023-01-31 19:29:48.657 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - -
+2023-01-31 19:29:48.659 +02:00 [INF] CORS policy execution successful.
+2023-01-31 19:29:48.660 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - - - 204 - - 3.4286ms
+2023-01-31 19:29:48.670 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 54
+2023-01-31 19:29:48.679 +02:00 [INF] CORS policy execution successful.
+2023-01-31 19:29:48.681 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-31 19:29:48.683 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-01-31 19:29:48.688 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-01-31 19:29:48.769 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-01-31 19:29:49.066 +02:00 [INF] Executing OkObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse'.
+2023-01-31 19:29:49.071 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 383.9186ms
+2023-01-31 19:29:49.075 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-01-31 19:29:49.079 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 54 - 200 - application/json;+charset=utf-8 408.1259ms
+2023-02-01 18:17:38.519 +02:00 [INF] User profile is available. Using 'C:\Users\MadalinaVarga\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-02-01 18:17:38.978 +02:00 [INF] Now listening on: http://localhost:5055
+2023-02-01 18:17:38.986 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-01 18:17:38.989 +02:00 [INF] Hosting environment: Development
+2023-02-01 18:17:38.992 +02:00 [INF] Content root path: C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\
+2023-02-01 18:17:42.077 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/index.html - -
+2023-02-01 18:17:42.179 +02:00 [WRN] Failed to determine the https port for redirect.
+2023-02-01 18:17:42.625 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - -
+2023-02-01 18:17:42.674 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/index.html - - - 200 - text/html;charset=utf-8 592.5963ms
+2023-02-01 18:17:42.676 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - - - 200 12020 application/javascript;+charset=utf-8 7.4505ms
+2023-02-01 18:17:42.701 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_vs/browserLink - -
+2023-02-01 18:17:42.811 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 109.9596ms
+2023-02-01 18:17:43.228 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - -
+2023-02-01 18:17:43.454 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 226.0386ms
+2023-02-01 18:18:45.350 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - -
+2023-02-01 18:18:45.530 +02:00 [INF] CORS policy execution successful.
+2023-02-01 18:18:45.534 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - - - 204 - - 184.5019ms
+2023-02-01 18:18:45.541 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 54
+2023-02-01 18:18:45.548 +02:00 [INF] CORS policy execution successful.
+2023-02-01 18:18:45.555 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-01 18:18:45.609 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-02-01 18:18:46.960 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-02-01 18:18:49.154 +02:00 [INF] Executed DbCommand (90ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-02-01 18:18:49.873 +02:00 [INF] Executing OkObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse'.
+2023-02-01 18:18:49.898 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 4277.2968ms
+2023-02-01 18:18:49.901 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-01 18:18:49.910 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 54 - 200 - application/json;+charset=utf-8 4369.2970ms
+2023-02-01 18:19:52.712 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - -
+2023-02-01 18:19:52.734 +02:00 [INF] CORS policy execution successful.
+2023-02-01 18:19:52.736 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - - - 204 - - 23.7889ms
+2023-02-01 18:19:52.745 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 48
+2023-02-01 18:19:52.748 +02:00 [INF] CORS policy execution successful.
+2023-02-01 18:19:52.750 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-01 18:19:52.752 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-02-01 18:19:52.801 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-02-01 18:19:52.820 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-02-01 18:19:52.827 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse'.
+2023-02-01 18:19:52.830 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 74.3698ms
+2023-02-01 18:19:52.833 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-01 18:19:52.835 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 48 - 400 - application/json;+charset=utf-8 89.4627ms
+2023-02-01 18:20:16.841 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - -
+2023-02-01 18:20:16.859 +02:00 [INF] CORS policy execution successful.
+2023-02-01 18:20:16.862 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - - - 204 - - 21.6707ms
+2023-02-01 18:20:16.869 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 48
+2023-02-01 18:20:16.912 +02:00 [INF] CORS policy execution successful.
+2023-02-01 18:20:16.914 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-01 18:20:16.915 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-02-01 18:20:16.997 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-02-01 18:20:17.006 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-02-01 18:20:17.013 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse'.
+2023-02-01 18:20:17.015 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 95.775ms
+2023-02-01 18:20:17.017 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-01 18:20:17.019 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 48 - 400 - application/json;+charset=utf-8 149.6901ms
+2023-02-01 18:21:43.843 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - -
+2023-02-01 18:21:43.851 +02:00 [INF] CORS policy execution successful.
+2023-02-01 18:21:43.852 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - - - 204 - - 9.2334ms
+2023-02-01 18:21:43.859 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 48
+2023-02-01 18:21:43.861 +02:00 [INF] CORS policy execution successful.
+2023-02-01 18:21:43.862 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-01 18:21:43.864 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-02-01 18:21:43.869 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-02-01 18:21:43.875 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-02-01 18:21:43.882 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse'.
+2023-02-01 18:21:43.885 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 17.5432ms
+2023-02-01 18:21:43.889 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-01 18:21:43.891 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 48 - 400 - application/json;+charset=utf-8 31.3722ms
+2023-02-01 18:22:07.516 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - -
+2023-02-01 18:22:07.518 +02:00 [INF] CORS policy execution successful.
+2023-02-01 18:22:07.520 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - - - 204 - - 3.5126ms
+2023-02-01 18:22:07.587 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 48
+2023-02-01 18:22:07.589 +02:00 [INF] CORS policy execution successful.
+2023-02-01 18:22:07.590 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-01 18:22:07.592 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-02-01 18:22:07.596 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-02-01 18:22:07.604 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-02-01 18:22:07.615 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse'.
+2023-02-01 18:22:07.619 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 24.0506ms
+2023-02-01 18:22:07.624 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-01 18:22:07.627 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 48 - 400 - application/json;+charset=utf-8 40.0700ms
+2023-02-01 18:22:09.621 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 48
+2023-02-01 18:22:09.623 +02:00 [INF] CORS policy execution successful.
+2023-02-01 18:22:09.627 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-01 18:22:09.631 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-02-01 18:22:09.635 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-02-01 18:22:09.642 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-02-01 18:22:09.649 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse'.
+2023-02-01 18:22:09.652 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 17.7643ms
+2023-02-01 18:22:09.655 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-01 18:22:09.657 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 48 - 400 - application/json;+charset=utf-8 36.5190ms
+2023-02-01 18:23:16.715 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - -
+2023-02-01 18:23:16.724 +02:00 [INF] CORS policy execution successful.
+2023-02-01 18:23:16.725 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - - - 204 - - 10.5505ms
+2023-02-01 18:23:16.733 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 61
+2023-02-01 18:23:16.735 +02:00 [INF] CORS policy execution successful.
+2023-02-01 18:23:16.736 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-01 18:23:16.739 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-02-01 18:23:16.744 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-02-01 18:23:16.751 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-02-01 18:23:16.759 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse'.
+2023-02-01 18:23:16.762 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 18.9569ms
+2023-02-01 18:23:16.766 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-01 18:23:16.768 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 61 - 400 - application/json;+charset=utf-8 35.2371ms
+2023-02-01 18:25:04.742 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - -
+2023-02-01 18:25:04.750 +02:00 [INF] CORS policy execution successful.
+2023-02-01 18:25:04.752 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - - - 204 - - 10.1309ms
+2023-02-01 18:25:04.768 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 46
+2023-02-01 18:25:04.772 +02:00 [INF] CORS policy execution successful.
+2023-02-01 18:25:04.774 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-01 18:25:04.776 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-02-01 18:25:04.781 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-02-01 18:25:04.809 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-02-01 18:25:05.124 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse'.
+2023-02-01 18:25:05.127 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 347.0932ms
+2023-02-01 18:25:05.130 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-01 18:25:05.133 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 46 - 400 - application/json;+charset=utf-8 367.6978ms
+2023-02-01 18:26:16.356 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - -
+2023-02-01 18:26:16.362 +02:00 [INF] CORS policy execution successful.
+2023-02-01 18:26:16.364 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/auth/login/student - - - 204 - - 7.9338ms
+2023-02-01 18:26:16.370 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 47
+2023-02-01 18:26:16.371 +02:00 [INF] CORS policy execution successful.
+2023-02-01 18:26:16.373 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-01 18:26:16.375 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-02-01 18:26:16.380 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-02-01 18:26:16.387 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-02-01 18:26:16.685 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse'.
+2023-02-01 18:26:16.687 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 308.12ms
+2023-02-01 18:26:16.691 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-01 18:26:16.693 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 47 - 400 - application/json;+charset=utf-8 322.8422ms

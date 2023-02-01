@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import useSWR from "swr";
+import { useState } from "react";
 import config from "../../config";
 import logoImg from "../../images/dog-logo.png";
 import { CreateAccount } from "../../services/userAPI";
+import FormField from "./FormField";
 
 function SignIn() {
   const [formInput, setFormInput] = useState({
@@ -52,58 +52,57 @@ function SignIn() {
         <div>
           <img src={logoImg} className="" alt="dog image" />
         </div>
-        <form
-          onSubmit={onSubmit}
-          className="bg-white drop-shadow-md p-8 rounded"
-        >
+        <form onSubmit={onSubmit} className="bg-white drop-shadow-md p-8 rounded">
           <h3>Creaza un cont</h3>
           <div className="flex flex-col pt-8">
-            <label>Nume</label>
-            <input
-              className="bg-gray-100"
-              type="text"
-              name="lastName"
-              required
+            <FormField
+              text={"Nume"}
+              type={"text"}
+              name={"lastName"}
+              required={true}
+              className={"bg-gray-100"}
               onChange={onChangeInput}
             />
-            <label>Prenume</label>
-            <input
-              className="bg-gray-100"
-              type="text"
-              name="firstName"
-              required
+            <FormField
+              text={"Prenume"}
+              type={"text"}
+              name={"firstName"}
+              required={true}
+              className={"bg-gray-100"}
               onChange={onChangeInput}
             />
-            <label>Email</label>
-            <input
-              className="bg-gray-100"
-              type="email"
-              name="email"
-              required
+            <FormField
+              text={"Email"}
+              type={"email"}
+              name={"email"}
+              required={true}
+              className={"bg-gray-100"}
               onChange={onChangeInput}
             />
-            <label>Parola</label>
-            <input
-              className="bg-gray-100"
-              type="password"
-              name="password"
-              required
+            <FormField
+              text={"Parola"}
+              type={"password"}
+              name={"password"}
+              required={true}
+              className={"bg-gray-100"}
               onChange={onChangeInput}
             />
-            <label>Confirmare Parola</label>
-            <input
-              className="bg-gray-100"
-              type="password"
-              name="checkPassword"
-              required
+            <FormField
+              text={"Confirmare Parola"}
+              type={"password"}
+              name={"checkPassword"}
+              required={true}
+              className={"bg-gray-100"}
               onChange={onChangeInput}
             />
           </div>
           <div className="flex gap-2 items-center">
-            <label>Sunt profesor</label>
-            <input
-              type="checkbox"
-              name="teacherCheck"
+            <FormField
+              text={"Sunt profesor"}
+              type={"checkbox"}
+              name={"teacherCheck"}
+              required={false}
+              className={""}
               onChange={onChangeCheckbox}
             />
           </div>

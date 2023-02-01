@@ -6,4 +6,4 @@ const swrConfig = {
   },
 };
 
-module.exports = swrConfig;
+export default swrConfig;
