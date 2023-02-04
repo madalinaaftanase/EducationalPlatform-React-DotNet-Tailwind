@@ -21,13 +21,13 @@ export function Navbar() {
       </NavLink>
       <Bars />
       <NavMenu>
-        <NavLink to="/students">Students</NavLink>
-        <NavLink to="/">Game</NavLink>
-        <NavLink to="/contact">Pagina</NavLink>
-        <NavLink to="/pagina">Pagina</NavLink>
+        <NavLink to="/Proiecte">Proiecte</NavLink>
+        <NavLink to="/Joc">Game</NavLink>
+        <NavLink to="/Contact">Pagina</NavLink>
+        <NavLink to="/Pagina">Pagina</NavLink>
       </NavMenu>
       <NavBtn>
-        <NavBtnLink to="/signin">Bine ai venit,{name}</NavBtnLink>
+        <NavBtnLink to="/Signin">Bine ai venit,{name}</NavBtnLink>
       </NavBtn>
     </Nav>
   );

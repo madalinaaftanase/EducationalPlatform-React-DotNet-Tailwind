@@ -20,9 +20,9 @@ function UserContextProvider({ children }: UserContextProviderInterface) {
   const [isAuthentificated, setIsAuthentificated] = useState(false);
   const [userName, setUserName] = useState("");
 
-  const setToken = (token: string) => {
+  const setToken = () => {
     setIsAuthentificated(true);
-    setUserName("Madalina");
+    setUserName(" Madalina");
     // ia numele din token si il seteaza
   };
 
