@@ -7,7 +7,7 @@ namespace PlatformaEducationala.Core.Utils
 {
     public static class CreateToken
     {
-        public static string GenerateToken(PlatformaEducationala.Core.Entities.User user, string role)
+        public static string GenerateToken(Common.User user, string role)
         {
             //var config = new ConfigurationBuilder().AddJsonFile($"appsettings.json", true, true).Build();
             //var secretKey = config["secretKey"];

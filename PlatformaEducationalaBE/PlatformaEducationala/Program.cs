@@ -36,7 +36,7 @@ builder.Services.AddSwaggerGen(options =>
         options.OperationFilter<SecurityRequirementsOperationFilter>();
     });
 
-builder.Services.AddDB(builder.Configuration);
+builder.Services.AddDb(builder.Configuration);
 
 builder.Services.AddMediatR(typeof(GetQuery).Assembly);
 

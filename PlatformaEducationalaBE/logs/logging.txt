@@ -6502,3 +6502,72 @@ WHERE [s].[Email] = @__email_0
 2023-02-01 18:26:16.687 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 308.12ms
 2023-02-01 18:26:16.691 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
 2023-02-01 18:26:16.693 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login/student application/json 47 - 400 - application/json;+charset=utf-8 322.8422ms
+2023-02-04 17:11:28.022 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-02-04 17:12:24.535 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-02-04 17:12:25.426 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-02-04 17:12:25.444 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-02-04 17:12:25.452 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-02-04 17:15:27.484 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-02-04 17:15:36.828 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-02-04 17:15:37.057 +02:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-02-04 17:15:37.076 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-02-04 17:15:37.078 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-02-04 17:15:37.078 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-02-04 17:15:37.088 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-02-04 17:15:37.099 +02:00 [INF] Applying migration '20230204151527_CreatedTables'.
+2023-02-04 17:15:37.148 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Grades] (
+    [Id] uniqueidentifier NOT NULL,
+    [TecherId] uniqueidentifier NOT NULL,
+    CONSTRAINT [PK_Grades] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Grades_Teachers_TecherId] FOREIGN KEY ([TecherId]) REFERENCES [Teachers] ([Id]) ON DELETE CASCADE
+);
+2023-02-04 17:15:37.149 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Groups] (
+    [Id] uniqueidentifier NOT NULL,
+    [TeacherId] uniqueidentifier NOT NULL,
+    CONSTRAINT [PK_Groups] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Groups_Teachers_TeacherId] FOREIGN KEY ([TeacherId]) REFERENCES [Teachers] ([Id]) ON DELETE CASCADE
+);
+2023-02-04 17:15:37.150 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Projects] (
+    [Id] uniqueidentifier NOT NULL,
+    [GradeId] uniqueidentifier NOT NULL,
+    [StudentId] uniqueidentifier NOT NULL,
+    CONSTRAINT [PK_Projects] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Projects_Grades_GradeId] FOREIGN KEY ([GradeId]) REFERENCES [Grades] ([Id]),
+    CONSTRAINT [FK_Projects_Students_StudentId] FOREIGN KEY ([StudentId]) REFERENCES [Students] ([Id]) ON DELETE CASCADE
+);
+2023-02-04 17:15:37.151 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [StudentGroups] (
+    [StudentId] uniqueidentifier NOT NULL,
+    [GroupId] uniqueidentifier NOT NULL,
+    CONSTRAINT [PK_StudentGroups] PRIMARY KEY ([StudentId], [GroupId]),
+    CONSTRAINT [FK_StudentGroups_Groups_GroupId] FOREIGN KEY ([GroupId]) REFERENCES [Groups] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_StudentGroups_Students_StudentId] FOREIGN KEY ([StudentId]) REFERENCES [Students] ([Id]) ON DELETE CASCADE
+);
+2023-02-04 17:15:37.152 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Grades_TecherId] ON [Grades] ([TecherId]);
+2023-02-04 17:15:37.152 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Groups_TeacherId] ON [Groups] ([TeacherId]);
+2023-02-04 17:15:37.152 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Projects_GradeId] ON [Projects] ([GradeId]);
+2023-02-04 17:15:37.153 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Projects_StudentId] ON [Projects] ([StudentId]);
+2023-02-04 17:15:37.153 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_StudentGroups_GroupId] ON [StudentGroups] ([GroupId]);
+2023-02-04 17:15:37.154 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20230204151527_CreatedTables', N'6.0.6');
