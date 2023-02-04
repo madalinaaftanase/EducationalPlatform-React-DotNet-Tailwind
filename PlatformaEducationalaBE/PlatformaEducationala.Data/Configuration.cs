@@ -18,6 +18,7 @@ namespace PlatformaEducationala.Data;
             services.AddDbContext<PlatformDBContext>(options => options.UseSqlServer(connectionString)); 
             services.AddScoped<IStudentRepository, StudentsRepository>();
             services.AddScoped<ITeacherRepository, TeachersRepository>();
+            services.AddScoped<IProjectRepository, ProjectsRepository>();
         }
     }
 
