@@ -9,6 +9,7 @@ namespace PlatformaEducationala.Data.Context.Configurations;
         public void Configure(EntityTypeBuilder<Group> builder)
         {
             builder.Property(x => x.Id).IsRequired();
+            builder.Property(x => x.Name).IsRequired();
             builder.HasOne(x => x.Teacher).WithMany(x => x.Groups).HasForeignKey(x => x.TeacherId).IsRequired(true);
     }
 }

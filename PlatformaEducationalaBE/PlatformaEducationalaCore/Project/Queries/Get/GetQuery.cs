@@ -30,6 +30,7 @@ namespace PlatformaEducationala.Core.Project.Queries.Get
                 Projects = projects.Select(project => new ProjectDto()
                 {
                     Name = project.Name,
+                    Xml = project.Xml
                 }).ToList(),
             };
 

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "vOHB4DNgym7Jkj0lFgzNdmTsAzheFH3DqNfxEnmf/1VPdH9OlhgBbHFRqZJShsmy+SB83FW09dkjHfYdoKUkSA==",
+  "dgSpecHash": "r8bj/qXhopmev4tm3/1WUv9cnurCC2PeuxAufhJvBuv95eh5b8wuZIOgJJfy0PGcTSOx40K52AL5uONNU+lOUg==",
   "success": true,
   "projectFilePath": "C:\\facultate\\anul3\\licenta\\PlatformaEducationalaBE\\PlatformaEducationala.Data\\PlatformaEducationala.Data.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\MadalinaVarga\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\MadalinaVarga\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\MadalinaVarga\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\MadalinaVarga\\.nuget\\packages\\fluentvalidation\\11.2.1\\fluentvalidation.11.2.1.nupkg.sha512",

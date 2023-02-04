@@ -23,7 +23,7 @@ namespace PlatformaEducationala.Data.Repositories
 
         public async Task<Teacher> GetByEmail(string email)
         {
-            return await _platformDbContext.Teachers.Where(t=>t.Email==email).FirstOrDefaultAsync();
+            return await _platformDbContext.Teachers.FirstOrDefaultAsync(t => t.Email == email);
         }
     }
 }
