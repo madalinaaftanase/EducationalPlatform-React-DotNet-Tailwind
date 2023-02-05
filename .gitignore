@@ -1,3 +1,6 @@
 # Local Netlify folder
 .netlify
 /PlatformaEducationalaBE/.vs/PlatformaEducationala/FileContentIndex/51869351-78a3-4178-9285-827ee7654043.vsidx
+/.vs
+.vsidx
+/.vsidx
