@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PlatformaEducationala.Core.Project.Models;
-using PlatformaEducationala.Core.User.Queries.Get;
+using PlatformaEducationala.Core.Project.Queries.Get;
 
 namespace PlatformaEducationala.Api.Controllers;
 
@@ -21,7 +21,7 @@ public class ProjectsController : ApiController
     [HttpGet]
     public async Task<ActionResult<List<ProjectDto>>> Get()
     {
-        var result = await _mediator.Send(new GetQuery());
+        var result = await _mediator.Send(new GetQuery{ CurrentUserId = Guid.Parse(UserId)});
 
         return HandleMediatorResponse(result);
     }

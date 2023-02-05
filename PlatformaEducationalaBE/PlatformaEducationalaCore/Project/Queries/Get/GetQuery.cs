@@ -7,12 +7,15 @@ namespace PlatformaEducationala.Core.Project.Queries.Get
 {
     public class GetQuery : IRequest<GetResponse>
     {
+        public Guid? CurrentUserId { get; set; } = Guid.Empty;
+
     }
 
     public class GetQueryHndler : IRequestHandler<GetQuery, GetResponse>
     {
         private readonly IProjectRepository _projectRepository;
-        private readonly ILogger _logger;
+        private readonly ILogger _logger; 
+
 
         public GetQueryHndler(IProjectRepository projectRepository , ILogger logger)
         {

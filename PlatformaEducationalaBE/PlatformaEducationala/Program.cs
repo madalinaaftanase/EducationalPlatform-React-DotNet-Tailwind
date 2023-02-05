@@ -2,13 +2,12 @@ using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using PlatformaEducationala.Api.Services;
 using PlatformaEducationala.Core.User.Queries.Get;
 using PlatformaEducationala.Data;
 using Serilog;
 using Swashbuckle.AspNetCore.Filters;
-using System.Security.Claims;
 using System.Text;
+using PlatformaEducationala.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -95,6 +94,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseMiddleware<AuthenticationMiddleware>();
 
 app.UseCors(p => p.WithOrigins("http://localhost:3000")
    .AllowAnyHeader()
@@ -102,7 +102,6 @@ app.UseCors(p => p.WithOrigins("http://localhost:3000")
 
 app.MapControllers();
 
-//will use the angular static files only when the environment is different from the developement one
 if (!app.Environment.IsDevelopment())
 {
     app.UseSpa(spa => spa.Options.SourcePath = "wwwroot/spa");
