@@ -2,12 +2,12 @@ import { StudentSigninRequest, StudentsResponse } from "../models/student/Studen
 import axios from "axios";
 import { LoginRequest } from "../models/user/User";
 import { LoginResponse } from "../models/student/LoginResponse";
-import { getCookie } from "../utilities/cookieFunctions";
+import { useGetCookie } from "../utilities/cookieFunctions";
 
 const GetAll = (url: string) =>
   axios
     .get<StudentsResponse>(url, {
-      headers: { Authorization: `Bearer ${getCookie("token")}` },
+      headers: { Authorization: `Bearer ${useGetCookie("token")}` },
     })
     .then((res) => res.data);
 

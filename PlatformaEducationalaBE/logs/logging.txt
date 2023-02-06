@@ -6571,3 +6571,455 @@ CREATE INDEX [IX_StudentGroups_GroupId] ON [StudentGroups] ([GroupId]);
 2023-02-04 17:15:37.154 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
 INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
 VALUES (N'20230204151527_CreatedTables', N'6.0.6');
+2023-02-06 19:44:03.894 +02:00 [INF] User profile is available. Using 'C:\Users\MadalinaVarga\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-02-06 19:44:04.884 +02:00 [INF] Now listening on: http://localhost:5055
+2023-02-06 19:44:04.891 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-06 19:44:04.893 +02:00 [INF] Hosting environment: Development
+2023-02-06 19:44:04.895 +02:00 [INF] Content root path: C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\
+2023-02-06 19:44:06.268 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/index.html - -
+2023-02-06 19:44:06.431 +02:00 [WRN] Failed to determine the https port for redirect.
+2023-02-06 19:44:06.976 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_vs/browserLink - -
+2023-02-06 19:44:07.012 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - -
+2023-02-06 19:44:07.053 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/index.html - - - 200 - text/html;charset=utf-8 707.4599ms
+2023-02-06 19:44:07.058 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - - - 200 12020 application/javascript;+charset=utf-8 45.4213ms
+2023-02-06 19:44:07.173 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 202.0518ms
+2023-02-06 19:44:07.296 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - -
+2023-02-06 19:44:07.554 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 257.1698ms
+2023-02-06 20:09:03.019 +02:00 [INF] User profile is available. Using 'C:\Users\MadalinaVarga\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-02-06 20:09:03.359 +02:00 [INF] Now listening on: http://localhost:5055
+2023-02-06 20:09:03.367 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-06 20:09:03.369 +02:00 [INF] Hosting environment: Development
+2023-02-06 20:09:03.371 +02:00 [INF] Content root path: C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\
+2023-02-06 20:09:04.435 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/index.html - -
+2023-02-06 20:09:04.555 +02:00 [WRN] Failed to determine the https port for redirect.
+2023-02-06 20:09:04.946 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_vs/browserLink - -
+2023-02-06 20:09:04.946 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - -
+2023-02-06 20:09:04.958 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/index.html - - - 200 - text/html;charset=utf-8 528.3749ms
+2023-02-06 20:09:04.958 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - - - 200 12020 application/javascript;+charset=utf-8 8.7581ms
+2023-02-06 20:09:05.013 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 68.4176ms
+2023-02-06 20:09:05.161 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - -
+2023-02-06 20:09:05.432 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 270.7113ms
+2023-02-06 20:18:36.340 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/Auth/Login/Student - -
+2023-02-06 20:18:36.940 +02:00 [INF] CORS policy execution successful.
+2023-02-06 20:18:36.946 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/Auth/Login/Student - - - 204 - - 606.0268ms
+2023-02-06 20:18:36.957 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/Auth/Login/Student application/json 54
+2023-02-06 20:18:36.969 +02:00 [INF] CORS policy execution successful.
+2023-02-06 20:18:36.981 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-06 20:18:37.051 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-02-06 20:18:43.883 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-02-06 20:18:46.657 +02:00 [INF] Executed DbCommand (114ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-02-06 20:18:47.152 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 10087.4081ms
+2023-02-06 20:18:47.159 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-06 20:18:47.283 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Student -> StudentDto
+PlatformaEducationala.Core.Entities.Student -> PlatformaEducationala.Core.User.Models.StudentDto
+   at lambda_method58(Closure , Object , StudentDto , ResolutionContext )
+   at PlatformaEducationala.Data.Repositories.StudentsRepository.GetByEmail(String email) in C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala.Data\Repositories\StudentsRepository.cs:line 31
+   at PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommandHandler.Handle(LoginStudentCommand command, CancellationToken cancellationToken) in C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationalaCore\User\Commands\Login\LoginStudentCommand.cs:line 23
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at PlatformaEducationala.Api.Controllers.AuthController.Post(LoginStudentCommand command) in C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\Controllers\AuthController.cs:line 39
+   at lambda_method6(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at PlatformaEducationala.Api.Services.AuthenticationMiddleware.InvokeAsync(HttpContext context) in C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\Services\AuthenticationMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-02-06 20:18:47.488 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/Auth/Login/Student application/json 54 - 500 - text/plain;+charset=utf-8 10530.8506ms
+2023-02-06 20:18:57.113 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/Auth/Login/Student - -
+2023-02-06 20:18:57.119 +02:00 [INF] CORS policy execution successful.
+2023-02-06 20:18:57.121 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/Auth/Login/Student - - - 204 - - 8.3424ms
+2023-02-06 20:18:57.124 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/Auth/Login/Student application/json 54
+2023-02-06 20:18:57.128 +02:00 [INF] CORS policy execution successful.
+2023-02-06 20:18:57.129 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-06 20:18:57.133 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-02-06 20:18:57.154 +02:00 [INF] Executing action method PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) - Validation state: "Valid"
+2023-02-06 20:18:57.162 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-02-06 20:18:57.221 +02:00 [INF] Executed DbCommand (19ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-02-06 20:18:57.437 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 299.8103ms
+2023-02-06 20:18:57.441 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-06 20:18:57.562 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Student -> StudentDto
+PlatformaEducationala.Core.Entities.Student -> PlatformaEducationala.Core.User.Models.StudentDto
+   at lambda_method58(Closure , Object , StudentDto , ResolutionContext )
+   at PlatformaEducationala.Data.Repositories.StudentsRepository.GetByEmail(String email) in C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala.Data\Repositories\StudentsRepository.cs:line 31
+   at PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommandHandler.Handle(LoginStudentCommand command, CancellationToken cancellationToken) in C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationalaCore\User\Commands\Login\LoginStudentCommand.cs:line 23
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at PlatformaEducationala.Api.Controllers.AuthController.Post(LoginStudentCommand command) in C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\Controllers\AuthController.cs:line 39
+   at lambda_method6(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at PlatformaEducationala.Api.Services.AuthenticationMiddleware.InvokeAsync(HttpContext context) in C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\Services\AuthenticationMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-02-06 20:18:57.628 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/Auth/Login/Student application/json 54 - 500 - text/plain;+charset=utf-8 503.9530ms
+2023-02-06 20:19:16.775 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/Auth/Login/Student - -
+2023-02-06 20:19:16.778 +02:00 [INF] CORS policy execution successful.
+2023-02-06 20:19:16.780 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/Auth/Login/Student - - - 204 - - 4.9558ms
+2023-02-06 20:19:16.787 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/Auth/Login/Student application/json 54
+2023-02-06 20:19:16.830 +02:00 [INF] CORS policy execution successful.
+2023-02-06 20:19:16.832 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-06 20:19:16.839 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-02-06 20:19:16.849 +02:00 [INF] Executing action method PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) - Validation state: "Valid"
+2023-02-06 20:19:21.153 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-02-06 20:19:21.164 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-02-06 20:19:21.456 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 4608.1569ms
+2023-02-06 20:19:21.460 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-06 20:19:21.551 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Student -> StudentDto
+PlatformaEducationala.Core.Entities.Student -> PlatformaEducationala.Core.User.Models.StudentDto
+   at lambda_method58(Closure , Object , StudentDto , ResolutionContext )
+   at PlatformaEducationala.Data.Repositories.StudentsRepository.GetByEmail(String email) in C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala.Data\Repositories\StudentsRepository.cs:line 31
+   at PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommandHandler.Handle(LoginStudentCommand command, CancellationToken cancellationToken) in C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationalaCore\User\Commands\Login\LoginStudentCommand.cs:line 23
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at PlatformaEducationala.Api.Controllers.AuthController.Post(LoginStudentCommand command) in C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\Controllers\AuthController.cs:line 39
+   at lambda_method6(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at PlatformaEducationala.Api.Services.AuthenticationMiddleware.InvokeAsync(HttpContext context) in C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\Services\AuthenticationMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-02-06 20:19:21.599 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/Auth/Login/Student application/json 54 - 500 - text/plain;+charset=utf-8 4811.4699ms
+2023-02-06 20:19:25.165 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/Auth/Login/Student - -
+2023-02-06 20:19:25.167 +02:00 [INF] CORS policy execution successful.
+2023-02-06 20:19:25.169 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/Auth/Login/Student - - - 204 - - 4.3701ms
+2023-02-06 20:19:25.212 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/Auth/Login/Student application/json 54
+2023-02-06 20:19:25.214 +02:00 [INF] CORS policy execution successful.
+2023-02-06 20:19:25.215 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-06 20:19:25.218 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-02-06 20:19:25.224 +02:00 [INF] Executing action method PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) - Validation state: "Valid"
+2023-02-06 20:19:54.579 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-02-06 20:19:54.590 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-02-06 20:19:55.269 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 30045.6668ms
+2023-02-06 20:19:55.274 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-06 20:19:55.356 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Student -> StudentDto
+PlatformaEducationala.Core.Entities.Student -> PlatformaEducationala.Core.User.Models.StudentDto
+   at lambda_method58(Closure , Object , StudentDto , ResolutionContext )
+   at PlatformaEducationala.Data.Repositories.StudentsRepository.GetByEmail(String email) in C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala.Data\Repositories\StudentsRepository.cs:line 31
+   at PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommandHandler.Handle(LoginStudentCommand command, CancellationToken cancellationToken) in C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationalaCore\User\Commands\Login\LoginStudentCommand.cs:line 23
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at PlatformaEducationala.Api.Controllers.AuthController.Post(LoginStudentCommand command) in C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\Controllers\AuthController.cs:line 39
+   at lambda_method6(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at PlatformaEducationala.Api.Services.AuthenticationMiddleware.InvokeAsync(HttpContext context) in C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\Services\AuthenticationMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-02-06 20:19:55.428 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/Auth/Login/Student application/json 54 - 500 - text/plain;+charset=utf-8 30215.6619ms
+2023-02-06 20:20:06.786 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/Auth/Login/Student - -
+2023-02-06 20:20:06.789 +02:00 [INF] CORS policy execution successful.
+2023-02-06 20:20:06.791 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/Auth/Login/Student - - - 204 - - 4.2644ms
+2023-02-06 20:20:06.797 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/Auth/Login/Student application/json 54
+2023-02-06 20:20:06.799 +02:00 [INF] CORS policy execution successful.
+2023-02-06 20:20:06.802 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-06 20:20:06.806 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-02-06 20:20:06.813 +02:00 [INF] Executing action method PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) - Validation state: "Valid"
+2023-02-06 20:21:11.298 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-02-06 20:21:11.327 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-02-06 20:21:26.629 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 79817.1037ms
+2023-02-06 20:21:26.634 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-06 20:21:26.733 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Student -> StudentDto
+PlatformaEducationala.Core.Entities.Student -> PlatformaEducationala.Core.User.Models.StudentDto
+   at lambda_method58(Closure , Object , StudentDto , ResolutionContext )
+   at PlatformaEducationala.Data.Repositories.StudentsRepository.GetByEmail(String email) in C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala.Data\Repositories\StudentsRepository.cs:line 31
+   at PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommandHandler.Handle(LoginStudentCommand command, CancellationToken cancellationToken) in C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationalaCore\User\Commands\Login\LoginStudentCommand.cs:line 23
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at PlatformaEducationala.Api.Controllers.AuthController.Post(LoginStudentCommand command) in C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\Controllers\AuthController.cs:line 39
+   at lambda_method6(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at PlatformaEducationala.Api.Services.AuthenticationMiddleware.InvokeAsync(HttpContext context) in C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\Services\AuthenticationMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-02-06 20:21:26.794 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/Auth/Login/Student application/json 54 - 500 - text/plain;+charset=utf-8 79997.1513ms
+2023-02-06 20:22:55.318 +02:00 [INF] User profile is available. Using 'C:\Users\MadalinaVarga\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-02-06 20:22:55.624 +02:00 [INF] Now listening on: http://localhost:5055
+2023-02-06 20:22:55.632 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-06 20:22:55.635 +02:00 [INF] Hosting environment: Development
+2023-02-06 20:22:55.637 +02:00 [INF] Content root path: C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\
+2023-02-06 20:22:56.842 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/index.html - -
+2023-02-06 20:22:56.954 +02:00 [WRN] Failed to determine the https port for redirect.
+2023-02-06 20:22:57.363 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - -
+2023-02-06 20:22:57.363 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_vs/browserLink - -
+2023-02-06 20:22:57.372 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - - - 200 12020 application/javascript;+charset=utf-8 7.8736ms
+2023-02-06 20:22:57.372 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/index.html - - - 200 - text/html;charset=utf-8 541.7203ms
+2023-02-06 20:22:57.521 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 157.3760ms
+2023-02-06 20:22:57.700 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - -
+2023-02-06 20:22:58.042 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 341.9148ms
+2023-02-06 20:23:28.627 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/Auth/Login/Student - -
+2023-02-06 20:23:28.761 +02:00 [INF] CORS policy execution successful.
+2023-02-06 20:23:28.766 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/Auth/Login/Student - - - 204 - - 138.1163ms
+2023-02-06 20:23:28.768 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/Auth/Login/Student application/json 54
+2023-02-06 20:23:28.779 +02:00 [INF] CORS policy execution successful.
+2023-02-06 20:23:28.789 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-06 20:23:28.849 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-02-06 20:23:58.334 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-02-06 20:23:59.779 +02:00 [INF] Executed DbCommand (123ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-02-06 20:25:45.644 +02:00 [INF] User profile is available. Using 'C:\Users\MadalinaVarga\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-02-06 20:25:45.902 +02:00 [INF] Now listening on: http://localhost:5055
+2023-02-06 20:25:45.909 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-06 20:25:45.911 +02:00 [INF] Hosting environment: Development
+2023-02-06 20:25:45.915 +02:00 [INF] Content root path: C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\
+2023-02-06 20:25:47.015 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/index.html - -
+2023-02-06 20:25:47.107 +02:00 [WRN] Failed to determine the https port for redirect.
+2023-02-06 20:25:47.475 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - -
+2023-02-06 20:25:47.477 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_vs/browserLink - -
+2023-02-06 20:25:47.484 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - - - 200 12020 application/javascript;+charset=utf-8 6.6856ms
+2023-02-06 20:25:47.486 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/index.html - - - 200 - text/html;charset=utf-8 479.0425ms
+2023-02-06 20:25:47.539 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 61.6596ms
+2023-02-06 20:25:47.728 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - -
+2023-02-06 20:25:47.989 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 261.0320ms
+2023-02-06 20:25:59.591 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/Auth/Login/Student - -
+2023-02-06 20:25:59.712 +02:00 [INF] CORS policy execution successful.
+2023-02-06 20:25:59.715 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/Auth/Login/Student - - - 204 - - 124.7414ms
+2023-02-06 20:25:59.719 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/Auth/Login/Student application/json 54
+2023-02-06 20:25:59.730 +02:00 [INF] CORS policy execution successful.
+2023-02-06 20:25:59.740 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-06 20:25:59.797 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-02-06 20:26:32.167 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-02-06 20:26:33.641 +02:00 [INF] Executed DbCommand (154ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-02-06 20:26:53.645 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 53832.4863ms
+2023-02-06 20:26:53.651 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-06 20:26:53.761 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Student -> StudentDto
+PlatformaEducationala.Core.Entities.Student -> PlatformaEducationala.Core.User.Models.StudentDto
+   at lambda_method58(Closure , Object , StudentDto , ResolutionContext )
+   at PlatformaEducationala.Data.Repositories.StudentsRepository.GetByEmail(String email) in C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala.Data\Repositories\StudentsRepository.cs:line 31
+   at PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommandHandler.Handle(LoginStudentCommand command, CancellationToken cancellationToken) in C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationalaCore\User\Commands\Login\LoginStudentCommand.cs:line 23
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at PlatformaEducationala.Api.Controllers.AuthController.Post(LoginStudentCommand command) in C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\Controllers\AuthController.cs:line 39
+   at lambda_method6(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at PlatformaEducationala.Api.Services.AuthenticationMiddleware.InvokeAsync(HttpContext context) in C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\Services\AuthenticationMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-02-06 20:26:53.966 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/Auth/Login/Student application/json 54 - 500 - text/plain;+charset=utf-8 54247.0092ms
+2023-02-06 20:31:36.924 +02:00 [INF] User profile is available. Using 'C:\Users\MadalinaVarga\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-02-06 20:31:37.196 +02:00 [INF] Now listening on: http://localhost:5055
+2023-02-06 20:31:37.205 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-06 20:31:37.207 +02:00 [INF] Hosting environment: Development
+2023-02-06 20:31:37.210 +02:00 [INF] Content root path: C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\
+2023-02-06 20:31:37.891 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/index.html - -
+2023-02-06 20:31:37.995 +02:00 [WRN] Failed to determine the https port for redirect.
+2023-02-06 20:31:38.358 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_vs/browserLink - -
+2023-02-06 20:31:38.358 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - -
+2023-02-06 20:31:38.368 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - - - 200 12020 application/javascript;+charset=utf-8 8.3637ms
+2023-02-06 20:31:38.368 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/index.html - - - 200 - text/html;charset=utf-8 483.1188ms
+2023-02-06 20:31:38.421 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 63.3834ms
+2023-02-06 20:31:38.593 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - -
+2023-02-06 20:31:38.823 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 230.3455ms
+2023-02-06 20:31:42.252 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/Auth/Login/Student - -
+2023-02-06 20:31:42.378 +02:00 [INF] CORS policy execution successful.
+2023-02-06 20:31:42.382 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/Auth/Login/Student - - - 204 - - 130.3141ms
+2023-02-06 20:31:42.386 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/Auth/Login/Student application/json 54
+2023-02-06 20:31:42.395 +02:00 [INF] CORS policy execution successful.
+2023-02-06 20:31:42.403 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-06 20:31:42.455 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-02-06 20:32:02.608 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-02-06 20:32:05.421 +02:00 [INF] Executed DbCommand (152ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-02-06 20:32:20.691 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 38222.8616ms
+2023-02-06 20:32:20.699 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-06 20:32:20.810 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Student -> StudentDto
+PlatformaEducationala.Core.Entities.Student -> PlatformaEducationala.Core.User.Models.StudentDto
+   at lambda_method61(Closure , Object , StudentDto , ResolutionContext )
+   at PlatformaEducationala.Data.Repositories.StudentsRepository.GetByEmail(String email) in C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala.Data\Repositories\StudentsRepository.cs:line 33
+   at PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommandHandler.Handle(LoginStudentCommand command, CancellationToken cancellationToken) in C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationalaCore\User\Commands\Login\LoginStudentCommand.cs:line 23
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at PlatformaEducationala.Api.Controllers.AuthController.Post(LoginStudentCommand command) in C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\Controllers\AuthController.cs:line 39
+   at lambda_method6(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at PlatformaEducationala.Api.Services.AuthenticationMiddleware.InvokeAsync(HttpContext context) in C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\Services\AuthenticationMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-02-06 20:32:20.965 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/Auth/Login/Student application/json 54 - 500 - text/plain;+charset=utf-8 38579.3893ms
+2023-02-06 20:38:44.000 +02:00 [INF] User profile is available. Using 'C:\Users\MadalinaVarga\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-02-06 20:38:44.468 +02:00 [INF] Now listening on: http://localhost:5055
+2023-02-06 20:38:44.476 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-06 20:38:44.478 +02:00 [INF] Hosting environment: Development
+2023-02-06 20:38:44.482 +02:00 [INF] Content root path: C:\facultate\anul3\licenta\PlatformaEducationalaBE\PlatformaEducationala\
+2023-02-06 20:38:45.297 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/index.html - -
+2023-02-06 20:38:45.394 +02:00 [WRN] Failed to determine the https port for redirect.
+2023-02-06 20:38:45.777 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_vs/browserLink - -
+2023-02-06 20:38:45.779 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - -
+2023-02-06 20:38:45.804 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_framework/aspnetcore-browser-refresh.js - - - 200 12020 application/javascript;+charset=utf-8 7.9621ms
+2023-02-06 20:38:45.823 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/index.html - - - 200 - text/html;charset=utf-8 534.1427ms
+2023-02-06 20:38:45.859 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 85.9338ms
+2023-02-06 20:38:46.008 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - -
+2023-02-06 20:38:46.265 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 256.6099ms
+2023-02-06 20:38:48.275 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5055/api/Auth/Login/Student - -
+2023-02-06 20:38:48.384 +02:00 [INF] CORS policy execution successful.
+2023-02-06 20:38:48.387 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5055/api/Auth/Login/Student - - - 204 - - 111.4418ms
+2023-02-06 20:38:48.389 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/Auth/Login/Student application/json 54
+2023-02-06 20:38:48.397 +02:00 [INF] CORS policy execution successful.
+2023-02-06 20:38:48.405 +02:00 [INF] Executing endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-06 20:38:48.458 +02:00 [INF] Route matched with {action = "Post", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse]] Post(PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentCommand) on controller PlatformaEducationala.Api.Controllers.AuthController (PlatformaEducationala.Api).
+2023-02-06 20:38:55.758 +02:00 [INF] Entity Framework Core 6.0.6 initialized 'PlatformDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2023-02-06 20:38:58.318 +02:00 [INF] Executed DbCommand (162ms) [Parameters=[@__email_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Email], [s].[FirstName], [s].[LastName], [s].[Password]
+FROM [Students] AS [s]
+WHERE [s].[Email] = @__email_0
+2023-02-06 20:39:26.438 +02:00 [INF] Executing OkObjectResult, writing value of type 'PlatformaEducationala.Core.User.Commands.LoginAccount.LoginStudentResponse'.
+2023-02-06 20:39:26.492 +02:00 [INF] Executed action PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api) in 38021.553ms
+2023-02-06 20:39:26.500 +02:00 [INF] Executed endpoint 'PlatformaEducationala.Api.Controllers.AuthController.Post (PlatformaEducationala.Api)'
+2023-02-06 20:39:26.514 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/Auth/Login/Student application/json 54 - 200 - application/json;+charset=utf-8 38124.6549ms

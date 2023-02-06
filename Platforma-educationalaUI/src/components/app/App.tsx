@@ -10,7 +10,7 @@ import Signin from "../../pages/Signin";
 import ErrorResponse from "../ErrorResponse";
 import { useContext } from "react";
 import { UserContext } from "../../hooks/UserContext";
-import ProjectLayout from "../../pages/ProjectLayout";
+import Projects from "../../pages/Projects";
 
 function App() {
   const navigator = useNavigate();
@@ -26,7 +26,7 @@ function App() {
           <Route path="/Login/Student" element={<LoginPage />} />
           <Route path="/Login/Teacher" element={<LoginPage />} />
           <Route path="/Students" element={<Students />} />
-          <Route path="/Proiecte" element={<ProjectLayout />} />
+          <Route path="/Proiecte" element={<Projects />} />
           <Route path="/Error" element={<ErrorResponse />} />
         </Routes>
       </SWRConfig>

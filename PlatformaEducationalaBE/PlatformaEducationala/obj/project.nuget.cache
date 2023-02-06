@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "mV8++W3BVXtx8vNuYFFxvpc3DIsCp26lpV2G8scbUa14+gacgOEpSK5A5SOlpjJOifxa6qNQiCW8eVLEwiMe0w==",
+  "dgSpecHash": "nJ2NVadnZSdfT3cazGhlNvek6QE0X1zQxN6CVPZDEjH1K44eQ3OWgMsapStbWHSbP6TW8EacENznYoQwK+SXJw==",
   "success": true,
   "projectFilePath": "C:\\facultate\\anul3\\licenta\\PlatformaEducationalaBE\\PlatformaEducationala\\PlatformaEducationala.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MadalinaVarga\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\MadalinaVarga\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\MadalinaVarga\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\MadalinaVarga\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\MadalinaVarga\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",

@@ -75,6 +75,8 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 var app = builder.Build();
 
 app.UseDefaultFiles();

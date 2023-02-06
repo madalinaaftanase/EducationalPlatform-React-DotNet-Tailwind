@@ -1,5 +1,4 @@
-﻿
-namespace PlatformaEducationala.Core.Repositories;
+﻿namespace PlatformaEducationala.Core.Repositories;
     public interface IGroupRepository
     {
     }

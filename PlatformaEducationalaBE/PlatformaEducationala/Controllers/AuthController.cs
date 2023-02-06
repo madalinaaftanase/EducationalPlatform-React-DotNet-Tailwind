@@ -19,28 +19,28 @@ namespace PlatformaEducationala.Api.Controllers
             _mediator = mediator;
         }
 
-        [HttpPost("register/student")]
+        [HttpPost("Register/Student")]
         public async Task<ActionResult> Post([FromBody] CreateStudentAccountCommand command)
         {
             var result = await _mediator.Send(command);
             return HandleMediatorResponse(result);
         }
 
-        [HttpPost("register/teacher")]
+        [HttpPost("Register/Teacher")]
         public async Task<ActionResult> Post([FromBody] CreateTeacherAccountCommand command)
         {
             var result = await _mediator.Send(command);
             return HandleMediatorResponse(result);
         }
 
-        [HttpPost("login/student")]
+        [HttpPost("Login/Student")]
         public async Task<ActionResult<LoginStudentResponse>> Post([FromBody] LoginStudentCommand command)
         {
             var result = await _mediator.Send(command);
             return HandleMediatorResponse(result);
         }
         
-        [HttpPost("login/teacher")]
+        [HttpPost("Login/Teacher")]
         public async Task<ActionResult<LoginTeacherResponse>> Post([FromBody] LoginTeacherCommand command)
         {
             var result = await _mediator.Send(command);

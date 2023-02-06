@@ -1,5 +1,4 @@
-﻿
-using AutoMapper;
+﻿using AutoMapper;
 using PlatformaEducationala.Core.Repositories;
 using PlatformaEducationala.Core.User.Models;
 using PlatformaEducationala.Data.Context;
@@ -14,10 +13,14 @@ public class StudentsRepository : IStudentRepository
     private readonly IMapper _mapper;
 
 
-    public StudentsRepository(PlatformDBContext platformDbContext, IMapper mapper)
+    public StudentsRepository(PlatformDBContext platformDbContext)
     {
         _platformDbContext = platformDbContext;
-        _mapper = mapper;
+        _mapper = new MapperConfiguration(cfg =>
+        {
+            cfg.CreateMap<Student, StudentDto>();
+            cfg.CreateMap<List<Student>, List<StudentDto>>();
+        }).CreateMapper();
     }
 
     public async Task AddAsync(Student account)
@@ -28,13 +31,14 @@ public class StudentsRepository : IStudentRepository
 
     public async Task<StudentDto> GetByEmail(string email)
     {
-      var student =  _platformDbContext.Students.FirstOrDefaultAsync(s =>s.Email==email);
-      return student == null ? null : _mapper.Map<StudentDto>(student);
+      var student =  await _platformDbContext.Students.FirstOrDefaultAsync(s =>s.Email==email);
+
+      return student==null? null:_mapper.Map<StudentDto>(student);
     }
 
     public async Task<List<StudentDto>> GetAll()
     {
-        var students = _platformDbContext.Students.ToListAsync();
+        var students = await _platformDbContext.Students.ToListAsync();
         return _mapper.Map<List<StudentDto>>(students);
     }
 

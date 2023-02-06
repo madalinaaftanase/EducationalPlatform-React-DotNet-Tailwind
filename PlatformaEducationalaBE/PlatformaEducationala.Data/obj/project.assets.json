@@ -999,6 +999,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "AutoMapper": "12.0.1",
           "BCrypt.Net-Next": "4.0.3",
           "FluentValidation": "11.2.1",
           "MediatR": "10.0.1",

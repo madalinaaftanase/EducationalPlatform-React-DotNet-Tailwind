@@ -11,7 +11,7 @@ public class ApiController: ControllerBase
     protected const string TeacherRole = "teacher";
     protected const string StudentRole = "student";
     protected const string TeacherOrStudent = TeacherRole + "," + StudentRole;
-    protected string UserId => HttpContext.Items["UserId"]?.ToString();
+    //protected string UserId => HttpContext.Items["UserId"]?.ToString();
     protected ActionResult HandleMediatorResponse(BaseResponse result)
     {
         switch (result.ResponseStatus)

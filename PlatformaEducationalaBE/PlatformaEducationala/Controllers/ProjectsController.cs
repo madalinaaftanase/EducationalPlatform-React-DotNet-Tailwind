@@ -21,8 +21,15 @@ public class ProjectsController : ApiController
     [HttpGet]
     public async Task<ActionResult<List<ProjectDto>>> Get()
     {
-        var result = await _mediator.Send(new GetQuery{ CurrentUserId = Guid.Parse(UserId)});
+        var result = await _mediator.Send(new GetQuery());
 
         return HandleMediatorResponse(result);
-    }
+    } 
+    // [HttpGet]
+    // public async Task<ActionResult<List<ProjectDto>>> Get()
+    // {
+    //     var result = await _mediator.Send(new GetQuery{ CurrentUserId = Guid.Parse(UserId)});
+    //
+    //     return HandleMediatorResponse(result);
+    // }
 }
