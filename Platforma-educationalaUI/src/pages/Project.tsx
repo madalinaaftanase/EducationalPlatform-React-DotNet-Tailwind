@@ -5,6 +5,18 @@ function Project() {
   const [html, setHtml] = useState("");
   const url = window.location.href;
 
+  // const url = `${config.baseApiUrl}/Projects/${project.id}`;
+  // useEffect(() => {
+  //   init();
+  // }, []);
+
+  // let init = async () => {
+  //   const response = await getById(url);
+  //   if (response.responseStatus == 200) {
+  //     //setProjects(response.projects);
+  //   }
+  // };
+
   return (
     <main className="grid grid-rows-2  md:grid-cols-[3fr_2fr]">
       <section>

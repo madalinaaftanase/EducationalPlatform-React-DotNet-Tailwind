@@ -22,6 +22,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/Joc" element={<Project />} />
+          <Route path="/" element={<Project />} />
           <Route path="/Signin" element={<Signin />} />
           <Route path="/Login/Student" element={<LoginPage />} />
           <Route path="/Login/Teacher" element={<LoginPage />} />

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { ProjectsResponse } from "../models/project/Project";
-import { useGetCookie } from "../utilities/cookieFunctions";
+import { getCookie } from "../utilities/cookieFunctions";
 
 export const getAll = async (url: string) => {
   //   const response = await axios
@@ -12,6 +12,18 @@ export const getAll = async (url: string) => {
   //     });
   //     return response.data;
   return proiecte;
+};
+
+export const getById = async (url: string) => {
+  //   const response = await axios
+  //   .get<Project>(url, {
+  //     headers: { Authorization: `Bearer ${getCookie("token")}` },
+  //   })
+  //     .catch((err) => {
+  //       return err.response.data;
+  //     });
+  //     return response.data;
+  return proiecte.projects[0];
 };
 
 const proiecte: ProjectsResponse = {

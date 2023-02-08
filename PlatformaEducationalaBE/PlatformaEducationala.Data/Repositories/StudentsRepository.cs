@@ -19,7 +19,6 @@ public class StudentsRepository : IStudentRepository
         _mapper = new MapperConfiguration(cfg =>
         {
             cfg.CreateMap<Student, StudentDto>();
-            cfg.CreateMap<List<Student>, List<StudentDto>>();
         }).CreateMapper();
     }
 
