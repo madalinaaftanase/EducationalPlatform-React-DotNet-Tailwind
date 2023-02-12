@@ -4,9 +4,9 @@ import { useBlocklyWorkspace } from "react-blockly";
 import Blockly, { WorkspaceSvg } from "blockly";
 import { toolboxCategories } from "./toolboxCategories";
 
-interface BlockyMainInterface{
+interface BlockyMainInterface {
   setHtml: Function;
-  xmlFromDb?: string
+  xmlFromDb?: string;
 }
 
 export default function BlockyMain({ setHtml, xmlFromDb }: BlockyMainInterface) {
@@ -20,15 +20,19 @@ export default function BlockyMain({ setHtml, xmlFromDb }: BlockyMainInterface) 
       workspace.scrollbar.setContainerVisible(true);
     } else {
       workspace.scrollbar.setContainerVisible(false);
-    } 
+    }
     setJavascriptCode(code);
     setHtml(code);
+    //to do
+    // when save button is clicked save xml and put in db
+    // var xml = Blockly.Xml.workspaceToDom(workspace);
+    //var xmlText = Blockly.Xml.domToText(xml);
   }
 
-  const { workspace, xml } = useBlocklyWorkspace({
+  const { workspace } = useBlocklyWorkspace({
     ref: blocklyRef,
     toolboxConfiguration: toolboxCategories as any,
-    initialXml: xmlFromDb??initialXml,
+    initialXml: xmlFromDb ?? initialXml,
     workspaceConfiguration: {
       grid: {
         spacing: 20,

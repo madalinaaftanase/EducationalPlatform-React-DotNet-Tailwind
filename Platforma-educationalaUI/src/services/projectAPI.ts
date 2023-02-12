@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ProjectsResponse } from "../models/project/Project";
+import { ProjectResponse, ProjectsResponse } from "../models/project/Project";
 import { getCookie } from "../utilities/cookieFunctions";
 
 export const getAll = async (url: string) => {
@@ -23,7 +23,7 @@ export const getById = async (url: string) => {
   //       return err.response.data;
   //     });
   //     return response.data;
-  return proiecte.projects[0];
+  return proiect;
 };
 
 const proiecte: ProjectsResponse = {
@@ -31,6 +31,16 @@ const proiecte: ProjectsResponse = {
     { id: "1", name: "proiect1", xml: "xml" },
     { id: "2", name: "proiect2", xml: "xml" },
   ],
+  errors: [],
+  responseStatus: 200,
+};
+
+const proiect: ProjectResponse = {
+  project: {
+    id: "1",
+    name: "proiect1",
+    xml: '<xml xmlns="https://developers.google.com/blockly/xml"><block type="document" id="*[p(l)IBYpSM_7LvsSbP" x="70" y="70"><statement name="Content"><block type="div" id="Vg[u(ms=H/-lkj(LJUgf"></block></statement></block></xml>',
+  },
   errors: [],
   responseStatus: 200,
 };

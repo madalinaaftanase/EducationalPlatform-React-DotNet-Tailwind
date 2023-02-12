@@ -7,7 +7,7 @@ import "./App.css";
 import Students from "../../pages/Students";
 import LoginPage from "../../pages/Login";
 import Signin from "../../pages/Signin";
-import ErrorResponse from "../ErrorResponse";
+import ErrorResponse from "../common/ErrorResponse";
 import { useContext } from "react";
 import { UserContext } from "../../hooks/UserContext";
 import Projects from "../../pages/Projects";
@@ -28,6 +28,7 @@ function App() {
           <Route path="/Login/Teacher" element={<LoginPage />} />
           <Route path="/Students" element={<Students />} />
           <Route path="/Proiecte" element={<Projects />} />
+          <Route path="/Proiecte/:id" element={<Project />} />
           <Route path="/Error" element={<ErrorResponse />} />
         </Routes>
       </SWRConfig>

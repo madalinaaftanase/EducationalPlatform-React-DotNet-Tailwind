@@ -1,29 +1,42 @@
-import {useState} from 'react'
-import BlockyMain from '../components/blockyMain/BlockyMain';
-import RightSideLayout from '../components/game/RightSideLayout';
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+
+import BlockyMain from "../components/blockyMain/BlockyMain";
+import LoadingSpinner from "../components/common/LoadingSpinner";
+import RightSideLayout from "../components/game/RightSideLayout";
+import config from "../config";
+import { getById } from "../services/projectAPI";
+
 function Project() {
-  const [html, setHtml] = useState("");
-  const url = window.location.href;
+  const [initialXml, setInitialXml] = useState("");
+  const [htmlText, setHtml] = useState("");
+  const params = useParams();
 
-  // const url = `${config.baseApiUrl}/Projects/${project.id}`;
-  // useEffect(() => {
-  //   init();
-  // }, []);
+  useEffect(() => {
+    init();
+  }, []);
 
-  // let init = async () => {
-  //   const response = await getById(url);
-  //   if (response.responseStatus == 200) {
-  //     //setProjects(response.projects);
-  //   }
-  // };
+  let init = async () => {
+    if (params.id) {
+      const url = `${config.baseApiUrl}/Proiecte/${params.id}`;
+      const response = await getById(url);
+      if (response.responseStatus == 200) {
+        setInitialXml(response.project.xml);
+      }
+    }
+  };
+  // to do
+  if (!initialXml && params.id) {
+    return <LoadingSpinner />;
+  }
 
   return (
     <main className="grid grid-rows-2  md:grid-cols-[3fr_2fr]">
       <section>
-        <BlockyMain setHtml={setHtml} />
+        <BlockyMain setHtml={setHtml} xmlFromDb={initialXml} />
       </section>
       <section className="bg-gray-200">
-        <RightSideLayout htmlText={html} />
+        <RightSideLayout htmlText={htmlText} />
       </section>
     </main>
   );

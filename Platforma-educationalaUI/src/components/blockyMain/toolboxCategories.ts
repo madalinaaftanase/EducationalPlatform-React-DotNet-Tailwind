@@ -22,7 +22,7 @@ export const toolboxCategories = {
             },
             {
               kind: "block",
-              type: "content",
+              type: "body",
             },
           ],
         },
