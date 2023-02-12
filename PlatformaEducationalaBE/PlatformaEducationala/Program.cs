@@ -94,9 +94,9 @@ if (app.Environment.IsDevelopment())
     });
 }
 
+app.UseMiddleware<AuthenticationMiddleware>();
 app.UseAuthentication();
 app.UseAuthorization();
-app.UseMiddleware<AuthenticationMiddleware>();
 
 app.UseCors(p => p.WithOrigins("http://localhost:3000")
    .AllowAnyHeader()

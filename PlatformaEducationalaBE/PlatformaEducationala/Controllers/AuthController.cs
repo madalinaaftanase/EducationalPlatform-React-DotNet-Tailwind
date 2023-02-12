@@ -26,7 +26,7 @@ namespace PlatformaEducationala.Api.Controllers
             return HandleMediatorResponse(result);
         }
 
-        [HttpPost("Register/Teacher")]
+        [HttpPost("Register/Profesor")]
         public async Task<ActionResult> Post([FromBody] CreateTeacherAccountCommand command)
         {
             var result = await _mediator.Send(command);
@@ -40,7 +40,7 @@ namespace PlatformaEducationala.Api.Controllers
             return HandleMediatorResponse(result);
         }
         
-        [HttpPost("Login/Teacher")]
+        [HttpPost("Login/Profesor")]
         public async Task<ActionResult<LoginTeacherResponse>> Post([FromBody] LoginTeacherCommand command)
         {
             var result = await _mediator.Send(command);

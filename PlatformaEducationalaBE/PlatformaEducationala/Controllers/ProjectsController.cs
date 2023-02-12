@@ -17,19 +17,12 @@ public class ProjectsController : ApiController
     {
         _mediator = mediator;
     }
-
+    
     [HttpGet]
     public async Task<ActionResult<List<ProjectDto>>> Get()
     {
-        var result = await _mediator.Send(new GetQuery());
-
+        var result = await _mediator.Send(new GetQuery{ CurrentUserId = Guid.Parse(UserId)});
+    
         return HandleMediatorResponse(result);
-    } 
-    // [HttpGet]
-    // public async Task<ActionResult<List<ProjectDto>>> Get()
-    // {
-    //     var result = await _mediator.Send(new GetQuery{ CurrentUserId = Guid.Parse(UserId)});
-    //
-    //     return HandleMediatorResponse(result);
-    // }
+    }
 }

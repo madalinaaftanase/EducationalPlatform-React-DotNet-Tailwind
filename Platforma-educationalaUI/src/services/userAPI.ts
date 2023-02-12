@@ -4,12 +4,14 @@ import { LoginRequest } from "../models/user/User";
 import { LoginResponse } from "../models/student/LoginResponse";
 import { getCookie } from "../utilities/cookieFunctions";
 
-const GetAll = (url: string) =>
+const GetAll = (url: string) => {
+  var token = getCookie("token");
   axios
     .get<StudentsResponse>(url, {
-      headers: { Authorization: `Bearer ${getCookie("token")}` },
+      headers: { 'Authorization': `Bearer ${token}`},
     })
     .then((res) => res.data);
+};
 
 const CreateAccount = (url: string, accountData: StudentSigninRequest) =>
   axios.post(url, accountData).then((res) => {
