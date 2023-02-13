@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using PlatformaEducationala.Core.Project.Commands.Update;
 using PlatformaEducationala.Core.Project.Models;
 using PlatformaEducationala.Core.Project.Queries.Get;
 
@@ -25,4 +26,12 @@ public class ProjectsController : ApiController
     
         return HandleMediatorResponse(result);
     }
+
+    [HttpPost("/Save")]
+    public async Task<ActionResult<string>> Save()
+    {
+        var result = await _mediator.Send(new SaveCommand { CurrentUserId = Guid.Parse((UserId)) });
+        return HandleMediatorResponse(result);
+    }
+
 }
