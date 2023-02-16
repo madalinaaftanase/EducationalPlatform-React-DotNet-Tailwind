@@ -22,10 +22,12 @@ function Projects() {
   };
 
   return (
-    <div className="flex-col p-8">
-      <AddButton />
-      <h1>Projects</h1>
-      <div className="flex flex-col gap-4 bg-blue-500">
+    <div className="flex flex-col p-8 gap-4">
+      <div className="flex justify-between">
+        <h1>Proiectele tale:</h1>
+        <AddButton />
+      </div>
+      <div className="flex gap-4">
         {projects.map((value) => {
           return <Card project={value} key={value.id} />;
         })}

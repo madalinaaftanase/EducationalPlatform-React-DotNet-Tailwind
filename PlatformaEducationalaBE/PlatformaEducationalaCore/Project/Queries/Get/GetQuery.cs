@@ -3,42 +3,45 @@ using PlatformaEducationala.Core.Project.Models;
 using PlatformaEducationala.Core.Repositories;
 using Serilog;
 
-namespace PlatformaEducationala.Core.Project.Queries.Get
+namespace PlatformaEducationala.Core.Project.Queries.Get;
+
+public class GetQuery : IRequest<GetResponse>
 {
-    public class GetQuery : IRequest<GetResponse>
-    {
-        public Guid? CurrentUserId { get; set; } = Guid.Empty;
+    public Guid CurrentUserId { get; set; }
+}
 
+public class GetQueryHndler : IRequestHandler<GetQuery, GetResponse>
+{
+    private readonly ILogger _logger;
+    private readonly IProjectRepository _projectRepository;
+
+
+    public GetQueryHndler(IProjectRepository projectRepository, ILogger logger)
+    {
+        _projectRepository = projectRepository;
+        _logger = logger;
     }
 
-    public class GetQueryHndler : IRequestHandler<GetQuery, GetResponse>
+    public async Task<GetResponse> Handle(GetQuery request, CancellationToken cancellationToken)
     {
-        private readonly IProjectRepository _projectRepository;
-        private readonly ILogger _logger; 
+        _logger.Information("Start Handle");
+        var projects = await _projectRepository.GetAll(request.CurrentUserId);
 
-
-        public GetQueryHndler(IProjectRepository projectRepository , ILogger logger)
+        if (projects == null)
         {
-            _projectRepository = projectRepository;
-            _logger = logger;
+            return new GetResponse();
         }
 
-        public async Task<GetResponse> Handle(GetQuery request, CancellationToken cancellationToken)
+        var result = new GetResponse
         {
-            _logger.Information("Exemplu logging");
-            var projects = await _projectRepository.GetAll();
-
-            var result = new GetResponse
+            Projects = projects.Select(project => new ProjectDto
             {
-                Projects = projects.Select(project => new ProjectDto()
-                {
-                    Name = project.Name,
-                    Xml = project.Xml
-                }).ToList(),
-            };
+                Name = project.Name,
+                Id = project.Id,
+                Xml = project.Xml
+            }).ToList()
+        };
 
-            return result;
-        }
+        return result;
     }
-
 }

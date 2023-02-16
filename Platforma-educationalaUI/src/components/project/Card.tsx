@@ -9,7 +9,7 @@ function Card({ project }: CardInterface) {
   const navigator = useNavigate();
   return (
     <div
-      className="block max-w-sm p-6 bg-blue-200 border border-gray-200 rounded-lg shadow hover:bg-blue-400 cursor-pointer "
+      className="block max-w-sm p-6 bg-mintBlue border border-gray-200 rounded-lg shadow hover:bg-mint cursor-pointer min-w-[30%]"
       onClick={() => {
         navigator(`/Proiecte/${project.id}`);
       }}

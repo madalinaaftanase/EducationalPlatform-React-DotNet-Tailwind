@@ -31,6 +31,9 @@ namespace PlatformaEducationala.Data.Migrations
                     b.Property<Guid>("TecherId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<int>("Value")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("TecherId");
@@ -43,6 +46,10 @@ namespace PlatformaEducationala.Data.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid>("TeacherId")
                         .HasColumnType("uniqueidentifier");
@@ -63,8 +70,15 @@ namespace PlatformaEducationala.Data.Migrations
                     b.Property<Guid>("GradeId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<Guid>("StudentId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Xml")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

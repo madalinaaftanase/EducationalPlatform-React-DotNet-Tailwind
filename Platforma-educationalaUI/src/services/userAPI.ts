@@ -8,7 +8,7 @@ const GetAll = (url: string) => {
   var token = getCookie("token");
   axios
     .get<StudentsResponse>(url, {
-      headers: { 'Authorization': `Bearer ${token}`},
+      headers: { Authorization: `Bearer ${token}` },
     })
     .then((res) => res.data);
 };

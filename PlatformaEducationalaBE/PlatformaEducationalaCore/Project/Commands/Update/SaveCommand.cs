@@ -48,7 +48,7 @@ public class SaveCommandHandler : IRequestHandler<SaveCommand, SaveResponse>
             return response;
         }
 
-        if (project.Result.UserId != command.CurrentUserId) // ???
+        if (project.Result.StudentId != command.CurrentUserId) // ???
         {
             response.ResponseStatus = ResultStatus.Forbidden;
             response.Errors = new List<string> { "Nu ai acces la acest proiect" };

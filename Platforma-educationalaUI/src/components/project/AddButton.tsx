@@ -1,6 +1,6 @@
 function AddButton() {
   return (
-    <button className="bg-blue-500 hover:bg-blue-400 text-yellow font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+    <button className="bg-mintBlue hover:bg-mint text-yellow font-bold py-2 px-4 border-b-4 border-mint hover:border-mintBlue rounded">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"

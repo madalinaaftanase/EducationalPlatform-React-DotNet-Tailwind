@@ -1,5 +1,6 @@
-﻿using System.Data.Entity;
-using AutoMapper;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using PlatformaEducationala.Core.Entities;
 using PlatformaEducationala.Core.Project.Models;
 using PlatformaEducationala.Core.Repositories;
 using PlatformaEducationala.Data.Context;
@@ -8,25 +9,25 @@ namespace PlatformaEducationala.Data.Repositories;
 
 public class ProjectsRepository : IProjectRepository
 {
-    private readonly IMapper _mapper;
     private readonly PlatformDBContext _platformDbContext;
 
-    public ProjectsRepository(PlatformDBContext platformDbContext, IMapper mapper)
+    public ProjectsRepository(PlatformDBContext platformDbContext)
     {
         _platformDbContext = platformDbContext;
-        _mapper = mapper;
     }
 
-    public async Task<List<ProjectDto>> GetAll()
+    public async Task<List<ProjectDto>> GetAll(Guid studentId)
     {
-        //refactor
-        var projects = _platformDbContext.Projects.ToListAsync();
-        return _mapper.Map<List<ProjectDto>>(projects);
+        var projects = await _platformDbContext.Projects
+                                        .Where(p => p.StudentId.Equals(studentId)).ToListAsync();
+        var result = MapperModels<Project, ProjectDto>.MapList(projects);
+
+        return result;
     }
 
     public async Task<ProjectDto> GetById(Guid id)
     {
         var project = _platformDbContext.Projects.SingleOrDefault(p => p.Id == id);
-        return project ==null? _mapper.Map<ProjectDto>(project):null;
+        return project == null ? MapperModels<Project,ProjectDto>.Map(project) : null;
     }
 }

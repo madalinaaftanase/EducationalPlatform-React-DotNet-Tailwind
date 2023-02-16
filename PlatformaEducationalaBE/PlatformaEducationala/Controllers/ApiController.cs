@@ -4,14 +4,16 @@ using PlatformaEducationala.Core.Common;
 using PlatformaEducationala.Core.Enums;
 
 namespace PlatformaEducationala.Api.Controllers;
+
 [ApiController]
 [Authorize(Roles = TeacherOrStudent)]
-public class ApiController: ControllerBase
+public class ApiController : ControllerBase
 {
     protected const string TeacherRole = "teacher";
     protected const string StudentRole = "student";
     protected const string TeacherOrStudent = TeacherRole + "," + StudentRole;
     protected string UserId => HttpContext.Items["UserId"]?.ToString();
+
     protected ActionResult HandleMediatorResponse(BaseResponse result)
     {
         switch (result.ResponseStatus)

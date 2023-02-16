@@ -1,8 +1,7 @@
-﻿
-
-using System.IdentityModel.Tokens.Jwt;
+﻿using System.IdentityModel.Tokens.Jwt;
 
 namespace PlatformaEducationala.Api.Services;
+
 public class AuthenticationMiddleware
 {
     private readonly RequestDelegate _next;
@@ -15,9 +14,13 @@ public class AuthenticationMiddleware
     public async Task InvokeAsync(HttpContext context)
     {
         var path = context.Request.Path;
-        var endpointsToExclude = new[] { "/api/Auth/Login/Student", "/api/Auth/Login/Profesor", "/api/Auth/Register/Profesor", "/api/Auth/Register/Student" };
-        
-        if (endpointsToExclude.Contains(path))
+        var endpointsToExclude = new[]
+        {
+            "/api/Auth/Login/Student", "/api/Auth/Login/Profesor", "/api/Auth/Register/Profesor",
+            "/api/Auth/Register/Student"
+        };
+
+        if (endpointsToExclude.Any(endpoint => endpoint == path))
         {
             await _next(context);
             return;
@@ -31,12 +34,14 @@ public class AuthenticationMiddleware
             var handler = new JwtSecurityTokenHandler();
             var jwt = handler.ReadJwtToken(token);
             var claims = jwt.Claims;
-            var userId = claims.FirstOrDefault(c => c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")?.Value;
+            var userId = claims.FirstOrDefault(c =>
+                c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")?.Value;
             if (userId == null)
             {
                 context.Response.StatusCode = 401;
                 return;
             }
+
             context.Items["UserId"] = userId;
         }
         else

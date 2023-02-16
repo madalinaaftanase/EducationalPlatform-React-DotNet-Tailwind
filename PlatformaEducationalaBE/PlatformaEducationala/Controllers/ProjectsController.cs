@@ -18,20 +18,19 @@ public class ProjectsController : ApiController
     {
         _mediator = mediator;
     }
-    
+
     [HttpGet]
     public async Task<ActionResult<List<ProjectDto>>> Get()
     {
-        var result = await _mediator.Send(new GetQuery{ CurrentUserId = Guid.Parse(UserId)});
-    
+        var result = await _mediator.Send(new GetQuery { CurrentUserId = Guid.Parse(UserId) });
+
         return HandleMediatorResponse(result);
     }
 
     [HttpPost("/Save")]
     public async Task<ActionResult<string>> Save()
     {
-        var result = await _mediator.Send(new SaveCommand { CurrentUserId = Guid.Parse((UserId)) });
+        var result = await _mediator.Send(new SaveCommand { CurrentUserId = Guid.Parse(UserId) });
         return HandleMediatorResponse(result);
     }
-
 }
