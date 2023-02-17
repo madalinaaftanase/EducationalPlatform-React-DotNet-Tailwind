@@ -18,7 +18,7 @@ interface UserContextProviderInterface {
 }
 
 function UserContextProvider({ children }: UserContextProviderInterface) {
-  const [isAuthentificated, setIsAuthentificated] = useState(getCookie("token")==null?false:true);
+  const [isAuthentificated, setIsAuthentificated] = useState(!!getCookie("token"));
   const [userName, setUserName] = useState("");
 
   const setToken = () => {
