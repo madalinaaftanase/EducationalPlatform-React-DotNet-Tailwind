@@ -1,7 +1,5 @@
-﻿
-namespace PlatformaEducationala.Core.User.Models;
-
-public class StudentDto
+﻿namespace PlatformaEducationala.Core.User.Models;
+public class StudentDto : Common.User
 {
-    public string Email { get; set; }
+
 }

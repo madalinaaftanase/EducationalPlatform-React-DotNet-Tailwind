@@ -7,7 +7,7 @@ namespace PlatformaEducationala.Core.User.Commands.CreateAccount
     {
         public CreateStudentAccountValidator()
         {
-            RuleFor(createAcoountCommand => createAcoountCommand.Email)
+            RuleFor(createAccountCommand => createAccountCommand.Email)
                .NotEmpty()
                .MinimumLength(8)
                .MaximumLength(50);

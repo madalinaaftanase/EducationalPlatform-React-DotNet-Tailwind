@@ -14,5 +14,6 @@ public class StudentsConfiguration: IEntityTypeConfiguration<Student>
         builder.Property(x=> x.FirstName).IsRequired();
         builder.Property(x=> x.LastName).IsRequired();
         builder.Property(x=> x.Password).IsRequired();
+
     }
 }

@@ -9,12 +9,18 @@ public class PlatformDBContext : DbContext
 {
     public DbSet<Student> Students { get; set; }
     public DbSet<Teacher> Teachers { get; set; }
+    public DbSet<Project> Projects { get; set; }
+    public DbSet<Group> Groups { get; set; }
+    public DbSet<Grade> Grades { get; set; }
+    public DbSet<StudentGroup> StudentGroups { get; set; }
+
     public PlatformDBContext(DbContextOptions<PlatformDBContext> options) : base(options)
     {
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        base.OnModelCreating(modelBuilder);
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
     }
 }

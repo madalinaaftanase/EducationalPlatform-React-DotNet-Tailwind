@@ -17,7 +17,7 @@ function Login() {
   });
 
   useEffect(() => {
-    if (window.location.href.includes("student")) {
+    if (window.location.href.includes("Student")) {
       setIsStudent(true);
     }
   }, []);
@@ -30,16 +30,17 @@ function Login() {
       return setErrors("Toate campurile sunt obligatorii");
     }
 
-    let url = `${config.baseApiUrl}/auth/login/teacher`;
+    let url = `${config.baseApiUrl}/Auth/Login/Teacher`;
     if (isStudent) {
-      url = `${config.baseApiUrl}/auth/login/student`;
+      url = `${config.baseApiUrl}/Auth/Login/Student`;
     }
 
-    
     let response = await LoginAccount(url, { ...loginInput });
-    if(response.status == 200){
-      document.cookie = `token=${response.token}; path=/;`;
-      setToken(response.token);
+    if (response.status == 200) {
+      console.log(response);
+      let token = response.data.token;
+      document.cookie = `token=${token}; path=/;`;
+      setToken(token);
       navigator("/");
     } else {
       setErrors(response.errors[0]);
@@ -54,7 +55,7 @@ function Login() {
 
     setLoginInput(actualLoginInput);
   };
-  
+
   return (
     <section className="h-screen bg-try">
       <div className="grid grid-cols-2 p-8 w-[1200px] m-auto">
@@ -96,7 +97,7 @@ function Login() {
                 <a
                   href="#!"
                   className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
-                  onClick={() => (window.location.href = "/login/teacher")}
+                  onClick={() => (window.location.href = "/Login/Teacher")}
                 >
                   Login cont profesor
                 </a>
@@ -108,7 +109,7 @@ function Login() {
                 <a
                   href="#!"
                   className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
-                  onClick={() => (window.location.href = "/login/student")}
+                  onClick={() => (window.location.href = "/Login/Student")}
                 >
                   Login cont student
                 </a>
@@ -119,7 +120,7 @@ function Login() {
               <a
                 href="#!"
                 className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
-                onClick={() => (window.location.href = "/signin")}
+                onClick={() => (window.location.href = "/Signin")}
               >
                 Inregistreaza-te acum!
               </a>

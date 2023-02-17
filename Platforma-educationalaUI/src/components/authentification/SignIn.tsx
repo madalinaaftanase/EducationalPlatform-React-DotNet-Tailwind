@@ -27,9 +27,9 @@ function SignIn() {
     if (formInput.password.length < 8)
       return setErrors("Parola trebuie sa aibe cel putin 8 caractere");
 
-    var url = `${config.baseApiUrl}/auth/register/student`;
+    var url = `${config.baseApiUrl}/Auth/Register/Student`;
     if (isTeacher) {
-      url = `${config.baseApiUrl}/auth/register/teacher`;
+      url = `${config.baseApiUrl}/Auth/Register/Teacher`;
     }
     CreateAccount(url, { ...formInput });
   };
@@ -120,7 +120,7 @@ function SignIn() {
               <a
                 href="#!"
                 className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
-                onClick={() => (window.location.href = "/login/student")}
+                onClick={() => (window.location.href = "/Login/Student")}
               >
                 Logheaza-te acum!
               </a>

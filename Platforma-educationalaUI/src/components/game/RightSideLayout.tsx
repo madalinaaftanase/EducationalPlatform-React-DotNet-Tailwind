@@ -6,6 +6,7 @@ function RightSideLayout({ htmlText }: { htmlText: string }) {
   const [isResultComponent, setResultComponent] = useState(true);
   return (
     <>
+      <p>Numele proiectului</p>
       <div className="bg-[#eb5353] flex gap-4 p-2 text-white ">
         {/* need to be change when component is displayed not on focus */}
         <button

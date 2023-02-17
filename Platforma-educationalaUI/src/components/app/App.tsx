@@ -1,5 +1,5 @@
 import { Route, Routes, useNavigate } from "react-router-dom";
-import Game from "../../pages/Game";
+import Project from "../../pages/Project";
 import swrConfig from "../../swrConfig";
 import { SWRConfig } from "swr";
 import { Navbar } from "../navbar/Navbar";
@@ -7,9 +7,10 @@ import "./App.css";
 import Students from "../../pages/Students";
 import LoginPage from "../../pages/Login";
 import Signin from "../../pages/Signin";
-import ErrorResponse from "../ErrorResponse";
-import { useContext, useEffect } from "react";
+import ErrorResponse from "../common/ErrorResponse";
+import { useContext } from "react";
 import { UserContext } from "../../hooks/UserContext";
+import Projects from "../../pages/Projects";
 
 function App() {
   const navigator = useNavigate();
@@ -20,12 +21,15 @@ function App() {
       <SWRConfig value={swrConfig}>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Game />} />
-          <Route path="/signin" element={<Signin />} />
-          <Route path="/login/student" element={<LoginPage />} />
-          <Route path="/login/teacher" element={<LoginPage />} />
-          <Route path="/students" element={<Students />} />
-          <Route path="/error" element={<ErrorResponse />} />
+          <Route path="/Joc" element={<Project />} />
+          <Route path="/" element={<Project />} />
+          <Route path="/Signin" element={<Signin />} />
+          <Route path="/Login/Student" element={<LoginPage />} />
+          <Route path="/Login/Teacher" element={<LoginPage />} />
+          <Route path="/Students" element={<Students />} />
+          <Route path="/Proiecte" element={<Projects />} />
+          <Route path="/Proiecte/:id" element={<Project />} />
+          <Route path="/Error" element={<ErrorResponse />} />
         </Routes>
       </SWRConfig>
     );
@@ -35,10 +39,10 @@ function App() {
     <SWRConfig value={swrConfig}>
       <Routes>
         <Route path="/" element={<Signin />} />
-        <Route path="/signin" element={<Signin />} />
-        <Route path="/login/student" element={<LoginPage />} />
-        <Route path="/login/teacher" element={<LoginPage />} />
-        <Route path="/error" element={<ErrorResponse />} />
+        <Route path="/Signin" element={<Signin />} />
+        <Route path="/Login/Student" element={<LoginPage />} />
+        <Route path="/Login/Teacher" element={<LoginPage />} />
+        <Route path="/Error" element={<ErrorResponse />} />
       </Routes>
     </SWRConfig>
   );

@@ -1,5 +1,4 @@
-﻿
-using MediatR;
+﻿using MediatR;
 using PlatformaEducationala.Core.Repositories;
 using PlatformaEducationala.Core.Utils;
 

@@ -24,8 +24,8 @@ Blockly.JavaScript["document"] = function (block) {
   </html>`;
 };
 
-let content = generateBaseFrameComponent("content");
-let contentFunction = generateFunction("content", "body");
+let content = generateBaseFrameComponent("body");
+let contentFunction = generateFunction("body", "body");
 
 let header = generateBaseFrameComponent("header");
 let headerFunction = generateFunction("header", "head");

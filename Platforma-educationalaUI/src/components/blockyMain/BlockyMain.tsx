@@ -1,10 +1,15 @@
 import "../blocky";
 import { useEffect, useRef, useState } from "react";
-import { BlocklyWorkspace, useBlocklyWorkspace } from "react-blockly";
+import { useBlocklyWorkspace } from "react-blockly";
 import Blockly, { WorkspaceSvg } from "blockly";
 import { toolboxCategories } from "./toolboxCategories";
 
-export default function BlockyMain({ setHtml }: { setHtml: Function }) {
+interface BlockyMainInterface {
+  setHtml: Function;
+  xmlFromDb?: string;
+}
+
+export default function BlockyMain({ setHtml, xmlFromDb }: BlockyMainInterface) {
   const blocklyRef = useRef(null);
   const [javascriptCode, setJavascriptCode] = useState("");
   const initialXml = '<xml xmlns="http://www.w3.org/1999/xhtml"></xml>';
@@ -18,12 +23,16 @@ export default function BlockyMain({ setHtml }: { setHtml: Function }) {
     }
     setJavascriptCode(code);
     setHtml(code);
+    //to do
+    // when save button is clicked save xml and put in db
+    // var xml = Blockly.Xml.workspaceToDom(workspace);
+    //var xmlText = Blockly.Xml.domToText(xml);
   }
 
-  const { workspace, xml } = useBlocklyWorkspace({
+  const { workspace } = useBlocklyWorkspace({
     ref: blocklyRef,
     toolboxConfiguration: toolboxCategories as any,
-    initialXml: initialXml,
+    initialXml: xmlFromDb ?? initialXml,
     workspaceConfiguration: {
       grid: {
         spacing: 20,

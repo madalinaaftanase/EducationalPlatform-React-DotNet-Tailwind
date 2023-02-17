@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { getCookie } from "../utilities/cookieFunctions";
 
 interface UserContextInterface {
   isAuthentificated: boolean;
@@ -17,13 +18,12 @@ interface UserContextProviderInterface {
 }
 
 function UserContextProvider({ children }: UserContextProviderInterface) {
-  const [isAuthentificated, setIsAuthentificated] = useState(false);
+  const [isAuthentificated, setIsAuthentificated] = useState(!!getCookie("token"));
   const [userName, setUserName] = useState("");
 
-  const setToken = (token: string) => {
+  const setToken = () => {
     setIsAuthentificated(true);
-    setUserName("Madalina");
-    // ia numele din token si il seteaza
+    setUserName(" Madalina");
   };
 
   return (

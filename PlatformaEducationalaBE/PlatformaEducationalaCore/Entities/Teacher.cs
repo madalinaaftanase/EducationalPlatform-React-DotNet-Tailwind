@@ -1,6 +1,7 @@
-﻿
-namespace PlatformaEducationala.Core.Entities;
+﻿namespace PlatformaEducationala.Core.Entities;
 
-public class Teacher : User
+public class Teacher : Common.User
 {
+    public ICollection<Grade> Grades { get; set; }
+    public ICollection<Group> Groups { get; set; }
 }

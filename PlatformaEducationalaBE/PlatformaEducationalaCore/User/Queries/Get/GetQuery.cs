@@ -9,6 +9,7 @@ namespace PlatformaEducationala.Core.User.Queries.Get;
 
 public class GetQuery: IRequest<GetResponse>
 {
+    public Guid CurrentUserId { get; set; }
 }
 
 public class GetQueryHndler : IRequestHandler<GetQuery, GetResponse>

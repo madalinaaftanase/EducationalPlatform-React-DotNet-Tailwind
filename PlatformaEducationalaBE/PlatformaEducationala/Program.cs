@@ -1,3 +1,4 @@
+using System.Text;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -7,8 +8,6 @@ using PlatformaEducationala.Core.User.Queries.Get;
 using PlatformaEducationala.Data;
 using Serilog;
 using Swashbuckle.AspNetCore.Filters;
-using System.Security.Claims;
-using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,36 +16,31 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new OpenApiInfo
     {
-        options.SwaggerDoc("v1", new OpenApiInfo
-        {
-            Version = "v1",
-            Title = "Platforma educationala",
-            Description = "Foloseste endpoint-ul de login sa obtii jwt-ul necesar autorizarii"
-        });
-
-        options.AddSecurityDefinition("oauth", new OpenApiSecurityScheme
-        {
-            Description = "Standard Auth header using Bearer scheme",
-            In = ParameterLocation.Header,
-            Name = "Authorization",
-            Type = SecuritySchemeType.ApiKey
-
-        });
-        options.OperationFilter<SecurityRequirementsOperationFilter>();
+        Version = "v1",
+        Title = "Platforma educationala",
+        Description = "Foloseste endpoint-ul de login sa obtii jwt-ul necesar autorizarii"
     });
 
-builder.Services.AddDB(builder.Configuration);
+    options.AddSecurityDefinition("oauth", new OpenApiSecurityScheme
+    {
+        Description = "Standard Auth header using Bearer scheme",
+        In = ParameterLocation.Header,
+        Name = "Authorization",
+        Type = SecuritySchemeType.ApiKey
+    });
+    options.OperationFilter<SecurityRequirementsOperationFilter>();
+});
+
+builder.Services.AddDb(builder.Configuration);
 
 builder.Services.AddMediatR(typeof(GetQuery).Assembly);
 
-builder.Services.AddSpaStaticFiles(Configuration =>
-{
-    Configuration.RootPath = " wwwroot/spa";
-});
+builder.Services.AddSpaStaticFiles(Configuration => { Configuration.RootPath = " wwwroot/spa"; });
 
 builder.Services.AddCors();
-
 builder.Host.UseSerilog((ctx, lc) => lc
     .WriteTo.Console()
     .WriteTo.File("../logs/logging.txt"));
@@ -59,22 +53,21 @@ builder.Services.AddAuthentication(options =>
 }).AddJwtBearer(o =>
 {
     o.TokenValidationParameters =
-                         new TokenValidationParameters
-                         {
-                             ValidateAudience = false,
-                             ValidateIssuer = false,
-                             ValidateIssuerSigningKey = true,
-                             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
-                         };
+        new TokenValidationParameters
+        {
+            ValidateAudience = false,
+            ValidateIssuer = false,
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+        };
 
     o.Events = new JwtBearerEvents
     {
-        OnAuthenticationFailed = tokenInvalid =>
-        {
-            return Task.CompletedTask;
-        }
+        OnAuthenticationFailed = tokenInvalid => { return Task.CompletedTask; }
     };
 });
+
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
 
@@ -93,18 +86,16 @@ if (app.Environment.IsDevelopment())
     });
 }
 
+app.UseMiddleware<AuthenticationMiddleware>();
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseCors(p => p.WithOrigins("http://localhost:3000")
-   .AllowAnyHeader()
-   .AllowAnyMethod());
+    .AllowAnyOrigin()
+    .AllowAnyHeader()
+    .AllowAnyMethod());
 
 app.MapControllers();
 
-//will use the angular static files only when the environment is different from the developement one
-if (!app.Environment.IsDevelopment())
-{
-    app.UseSpa(spa => spa.Options.SourcePath = "wwwroot/spa");
-}
+if (!app.Environment.IsDevelopment()) app.UseSpa(spa => spa.Options.SourcePath = "wwwroot/spa");
 app.Run();
