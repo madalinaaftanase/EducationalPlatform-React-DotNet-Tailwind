@@ -1,12 +1,14 @@
-import AddButton from "../components/project/components/AddButton";
 import config from "../config";
 import { getAll } from "../services/projectAPI";
 import Project from "../models/project/Project";
-import Card from "../components/project/components/Card";
 
+import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Card from "../components/project/components/Card";
+import AddButton from "../components/project/components/AddButton";
 
 function Projects() {
+  const navigator = useNavigate();
   let url = `${config.baseApiUrl}/Projects`;
   const [projects, setProjects] = useState<Project[]>([]);
 
@@ -16,8 +18,10 @@ function Projects() {
 
   let init = async () => {
     const response = await getAll(url);
-    if (response.responseStatus == 200) {
+    if (response?.responseStatus == 200) {
       setProjects(response.projects);
+    } else {
+      navigator("/Error");
     }
   };
 

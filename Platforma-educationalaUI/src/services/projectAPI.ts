@@ -4,24 +4,21 @@ import { getCookie } from "../utilities/cookieFunctions";
 
 export const getAll = async (url: string) => {
   var token = getCookie("token");
-
-  const response = await axios
-    .get<ProjectsResponse>(url, {
+  try {
+    const response = await axios.get<ProjectsResponse>(url, {
       headers: { Authorization: `Bearer ${token}` },
-    })
-    .catch((err) => {
-      return err.response.data;
     });
-  return response.data;
+  } catch (err) {
+    if (axios.isAxiosError(err)) return err.response?.data as ProjectsResponse;
+  }
 };
 
 export const getById = async (url: string) => {
-  const response = await axios
-    .get<ProjectResponse>(url, {
+  try {
+    const response = await axios.get<ProjectResponse>(url, {
       headers: { Authorization: `Bearer ${getCookie("token")}` },
-    })
-    .catch((err) => {
-      return err.response.data;
     });
-  return response.data;
+  } catch (err) {
+    if (axios.isAxiosError(err)) return err.response?.data as ProjectResponse;
+  }
 };
