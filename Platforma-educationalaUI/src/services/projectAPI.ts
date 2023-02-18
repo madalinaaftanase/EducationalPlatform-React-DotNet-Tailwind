@@ -8,6 +8,7 @@ export const getAll = async (url: string) => {
     const response = await axios.get<ProjectsResponse>(url, {
       headers: { Authorization: `Bearer ${token}` },
     });
+    return response.data;
   } catch (err) {
     if (axios.isAxiosError(err)) return err.response?.data as ProjectsResponse;
   }
@@ -18,6 +19,7 @@ export const getById = async (url: string) => {
     const response = await axios.get<ProjectResponse>(url, {
       headers: { Authorization: `Bearer ${getCookie("token")}` },
     });
+    return response.data;
   } catch (err) {
     if (axios.isAxiosError(err)) return err.response?.data as ProjectResponse;
   }

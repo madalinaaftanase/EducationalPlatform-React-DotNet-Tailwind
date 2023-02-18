@@ -5,7 +5,6 @@ import BlockyMain from "../components/blocky-main/BlockyMain";
 import LoadingSpinner from "../components/common/LoadingSpinner";
 import RightSideLayout from "../components/project/right-side/RightSideLayout";
 import config from "../config";
-import { ProjectResponse } from "../models/project/Project";
 import { getById } from "../services/projectAPI";
 
 function Project() {

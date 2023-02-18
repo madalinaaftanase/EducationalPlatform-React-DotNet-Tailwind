@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Project from "../../models/project/Project";
+import Project from "../../../models/project/Project";
 
 interface CardInterface {
   project: Project;
