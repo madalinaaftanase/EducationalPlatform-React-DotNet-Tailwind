@@ -1,18 +1,29 @@
 import { useState } from "react";
 import EditableInput from "../components/EditableInput";
+import SaveButton from "../components/SaveButton";
 import HTMLResult from "./HtmlResult";
 import ResultCompiler from "./ResultCompiler";
 
 interface RightSideLayoutInterface {
   htmlText: string;
   name: string;
+  xml: string;
 }
 
-function RightSideLayout({ htmlText, name }: RightSideLayoutInterface) {
+function RightSideLayout({ htmlText, name, xml }: RightSideLayoutInterface) {
   const [isResultComponent, setResultComponent] = useState(true);
+  const [newText, setNewText] = useState(name);
+
+  const handleTextChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setNewText(event.target.value);
+  };
+
   return (
     <>
-      <EditableInput text={name} />
+      <div className="flex justify-between p-2">
+        <EditableInput text={newText} handleTextChange={handleTextChange} />
+        <SaveButton name={newText} xml={xml} />
+      </div>
       <div className="bg-[#eb5353] flex gap-4 p-2 text-white ">
         {/* need to be change when component is displayed not on focus */}
         <button

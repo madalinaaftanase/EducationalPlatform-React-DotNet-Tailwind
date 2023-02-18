@@ -42,7 +42,8 @@ public class SaveCommandHandler : IRequestHandler<SaveCommand, SaveResponse>
             };
         }
 
-        var project = _projectRepository.GetById(command.Id, command.CurrentUserId);
+        var project = await _projectRepository.GetById(command.Id, command.CurrentUserId);
+
         if (project == null)
         {
             response.ResponseStatus = ResultStatus.NotFound;
@@ -50,11 +51,17 @@ public class SaveCommandHandler : IRequestHandler<SaveCommand, SaveResponse>
             return response;
         }
 
-        if (project.Result.StudentId != command.CurrentUserId) // ???
+        project.Xml = command.Xml;
+        project.Name = command.Name;
+
+        try
         {
-            response.ResponseStatus = ResultStatus.Forbidden;
-            response.Errors = new List<string> { "Nu ai acces la acest proiect" };
-            return response;
+            await _projectRepository.UpdateAsync(project);
+        }
+        catch (Exception e)
+        {
+            response.ResponseMessage = $"Eroare la update{e}";
+            response.ResponseStatus = ResultStatus.InternalError;
         }
 
         response.ResponseMessage = "Salvat cu Succes!";

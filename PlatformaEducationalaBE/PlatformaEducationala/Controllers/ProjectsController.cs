@@ -37,10 +37,11 @@ public class ProjectsController : ApiController
         return HandleMediatorResponse(result);
     }
 
-    [HttpPost("/Save")]
-    public async Task<ActionResult<string>> Save()
+    [HttpPost("{id}/Save")]
+    public async Task<ActionResult<string>> Save([FromBody] SaveCommand command)
     {
-        var result = await _mediator.Send(new SaveCommand { CurrentUserId = Guid.Parse(UserId) });
+        command.CurrentUserId = Guid.Parse(UserId);
+        var result = await _mediator.Send(command);
         return HandleMediatorResponse(result);
     }
 }
