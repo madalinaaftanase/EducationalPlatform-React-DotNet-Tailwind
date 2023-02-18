@@ -1,5 +1,4 @@
-﻿
-using PlatformaEducationala.Core.Common;
+﻿using PlatformaEducationala.Core.Common;
 using PlatformaEducationala.Core.Project.Models;
 
 namespace PlatformaEducationala.Core.Project.Queries.Get;

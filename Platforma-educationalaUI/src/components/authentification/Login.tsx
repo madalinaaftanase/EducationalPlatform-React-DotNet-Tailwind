@@ -37,7 +37,6 @@ function Login() {
 
     let response = await LoginAccount(url, { ...loginInput });
     if (response.status == 200) {
-      console.log(response);
       let token = response.data.token;
       document.cookie = `token=${token}; path=/;`;
       setToken(token);

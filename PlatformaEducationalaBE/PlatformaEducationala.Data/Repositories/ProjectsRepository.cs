@@ -25,9 +25,10 @@ public class ProjectsRepository : IProjectRepository
         return result;
     }
 
-    public async Task<ProjectDto> GetById(Guid id)
+    public async Task<ProjectDto> GetById(Guid id, Guid studentId)
     {
-        var project = _platformDbContext.Projects.SingleOrDefault(p => p.Id == id);
-        return project == null ? MapperModels<Project,ProjectDto>.Map(project) : null;
+        var project = await _platformDbContext.Projects.FirstOrDefaultAsync(p => p.Id == id && p.StudentId == studentId);
+        return project==null? null : MapperModels<Project, ProjectDto>.Map(project);
+
     }
 }

@@ -4,24 +4,26 @@ using PlatformaEducationala.Core.Repositories;
 using Serilog;
 
 namespace PlatformaEducationala.Core.Project.Commands.Update;
-    public class SaveCommand : IRequest<SaveResponse>
-    {
-        public Guid CurrentUserId { get; set; }
-        public Guid Id { get; set; }
-        public string Xml { get; set; }
-        public string Name { get; set; }
-    }
+
+public class SaveCommand : IRequest<SaveResponse>
+{
+    public Guid CurrentUserId { get; set; }
+    public Guid Id { get; set; }
+    public string Xml { get; set; }
+    public string Name { get; set; }
+}
 
 public class SaveCommandHandler : IRequestHandler<SaveCommand, SaveResponse>
 {
-    private readonly IProjectRepository _projectRepository;
     private readonly ILogger _logger;
+    private readonly IProjectRepository _projectRepository;
 
     public SaveCommandHandler(IProjectRepository projectRepository, ILogger logger)
     {
-            _logger= logger;
-            _projectRepository= projectRepository;
+        _logger = logger;
+        _projectRepository = projectRepository;
     }
+
     public async Task<SaveResponse> Handle(SaveCommand command, CancellationToken cancellationToken)
     {
         var validator = new SaveValidator();
@@ -31,19 +33,19 @@ public class SaveCommandHandler : IRequestHandler<SaveCommand, SaveResponse>
         if (!resultValidation.IsValid)
         {
             _logger.Information("Given input failed validation:{errors}", resultValidation.Errors);
-            return new SaveResponse()
+            return new SaveResponse
             {
                 Errors = resultValidation.Errors
                     .Select(x => $"Property {x.PropertyName} failed validation. Error was {x.ErrorMessage}")
                     .ToList(),
-                ResponseStatus = Enums.ResultStatus.BadRequest
+                ResponseStatus = ResultStatus.BadRequest
             };
         }
 
-        var project = _projectRepository.GetById(command.Id);
+        var project = _projectRepository.GetById(command.Id, command.CurrentUserId);
         if (project == null)
         {
-            response.ResponseStatus=Enums.ResultStatus.NotFound;
+            response.ResponseStatus = ResultStatus.NotFound;
             response.Errors = new List<string> { "Proiectul nu a fost gasit." };
             return response;
         }
@@ -57,6 +59,5 @@ public class SaveCommandHandler : IRequestHandler<SaveCommand, SaveResponse>
 
         response.ResponseMessage = "Salvat cu Succes!";
         return response;
-
     }
 }

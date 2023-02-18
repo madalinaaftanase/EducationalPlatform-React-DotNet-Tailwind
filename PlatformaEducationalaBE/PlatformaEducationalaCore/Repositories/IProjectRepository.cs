@@ -5,5 +5,5 @@ namespace PlatformaEducationala.Core.Repositories;
     public interface IProjectRepository
     {
         Task<List<ProjectDto>> GetAll(Guid userId);
-        Task<ProjectDto> GetById(Guid id);
+        Task<ProjectDto> GetById(Guid id, Guid studentId);
 }
