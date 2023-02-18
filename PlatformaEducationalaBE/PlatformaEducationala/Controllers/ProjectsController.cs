@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using PlatformaEducationala.Core.Project.Commands.Update;
 using PlatformaEducationala.Core.Project.Models;
 using PlatformaEducationala.Core.Project.Queries.Get;
+using PlatformaEducationala.Core.Project.Queries.GetById;
 
 namespace PlatformaEducationala.Api.Controllers;
 
@@ -23,6 +24,15 @@ public class ProjectsController : ApiController
     public async Task<ActionResult<List<ProjectDto>>> Get()
     {
         var result = await _mediator.Send(new GetQuery { CurrentUserId = Guid.Parse(UserId) });
+
+        return HandleMediatorResponse(result);
+    }
+
+    [HttpGet("{id}")]
+    public async Task<ActionResult<List<ProjectDto>>> GetById([FromRoute] GetByIdQuery query)
+    {
+        query.CurrentUserId= Guid.Parse(UserId);
+        var result = await _mediator.Send(query);
 
         return HandleMediatorResponse(result);
     }

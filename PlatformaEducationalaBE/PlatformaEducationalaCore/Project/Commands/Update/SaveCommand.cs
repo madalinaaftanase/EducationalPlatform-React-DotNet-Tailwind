@@ -40,7 +40,7 @@ public class SaveCommandHandler : IRequestHandler<SaveCommand, SaveResponse>
             };
         }
 
-        var project = _projectRepository.GetById(command.Id);
+        var project = _projectRepository.GetById(command.Id, command.CurrentUserId);
         if (project == null)
         {
             response.ResponseStatus=Enums.ResultStatus.NotFound;

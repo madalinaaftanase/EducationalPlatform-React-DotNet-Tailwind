@@ -1,8 +1,8 @@
-import AddButton from "../components/project/AddButton";
+import AddButton from "../components/project/components/AddButton";
 import config from "../config";
 import { getAll } from "../services/projectAPI";
 import Project from "../models/project/Project";
-import Card from "../components/project/Card";
+import Card from "../components/project/components/Card";
 
 import { useEffect, useState } from "react";
 

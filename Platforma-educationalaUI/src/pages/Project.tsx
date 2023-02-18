@@ -1,15 +1,17 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-import BlockyMain from "../components/blockyMain/BlockyMain";
+import BlockyMain from "../components/blocky-main/BlockyMain";
 import LoadingSpinner from "../components/common/LoadingSpinner";
-import RightSideLayout from "../components/game/RightSideLayout";
+import RightSideLayout from "../components/project/right-side/RightSideLayout";
 import config from "../config";
 import { getById } from "../services/projectAPI";
 
 function Project() {
   const [initialXml, setInitialXml] = useState("");
   const [htmlText, setHtml] = useState("");
+  const [calledDb, setCallDb] = useState(false);
+  const [projectName, setProjectName] = useState("defualt");
   const params = useParams();
 
   useEffect(() => {
@@ -18,15 +20,17 @@ function Project() {
 
   let init = async () => {
     if (params.id) {
-      const url = `${config.baseApiUrl}/Proiecte/${params.id}`;
+      const url = `${config.baseApiUrl}/Projects/${params.id}`;
       const response = await getById(url);
-      if (response.responseStatus == 200) {
+      if (response.responseStatus == 200 && response.project != null) {
         setInitialXml(response.project.xml);
+        setProjectName(response.project.name);
       }
+      setCallDb(true);
     }
   };
   // to do
-  if (!initialXml && params.id) {
+  if (!calledDb && params.id) {
     return <LoadingSpinner />;
   }
 
@@ -36,7 +40,7 @@ function Project() {
         <BlockyMain setHtml={setHtml} xmlFromDb={initialXml} />
       </section>
       <section className="bg-gray-200">
-        <RightSideLayout htmlText={htmlText} />
+        <RightSideLayout htmlText={htmlText} name={projectName} />
       </section>
     </main>
   );
