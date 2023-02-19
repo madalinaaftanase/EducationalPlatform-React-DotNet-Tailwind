@@ -31,7 +31,7 @@ function Projects() {
         <h1>Proiectele tale:</h1>
         <AddButton />
       </div>
-      <div className="flex gap-4">
+      <div className="flex gap-4 flex-wrap">
         {projects.map((value) => {
           return <Card project={value} key={value.id} />;
         })}

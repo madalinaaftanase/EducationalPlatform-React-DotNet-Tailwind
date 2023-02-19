@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { ChangeEventHandler, useState } from "react";
 
-function EditableInput({ text, handleTextChange }: { text: string, handleTextChange:any }) {
+function EditableInput({ text, handleTextChange }: { text: string, handleTextChange:ChangeEventHandler<HTMLInputElement> }) {
   const [displayEditIcon, setDisplayEditIcon] = useState(false);
   const [isInEditMode, setIsInEditMode] = useState(false);
 

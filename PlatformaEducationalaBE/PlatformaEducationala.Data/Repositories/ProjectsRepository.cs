@@ -37,4 +37,11 @@ public class ProjectsRepository : IProjectRepository
         _platformDbContext.Update(mappedProject);
         await _platformDbContext.SaveChangesAsync();
     }
+
+    public async Task DeleteAsync(ProjectDto project)
+    {
+        var mappedProject = MapperModels<ProjectDto, Project>.Map(project);
+        _platformDbContext.Projects.Remove(mappedProject);
+        await _platformDbContext.SaveChangesAsync();
+    }
 }
