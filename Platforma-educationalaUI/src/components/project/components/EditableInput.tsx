@@ -1,9 +1,8 @@
 import { useState } from "react";
 
-function EditableInput({ text }: { text: string }) {
+function EditableInput({ text, handleTextChange }: { text: string, handleTextChange:any }) {
   const [displayEditIcon, setDisplayEditIcon] = useState(false);
   const [isInEditMode, setIsInEditMode] = useState(false);
-  const [newText, setNewText] = useState(text);
 
   const handleMouseHover = () => {
     setDisplayEditIcon(true);
@@ -11,10 +10,6 @@ function EditableInput({ text }: { text: string }) {
 
   const handleEdit = () => {
     setIsInEditMode(true);
-  };
-
-  const handleTextChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setNewText(event.target.value);
   };
 
   const handleEditMode = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -33,7 +28,7 @@ function EditableInput({ text }: { text: string }) {
       {isInEditMode ? (
         <input
           type="text"
-          value={newText}
+          value={text}
           onChange={handleTextChange}
           onKeyDown={handleEditMode}
           onBlur={handleMouseLeave}
@@ -45,7 +40,7 @@ function EditableInput({ text }: { text: string }) {
           onMouseLeave={handleMouseLeave}
           onClick={handleEdit}
         >
-          <div>{newText}</div>
+          <div>{text}</div>
           {displayEditIcon && (
             <svg
               xmlns="http://www.w3.org/2000/svg"

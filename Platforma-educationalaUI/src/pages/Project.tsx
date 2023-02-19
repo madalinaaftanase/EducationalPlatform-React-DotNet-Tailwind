@@ -10,6 +10,7 @@ import { getById } from "../services/projectAPI";
 function Project() {
   const navigator = useNavigate();
   const [initialXml, setInitialXml] = useState("");
+  const [changedXml, setChangeXml] = useState(initialXml);
   const [htmlText, setHtml] = useState("");
   const [calledDb, setCallDb] = useState(false);
   const [projectName, setProjectName] = useState("defualt");
@@ -40,10 +41,10 @@ function Project() {
   return (
     <main className="grid grid-rows-2  md:grid-cols-[3fr_2fr]">
       <section>
-        <BlockyMain setHtml={setHtml} xmlFromDb={initialXml} />
+        <BlockyMain setHtml={setHtml} xmlFromDb={initialXml} setXml={setChangeXml} />
       </section>
       <section className="bg-gray-200">
-        <RightSideLayout htmlText={htmlText} name={projectName} />
+        <RightSideLayout htmlText={htmlText} name={projectName} xml={changedXml} />
       </section>
     </main>
   );

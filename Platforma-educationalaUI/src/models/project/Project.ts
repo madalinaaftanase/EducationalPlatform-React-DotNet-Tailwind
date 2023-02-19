@@ -4,6 +4,12 @@ export default interface Project {
   xml: string;
 }
 
+export interface ProjectSave {
+  id?: string;
+  name: string;
+  xml: string;
+}
+
 export interface ProjectResponse {
   project: Project;
   errors: string[];

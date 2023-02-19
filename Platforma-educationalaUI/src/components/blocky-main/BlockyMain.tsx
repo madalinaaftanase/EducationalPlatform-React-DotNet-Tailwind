@@ -7,9 +7,10 @@ import { toolboxCategories } from "./toolboxCategories";
 interface BlockyMainInterface {
   setHtml: Function;
   xmlFromDb?: string;
+  setXml: Function;
 }
 
-export default function BlockyMain({ setHtml, xmlFromDb }: BlockyMainInterface) {
+export default function BlockyMain({ setHtml, xmlFromDb, setXml }: BlockyMainInterface) {
   const blocklyRef = useRef(null);
   const [javascriptCode, setJavascriptCode] = useState("");
   const initialXml = '<xml xmlns="http://www.w3.org/1999/xhtml"></xml>';
@@ -25,8 +26,9 @@ export default function BlockyMain({ setHtml, xmlFromDb }: BlockyMainInterface) 
     setHtml(code);
     //to do
     // when save button is clicked save xml and put in db
-    // var xml = Blockly.Xml.workspaceToDom(workspace);
-    //var xmlText = Blockly.Xml.domToText(xml);
+    var xml = Blockly.Xml.workspaceToDom(workspace);
+    var xmlText = Blockly.Xml.domToText(xml);
+    setXml(xmlText);
   }
 
   const { workspace } = useBlocklyWorkspace({
