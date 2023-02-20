@@ -10,6 +10,12 @@ export interface ProjectSave {
   xml: string;
 }
 
+export interface DeleteProject {
+  message: string;
+  errors: string[];
+  responseStatus: number;
+}
+
 export interface ProjectResponse {
   project: Project;
   errors: string[];

@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using PlatformaEducationala.Core.Project.Commands.Delete;
 using PlatformaEducationala.Core.Project.Commands.Update;
 using PlatformaEducationala.Core.Project.Models;
 using PlatformaEducationala.Core.Project.Queries.Get;
@@ -39,6 +40,14 @@ public class ProjectsController : ApiController
 
     [HttpPost("{id}/Save")]
     public async Task<ActionResult<string>> Save([FromBody] SaveCommand command)
+    {
+        command.CurrentUserId = Guid.Parse(UserId);
+        var result = await _mediator.Send(command);
+        return HandleMediatorResponse(result);
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<ActionResult<string>> Delete([FromRoute] DeleteCommand command)
     {
         command.CurrentUserId = Guid.Parse(UserId);
         var result = await _mediator.Send(command);

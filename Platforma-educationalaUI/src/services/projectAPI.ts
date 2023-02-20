@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ProjectResponse, ProjectSave, ProjectsResponse } from "../models/project/Project";
+import { DeleteProject, ProjectResponse, ProjectSave, ProjectsResponse } from "../models/project/Project";
 import { getCookie } from "../utilities/cookieFunctions";
 
 export const getAll = async (url: string) => {
@@ -33,5 +33,22 @@ export const saveProject = async (url: string, project: ProjectSave) => {
     return response.data;
   } catch (err) {
     if (axios.isAxiosError(err)) return err.response?.data as ProjectResponse;
+  }
+};
+
+const payload = {
+  reason: 'Account no longer needed',
+  notify: true,
+};
+
+export const deleteByIdProject = async (url: string) => {
+  try {
+    const response = await axios.delete<DeleteProject>(url,{
+      data:payload,
+      headers: { Authorization: `Bearer ${getCookie("token")}` },
+    });
+    return response.data;
+  } catch (err) {
+    if (axios.isAxiosError(err)) return err.response?.data as DeleteProject;
   }
 };

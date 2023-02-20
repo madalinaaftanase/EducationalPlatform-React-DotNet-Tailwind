@@ -7,5 +7,6 @@ namespace PlatformaEducationala.Core.Repositories;
         Task<List<ProjectDto>> GetAll(Guid userId);
         Task<ProjectDto> GetById(Guid id, Guid studentId);
         Task UpdateAsync(ProjectDto project);
+        Task DeleteAsync(ProjectDto project);
 
 }
