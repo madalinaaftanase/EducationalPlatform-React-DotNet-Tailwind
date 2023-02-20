@@ -1,11 +1,11 @@
 import config from "../config";
 import { getAll } from "../services/projectAPI";
 import Project from "../models/project/Project";
+import Card from "../components/project/components/Card";
+import AddButton from "../components/project/components/AddButton";
 
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Card from "../components/project/components/Card";
-import AddButton from "../components/project/components/AddButton";
 
 function Projects() {
   const navigator = useNavigate();
