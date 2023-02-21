@@ -44,4 +44,10 @@ public class ProjectsRepository : IProjectRepository
         _platformDbContext.Projects.Remove(mappedProject);
         await _platformDbContext.SaveChangesAsync();
     }
+
+    public async Task CreateAsync(Project project)
+    {
+        await _platformDbContext.AddAsync(project);
+        await _platformDbContext.SaveChangesAsync();
+    }
 }

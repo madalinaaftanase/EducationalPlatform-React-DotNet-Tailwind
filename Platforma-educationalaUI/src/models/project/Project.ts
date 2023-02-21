@@ -7,11 +7,17 @@ export default interface Project {
 export interface ProjectSave {
   id?: string;
   name: string;
-  xml: string;
+  xml?: string;
 }
 
 export interface DeleteProject {
   message: string;
+  errors: string[];
+  responseStatus: number;
+}
+
+export interface CreateProjectResponse {
+  id: string;
   errors: string[];
   responseStatus: number;
 }

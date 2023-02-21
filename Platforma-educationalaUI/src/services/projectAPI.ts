@@ -1,5 +1,11 @@
 import axios from "axios";
-import { DeleteProject, ProjectResponse, ProjectSave, ProjectsResponse } from "../models/project/Project";
+import Project, {
+  CreateProjectResponse,
+  DeleteProject,
+  ProjectResponse,
+  ProjectSave,
+  ProjectsResponse,
+} from "../models/project/Project";
 import { getCookie } from "../utilities/cookieFunctions";
 
 export const getAll = async (url: string) => {
@@ -37,18 +43,29 @@ export const saveProject = async (url: string, project: ProjectSave) => {
 };
 
 const payload = {
-  reason: 'Account no longer needed',
+  reason: "Account no longer needed",
   notify: true,
 };
 
 export const deleteByIdProject = async (url: string) => {
   try {
-    const response = await axios.delete<DeleteProject>(url,{
-      data:payload,
+    const response = await axios.delete<DeleteProject>(url, {
+      data: payload,
       headers: { Authorization: `Bearer ${getCookie("token")}` },
     });
     return response.data;
   } catch (err) {
     if (axios.isAxiosError(err)) return err.response?.data as DeleteProject;
+  }
+};
+
+export const createProject = async (url: string, data: ProjectSave) => {
+  try {
+    const response = await axios.post<CreateProjectResponse>(url, data, {
+      headers: { Authorization: `Bearer ${getCookie("token")}` },
+    });
+    return response.data;
+  } catch (err) {
+    if (axios.isAxiosError(err)) return err.response?.data as CreateProjectResponse;
   }
 };
