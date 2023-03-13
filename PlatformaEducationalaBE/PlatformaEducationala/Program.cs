@@ -76,7 +76,7 @@ app.UseSpaStaticFiles();
 
 app.UseRouting();
 app.UseHttpsRedirection();
-if (app.Environment.IsDevelopment())
+if (!app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI(options =>
