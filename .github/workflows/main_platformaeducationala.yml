@@ -19,7 +19,7 @@ jobs:
       
       - name: Set connection string
         run: |
-             (Get-Content appsettings.Prod.json) -replace '{prod_pass}', '${env:Production}' | Set-Content appsettings.Prod.json
+             (Get-Content ./PlatformaEducationalaBE/PlatformaEducationala/appsettings.Prod.json) -replace '{prod_pass}', '${env:Production}' | Set-Content appsettings.Prod.json
         env:
             Production: ${{ secrets.DB_PASS }}
 
