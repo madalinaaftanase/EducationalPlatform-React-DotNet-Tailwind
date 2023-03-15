@@ -16,6 +16,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      
+      - name: Set connection string
+        run: |
+             (Get-Content appsettings.Prod.json) -replace '{prod_pass}', '${env:Production}' | Set-Content appsettings.Prod.json
+        env:
+            Production: ${{ secrets.DB_PASS }}
 
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v2
