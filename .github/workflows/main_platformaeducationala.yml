@@ -19,7 +19,7 @@ jobs:
       
       - name: Set connection string
         run: |
-             (Get-Content ./PlatformaEducationalaBE/PlatformaEducationala/appsettings.Prod.json) -replace ${{ secrets.DB_PASS }}, '${env:Production}' | Set-Content appsettings.Prod.json
+             (Get-Content ./PlatformaEducationalaBE/PlatformaEducationala/appsettings.Prod.json) -replace '{prod_pass}', ${{ secrets.DB_PASS }} | Set-Content ./PlatformaEducationalaBE/PlatformaEducationala/appsettings.Prod.json
 
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v2
