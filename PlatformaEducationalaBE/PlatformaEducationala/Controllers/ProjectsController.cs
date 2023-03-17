@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using PlatformaEducationala.Core.Project.Commands.Create;
 using PlatformaEducationala.Core.Project.Commands.Delete;
 using PlatformaEducationala.Core.Project.Commands.Update;
 using PlatformaEducationala.Core.Project.Models;
@@ -40,6 +41,14 @@ public class ProjectsController : ApiController
 
     [HttpPost("{id}/Save")]
     public async Task<ActionResult<string>> Save([FromBody] SaveCommand command)
+    {
+        command.CurrentUserId = Guid.Parse(UserId);
+        var result = await _mediator.Send(command);
+        return HandleMediatorResponse(result);
+    }
+
+    [HttpPost]
+    public async Task<ActionResult<string>> Create([FromBody] CreateCommand command)
     {
         command.CurrentUserId = Guid.Parse(UserId);
         var result = await _mediator.Send(command);
