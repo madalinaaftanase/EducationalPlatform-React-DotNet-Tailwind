@@ -1,4 +1,5 @@
 using System.Text;
+using Azure.Identity;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -84,6 +85,10 @@ if (!app.Environment.IsDevelopment())
         options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
         options.RoutePrefix = string.Empty;
     });
+
+    builder.Configuration.AddAzureKeyVault(
+        new Uri("https://degree-kv.vault.azure.net"),
+        new DefaultAzureCredential()).Build();
 }
 
 app.UseMiddleware<AuthenticationMiddleware>();

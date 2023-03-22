@@ -11,7 +11,7 @@ public static class Configuration
 {
     public static void AddDb(this IServiceCollection services, IConfiguration configuration)
     {
-        var connectionString = configuration.GetConnectionString("Main");
+        var connectionString = configuration.GetConnectionString("prodDb");
 
         services.AddDbContext<PlatformDBContext>(options =>
         {
