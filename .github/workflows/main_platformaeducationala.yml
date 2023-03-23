@@ -11,20 +11,8 @@ on:
       - main
 
 jobs:
-  replacement:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Find and Replace
-        uses: jacobtomlinson/gha-find-replace@v3
-        with:
-          find: "{prod_pass}"
-          replace: "${{ secrets.DB_PASS }}"
-          include: "./PlatformaEducationalaBE/PlatformaEducationala/appsettings.Prod.json"
-          
   build:
     runs-on: windows-latest
-    needs: replacement
     steps:
       - uses: actions/checkout@v2
       - name: Set up .NET Core
