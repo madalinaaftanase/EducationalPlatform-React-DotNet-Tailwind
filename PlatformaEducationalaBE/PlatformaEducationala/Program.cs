@@ -52,6 +52,7 @@ builder.Services.AddSwaggerGen(options =>
     options.OperationFilter<SecurityRequirementsOperationFilter>();
 });
 
+builder.Configuration.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
 builder.Services.AddDb(builder.Configuration);
 
 builder.Host.ConfigureLogging(logging =>
@@ -67,11 +68,7 @@ builder.Services.AddCors();
 
 if (!builder.Environment.IsDevelopment())
 {
-    var configuration = new ConfigurationBuilder()
-    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-    .Build();
-    string instrumentationKey = configuration["AppInsightsInstrumentationKey"];
-
+    string instrumentationKey = builder.Configuration["AppInsightsInstrumentationKey"];
     builder.Services.AddApplicationInsightsTelemetry(instrumentationKey);
 }
 

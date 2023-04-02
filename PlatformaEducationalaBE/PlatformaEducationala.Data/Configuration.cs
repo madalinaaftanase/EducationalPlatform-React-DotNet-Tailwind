@@ -13,11 +13,6 @@ public static class Configuration
     {
         var connectionString = configuration.GetConnectionString("prodDb");
 
-        if (string.IsNullOrEmpty(connectionString))
-        {
-            throw new ArgumentException("The connection string cannot be empty or null");
-        }
-
         services.AddDbContext<PlatformDBContext>(options =>
         {
             options.UseSqlServer(connectionString);
