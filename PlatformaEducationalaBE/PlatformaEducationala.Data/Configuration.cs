@@ -9,10 +9,11 @@ namespace PlatformaEducationala.Data;
 
 public static class Configuration
 {
-    public static void AddDb(this IServiceCollection services, IConfiguration configuration)
+    public static void AddDb(this IConfiguration configuration)
     {
         var connectionString = configuration.GetConnectionString("prodDb");
 
+        var services = new ServiceCollection();
         services.AddDbContext<PlatformDBContext>(options =>
         {
             options.UseSqlServer(connectionString);
