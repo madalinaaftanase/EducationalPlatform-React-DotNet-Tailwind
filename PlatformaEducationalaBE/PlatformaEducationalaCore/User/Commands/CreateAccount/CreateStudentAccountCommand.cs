@@ -1,8 +1,8 @@
 ﻿
 using MediatR;
+using Microsoft.Extensions.Logging;
 using PlatformaEducationala.Core.Entities;
 using PlatformaEducationala.Core.Repositories;
-using Serilog;
 
 namespace PlatformaEducationala.Core.User.Commands.CreateAccount;
 
@@ -18,7 +18,7 @@ public class CreateAccountCommandHandler : IRequestHandler<CreateStudentAccountC
 {
     private readonly IStudentRepository _studentRepository;
     private readonly ILogger _logger;
-    public CreateAccountCommandHandler(IStudentRepository studentRepository, ILogger logger)
+    public CreateAccountCommandHandler(IStudentRepository studentRepository, ILogger<CreateAccountCommandHandler> logger)
     {
         _studentRepository = studentRepository;
         _logger = logger;
@@ -31,7 +31,7 @@ public class CreateAccountCommandHandler : IRequestHandler<CreateStudentAccountC
         var result = new CreateStudentAccountResponse();
         if (!resultValidation.IsValid)
         {
-            _logger.Information("Given input failed validation:{errors}", resultValidation.Errors);
+            _logger.LogInformation("Given input failed validation:{errors}", resultValidation.Errors);
             return new CreateStudentAccountResponse
             {
                 Errors = resultValidation.Errors
@@ -44,7 +44,7 @@ public class CreateAccountCommandHandler : IRequestHandler<CreateStudentAccountC
 
         if (student != null)
         {
-            _logger.Information("Given Email already exist");
+            _logger.LogInformation("Given Email already exist");
             result.Errors.Add("Email exist already");
             result.ResponseStatus = Enums.ResultStatus.BadRequest;
             return result;
@@ -64,12 +64,12 @@ public class CreateAccountCommandHandler : IRequestHandler<CreateStudentAccountC
         }
         catch (Exception ex)
         {
-            _logger.Error("{method} failed.Account creation failed. Errors: {err}", nameof(_studentRepository.AddAsync), ex);
+            _logger.LogError("{method} failed.Account creation failed. Errors: {err}", nameof(_studentRepository.AddAsync), ex);
             result.Errors.Add("Failed");
             result.ResponseStatus = Enums.ResultStatus.InternalError;
             return result;
         }
-        _logger.Information("The account was created succesfully");
+        _logger.LogInformation("The account was created succesfully");
         return result;
     }
 }

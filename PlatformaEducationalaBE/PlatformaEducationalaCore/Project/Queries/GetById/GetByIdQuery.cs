@@ -1,6 +1,6 @@
 ﻿using MediatR;
+using Microsoft.Extensions.Logging;
 using PlatformaEducationala.Core.Repositories;
-using Serilog;
 
 namespace PlatformaEducationala.Core.Project.Queries.GetById;
 
@@ -15,7 +15,7 @@ public class GetByIdHandler : IRequestHandler<GetByIdQuery, GetByIdResponse>
     private readonly ILogger _logger;
     private readonly IProjectRepository _projectRepository;
 
-    public GetByIdHandler(ILogger logger, IProjectRepository projectRepository)
+    public GetByIdHandler(ILogger<GetByIdHandler> logger, IProjectRepository projectRepository)
     {
         _logger = logger;
         _projectRepository = projectRepository;

@@ -1,7 +1,7 @@
 ﻿using MediatR;
+using Microsoft.Extensions.Logging;
 using PlatformaEducationala.Core.Enums;
 using PlatformaEducationala.Core.Repositories;
-using Serilog;
 
 namespace PlatformaEducationala.Core.Project.Commands.Delete;
 
@@ -16,7 +16,7 @@ public class DeleteCommandHandler : IRequestHandler<DeleteCommand, DeleteRespons
     private readonly ILogger _logger;
     private readonly IProjectRepository _projectRepository;
 
-    public DeleteCommandHandler(ILogger logger, IProjectRepository projectRepository)
+    public DeleteCommandHandler(ILogger<DeleteCommandHandler> logger, IProjectRepository projectRepository)
     {
         _projectRepository = projectRepository;
         _logger = logger;

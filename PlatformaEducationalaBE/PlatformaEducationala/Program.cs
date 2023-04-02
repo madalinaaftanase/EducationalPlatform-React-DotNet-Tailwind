@@ -7,7 +7,6 @@ using Microsoft.OpenApi.Models;
 using PlatformaEducationala.Api.Services;
 using PlatformaEducationala.Core.User.Queries.Get;
 using PlatformaEducationala.Data;
-using Serilog;
 using Swashbuckle.AspNetCore.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,26 +24,56 @@ builder.Services.AddSwaggerGen(options =>
         Description = "Foloseste endpoint-ul de login sa obtii jwt-ul necesar autorizarii"
     });
 
-    options.AddSecurityDefinition("oauth", new OpenApiSecurityScheme
+    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
-        Description = "Standard Auth header using Bearer scheme",
-        In = ParameterLocation.Header,
+        Description = "Enter 'Bearer token'",
         Name = "Authorization",
-        Type = SecuritySchemeType.ApiKey
+        In = ParameterLocation.Header,
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "Bearer"
+    });
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement()
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Name="Bearer",
+                In = ParameterLocation.Header,
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                },
+                Scheme ="oauth2"
+            },
+            new List<string>()
+        }
     });
     options.OperationFilter<SecurityRequirementsOperationFilter>();
 });
 
 builder.Services.AddDb(builder.Configuration);
 
+builder.Host.ConfigureLogging(logging =>
+{
+    logging.ClearProviders();
+    logging.AddConsole();
+});
 builder.Services.AddMediatR(typeof(GetQuery).Assembly);
 
 builder.Services.AddSpaStaticFiles(Configuration => { Configuration.RootPath = " wwwroot/spa"; });
 
 builder.Services.AddCors();
-builder.Host.UseSerilog((ctx, lc) => lc
-    .WriteTo.Console()
-    .WriteTo.File("../logs/logging.txt"));
+
+if (!builder.Environment.IsDevelopment())
+{
+    var configuration = new ConfigurationBuilder()
+    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+    .Build();
+    string instrumentationKey = configuration["AppInsightsInstrumentationKey"];
+
+    builder.Services.AddApplicationInsightsTelemetry(instrumentationKey);
+}
 
 builder.Services.AddAuthentication(options =>
 {
@@ -77,15 +106,15 @@ app.UseSpaStaticFiles();
 
 app.UseRouting();
 app.UseHttpsRedirection();
+app.UseSwagger();
+app.UseSwaggerUI(options =>
+{
+    options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+    options.RoutePrefix = string.Empty;
+});
+
 if (!app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI(options =>
-    {
-        options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
-        options.RoutePrefix = string.Empty;
-    });
-
     builder.Configuration.AddAzureKeyVault(
         new Uri("https://degree-kv.vault.azure.net"),
         new DefaultAzureCredential()).Build();

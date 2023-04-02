@@ -1,7 +1,7 @@
 ﻿using MediatR;
+using Microsoft.Extensions.Logging;
 using PlatformaEducationala.Core.Project.Models;
 using PlatformaEducationala.Core.Repositories;
-using Serilog;
 
 namespace PlatformaEducationala.Core.Project.Queries.Get;
 
@@ -16,7 +16,7 @@ public class GetQueryHndler : IRequestHandler<GetQuery, GetResponse>
     private readonly IProjectRepository _projectRepository;
 
 
-    public GetQueryHndler(IProjectRepository projectRepository, ILogger logger)
+    public GetQueryHndler(IProjectRepository projectRepository, ILogger<GetQueryHndler> logger)
     {
         _projectRepository = projectRepository;
         _logger = logger;
@@ -24,7 +24,7 @@ public class GetQueryHndler : IRequestHandler<GetQuery, GetResponse>
 
     public async Task<GetResponse> Handle(GetQuery request, CancellationToken cancellationToken)
     {
-        _logger.Information("Start Handle");
+        _logger.LogInformation("Start Handle");
         var projects = await _projectRepository.GetAll(request.CurrentUserId);
 
         if (projects == null)

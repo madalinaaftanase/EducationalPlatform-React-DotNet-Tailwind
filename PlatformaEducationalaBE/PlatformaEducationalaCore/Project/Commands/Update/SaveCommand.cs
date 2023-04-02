@@ -1,7 +1,7 @@
 ﻿using MediatR;
+using Microsoft.Extensions.Logging;
 using PlatformaEducationala.Core.Enums;
 using PlatformaEducationala.Core.Repositories;
-using Serilog;
 
 namespace PlatformaEducationala.Core.Project.Commands.Update;
 
@@ -18,7 +18,7 @@ public class SaveCommandHandler : IRequestHandler<SaveCommand, SaveResponse>
     private readonly ILogger _logger;
     private readonly IProjectRepository _projectRepository;
 
-    public SaveCommandHandler(IProjectRepository projectRepository, ILogger logger)
+    public SaveCommandHandler(IProjectRepository projectRepository, ILogger<SaveCommandHandler> logger)
     {
         _logger = logger;
         _projectRepository = projectRepository;
@@ -32,7 +32,7 @@ public class SaveCommandHandler : IRequestHandler<SaveCommand, SaveResponse>
 
         if (!resultValidation.IsValid)
         {
-            _logger.Information("Given input failed validation:{errors}", resultValidation.Errors);
+            _logger.LogInformation("Given input failed validation:{errors}", resultValidation.Errors);
             return new SaveResponse
             {
                 Errors = resultValidation.Errors

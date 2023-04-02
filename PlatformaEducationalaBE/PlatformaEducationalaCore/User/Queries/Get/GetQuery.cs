@@ -1,7 +1,6 @@
-﻿
-using MediatR;
+﻿using MediatR;
+using Microsoft.Extensions.Logging;
 using PlatformaEducationala.Core.Repositories;
-using Serilog;
 using PlatformaEducationala.Core.User.Models;
 
 
@@ -17,7 +16,7 @@ public class GetQueryHndler : IRequestHandler<GetQuery, GetResponse>
     private readonly IStudentRepository _studentRepository;
     private readonly ILogger _logger;
 
-   public GetQueryHndler(IStudentRepository studentRepository, ILogger logger)
+   public GetQueryHndler(IStudentRepository studentRepository, ILogger<GetQueryHndler> logger)
     {
         _studentRepository = studentRepository;
         _logger = logger;
@@ -25,7 +24,7 @@ public class GetQueryHndler : IRequestHandler<GetQuery, GetResponse>
 
     public async Task<GetResponse> Handle(GetQuery request, CancellationToken cancellationToken)
     {
-        _logger.Information("Exemplu logging");
+        _logger.LogInformation("Exemplu logging");
         var students = await _studentRepository.GetAll();
 
         var result = new GetResponse

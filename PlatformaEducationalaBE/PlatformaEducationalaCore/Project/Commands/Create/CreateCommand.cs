@@ -1,7 +1,7 @@
 ﻿using MediatR;
+using Microsoft.Extensions.Logging;
 using PlatformaEducationala.Core.Enums;
 using PlatformaEducationala.Core.Repositories;
-using Serilog;
 
 namespace PlatformaEducationala.Core.Project.Commands.Create;
 
@@ -16,7 +16,7 @@ public class CreateCommandHandler : IRequestHandler<CreateCommand, CreateRespons
     private readonly ILogger _logger;
     private readonly IProjectRepository _projectRepository;
 
-    public CreateCommandHandler(IProjectRepository projectRepository, ILogger logger)
+    public CreateCommandHandler(IProjectRepository projectRepository, ILogger<CreateCommandHandler> logger)
     {
         _projectRepository = projectRepository;
         _logger = logger;
@@ -30,7 +30,7 @@ public class CreateCommandHandler : IRequestHandler<CreateCommand, CreateRespons
 
         if (!resultValidation.IsValid)
         {
-            _logger.Information("Given input failed validation:{errors}", resultValidation.Errors);
+            _logger.Log(LogLevel.Information,"Given input failed validation:{errors}", resultValidation.Errors);
             return new CreateResponse
             {
                 Errors = resultValidation.Errors
