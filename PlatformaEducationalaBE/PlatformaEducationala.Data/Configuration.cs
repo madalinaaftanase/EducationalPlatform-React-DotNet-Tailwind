@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using PlatformaEducationala.Core.Repositories;
 using PlatformaEducationala.Data.Context;
 using PlatformaEducationala.Data.Repositories;
@@ -9,9 +10,10 @@ namespace PlatformaEducationala.Data;
 
 public static class Configuration
 {
-    public static void AddDb(this IServiceCollection services, IConfiguration configuration, string connString)
+    public static void AddDb(this IServiceCollection services, IConfiguration configuration)
     {
-        var connectionString = connString;
+        var connectionString = configuration["prodDb"];
+
 
         services.AddDbContext<PlatformDBContext>(options =>
         {
