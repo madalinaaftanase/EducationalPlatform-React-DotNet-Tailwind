@@ -24,35 +24,37 @@ builder.Services.AddSwaggerGen(options =>
         Description = "Foloseste endpoint-ul de login sa obtii jwt-ul necesar autorizarii"
     });
 
-    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    var securityScheme = new OpenApiSecurityScheme()
     {
         Description = "Enter 'Bearer token'",
         Name = "Authorization",
         In = ParameterLocation.Header,
         Type = SecuritySchemeType.ApiKey,
-        Scheme = "Bearer"
-    });
-    options.AddSecurityRequirement(new OpenApiSecurityRequirement()
+        Scheme = "bearer"
+    };
+    var securityRequirement= new OpenApiSecurityRequirement
     {
         {
             new OpenApiSecurityScheme
             {
-                Name="Bearer",
                 In = ParameterLocation.Header,
                 Reference = new OpenApiReference
                 {
                     Type = ReferenceType.SecurityScheme,
-                    Id = "Bearer"
+                    Id = "bearerAuth"
                 },
-                Scheme ="oauth2"
             },
-            new List<string>()
+            new string[]{ }
         }
-    });
+    };
+    options.AddSecurityDefinition("bearerAuth", securityScheme);
+    options.AddSecurityRequirement(securityRequirement);
     options.OperationFilter<SecurityRequirementsOperationFilter>();
 });
 
 builder.Configuration.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+builder.Configuration.AddJsonFile("appsettings.Development.json", optional: true, reloadOnChange: true);
+
 builder.Services.AddDb(builder.Configuration, builder.Configuration["prodDb"]);
 
 builder.Host.ConfigureLogging(logging =>
