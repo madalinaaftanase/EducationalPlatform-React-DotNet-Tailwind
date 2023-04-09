@@ -3,14 +3,16 @@ import { getCookie } from "../utilities/cookieFunctions";
 
 interface UserContextInterface {
   isAuthentificated: boolean;
-  name: string | undefined;
+  username: string | undefined;
   setToken: Function;
+  setUsername: Function;
 }
 
 export const UserContext = React.createContext<UserContextInterface>({
   isAuthentificated: false,
-  name: undefined,
+  username: undefined,
   setToken: () => {},
+  setUsername: () => {},
 });
 
 interface UserContextProviderInterface {
@@ -19,15 +21,14 @@ interface UserContextProviderInterface {
 
 function UserContextProvider({ children }: UserContextProviderInterface) {
   const [isAuthentificated, setIsAuthentificated] = useState(!!getCookie("token"));
-  const [userName, setUserName] = useState("");
+  const [username, setUsername] = useState("");
 
   const setToken = () => {
     setIsAuthentificated(true);
-    setUserName(" Madalina");
   };
 
   return (
-    <UserContext.Provider value={{ isAuthentificated, name: userName, setToken }}>
+    <UserContext.Provider value={{ isAuthentificated, username: username, setToken, setUsername }}>
       {children}
     </UserContext.Provider>
   );

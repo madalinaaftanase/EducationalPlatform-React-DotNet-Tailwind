@@ -7,7 +7,7 @@ import { LoginAccount } from "../../services/userAPI";
 import FormField from "./FormField";
 
 function Login() {
-  const { setToken } = useContext(UserContext);
+  const { setToken, setUsername } = useContext(UserContext);
   const navigator = useNavigate();
   const [isStudent, setIsStudent] = useState(false);
   const [errors, setErrors] = useState("");
@@ -40,6 +40,7 @@ function Login() {
       let token = response.data.token;
       document.cookie = `token=${token}; path=/;`;
       setToken(token);
+      setUsername(response.data.username);
       navigator("/");
     } else {
       setErrors(response.errors[0]);
