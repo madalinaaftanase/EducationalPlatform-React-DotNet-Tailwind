@@ -7,7 +7,7 @@ import { LoginAccount } from "../../services/userAPI";
 import FormField from "./FormField";
 
 function Login() {
-  const { setToken, setUsername } = useContext(UserContext);
+  const { setToken, setUsername, setIsTeacher } = useContext(UserContext);
   const navigator = useNavigate();
   const [isStudent, setIsStudent] = useState(false);
   const [errors, setErrors] = useState("");
@@ -30,9 +30,9 @@ function Login() {
       return setErrors("Toate campurile sunt obligatorii");
     }
 
-    let url = `${config.baseApiUrl}/Auth/Login/Teacher`;
-    if (isStudent) {
-      url = `${config.baseApiUrl}/Auth/Login/Student`;
+    let url = `${config.baseApiUrl}/Auth/Login/Student`;
+    if (!isStudent) {
+      url = `${config.baseApiUrl}/Auth/Login/Teacher`;
     }
 
     let response = await LoginAccount(url, { ...loginInput });
@@ -40,8 +40,13 @@ function Login() {
       let token = response.data.token;
       document.cookie = `token=${token}; path=/;`;
       setToken(token);
+      setIsTeacher(!isStudent);
       setUsername(response.data.username);
-      navigator("/");
+      if (isStudent) {
+        navigator("/Student");
+      } else {
+        navigator("/Teacher");
+      }
     } else {
       setErrors(response.errors[0]);
     }

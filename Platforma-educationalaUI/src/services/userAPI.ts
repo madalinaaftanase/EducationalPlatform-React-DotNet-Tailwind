@@ -1,7 +1,6 @@
 import { StudentSigninRequest, StudentsResponse } from "../models/student/Student";
 import axios from "axios";
-import { LoginRequest } from "../models/user/User";
-import { LoginResponse } from "../models/student/LoginResponse";
+import { LoginRequest, LoginResponse } from "../models/user/User";
 import { getCookie } from "../utilities/cookieFunctions";
 
 const GetAll = (url: string) => {

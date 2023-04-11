@@ -26,7 +26,7 @@ public class AuthController : ApiController
         return HandleMediatorResponse(result);
     }
 
-    [HttpPost("Register/Profesor")]
+    [HttpPost("Register/Teacher")]
     public async Task<ActionResult> Post([FromBody] CreateTeacherAccountCommand command)
     {
         var result = await _mediator.Send(command);
@@ -40,7 +40,7 @@ public class AuthController : ApiController
         return HandleMediatorResponse(result);
     }
 
-    [HttpPost("Login/Profesor")]
+    [HttpPost("Login/Teacher")]
     public async Task<ActionResult<LoginTeacherResponse>> Post([FromBody] LoginTeacherCommand command)
     {
         var result = await _mediator.Send(command);

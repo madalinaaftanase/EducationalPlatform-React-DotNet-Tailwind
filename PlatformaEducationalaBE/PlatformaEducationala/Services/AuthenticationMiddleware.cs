@@ -16,7 +16,7 @@ public class AuthenticationMiddleware
         var path = context.Request.Path;
         var endpointsToExclude = new[]
         {
-            "/api/Auth/Login/Student", "/api/Auth/Login/Profesor", "/api/Auth/Register/Profesor",
+            "/api/Auth/Login/Student", "/api/Auth/Login/Teacher", "/api/Auth/Register/Teacher",
             "/api/Auth/Register/Student"
         };
 
