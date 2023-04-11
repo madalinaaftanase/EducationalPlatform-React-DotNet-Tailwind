@@ -43,7 +43,7 @@ function App() {
         <Route path="/" element={<Signin />} />
         <Route path="/Signin" element={<Signin />} />
         <Route path="/Login/Student" element={<LoginPage />} />
-        <Route path="/Login/Teacher" element={<LoginPage />} />
+        <Route path="/Login/Profesor" element={<LoginPage />} />
         <Route path="/Error" element={<ErrorResponse />} />
       </Routes>
     </SWRConfig>

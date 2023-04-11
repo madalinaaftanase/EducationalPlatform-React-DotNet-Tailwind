@@ -16,27 +16,27 @@ namespace PlatformaEducationala.Data.Repositories
         {
             _platformDbContext = platformDbContext;
         }
+        
         public async Task<List<GroupDto>> GetAll(GetQuery query)
         {
+            var result = new List<GroupDto>();
             if (query.IsTeacher)
             {
-                var groups = await _platformDbContext.Groups
+                var teacherGroups = await _platformDbContext.Groups
                         .Where(t => t.TeacherId.Equals(query.CurrentUserId)).ToListAsync();
-                var result = MapperModels<Group, GroupDto>.MapList(groups);
+                result = MapperModels<Group, GroupDto>.MapList(teacherGroups);
 
                 return result;
             }
-            else
-            {
-                var groups = await _platformDbContext.StudentGroups
+            
+            var groups = await _platformDbContext.StudentGroups
                 .Include(sg => sg.Group)
                 .Where(sg => sg.StudentId == query.CurrentUserId)
                 .Select(sg => sg.Group)
                 .ToListAsync();
 
-                var result = MapperModels<Group, GroupDto>.MapList(groups);
+            result = MapperModels<Group, GroupDto>.MapList(groups);
                 return result;
-            }
          
         }
     }

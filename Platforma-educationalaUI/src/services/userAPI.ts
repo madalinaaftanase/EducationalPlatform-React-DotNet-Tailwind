@@ -1,6 +1,6 @@
 import { StudentSigninRequest, StudentsResponse } from "../models/student/Student";
 import axios from "axios";
-import { LoginRequest, LoginResponse } from "../models/user/User";
+import { CreateAccountResponse, LoginRequest, LoginResponse } from "../models/user/User";
 import { getCookie } from "../utilities/cookieFunctions";
 
 const GetAll = (url: string) => {
@@ -12,12 +12,17 @@ const GetAll = (url: string) => {
     .then((res) => res.data);
 };
 
-const CreateAccount = (url: string, accountData: StudentSigninRequest) =>
-  axios.post(url, accountData).then((res) => {
-    if (res.status === 200 || res.status === 201) {
-      window.location.href = "/Login";
-    }
-  });
+const CreateAccount = async (url: string, accountData: StudentSigninRequest) => {
+  try {
+    const response = await axios.post<CreateAccountResponse>(url, accountData, {
+      headers: { Authorization: `Bearer ${getCookie("token")}` },
+    });
+    return response.data;
+  } catch (err) {
+    if (axios.isAxiosError(err)) return err.response?.data as CreateAccountResponse;
+  }
+}
+
 
 const LoginAccount = (url: string, loginData: LoginRequest) =>
   axios

@@ -30,9 +30,9 @@ function Login() {
       return setErrors("Toate campurile sunt obligatorii");
     }
 
-    let url = `${config.baseApiUrl}/Auth/Login/Student`;
-    if (!isStudent) {
-      url = `${config.baseApiUrl}/Auth/Login/Teacher`;
+    let url = `${config.baseApiUrl}/Auth/Login/Teacher`;
+    if (isStudent) {
+      url = `${config.baseApiUrl}/Auth/Login/Student`;
     }
 
     let response = await LoginAccount(url, { ...loginInput });
@@ -42,11 +42,7 @@ function Login() {
       setToken(token);
       setIsTeacher(!isStudent);
       setUsername(response.data.username);
-      if (isStudent) {
-        navigator("/Student");
-      } else {
-        navigator("/Teacher");
-      }
+      navigator("/Proiecte");
     } else {
       setErrors(response.errors[0]);
     }
@@ -102,7 +98,7 @@ function Login() {
                 <a
                   href="#!"
                   className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
-                  onClick={() => (window.location.href = "/Login/Teacher")}
+                  onClick={() => (window.location.href = "/Login/Profesor")}
                 >
                   Login cont profesor
                 </a>
