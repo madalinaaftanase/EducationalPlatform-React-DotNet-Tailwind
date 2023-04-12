@@ -7,7 +7,7 @@ import { LoginAccount } from "../../services/userAPI";
 import FormField from "./FormField";
 
 function Login() {
-  const { setToken, setUsername } = useContext(UserContext);
+  const { setToken, setUsername, setIsTeacher } = useContext(UserContext);
   const navigator = useNavigate();
   const [isStudent, setIsStudent] = useState(false);
   const [errors, setErrors] = useState("");
@@ -40,8 +40,9 @@ function Login() {
       let token = response.data.token;
       document.cookie = `token=${token}; path=/;`;
       setToken(token);
+      setIsTeacher(!isStudent);
       setUsername(response.data.username);
-      navigator("/");
+      navigator("/Proiecte");
     } else {
       setErrors(response.errors[0]);
     }
@@ -97,7 +98,7 @@ function Login() {
                 <a
                   href="#!"
                   className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
-                  onClick={() => (window.location.href = "/Login/Teacher")}
+                  onClick={() => (window.location.href = "/Login/Profesor")}
                 >
                   Login cont profesor
                 </a>

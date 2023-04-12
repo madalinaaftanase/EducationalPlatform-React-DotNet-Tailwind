@@ -11,6 +11,7 @@ import ErrorResponse from "../common/ErrorResponse";
 import { useContext } from "react";
 import { UserContext } from "../../hooks/UserContext";
 import Projects from "../../pages/Projects";
+import Groups from "../../pages/Groups";
 
 function App() {
   const navigator = useNavigate();
@@ -25,11 +26,12 @@ function App() {
           <Route path="/" element={<Project />} />
           <Route path="/Signin" element={<Signin />} />
           <Route path="/Login/Student" element={<LoginPage />} />
-          <Route path="/Login/Teacher" element={<LoginPage />} />
-          <Route path="/Students" element={<Students />} />
+          <Route path="/Login/Profesor" element={<LoginPage />} />
+          <Route path="/Studenti" element={<Students />} />
           <Route path="/Proiecte" element={<Projects />} />
           <Route path="/Proiecte/:id" element={<Project />} />
           <Route path="/Error" element={<ErrorResponse />} />
+          <Route path="/Grupe" element={<Groups />} />
         </Routes>
       </SWRConfig>
     );
@@ -41,7 +43,7 @@ function App() {
         <Route path="/" element={<Signin />} />
         <Route path="/Signin" element={<Signin />} />
         <Route path="/Login/Student" element={<LoginPage />} />
-        <Route path="/Login/Teacher" element={<LoginPage />} />
+        <Route path="/Login/Profesor" element={<LoginPage />} />
         <Route path="/Error" element={<ErrorResponse />} />
       </Routes>
     </SWRConfig>

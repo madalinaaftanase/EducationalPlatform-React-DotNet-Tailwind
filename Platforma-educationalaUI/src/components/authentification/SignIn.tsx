@@ -3,8 +3,10 @@ import config from "../../config";
 import logoImg from "../../images/dog-logo.png";
 import { CreateAccount } from "../../services/userAPI";
 import FormField from "./FormField";
+import { useNavigate } from "react-router-dom";
 
 function SignIn() {
+  const navigator = useNavigate();
   const [formInput, setFormInput] = useState({
     firstName: "",
     lastName: "",
@@ -15,7 +17,7 @@ function SignIn() {
   const [errors, setErrors] = useState("");
   const [isTeacher, setIsTeacher] = useState(false);
 
-  const onSubmit = (e: any) => {
+  const onSubmit = async (e: any) => {
     e.preventDefault();
     setErrors("");
     if (!formInput.lastName) return setErrors("Numele este obligatoriu");
@@ -31,7 +33,18 @@ function SignIn() {
     if (isTeacher) {
       url = `${config.baseApiUrl}/Auth/Register/Teacher`;
     }
-    CreateAccount(url, { ...formInput });
+    let response = await CreateAccount(url, { ...formInput });
+    if (response?.responseStatus == 200) {
+      if (isTeacher) {
+        navigator("/Profesor");
+      } else {
+        navigator("/Student");
+      }
+    } else {
+      if (response?.errors) {
+        setErrors(response?.errors[0]);
+      }
+    }
   };
 
   const onChangeInput = (e: any) => {
