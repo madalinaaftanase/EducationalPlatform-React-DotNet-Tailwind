@@ -10,7 +10,7 @@ public class DeleteCommand : IRequest<DeleteResponse>
 {
     public Guid CurrentUserId { get; set; }
     public Guid Id { get; set; }
-    public bool isTeacher { get; set; }
+    public bool IsTeacher { get; set; }
 }
 
 public class DeleteCommandHandler : IRequestHandler<DeleteCommand, DeleteResponse>
@@ -31,7 +31,7 @@ public class DeleteCommandHandler : IRequestHandler<DeleteCommand, DeleteRespons
         {
             CurrentUserId = command.CurrentUserId,
             Id = command.Id,
-            IsTeacher = command.isTeacher
+            IsTeacher = command.IsTeacher
         };
         var project = await _projectRepository.GetById(command_to_query);
         if (project == null)

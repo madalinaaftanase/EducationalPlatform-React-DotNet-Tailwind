@@ -32,7 +32,8 @@ public class ProjectsController : ApiController
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<List<ProjectDto>>> GetById([FromRoute] GetByIdQuery query, [FromQuery(Name ="isTeacher")] bool isTeacher)
+    public async Task<ActionResult<List<ProjectDto>>> GetById([FromRoute] GetByIdQuery query,
+        [FromQuery(Name = "isTeacher")] bool isTeacher)
     {
         query.CurrentUserId = Guid.Parse(UserId);
         query.IsTeacher = isTeacher;
@@ -42,7 +43,8 @@ public class ProjectsController : ApiController
     }
 
     [HttpPost("{id}/Save")]
-    public async Task<ActionResult<string>> Save([FromBody] SaveCommand command, [FromQuery(Name ="isTeacher")] bool isTeacher)
+    public async Task<ActionResult<string>> Save([FromBody] SaveCommand command,
+        [FromQuery(Name = "isTeacher")] bool isTeacher)
     {
         command.CurrentUserId = Guid.Parse(UserId);
         command.IsTeacher = isTeacher;
@@ -59,10 +61,11 @@ public class ProjectsController : ApiController
     }
 
     [HttpDelete("{id}")]
-    public async Task<ActionResult<string>> Delete([FromRoute] DeleteCommand command, [FromQuery(Name = "isTeacher")] bool isTeacher)
+    public async Task<ActionResult<string>> Delete([FromRoute] DeleteCommand command,
+        [FromQuery(Name = "isTeacher")] bool isTeacher)
     {
         command.CurrentUserId = Guid.Parse(UserId);
-        command.isTeacher = isTeacher;
+        command.IsTeacher = isTeacher;
         var result = await _mediator.Send(command);
         return HandleMediatorResponse(result);
     }

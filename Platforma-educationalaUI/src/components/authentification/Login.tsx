@@ -22,6 +22,10 @@ function Login() {
     }
   }, []);
 
+  const setNameLocalStorage = (name: string) => {
+    localStorage.setItem("username", name);
+  };
+
   const onSubmit = async (e: any) => {
     e.preventDefault();
     setErrors("");
@@ -41,6 +45,7 @@ function Login() {
       document.cookie = `token=${token}; path=/;`;
       setToken(token);
       setIsTeacher(!isStudent);
+      setNameLocalStorage(response.data.username);
       setUsername(response.data.username);
       navigator("/Proiecte");
     } else {

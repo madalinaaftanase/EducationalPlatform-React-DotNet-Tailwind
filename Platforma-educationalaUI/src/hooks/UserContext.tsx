@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { getCookie } from "../utilities/cookieFunctions";
 
 interface UserContextInterface {
@@ -32,14 +32,22 @@ function UserContextProvider({ children }: UserContextProviderInterface) {
     setIsAuthentificated(true);
   };
 
+  useEffect(() => {
+    onInit();
+  }, []);
+
+  const onInit = () => {
+    setUsername(localStorage.getItem("username") || "");
+  };
+
   return (
     <UserContext.Provider
       value={{
         isAuthentificated,
         username: username,
+        isTeacher,
         setToken,
         setUsername,
-        isTeacher,
         setIsTeacher,
       }}
     >

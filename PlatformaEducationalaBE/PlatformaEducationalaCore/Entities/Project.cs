@@ -12,4 +12,5 @@ namespace PlatformaEducationala.Core.Entities;
         public Student Student { get; set; }
         public Guid? TeacherId { get; set; }
         public Teacher Teacher { get; set; }
+        public ICollection<StudentProject> StudentProjects { get; set; }
 }
