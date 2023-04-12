@@ -23,15 +23,7 @@ public class ProjectsController : ApiController
     }
 
     [HttpGet]
-    public async Task<ActionResult<List<ProjectDto>>> Get()
-    {
-        var result = await _mediator.Send(new GetQuery { CurrentUserId = Guid.Parse(UserId) });
-
-        return HandleMediatorResponse(result);
-    }
-
-    [HttpGet("{id}")]
-    public async Task<ActionResult<List<ProjectDto>>> GetById([FromRoute] GetByIdQuery query)
+    public async Task<ActionResult<List<ProjectDto>>> Get([FromQuery] GetQuery query)
     {
         query.CurrentUserId = Guid.Parse(UserId);
         var result = await _mediator.Send(query);
@@ -39,10 +31,21 @@ public class ProjectsController : ApiController
         return HandleMediatorResponse(result);
     }
 
+    [HttpGet("{id}")]
+    public async Task<ActionResult<List<ProjectDto>>> GetById([FromRoute] GetByIdQuery query, [FromQuery(Name ="isTeacher")] bool isTeacher)
+    {
+        query.CurrentUserId = Guid.Parse(UserId);
+        query.IsTeacher = isTeacher;
+        var result = await _mediator.Send(query);
+
+        return HandleMediatorResponse(result);
+    }
+
     [HttpPost("{id}/Save")]
-    public async Task<ActionResult<string>> Save([FromBody] SaveCommand command)
+    public async Task<ActionResult<string>> Save([FromBody] SaveCommand command, [FromQuery(Name ="isTeacher")] bool isTeacher)
     {
         command.CurrentUserId = Guid.Parse(UserId);
+        command.IsTeacher = isTeacher;
         var result = await _mediator.Send(command);
         return HandleMediatorResponse(result);
     }
@@ -56,9 +59,10 @@ public class ProjectsController : ApiController
     }
 
     [HttpDelete("{id}")]
-    public async Task<ActionResult<string>> Delete([FromRoute] DeleteCommand command)
+    public async Task<ActionResult<string>> Delete([FromRoute] DeleteCommand command, [FromQuery(Name = "isTeacher")] bool isTeacher)
     {
         command.CurrentUserId = Guid.Parse(UserId);
+        command.isTeacher = isTeacher;
         var result = await _mediator.Send(command);
         return HandleMediatorResponse(result);
     }

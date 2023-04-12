@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.Extensions.Logging;
 using PlatformaEducationala.Core.Enums;
+using PlatformaEducationala.Core.Project.Queries.GetById;
 using PlatformaEducationala.Core.Repositories;
 
 namespace PlatformaEducationala.Core.Project.Commands.Delete;
@@ -9,6 +10,7 @@ public class DeleteCommand : IRequest<DeleteResponse>
 {
     public Guid CurrentUserId { get; set; }
     public Guid Id { get; set; }
+    public bool isTeacher { get; set; }
 }
 
 public class DeleteCommandHandler : IRequestHandler<DeleteCommand, DeleteResponse>
@@ -25,7 +27,13 @@ public class DeleteCommandHandler : IRequestHandler<DeleteCommand, DeleteRespons
     public async Task<DeleteResponse> Handle(DeleteCommand command, CancellationToken cancellationToken)
     {
         var response = new DeleteResponse();
-        var project = await _projectRepository.GetById(command.Id, command.CurrentUserId);
+        var command_to_query = new GetByIdQuery()
+        {
+            CurrentUserId = command.CurrentUserId,
+            Id = command.Id,
+            IsTeacher = command.isTeacher
+        };
+        var project = await _projectRepository.GetById(command_to_query);
         if (project == null)
         {
             response.Errors = new List<string> { "Proiectul nu a fost gasit" };

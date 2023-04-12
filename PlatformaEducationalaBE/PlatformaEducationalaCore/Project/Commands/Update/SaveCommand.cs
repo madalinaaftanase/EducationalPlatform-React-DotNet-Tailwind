@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.Extensions.Logging;
 using PlatformaEducationala.Core.Enums;
+using PlatformaEducationala.Core.Project.Queries.GetById;
 using PlatformaEducationala.Core.Repositories;
 
 namespace PlatformaEducationala.Core.Project.Commands.Update;
@@ -11,6 +12,7 @@ public class SaveCommand : IRequest<SaveResponse>
     public Guid Id { get; set; }
     public string Xml { get; set; }
     public string Name { get; set; }
+    public bool IsTeacher { get; set; }
 }
 
 public class SaveCommandHandler : IRequestHandler<SaveCommand, SaveResponse>
@@ -30,6 +32,13 @@ public class SaveCommandHandler : IRequestHandler<SaveCommand, SaveResponse>
         var resultValidation = await validator.ValidateAsync(command, cancellationToken);
         var response = new SaveResponse();
 
+        var command_to_query = new GetByIdQuery()
+        {
+            CurrentUserId = command.CurrentUserId,
+            Id = command.Id,
+            IsTeacher = command.IsTeacher
+        };
+
         if (!resultValidation.IsValid)
         {
             _logger.LogInformation("Given input failed validation:{errors}", resultValidation.Errors);
@@ -42,7 +51,7 @@ public class SaveCommandHandler : IRequestHandler<SaveCommand, SaveResponse>
             };
         }
 
-        var project = await _projectRepository.GetById(command.Id, command.CurrentUserId);
+        var project = await _projectRepository.GetById(command_to_query);
 
         if (project == null)
         {
@@ -50,13 +59,13 @@ public class SaveCommandHandler : IRequestHandler<SaveCommand, SaveResponse>
             response.Errors = new List<string> { "Proiectul nu a fost gasit." };
             return response;
         }
-
+      
         project.Xml = command.Xml;
         project.Name = command.Name;
 
         try
         {
-            await _projectRepository.UpdateAsync(project);
+            await _projectRepository.UpdateAsync(project,command.IsTeacher);
         }
         catch (Exception e)
         {

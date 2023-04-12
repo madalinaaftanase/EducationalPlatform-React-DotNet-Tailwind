@@ -8,6 +8,7 @@ export interface ProjectSave {
   id?: string;
   name: string;
   xml?: string;
+  isTeacher?: boolean;
 }
 
 export interface DeleteProject {

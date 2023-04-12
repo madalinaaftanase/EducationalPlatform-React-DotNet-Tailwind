@@ -23,10 +23,10 @@ public class GetQueryHndler : IRequestHandler<GetQuery, GetResponse>
         _logger = logger;
     }
 
-    public async Task<GetResponse> Handle(GetQuery request, CancellationToken cancellationToken)
+    public async Task<GetResponse> Handle(GetQuery query, CancellationToken cancellationToken)
     {
         _logger.LogInformation("Start Handle");
-        var projects = await _groupRepository.GetAll(request);
+        var projects = await _groupRepository.GetAll(query);
 
         if (projects == null)
         {

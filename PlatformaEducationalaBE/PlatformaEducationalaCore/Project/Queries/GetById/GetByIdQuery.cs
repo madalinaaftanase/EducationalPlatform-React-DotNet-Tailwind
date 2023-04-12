@@ -8,6 +8,7 @@ public class GetByIdQuery : IRequest<GetByIdResponse>
 {
     public Guid CurrentUserId { get; set; }
     public Guid Id { get; set; }
+    public bool IsTeacher { get; set; }
 }
 
 public class GetByIdHandler : IRequestHandler<GetByIdQuery, GetByIdResponse>
@@ -21,10 +22,10 @@ public class GetByIdHandler : IRequestHandler<GetByIdQuery, GetByIdResponse>
         _projectRepository = projectRepository;
     }
 
-    public async Task<GetByIdResponse> Handle(GetByIdQuery request, CancellationToken cancellationToken)
+    public async Task<GetByIdResponse> Handle(GetByIdQuery query, CancellationToken cancellationToken)
     {
         var response = new GetByIdResponse();
-        var project = await _projectRepository.GetById(request.Id, request.CurrentUserId);
+        var project = await _projectRepository.GetById(query);
 
         response.Project = project;
         return response;

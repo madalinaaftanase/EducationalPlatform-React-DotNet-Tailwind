@@ -1,16 +1,19 @@
+import { useContext } from "react";
 import config from "../../../config";
 import { ProjectSave } from "../../../models/project/Project";
 import { createProject } from "../../../services/projectAPI";
 
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../../hooks/UserContext";
 
 function AddButton() {
   const navigator = useNavigate();
   const url = `${config.baseApiUrl}/Projects`;
   const projectDefault: ProjectSave = { name: "nume default" };
+  const { isTeacher } = useContext(UserContext);
 
   const handleOnClick = async () => {
-    const response = await createProject(url, projectDefault);
+    const response = await createProject(url, projectDefault, isTeacher);
     if (response?.responseStatus == 200) {
       navigator(`/Proiecte/${response.id}`);
     } else {

@@ -8,6 +8,7 @@ namespace PlatformaEducationala.Core.Project.Queries.Get;
 public class GetQuery : IRequest<GetResponse>
 {
     public Guid CurrentUserId { get; set; }
+    public bool IsTeacher { get; set; }
 }
 
 public class GetQueryHndler : IRequestHandler<GetQuery, GetResponse>
@@ -22,10 +23,10 @@ public class GetQueryHndler : IRequestHandler<GetQuery, GetResponse>
         _logger = logger;
     }
 
-    public async Task<GetResponse> Handle(GetQuery request, CancellationToken cancellationToken)
+    public async Task<GetResponse> Handle(GetQuery query, CancellationToken cancellationToken)
     {
         _logger.LogInformation("Start Handle");
-        var projects = await _projectRepository.GetAll(request.CurrentUserId);
+        var projects = await _projectRepository.GetAll(query);
 
         if (projects == null)
         {

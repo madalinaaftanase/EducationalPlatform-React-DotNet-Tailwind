@@ -1,10 +1,11 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
 
 import config from "../../../config";
 import Project from "../../../models/project/Project";
 import { deleteByIdProject } from "../../../services/projectAPI";
 import CheckModal from "../../common/CheckAlert";
+import { UserContext } from "../../../hooks/UserContext";
 
 interface CardInterface {
   project: Project;
@@ -12,11 +13,12 @@ interface CardInterface {
 
 function Card({ project }: CardInterface) {
   const [showAlert, setShowAlert] = useState(false);
+  const { isTeacher } = useContext(UserContext);
   const navigator = useNavigate();
   const url = `${config.baseApiUrl}/Projects/${project.id}`;
 
   let deleteProject = async () => {
-    const response = await deleteByIdProject(url);
+    const response = await deleteByIdProject(url, isTeacher);
     if (response?.responseStatus == 200) {
       window.location.reload();
     } else {
@@ -42,7 +44,9 @@ function Card({ project }: CardInterface) {
       <CheckModal
         handleConfirm={handleConfirmRemoving}
         handleCancel={handleCancelRemoving}
-        showModal={showAlert} title={"Esti sigur ca vrei sa stergi acest proiect?"}      />
+        showModal={showAlert}
+        title={"Esti sigur ca vrei sa stergi acest proiect?"}
+      />
       <div className="block max-w-sm p-6 bg-mintBlue border border-gray-200 rounded-lg shadow hover:bg-mint min-w-[30%] flex flex-row justify-between">
         <div>
           <h5

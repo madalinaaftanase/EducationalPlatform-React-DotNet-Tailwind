@@ -9,6 +9,7 @@ public class CreateCommand : IRequest<CreateResponse>
 {
     public Guid CurrentUserId { get; set; }
     public string Name { get; set; }
+    public Boolean IsTeacher { get; set; }
 }
 
 public class CreateCommandHandler : IRequestHandler<CreateCommand, CreateResponse>
@@ -46,9 +47,17 @@ public class CreateCommandHandler : IRequestHandler<CreateCommand, CreateRespons
             var project = new Entities.Project
             {
                 Name = command.Name,
-                StudentId = command.CurrentUserId,
                 Id = id
             };
+
+            if (command.IsTeacher)
+            {
+                project.TeacherId = command.CurrentUserId;
+            }
+            else
+            {
+                project.StudentId = command.CurrentUserId;
+            }
 
             await _projectRepository.CreateAsync(project);
             response.Id = id;

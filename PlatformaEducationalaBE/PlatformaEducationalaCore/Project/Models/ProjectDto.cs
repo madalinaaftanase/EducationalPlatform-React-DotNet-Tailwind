@@ -6,4 +6,5 @@ namespace PlatformaEducationala.Core.Project.Models;
         public string Name { get; set; }
         public string Xml { get; set; }
         public Guid StudentId { get; set; }
+        public Guid TeacherId { get; set; }
     }
