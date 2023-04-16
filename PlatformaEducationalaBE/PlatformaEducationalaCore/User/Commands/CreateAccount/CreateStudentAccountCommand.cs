@@ -53,8 +53,8 @@ public class CreateAccountCommandHandler : IRequestHandler<CreateStudentAccountC
         var entity = new Student
         {
             Email = command.Email,
-            FirstName = command.FirstName,
-            LastName = command.LastName,
+            Firstname = command.FirstName,
+            Lastname = command.LastName,
             Password = passwordHash
         };
 

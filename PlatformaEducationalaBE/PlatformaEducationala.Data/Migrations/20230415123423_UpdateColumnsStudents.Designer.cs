@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PlatformaEducationala.Data.Context;
 
@@ -11,9 +12,10 @@ using PlatformaEducationala.Data.Context;
 namespace PlatformaEducationala.Data.Migrations
 {
     [DbContext(typeof(PlatformDBContext))]
-    partial class PlatformDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230415123423_UpdateColumnsStudents")]
+    partial class UpdateColumnsStudents
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

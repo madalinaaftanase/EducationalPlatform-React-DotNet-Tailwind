@@ -6,8 +6,8 @@ namespace PlatformaEducationala.Core.Teacher.Commands.CreateAccount
 {
     public class CreateTeacherAccountCommand : IRequest<CreateTeacherAccountResponse>
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string Firstname { get; set; }
+        public string Lastname { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
     }
@@ -53,8 +53,8 @@ namespace PlatformaEducationala.Core.Teacher.Commands.CreateAccount
             var entity = new PlatformaEducationala.Core.Entities.Teacher
             {
                 Email = command.Email,
-                FirstName = command.FirstName,
-                LastName = command.LastName,
+                Firstname = command.Firstname,
+                Lastname = command.Lastname,
                 Password = passwordHash
             };
 

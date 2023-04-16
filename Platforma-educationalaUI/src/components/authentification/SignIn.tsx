@@ -8,8 +8,8 @@ import { useNavigate } from "react-router-dom";
 function SignIn() {
   const navigator = useNavigate();
   const [formInput, setFormInput] = useState({
-    firstName: "",
-    lastName: "",
+    firstname: "",
+    lastname: "",
     email: "",
     password: "",
     checkPassword: "",
@@ -20,7 +20,7 @@ function SignIn() {
   const onSubmit = async (e: any) => {
     e.preventDefault();
     setErrors("");
-    if (!formInput.lastName) return setErrors("Numele este obligatoriu");
+    if (!formInput.lastname) return setErrors("Numele este obligatoriu");
     if (!formInput.email) return setErrors("Email obligatoriu");
     if (!formInput.password) return setErrors("Parola obligatorie");
     if (!formInput.checkPassword) return setErrors("Confirma parola");
@@ -129,11 +129,13 @@ function SignIn() {
               Inregistrare
             </button>
             <p className="text-sm font-semibold mt-2 pt-1 mb-0">
-              Ai deja un cont?
+              Ai deja un cont?&nbsp;
               <a
                 href="#!"
                 className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
-                onClick={() => (window.location.href = "/Login/Student")}
+                onClick={() => {
+                  navigator("/Login/Student");
+                }}
               >
                 Logheaza-te acum!
               </a>

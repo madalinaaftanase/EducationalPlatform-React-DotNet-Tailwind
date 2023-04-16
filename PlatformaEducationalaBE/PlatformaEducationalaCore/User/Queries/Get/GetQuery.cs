@@ -11,18 +11,18 @@ public class GetQuery: IRequest<GetResponse>
     public Guid CurrentUserId { get; set; }
 }
 
-public class GetQueryHndler : IRequestHandler<GetQuery, GetResponse>
+public class GetQueryHandler : IRequestHandler<GetQuery, GetResponse>
 {
     private readonly IStudentRepository _studentRepository;
     private readonly ILogger _logger;
 
-   public GetQueryHndler(IStudentRepository studentRepository, ILogger<GetQueryHndler> logger)
+   public GetQueryHandler(IStudentRepository studentRepository, ILogger<GetQueryHandler> logger)
     {
         _studentRepository = studentRepository;
         _logger = logger;
     }
 
-    public async Task<GetResponse> Handle(GetQuery request, CancellationToken cancellationToken)
+    public async Task<GetResponse> Handle(GetQuery query, CancellationToken cancellationToken)
     {
         _logger.LogInformation("Exemplu logging");
         var students = await _studentRepository.GetAll();

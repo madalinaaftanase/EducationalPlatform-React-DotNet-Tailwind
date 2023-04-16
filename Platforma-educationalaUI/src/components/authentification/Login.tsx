@@ -7,7 +7,7 @@ import { LoginAccount } from "../../services/userAPI";
 import FormField from "./FormField";
 
 function Login() {
-  const { setToken, setUsername, setIsTeacher } = useContext(UserContext);
+  const { setToken, setUsername, setIsTeacher, setIdTeacher } = useContext(UserContext);
   const navigator = useNavigate();
   const [isStudent, setIsStudent] = useState(false);
   const [errors, setErrors] = useState("");
@@ -22,8 +22,11 @@ function Login() {
     }
   }, []);
 
-  const setNameLocalStorage = (name: string) => {
+  const setLocalStorage = (name: string, id: string) => {
     localStorage.setItem("username", name);
+    localStorage.setItem("idTeacher", id);
+    setUsername(name);
+    setIdTeacher(id);
   };
 
   const onSubmit = async (e: any) => {
@@ -45,8 +48,7 @@ function Login() {
       document.cookie = `token=${token}; path=/;`;
       setToken(token);
       setIsTeacher(!isStudent);
-      setNameLocalStorage(response.data.username);
-      setUsername(response.data.username);
+      setLocalStorage(response.data.username, response.data.id);
       navigator("/Proiecte");
     } else {
       setErrors(response.errors[0]);
@@ -99,7 +101,7 @@ function Login() {
             </button>
             {isStudent && (
               <p className="text-sm font-semibold mt-2 pt-1 mb-0">
-                Esti profesor?
+                Esti profesor?&nbsp;
                 <a
                   href="#!"
                   className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
@@ -111,7 +113,7 @@ function Login() {
             )}
             {!isStudent && (
               <p className="text-sm font-semibold mt-2 pt-1 mb-0">
-                Esti student?
+                Esti student?&nbsp;
                 <a
                   href="#!"
                   className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
@@ -122,7 +124,7 @@ function Login() {
               </p>
             )}
             <p className="text-sm font-semibold mt-2 pt-1 mb-0">
-              Nu ai un cont?
+              Nu ai un cont?&nbsp;
               <a
                 href="#!"
                 className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
