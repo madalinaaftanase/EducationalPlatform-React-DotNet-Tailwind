@@ -46,7 +46,7 @@ public class LoginStudentCommandHandler : IRequestHandler<LoginStudentCommand, L
         }
 
         response.Token = token;
-        response.Username = user.FirstName;
+        response.Username = user.Firstname;
         return response;
     }
 }

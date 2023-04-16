@@ -5,18 +5,22 @@ interface UserContextInterface {
   isAuthentificated: boolean;
   username: string | undefined;
   isTeacher: boolean;
+  idTeacher: string;
   setToken: Function;
   setUsername: Function;
   setIsTeacher: Function;
+  setIdTeacher: Function;
 }
 
 export const UserContext = React.createContext<UserContextInterface>({
   isAuthentificated: false,
   username: undefined,
   isTeacher: false,
+  idTeacher: "",
   setIsTeacher: () => {},
   setToken: () => {},
   setUsername: () => {},
+  setIdTeacher: () => {},
 });
 
 interface UserContextProviderInterface {
@@ -26,6 +30,7 @@ interface UserContextProviderInterface {
 function UserContextProvider({ children }: UserContextProviderInterface) {
   const [isAuthentificated, setIsAuthentificated] = useState(!!getCookie("token"));
   const [username, setUsername] = useState("");
+  const [idTeacher, setIdTeacher] = useState("");
   const [isTeacher, setIsTeacher] = useState(false);
 
   const setToken = () => {
@@ -38,6 +43,7 @@ function UserContextProvider({ children }: UserContextProviderInterface) {
 
   const onInit = () => {
     setUsername(localStorage.getItem("username") || "");
+    setIdTeacher(localStorage.getItem("idTeacher") || "");
   };
 
   return (
@@ -46,9 +52,11 @@ function UserContextProvider({ children }: UserContextProviderInterface) {
         isAuthentificated,
         username: username,
         isTeacher,
+        idTeacher,
         setToken,
         setUsername,
         setIsTeacher,
+        setIdTeacher,
       }}
     >
       {children}

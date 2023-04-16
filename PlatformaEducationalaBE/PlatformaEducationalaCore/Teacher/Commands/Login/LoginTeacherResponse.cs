@@ -8,4 +8,5 @@ public class LoginTeacherResponse: BaseResponse
 {
     public string Token { get; set; } = string.Empty;
     public string Username { get; set; }
+    public Guid Id { get; set; }
 }

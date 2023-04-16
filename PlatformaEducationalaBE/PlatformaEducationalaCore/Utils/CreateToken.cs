@@ -16,8 +16,8 @@ namespace PlatformaEducationala.Core.Utils
             {
                  new Claim(ClaimTypes.NameIdentifier , user.Id.ToString()),
                  new Claim(ClaimTypes.Email, user.Email),
-                 new Claim(ClaimTypes.GivenName, user.FirstName),
-                 new Claim(ClaimTypes.Surname, user.LastName),
+                 new Claim(ClaimTypes.GivenName, user.Firstname),
+                 new Claim(ClaimTypes.Surname, user.Lastname),
                  new Claim(ClaimsIdentity.DefaultRoleClaimType,role)
              };
 

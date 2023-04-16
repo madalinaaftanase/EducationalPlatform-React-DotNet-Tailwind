@@ -1,16 +1,27 @@
 export default interface Student {
+  firstname: string;
+  lastname: string;
   email: string;
+  id: string;
+  groupName?: string;
+  groupId?: string;
 }
 
 export interface StudentSigninRequest {
-  firstName: string;
-  lastName: string;
+  firstname: string;
+  lastname: string;
   email: string;
   password: string;
 }
 
 export interface StudentsResponse {
-  users: Student[];
+  students: Student[];
+  errors: string[];
+  responseStatus: number;
+}
+
+export interface StudentResponse {
+  student: Student;
   errors: string[];
   responseStatus: number;
 }

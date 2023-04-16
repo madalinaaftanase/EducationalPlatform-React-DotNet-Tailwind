@@ -49,7 +49,8 @@ public class LoginTeacherCommandHandler : IRequestHandler<LoginTeacherCommand, L
         }
 
         response.Token = token;
-        response.Username = user.FirstName;
+        response.Username = user.Firstname;
+        response.Id = user.Id;
         return response;
     }
 }

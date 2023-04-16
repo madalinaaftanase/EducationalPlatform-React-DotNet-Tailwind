@@ -11,8 +11,8 @@ public class TeachersConfiguration: IEntityTypeConfiguration<Teacher>
     {
         builder.Property(x => x.Id).IsRequired();
         builder.Property(x => x.Email).HasMaxLength(50).IsRequired();
-        builder.Property(x => x.FirstName).IsRequired();
-        builder.Property(x => x.LastName).IsRequired();
+        builder.Property(x => x.Firstname).IsRequired();
+        builder.Property(x => x.Lastname).IsRequired();
         builder.Property(x => x.Password).IsRequired();
     }
 }

@@ -1,4 +1,6 @@
-﻿using TeacherEntity = PlatformaEducationala.Core.Entities.Teacher;
+﻿using PlatformaEducationala.Core.Teacher.Queries.GetStudents;
+using PlatformaEducationala.Core.User.Models;
+using TeacherEntity = PlatformaEducationala.Core.Entities.Teacher;
 
 namespace PlatformaEducationala.Core.Repositories
 {
@@ -6,5 +8,6 @@ namespace PlatformaEducationala.Core.Repositories
     {
         Task<TeacherEntity> GetByEmail(string email);
         Task AddAsync(TeacherEntity teacher);
+        Task<List<StudentTableDto>> GetStudents(GetStudentsQuery query);
     }
 }
