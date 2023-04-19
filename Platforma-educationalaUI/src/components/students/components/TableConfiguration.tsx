@@ -1,12 +1,9 @@
-import { MouseEventHandler, useState, useEffect, ChangeEventHandler } from "react";
 import Student from "../../../models/student/Student";
-import Group from "../../../models/group/Group";
-import { getAll } from "../../../services/groupAPI";
-import config from "../../../config";
-import { useNavigate } from "react-router-dom";
-import { saveStudentGroup } from "../../../services/studentAPI";
 
-export const getColumns = (handleStudentGroup: (student: Student) => void) => {
+export const getColumns = (
+  handleStudentGroup: (student: Student) => void,
+  handleDeleteStudent: (student: Student) => void
+) => {
   return [
     {
       name: "Nume",
@@ -41,115 +38,28 @@ export const getColumns = (handleStudentGroup: (student: Student) => void) => {
       allowOverflow: true,
       button: true,
     },
+    {
+      cell: (row: Student) => (
+        <button onClick={() => handleDeleteStudent(row)}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="w-6 h-6 hover:text-red-700"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5m6 4.125l2.25 2.25m0 0l2.25 2.25M12 13.875l2.25-2.25M12 13.875l-2.25 2.25M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"
+            />
+          </svg>
+        </button>
+      ),
+      ignoreRowClick: true,
+      allowOverflow: true,
+      button: true,
+    },
   ];
 };
-
-function GroupModal({
-  isOpen,
-  setIsOpen,
-  studentDetails,
-}: {
-  isOpen: boolean;
-  setIsOpen: Function;
-  studentDetails?: Student;
-}) {
-  const [groups, setGroups] = useState<Group[]>([]);
-  const [selectedGroupId, setSelectedGroupId] = useState<string>();
-  const url = `${config.baseApiUrl}/Groups`;
-  const navigator = useNavigate();
-
-  useEffect(() => {
-    onInit();
-  }, []);
-
-  const handleCloseModal = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const onInit = async () => {
-    const response = await getAll(url, true);
-    if (response?.responseStatus == 200) {
-      setGroups(response.groups);
-    } else {
-      navigator("/Error");
-    }
-  };
-
-  const handleChangeGroup: ChangeEventHandler<HTMLSelectElement> = (e) => {
-    const newIdGroup = e.target.value;
-    if (newIdGroup.length < 1) {
-    }
-    setSelectedGroupId(newIdGroup);
-  };
-
-  const handleSubmit = async () => {
-    if (studentDetails?.groupId && selectedGroupId) {
-      const idStudent = studentDetails.id;
-      const url = `${config.baseApiUrl}/Students/${idStudent}/Groups/${studentDetails?.groupId}`;
-      var response = await saveStudentGroup(url, selectedGroupId);
-      if (response?.responseStatus == 200) {
-        setIsOpen(!isOpen);
-        window.location.reload();
-        //to do sa arat ca s-a salvat
-      }
-    } else {
-      setIsOpen(!isOpen);
-      navigator("/Error");
-    }
-  };
-
-  return (
-    <>
-      {isOpen && (
-        <div
-          id="defaultModal"
-          aria-hidden="true"
-          tab-index="-1"
-          className="fixed w-auto left-0 top-0  right-0 z-50  p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full flex items-center flex-col bg-gray-900 bg-opacity-50"
-        >
-          <div className="relative w-[30%]">
-            <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white p-6">
-                Editeaza grupa
-              </h3>
-              <div className="p-6 space-y-6">
-                <select onChange={handleChangeGroup}>
-                  <option value="default" disabled>
-                    Selecteaza o grupa
-                  </option>
-                  {groups.map((group) => {
-                    return (
-                      <option key={group.id} value={group.id}>
-                        {group.name}
-                      </option>
-                    );
-                  })}
-                </select>
-              </div>
-              <div className="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
-                <button
-                  data-modal-hide="defaultModal"
-                  type="button"
-                  className="bg-mintBlue hover:bg-mint text-yellow px-2 py-1 font-bold border-b-4 border-mint hover:border-mintBlue rounded"
-                  onClick={handleSubmit}
-                >
-                  Salveaza
-                </button>
-                <button
-                  type="button"
-                  data-modal-hide="defaultModal"
-                  className="bg-red-400 hover:bg-red-500 px-2 py-1 font-bold border-b-4 border-red-800 hover:border-red-700 rounded"
-                  onClick={handleCloseModal}
-                >
-                  Anuleaza
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-    </>
-  );
-}
-
-export default GroupModal;

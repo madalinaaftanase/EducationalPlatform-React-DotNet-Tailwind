@@ -1,12 +1,12 @@
-﻿
-using MediatR;
+﻿using MediatR;
 using Microsoft.Extensions.Logging;
 using PlatformaEducationala.Core.Entities;
+using PlatformaEducationala.Core.Enums;
 using PlatformaEducationala.Core.Repositories;
 
 namespace PlatformaEducationala.Core.User.Commands.CreateAccount;
 
-public class CreateStudentAccountCommand: IRequest<CreateStudentAccountResponse>
+public class CreateStudentAccountCommand : IRequest<CreateStudentAccountResponse>
 {
     public string FirstName { get; set; }
     public string LastName { get; set; }
@@ -16,15 +16,18 @@ public class CreateStudentAccountCommand: IRequest<CreateStudentAccountResponse>
 
 public class CreateAccountCommandHandler : IRequestHandler<CreateStudentAccountCommand, CreateStudentAccountResponse>
 {
-    private readonly IStudentRepository _studentRepository;
     private readonly ILogger _logger;
-    public CreateAccountCommandHandler(IStudentRepository studentRepository, ILogger<CreateAccountCommandHandler> logger)
+    private readonly IStudentRepository _studentRepository;
+
+    public CreateAccountCommandHandler(IStudentRepository studentRepository,
+        ILogger<CreateAccountCommandHandler> logger)
     {
         _studentRepository = studentRepository;
         _logger = logger;
     }
 
-    public async Task<CreateStudentAccountResponse> Handle(CreateStudentAccountCommand command, CancellationToken cancellationToken)
+    public async Task<CreateStudentAccountResponse> Handle(CreateStudentAccountCommand command,
+        CancellationToken cancellationToken)
     {
         var validator = new CreateStudentAccountValidator();
         var resultValidation = await validator.ValidateAsync(command, cancellationToken);
@@ -37,18 +40,20 @@ public class CreateAccountCommandHandler : IRequestHandler<CreateStudentAccountC
                 Errors = resultValidation.Errors
                     .Select(x => $"Property {x.PropertyName} failed vaidation. Error was {x.ErrorMessage}")
                     .ToList(),
-                ResponseStatus = Enums.ResultStatus.BadRequest
+                ResponseStatus = ResultStatus.BadRequest
             };
         }
+
         var student = await _studentRepository.GetByEmail(command.Email);
 
         if (student != null)
         {
             _logger.LogInformation("Given Email already exist");
             result.Errors.Add("Email exist already");
-            result.ResponseStatus = Enums.ResultStatus.BadRequest;
+            result.ResponseStatus = ResultStatus.BadRequest;
             return result;
         }
+
         var passwordHash = BCrypt.Net.BCrypt.HashPassword(command.Password);
         var entity = new Student
         {
@@ -64,11 +69,13 @@ public class CreateAccountCommandHandler : IRequestHandler<CreateStudentAccountC
         }
         catch (Exception ex)
         {
-            _logger.LogError("{method} failed.Account creation failed. Errors: {err}", nameof(_studentRepository.AddAsync), ex);
+            _logger.LogError("{method} failed.Account creation failed. Errors: {err}",
+                nameof(_studentRepository.AddAsync), ex);
             result.Errors.Add("Failed");
-            result.ResponseStatus = Enums.ResultStatus.InternalError;
+            result.ResponseStatus = ResultStatus.InternalError;
             return result;
         }
+
         _logger.LogInformation("The account was created succesfully");
         return result;
     }

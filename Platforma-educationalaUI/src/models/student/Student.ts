@@ -25,3 +25,8 @@ export interface StudentResponse {
   errors: string[];
   responseStatus: number;
 }
+
+export interface BasicResponse {
+  errors: string[];
+  responseStatus: number;
+}

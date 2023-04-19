@@ -1,4 +1,5 @@
 ﻿using PlatformaEducationala.Core.Entities;
+using PlatformaEducationala.Core.User.Commands.DeleteStudentGroup;
 using PlatformaEducationala.Core.User.Commands.SaveOrUpdateStudentGroup;
 using PlatformaEducationala.Core.User.Models;
 
@@ -12,4 +13,5 @@ public interface IStudentRepository
     Task SaveOrUpdateGroup(SaveOrUpdateGroupCommand command);
     Task<Entities.Teacher> GetTeacher(Guid studentId);
 
+    Task DeleteStudentGroup(DeleteStudentGroupCommand command);
 }

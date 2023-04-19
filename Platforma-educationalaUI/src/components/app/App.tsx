@@ -15,7 +15,6 @@ import Groups from "../../pages/Groups";
 import Profile from "../../pages/Profile";
 
 function App() {
-  const navigator = useNavigate();
   const { isAuthentificated } = useContext(UserContext);
 
   if (isAuthentificated) {
