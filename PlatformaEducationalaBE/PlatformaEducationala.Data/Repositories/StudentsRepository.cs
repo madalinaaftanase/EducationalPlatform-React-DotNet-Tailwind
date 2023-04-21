@@ -1,11 +1,10 @@
-﻿using AutoMapper;
+﻿using Microsoft.EntityFrameworkCore;
+using PlatformaEducationala.Core.Entities;
 using PlatformaEducationala.Core.Repositories;
+using PlatformaEducationala.Core.User.Commands.DeleteStudentGroup;
+using PlatformaEducationala.Core.User.Commands.SaveOrUpdateStudentGroup;
 using PlatformaEducationala.Core.User.Models;
 using PlatformaEducationala.Data.Context;
-using Microsoft.EntityFrameworkCore;
-using PlatformaEducationala.Core.Entities;
-using PlatformaEducationala.Core.User.Commands.SaveOrUpdateStudentGroup;
-using PlatformaEducationala.Core.User.Commands.SaveStudentGroup;
 
 namespace PlatformaEducationala.Data.Repositories;
 
@@ -35,10 +34,7 @@ public class StudentsRepository : IStudentRepository
             GroupId = command.NewIdGroup
         };
 
-        if (oldStudentGroup != null)
-        {
-            _platformDbContext.StudentGroups.Remove(oldStudentGroup);
-        }
+        if (oldStudentGroup != null) _platformDbContext.StudentGroups.Remove(oldStudentGroup);
 
         _platformDbContext.StudentGroups.Add(newStudentGroup);
         await _platformDbContext.SaveChangesAsync();
@@ -57,17 +53,28 @@ public class StudentsRepository : IStudentRepository
         return teacher;
     }
 
+    public async Task DeleteStudentGroup(DeleteStudentGroupCommand command)
+    {
+        var studentGroup = _platformDbContext.StudentGroups.Find(command.StudentId, command.GroupId);
+
+        if (studentGroup != null)
+        {
+            _platformDbContext.StudentGroups.Remove(studentGroup);
+        }
+
+        await _platformDbContext.SaveChangesAsync();
+    }
+
     public async Task<StudentDto> GetByEmail(string email)
     {
-      var student =  await _platformDbContext.Students.FirstOrDefaultAsync(s =>s.Email==email);
+        var student = await _platformDbContext.Students.FirstOrDefaultAsync(s => s.Email == email);
 
-      return MapperModels<Student,StudentDto>.Map(student);
+        return MapperModels<Student, StudentDto>.Map(student);
     }
 
     public async Task<List<StudentDto>> GetAll()
     {
         var students = await _platformDbContext.Students.ToListAsync();
-        return MapperModels<Student,StudentDto>.MapList(students);
+        return MapperModels<Student, StudentDto>.MapList(students);
     }
-
 }
