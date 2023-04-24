@@ -63,7 +63,7 @@ function StudentsTable() {
       setShowAlert(false);
 
       if (response?.responseStatus == 200) {
-        window.location.reload();
+        init();
       } else {
         navigator("/Error");
       }
@@ -106,7 +106,12 @@ function StudentsTable() {
         highlightOnHover={true}
         className="table w-3/5 bg-gray-100 text-gray-900 border border-green-400 rounded-lg shadow-sm"
       />
-      <GroupModal isOpen={isOpen} setIsOpen={setIsOpen} studentDetails={studentDetails} />
+      <GroupModal
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        studentDetails={studentDetails}
+        fetchData={init}
+      />
       <CheckModalRemove
         handleConfirm={handleConfirmRemoving}
         handleCancel={handleCancelRemoving}
@@ -114,7 +119,11 @@ function StudentsTable() {
         title={"Esti sigur ca vrei sa stergi studentul?"}
         setShowModal={setShowAlert}
       />
-      <AddStudentModal isOpen={isAddStudentModalOpen} setIsOpen={setAddStudentModal} />
+      <AddStudentModal
+        isOpen={isAddStudentModalOpen}
+        setIsOpen={setAddStudentModal}
+        fetchData={init}
+      />
     </div>
   );
 }

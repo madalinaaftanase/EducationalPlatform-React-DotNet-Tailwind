@@ -16,7 +16,7 @@ function Projects() {
 
   useEffect(() => {
     init();
-  }, []);
+  }, [isTeacher]);
 
   let init = async () => {
     const response = await getAll(url, isTeacher);
@@ -35,7 +35,7 @@ function Projects() {
       </div>
       <div className="flex gap-4 flex-wrap">
         {projects.map((value) => {
-          return <Card project={value} key={value.id} />;
+          return <Card project={value} key={value.id} fetchData={init} />;
         })}
       </div>
     </div>

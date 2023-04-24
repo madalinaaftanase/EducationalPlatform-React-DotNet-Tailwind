@@ -15,7 +15,7 @@ function Groups() {
 
   useEffect(() => {
     init();
-  }, []);
+  }, [isTeacher]);
 
   let init = async () => {
     const response = await getAll(url, isTeacher);

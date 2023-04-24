@@ -44,6 +44,9 @@ function UserContextProvider({ children }: UserContextProviderInterface) {
   const onInit = () => {
     setUsername(localStorage.getItem("username") || "");
     setIdTeacher(localStorage.getItem("idTeacher") || "");
+    if (localStorage.getItem("idTeacher")) {
+      setIsTeacher(true);
+    }
   };
 
   return (
