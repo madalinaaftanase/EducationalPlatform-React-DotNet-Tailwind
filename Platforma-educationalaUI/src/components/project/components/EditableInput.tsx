@@ -1,6 +1,12 @@
 import { ChangeEventHandler, useState } from "react";
 
-function EditableInput({ text, handleTextChange }: { text: string, handleTextChange:ChangeEventHandler<HTMLInputElement> }) {
+function EditableInput({
+  text,
+  handleTextChange,
+}: {
+  text: string;
+  handleTextChange: ChangeEventHandler<HTMLInputElement>;
+}) {
   const [displayEditIcon, setDisplayEditIcon] = useState(false);
   const [isInEditMode, setIsInEditMode] = useState(false);
 
@@ -32,6 +38,7 @@ function EditableInput({ text, handleTextChange }: { text: string, handleTextCha
           onChange={handleTextChange}
           onKeyDown={handleEditMode}
           onBlur={handleMouseLeave}
+          className="p-1"
         />
       ) : (
         <div

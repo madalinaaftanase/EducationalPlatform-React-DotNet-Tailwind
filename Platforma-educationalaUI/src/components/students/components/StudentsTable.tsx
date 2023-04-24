@@ -1,12 +1,14 @@
 import React, { useEffect, useState, useContext } from "react";
 import DataTable from "react-data-table-component";
 import config from "../../../config";
-import { GetAllStudents, deleteStudentFromGroup } from "../../../services/studentAPI";
+import { GetAllStudents } from "../../../services/studentAPI";
 import { useNavigate } from "react-router-dom";
 import Student from "../../../models/student/Student";
 import { getColumns } from "./TableConfiguration";
 import GroupModal from "./GroupModal";
-import CheckModal from "../../common/CheckAlert";
+import CheckModalRemove from "../../common/CheckAlert";
+import AddStudentModal from "./AddStudentModal";
+import { deleteStudentFromGroup } from "../../../services/groupAPI";
 
 function StudentsTable() {
   const navigator = useNavigate();
@@ -15,6 +17,7 @@ function StudentsTable() {
   const [studentsCopy, setStudentsCopy] = useState<Student[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
+  const [isAddStudentModalOpen, setAddStudentModal] = useState(false);
 
   useEffect(() => {
     init();
@@ -55,7 +58,7 @@ function StudentsTable() {
 
   let handleConfirmRemoving = async () => {
     if (studentDetails) {
-      const url = `${config.baseApiUrl}/Students/${studentDetails.id}/Groups/${studentDetails.groupId}`;
+      const url = `${config.baseApiUrl}/Groups/${studentDetails.groupId}/Students/${studentDetails.id}`;
       const response = await deleteStudentFromGroup(url);
       setShowAlert(false);
 
@@ -74,15 +77,27 @@ function StudentsTable() {
     setShowAlert(false);
   };
 
+  const handleAddNewStudent = () => {
+    setAddStudentModal(true);
+  };
+
   return (
     <div className="border border-green-400 bg-gray-300 m-2 p-2 rounded-lg shadow-sm">
       <div className="w-full flex justify-between items-center mb-2">
         <h2>Studenti:</h2>
-        <input
-          className="p-1 w-1/6 rounded-lg"
-          onChange={handleFilterChange}
-          placeholder={"Cauta"}
-        />
+        <div className="flex gap-x-4 items-center">
+          <button
+            className="bg-yellow-200 hover:bg-gray-500 px-3 py-1 border-b-4 border-gray-700 hover:border-gray-700 rounded font-semibold"
+            onClick={handleAddNewStudent}
+          >
+            Adauga un student
+          </button>
+          <input
+            className="p-1 w-1/2 rounded-lg"
+            onChange={handleFilterChange}
+            placeholder={"Cauta"}
+          />
+        </div>
       </div>
       <DataTable
         columns={getColumns(handleOpenModal, handleOpenConfirmationModal)}
@@ -92,12 +107,14 @@ function StudentsTable() {
         className="table w-3/5 bg-gray-100 text-gray-900 border border-green-400 rounded-lg shadow-sm"
       />
       <GroupModal isOpen={isOpen} setIsOpen={setIsOpen} studentDetails={studentDetails} />
-      <CheckModal
+      <CheckModalRemove
         handleConfirm={handleConfirmRemoving}
         handleCancel={handleCancelRemoving}
         showModal={showAlert}
         title={"Esti sigur ca vrei sa stergi studentul?"}
+        setShowModal={setShowAlert}
       />
+      <AddStudentModal isOpen={isAddStudentModalOpen} setIsOpen={setAddStudentModal} />
     </div>
   );
 }

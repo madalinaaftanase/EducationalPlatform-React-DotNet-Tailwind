@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PlatformaEducationala.Core.Entities;
 using PlatformaEducationala.Core.Repositories;
-using PlatformaEducationala.Core.User.Commands.DeleteStudentGroup;
 using PlatformaEducationala.Core.User.Commands.SaveOrUpdateStudentGroup;
 using PlatformaEducationala.Core.User.Models;
 using PlatformaEducationala.Data.Context;
@@ -53,17 +52,6 @@ public class StudentsRepository : IStudentRepository
         return teacher;
     }
 
-    public async Task DeleteStudentGroup(DeleteStudentGroupCommand command)
-    {
-        var studentGroup = _platformDbContext.StudentGroups.Find(command.StudentId, command.GroupId);
-
-        if (studentGroup != null)
-        {
-            _platformDbContext.StudentGroups.Remove(studentGroup);
-        }
-
-        await _platformDbContext.SaveChangesAsync();
-    }
 
     public async Task<StudentDto> GetByEmail(string email)
     {

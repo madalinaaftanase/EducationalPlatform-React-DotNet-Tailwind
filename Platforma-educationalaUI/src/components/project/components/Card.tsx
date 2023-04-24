@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useContext } from "react";
 
-
 import config from "../../../config";
 import Project from "../../../models/project/Project";
 import { deleteByIdProject } from "../../../services/projectAPI";
@@ -47,6 +46,7 @@ function Card({ project }: CardInterface) {
         handleCancel={handleCancelRemoving}
         showModal={showAlert}
         title={"Esti sigur ca vrei sa stergi acest proiect?"}
+        setShowModal={setShowAlert}
       />
       <div className="block max-w-sm p-6 bg-mintBlue border border-gray-200 rounded-lg shadow hover:bg-mint min-w-[30%] flex flex-row justify-between">
         <div>
