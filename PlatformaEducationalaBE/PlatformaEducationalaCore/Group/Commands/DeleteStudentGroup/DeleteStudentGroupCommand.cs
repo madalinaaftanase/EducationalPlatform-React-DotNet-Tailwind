@@ -4,7 +4,7 @@ using PlatformaEducationala.Core.Common;
 using PlatformaEducationala.Core.Enums;
 using PlatformaEducationala.Core.Repositories;
 
-namespace PlatformaEducationala.Core.User.Commands.DeleteStudentGroup;
+namespace PlatformaEducationala.Core.Group.Commands.DeleteStudentGroup;
 
 public class DeleteStudentGroupCommand : IRequest<BaseResponse>
 {
@@ -16,12 +16,15 @@ public class DeleteStudentGroupCommand : IRequest<BaseResponse>
 public class DeleteStudentGroupCommandHandler : IRequestHandler<DeleteStudentGroupCommand, BaseResponse>
 {
     private readonly ILogger _logger;
+    private readonly IGroupRepository _groupRepository;
     private readonly IStudentRepository _studentRepository;
 
-    public DeleteStudentGroupCommandHandler(IStudentRepository studentRepository,
-        ILogger<DeleteStudentGroupCommandHandler> logger)
+    public DeleteStudentGroupCommandHandler(IGroupRepository groupRepository,
+        ILogger<DeleteStudentGroupCommandHandler> logger,
+        IStudentRepository studentRepository)
     {
         _logger = logger;
+        _groupRepository = groupRepository;
         _studentRepository = studentRepository;
     }
 
@@ -38,7 +41,7 @@ public class DeleteStudentGroupCommandHandler : IRequestHandler<DeleteStudentGro
 
         try
         {
-            await _studentRepository.DeleteStudentGroup(command);
+            await _groupRepository.DeleteStudentGroup(command);
         }
         catch (Exception ex)
         {

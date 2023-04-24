@@ -39,15 +39,6 @@ const saveStudentGroup = async (url: string, newIdGroup: string) => {
     }
 };
 
-const deleteStudentFromGroup = async (url: string) => {
-    try {
-        const response = await axios.delete<BasicResponse>(url, {
-            headers: { Authorization: `Bearer ${getCookie("token")}` },
-        });
-        return response.data;
-    } catch (err) {
-        if (axios.isAxiosError(err)) return err.response?.data as BasicResponse;
-    }
-}
 
-export { GetAllStudents, saveStudent, saveStudentGroup, deleteStudentFromGroup }
+
+export { GetAllStudents, saveStudent, saveStudentGroup }

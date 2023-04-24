@@ -1,14 +1,16 @@
 import React from "react";
 import GenericModal from "./GenericModal";
+import CancelButton from "./CancelButton";
 
 interface CheckModalInterface {
   handleConfirm: () => void;
   handleCancel: () => void;
+  setShowModal: Function;
   showModal: boolean;
   title: string;
 }
 
-function CheckModal({ handleCancel, handleConfirm, showModal, title }: CheckModalInterface) {
+function CheckModal({ handleCancel, handleConfirm, showModal, title, setShowModal }: CheckModalInterface) {
   return (
     <GenericModal showModal={showModal}>
       <h3 className="text-lg font-normal text-black p-8">{title}</h3>
@@ -19,13 +21,8 @@ function CheckModal({ handleCancel, handleConfirm, showModal, title }: CheckModa
         >
           Da, sunt sigur
         </button>
-        <button
-          className="bg-red-300 hover:bg-pink-600 py-2 px-4 border-b-4 border-pink-600 hover:border-red-300 rounded"
-          onClick={handleCancel}
-        >
-          {" "}
-          Nu, anuleaza
-        </button>
+        <CancelButton setIsOpen={setShowModal} text={"Nu, anuleaza"} />
+
       </div>
     </GenericModal>
   );
