@@ -6,7 +6,15 @@ import Group from "../../../models/group/Group";
 import config from "../../../config";
 import { addStudentToGroup } from "../../../services/groupAPI";
 
-function AddStudentModal({ isOpen, setIsOpen }: { isOpen: boolean; setIsOpen: Function }) {
+function AddStudentModal({
+  isOpen,
+  setIsOpen,
+  fetchData,
+}: {
+  isOpen: boolean;
+  setIsOpen: Function;
+  fetchData: Function;
+}) {
   const [email, setEmail] = useState<string>();
   const [isDisable, setIsDisable] = useState(true);
   const [groups, setGroups] = useState<Group[]>([]);
@@ -24,8 +32,8 @@ function AddStudentModal({ isOpen, setIsOpen }: { isOpen: boolean; setIsOpen: Fu
       console.log(email);
       const response = await addStudentToGroup(url, email);
       setIsOpen(false);
-      if (response?.responseStatus === 200) {
-        window.location.reload();
+      if (response?.responseStatus == 200) {
+        fetchData();
       }
     }
   };

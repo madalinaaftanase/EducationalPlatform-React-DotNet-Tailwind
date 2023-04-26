@@ -12,10 +12,12 @@ function GroupModal({
   isOpen,
   setIsOpen,
   studentDetails,
+  fetchData,
 }: {
   isOpen: boolean;
   setIsOpen: Function;
   studentDetails?: Student;
+  fetchData: Function;
 }) {
   const [groups, setGroups] = useState<Group[]>([]);
   const [selectedGroupId, setSelectedGroupId] = useState<string>();
@@ -32,8 +34,7 @@ function GroupModal({
       var response = await saveStudentGroup(url, selectedGroupId);
       if (response?.responseStatus == 200) {
         setIsOpen(!isOpen);
-        window.location.reload();
-        //to do sa arat ca s-a salvat
+        fetchData();
       }
     } else {
       setIsOpen(!isOpen);

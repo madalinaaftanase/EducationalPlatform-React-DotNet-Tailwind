@@ -9,9 +9,10 @@ import { UserContext } from "../../../hooks/UserContext";
 
 interface CardInterface {
   project: Project;
+  fetchData:Function;
 }
 
-function Card({ project }: CardInterface) {
+function Card({ project, fetchData }: CardInterface) {
   const [showAlert, setShowAlert] = useState(false);
   const { isTeacher } = useContext(UserContext);
   const navigator = useNavigate();
@@ -20,9 +21,7 @@ function Card({ project }: CardInterface) {
   let deleteProject = async () => {
     const response = await deleteByIdProject(url, isTeacher);
     if (response?.responseStatus == 200) {
-      window.location.reload();
-    } else {
-      navigator("/Error");
+      fetchData();
     }
   };
 
