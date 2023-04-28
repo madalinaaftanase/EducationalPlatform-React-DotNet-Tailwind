@@ -3,9 +3,11 @@ import { ChangeEventHandler, useState } from "react";
 function EditableInput({
   text,
   handleTextChange,
+  handleFinishedEdit,
 }: {
   text: string;
   handleTextChange: ChangeEventHandler<HTMLInputElement>;
+  handleFinishedEdit?: Function;
 }) {
   const [displayEditIcon, setDisplayEditIcon] = useState(false);
   const [isInEditMode, setIsInEditMode] = useState(false);
@@ -21,12 +23,14 @@ function EditableInput({
   const handleEditMode = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
       setIsInEditMode(false);
+      handleFinishedEdit && handleFinishedEdit();
     }
   };
 
   const handleMouseLeave = () => {
     setIsInEditMode(false);
     setDisplayEditIcon(false);
+    handleFinishedEdit && handleFinishedEdit();
   };
 
   return (

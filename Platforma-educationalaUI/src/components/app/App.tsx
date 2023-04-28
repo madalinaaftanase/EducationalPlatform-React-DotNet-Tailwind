@@ -1,4 +1,4 @@
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Project from "../../pages/Project";
 import swrConfig from "../../swrConfig";
 import { SWRConfig } from "swr";
@@ -13,6 +13,7 @@ import { UserContext } from "../../hooks/UserContext";
 import Projects from "../../pages/Projects";
 import Groups from "../../pages/Groups";
 import Profile from "../../pages/Profile";
+import Group from "../../pages/Group";
 
 function App() {
   const { isAuthentificated } = useContext(UserContext);
@@ -32,6 +33,7 @@ function App() {
           <Route path="/Proiecte/:id" element={<Project />} />
           <Route path="/Error" element={<ErrorResponse />} />
           <Route path="/Grupe" element={<Groups />} />
+          <Route path="/Grupe/:id" element={<Group />} />
           <Route path="/Profil" element={<Profile />} />
         </Routes>
       </SWRConfig>

@@ -2,10 +2,14 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PlatformaEducationala.Core.Common;
+using PlatformaEducationala.Core.Group.Commands.AddOrUpdate;
 using PlatformaEducationala.Core.Group.Commands.AddStudentGroup;
 using PlatformaEducationala.Core.Group.Commands.DeleteStudentGroup;
 using PlatformaEducationala.Core.Group.Models;
 using PlatformaEducationala.Core.Group.Queries.Get;
+using PlatformaEducationala.Core.Group.Queries.GetById;
+using PlatformaEducationala.Core.Group.Queries.GetStudents;
+using PlatformaEducationala.Core.User.Models;
 
 namespace PlatformaEducationala.Api.Controllers;
 
@@ -31,6 +35,33 @@ public class GroupsController : ApiController
         return HandleMediatorResponse(result);
     }
 
+    [HttpGet("{id}")]
+    public async Task<ActionResult<GroupDto>> GetById([FromRoute] Guid id)
+    {
+        var query = new GetByIdQuery()
+        {
+            GroupId = id,
+            CurrentUserId = Guid.Parse(UserId)
+        };
+        var result = await _mediator.Send(query);
+
+        return HandleMediatorResponse(result);
+    }
+
+    [HttpGet("{groupId}/Students")]
+    public async Task<ActionResult<IList<StudentDto>>> GetStudentsGroup([FromRoute] Guid groupId
+    )
+    {
+        var query = new GetStudentsQuery
+        {
+            CurrentUserId = Guid.Parse(UserId),
+            GroupId = groupId
+        };
+        var result = await _mediator.Send(query);
+
+        return HandleMediatorResponse(result);
+    }
+
     [HttpDelete("{groupId}/Students/{studentId}")]
     public async Task<ActionResult<BaseResponse>> DeleteStudentGroup([FromRoute] Guid studentId,
         [FromRoute] Guid groupId)
@@ -41,8 +72,8 @@ public class GroupsController : ApiController
             GroupId = groupId,
             CurrentUserId = Guid.Parse(UserId)
         };
-
         var result = await _mediator.Send(command);
+
         return HandleMediatorResponse(result);
     }
 
@@ -53,8 +84,19 @@ public class GroupsController : ApiController
     {
         command.CurrentUserId = Guid.Parse(UserId);
         command.GroupId = groupId;
-
         var result = await _mediator.Send(command);
+
+        return HandleMediatorResponse(result);
+    }
+
+    [HttpPut("{groupId}")]
+    public async Task<ActionResult<GroupDto>> AddOrUpdate([FromRoute] Guid groupId,
+        [FromBody] AddOrUpdateCommand command)
+    {
+        command.CurrentUser = Guid.Parse(UserId);
+        command.GroupId = groupId;
+        var result = await _mediator.Send(command);
+
         return HandleMediatorResponse(result);
     }
 }

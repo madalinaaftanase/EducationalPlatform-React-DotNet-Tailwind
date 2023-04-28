@@ -36,9 +36,9 @@ function SignIn() {
     let response = await CreateAccount(url, { ...formInput });
     if (response?.responseStatus == 200) {
       if (isTeacher) {
-        navigator("/Profesor");
+        navigator("/Login/Profesor");
       } else {
-        navigator("/Student");
+        navigator("/Login/Student");
       }
     } else {
       if (response?.errors) {
@@ -71,7 +71,7 @@ function SignIn() {
             <FormField
               text={"Nume"}
               type={"text"}
-              name={"lastName"}
+              name={"lastname"}
               required={true}
               className={"bg-gray-100"}
               onChange={onChangeInput}
@@ -79,7 +79,7 @@ function SignIn() {
             <FormField
               text={"Prenume"}
               type={"text"}
-              name={"firstName"}
+              name={"firstname"}
               required={true}
               className={"bg-gray-100"}
               onChange={onChangeInput}
