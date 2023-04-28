@@ -55,12 +55,11 @@ function GroupTable() {
   };
 
   const handleSubmitChanges = async () => {
-    const groupId = "5CE30FCB-5B0E-4E45-9E7A-5605973C8456";
     const group: Partial<Group> = {
       name: groupName,
     };
-    const url = `${config.baseApiUrl}/Groups/${groupId}`;
-    await addOrUpdateGroup(url, group);
+    const url = `${config.baseApiUrl}/Groups/${id}`;
+    id && (await addOrUpdateGroup(url, group));
   };
 
   return (
