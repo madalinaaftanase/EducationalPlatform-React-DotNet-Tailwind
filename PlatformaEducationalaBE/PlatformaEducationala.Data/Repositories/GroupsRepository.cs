@@ -1,9 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PlatformaEducationala.Core.Entities;
+using PlatformaEducationala.Core.Group.Commands.AddOrUpdate;
 using PlatformaEducationala.Core.Group.Commands.DeleteStudentGroup;
 using PlatformaEducationala.Core.Group.Models;
 using PlatformaEducationala.Core.Group.Queries.Get;
+using PlatformaEducationala.Core.Group.Queries.GetStudents;
 using PlatformaEducationala.Core.Repositories;
+using PlatformaEducationala.Core.User.Models;
 using PlatformaEducationala.Data.Context;
 
 namespace PlatformaEducationala.Data.Repositories;
@@ -69,5 +72,29 @@ public class GroupsRepository : IGroupRepository
         {
             Console.WriteLine(ex.Message);
         }
+    }
+
+    public async Task<GroupDto> GetById(Guid id)
+    {
+       var group = await _platformDbContext.Groups.FirstOrDefaultAsync(g=>g.Id == id);
+       return MapperModels<Group,GroupDto>.Map(group);
+    }
+
+    public async Task AddOrUpdate(GroupDto group)
+    {
+        var mappedGroup = MapperModels<GroupDto, Group>.Map(group);
+        _platformDbContext.Update(mappedGroup);
+        _platformDbContext.SaveChangesAsync();
+    }
+
+    public async Task<List<StudentDto>> GetStudentsGroup(GetStudentsQuery query)
+    {
+        var students = await _platformDbContext.Students
+            .Include(s => s.StudentGroups)
+            .ThenInclude(sg => sg.Group)
+            .Where(s => s.StudentGroups.Any(sg => sg.Group.TeacherId == query.CurrentUserId && sg.GroupId == query.GroupId))
+            .ToListAsync();
+
+        return MapperModels<Student, StudentDto>.MapList(students);
     }
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import DataTable from "react-data-table-component";
 import config from "../../../config";
 import { GetAllStudents } from "../../../services/studentAPI";
