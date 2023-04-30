@@ -10,7 +10,7 @@ import { UserContext } from "../hooks/UserContext";
 
 function Project() {
   const navigator = useNavigate();
-  const {isTeacher} = useContext(UserContext);
+  const { isTeacher } = useContext(UserContext);
   const [initialXml, setInitialXml] = useState("");
   const [changedXml, setChangeXml] = useState(initialXml);
   const [htmlText, setHtml] = useState("");
@@ -25,7 +25,7 @@ function Project() {
   let init = async () => {
     if (params.id) {
       const url = `${config.baseApiUrl}/Projects/${params.id}`;
-      const response = await getById(url,isTeacher);
+      const response = await getById(url, isTeacher);
       if (response?.responseStatus == 200 && response?.project != null) {
         setInitialXml(response.project.xml);
         setProjectName(response.project.name);
