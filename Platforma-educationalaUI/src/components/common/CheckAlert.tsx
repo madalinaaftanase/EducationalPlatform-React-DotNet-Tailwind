@@ -10,10 +10,16 @@ interface CheckModalInterface {
   title: string;
 }
 
-function CheckModal({ handleCancel, handleConfirm, showModal, title, setShowModal }: CheckModalInterface) {
+function CheckModal({
+  handleCancel,
+  handleConfirm,
+  showModal,
+  title,
+  setShowModal,
+}: CheckModalInterface) {
   return (
     <GenericModal showModal={showModal}>
-      <h3 className="text-lg font-normal text-black p-8">{title}</h3>
+      <h5 className="text-black">{title}</h5>
       <div className="flex justify-center gap-4">
         <button
           className="bg-gray-300 hover:bg-gray-500 py-2 px-4 border-b-4 border-gray-800 hover:border-gray-700 rounded"
@@ -22,7 +28,6 @@ function CheckModal({ handleCancel, handleConfirm, showModal, title, setShowModa
           Da, sunt sigur
         </button>
         <CancelButton setIsOpen={setShowModal} text={"Nu, anuleaza"} />
-
       </div>
     </GenericModal>
   );

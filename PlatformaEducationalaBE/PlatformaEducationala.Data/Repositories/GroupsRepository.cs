@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PlatformaEducationala.Core.Entities;
-using PlatformaEducationala.Core.Group.Commands.AddOrUpdate;
 using PlatformaEducationala.Core.Group.Commands.DeleteStudentGroup;
 using PlatformaEducationala.Core.Group.Models;
 using PlatformaEducationala.Core.Group.Queries.Get;
@@ -76,15 +75,22 @@ public class GroupsRepository : IGroupRepository
 
     public async Task<GroupDto> GetById(Guid id)
     {
-       var group = await _platformDbContext.Groups.FirstOrDefaultAsync(g=>g.Id == id);
-       return MapperModels<Group,GroupDto>.Map(group);
+        var group = await _platformDbContext.Groups.FirstOrDefaultAsync(g => g.Id == id);
+        return MapperModels<Group, GroupDto>.Map(group);
     }
 
-    public async Task AddOrUpdate(GroupDto group)
+    public async Task Update(GroupDto group)
     {
         var mappedGroup = MapperModels<GroupDto, Group>.Map(group);
         _platformDbContext.Update(mappedGroup);
-        _platformDbContext.SaveChangesAsync();
+        await _platformDbContext.SaveChangesAsync();
+    }
+
+    public async Task Add(GroupDto group)
+    {
+        var mappedGroup = MapperModels<GroupDto, Group>.Map(group);
+        _platformDbContext.Add(mappedGroup);
+        await _platformDbContext.SaveChangesAsync();
     }
 
     public async Task<List<StudentDto>> GetStudentsGroup(GetStudentsQuery query)
@@ -92,7 +98,8 @@ public class GroupsRepository : IGroupRepository
         var students = await _platformDbContext.Students
             .Include(s => s.StudentGroups)
             .ThenInclude(sg => sg.Group)
-            .Where(s => s.StudentGroups.Any(sg => sg.Group.TeacherId == query.CurrentUserId && sg.GroupId == query.GroupId))
+            .Where(s => s.StudentGroups.Any(sg =>
+                sg.Group.TeacherId == query.CurrentUserId && sg.GroupId == query.GroupId))
             .ToListAsync();
 
         return MapperModels<Student, StudentDto>.MapList(students);
@@ -102,10 +109,7 @@ public class GroupsRepository : IGroupRepository
     {
         var group = _platformDbContext.Groups.Find(groupId);
 
-        if (group != null)
-        {
-            _platformDbContext.Groups.Remove(group);
-        }
+        if (group != null) _platformDbContext.Groups.Remove(group);
 
         await _platformDbContext.SaveChangesAsync();
     }

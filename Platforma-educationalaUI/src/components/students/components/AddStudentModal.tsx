@@ -40,8 +40,8 @@ function AddStudentModal({
 
   return (
     <GenericModal showModal={isOpen}>
-      <p>Introdu adresa de email</p>
-      <div className="flex flex-col">
+      <h5>Introdu adresa de email</h5>
+      <div className="flex flex-col ">
         <div className="flex items-center">
           <input onChange={handleInput} placeholder="Email student" className="p-1" />
           <GroupSubcomponent
@@ -50,9 +50,8 @@ function AddStudentModal({
             setSelectedGroupId={setSelectedGroupId}
           />
         </div>
-        <div className="flex gap-x-3">
+        <div className="flex gap-x-3 ">
           <button
-            data-modal-hide="defaultModal"
             type="button"
             className="bg-mintBlue hover:bg-mint text-yellow px-2 py-1 font-bold border-b-4 border-mint hover:border-mintBlue rounded disabled:opacity-75"
             onClick={handleSubmitAddButton}
