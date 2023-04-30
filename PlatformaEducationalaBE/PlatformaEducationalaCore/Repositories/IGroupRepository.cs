@@ -13,7 +13,8 @@ public interface IGroupRepository
     Task DeleteStudentGroup(DeleteStudentGroupCommand command);
     Task AddStudentGroup(Guid studentId, Guid groupId);
     Task<GroupDto> GetById(Guid groupId);
-    Task AddOrUpdate(GroupDto group);
+    Task Update(GroupDto group);
+    Task Add(GroupDto group);
     Task<List<StudentDto>> GetStudentsGroup(GetStudentsQuery query);
 
     Task DeleteGroup(Guid groupId);

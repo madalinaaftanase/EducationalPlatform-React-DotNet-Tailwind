@@ -44,13 +44,13 @@ function GroupModal({
 
   return (
     <GenericModal showModal={isOpen}>
-      <h3 className="text-xl font-semibold text-gray-900 dark:text-white p-6">Editeaza grupa</h3>
+      <h3 className="text-gray-900 dark:text-white">Editeaza grupa</h3>
       <GroupSubcomponent
         groups={groups}
         setGroups={setGroups}
         setSelectedGroupId={setSelectedGroupId}
       />
-      <div className="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+      <div className="flex space-x-2 rounded-b">
         <button
           data-modal-hide="defaultModal"
           type="button"

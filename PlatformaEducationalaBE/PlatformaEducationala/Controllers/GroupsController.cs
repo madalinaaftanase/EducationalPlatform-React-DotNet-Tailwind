@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PlatformaEducationala.Core.Common;
+using PlatformaEducationala.Core.Group.Commands.Add;
 using PlatformaEducationala.Core.Group.Commands.AddOrUpdate;
 using PlatformaEducationala.Core.Group.Commands.AddStudentGroup;
 using PlatformaEducationala.Core.Group.Commands.DeleteGroup;
@@ -39,7 +40,7 @@ public class GroupsController : ApiController
     [HttpGet("{id}")]
     public async Task<ActionResult<GroupDto>> GetById([FromRoute] Guid id)
     {
-        var query = new GetByIdQuery()
+        var query = new GetByIdQuery
         {
             GroupId = id,
             CurrentUserId = Guid.Parse(UserId)
@@ -81,7 +82,7 @@ public class GroupsController : ApiController
     [HttpDelete("{groupId}")]
     public async Task<ActionResult<BaseResponse>> DeleteGroup([FromRoute] Guid groupId)
     {
-        var command = new DeleteGroupCommand()
+        var command = new DeleteGroupCommand
         {
             GroupId = groupId,
             CurrentUserId = Guid.Parse(UserId)
@@ -105,10 +106,19 @@ public class GroupsController : ApiController
 
     [HttpPut("{groupId}")]
     public async Task<ActionResult<GroupDto>> AddOrUpdate([FromRoute] Guid groupId,
-        [FromBody] AddOrUpdateCommand command)
+        [FromBody] UpdateCommand command)
     {
         command.CurrentUser = Guid.Parse(UserId);
         command.GroupId = groupId;
+        var result = await _mediator.Send(command);
+
+        return HandleMediatorResponse(result);
+    }
+
+    [HttpPut]
+    public async Task<ActionResult<GroupDto>> Add([FromBody] AddCommand command)
+    {
+        command.CurrentUser = Guid.Parse(UserId);
         var result = await _mediator.Send(command);
 
         return HandleMediatorResponse(result);

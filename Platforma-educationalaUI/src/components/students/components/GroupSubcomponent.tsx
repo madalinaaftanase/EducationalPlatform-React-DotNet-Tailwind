@@ -34,7 +34,7 @@ function GroupSubcomponent({ groups, setGroups, setSelectedGroupId }: GroupInter
   };
 
   return (
-    <div className="p-6 space-y-6">
+    <div className="py-8 space-y-6">
       <select defaultValue={"default"} onChange={handleChangeGroup}>
         <option value="default" disabled>
           Selecteaza o grupa
