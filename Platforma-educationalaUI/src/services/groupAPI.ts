@@ -55,10 +55,10 @@ export const addOrUpdateGroup = async (url: string, group: Partial<Group>) => {
   }
 };
 
-export const getById = async (groupId: string)=>{
+export const getById = async (groupId: string) => {
   const url = `${config.baseApiUrl}/Groups/${groupId}`;
   try {
-    const response = await axios.get<GroupResponse>(url,{
+    const response = await axios.get<GroupResponse>(url, {
       headers: { Authorization: `Bearer ${getCookie("token")}` },
     });
     return response.data;
@@ -75,5 +75,16 @@ export const getStudentsFromGroup = async (url: string) => {
     return response.data;
   } catch (err) {
     if (axios.isAxiosError(err)) return err.response?.data as GroupStudentsResponse;
+  }
+}
+
+export const deleteGroup = async (url: string) => {
+  try {
+    const response = await axios.delete<BasicResponse>(url, {
+      headers: { Authorization: `Bearer ${getCookie("token")}` },
+    });
+    return response.data;
+  } catch (err) {
+    if (axios.isAxiosError(err)) return err.response?.data as BasicResponse;
   }
 }

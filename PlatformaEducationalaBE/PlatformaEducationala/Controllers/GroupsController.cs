@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using PlatformaEducationala.Core.Common;
 using PlatformaEducationala.Core.Group.Commands.AddOrUpdate;
 using PlatformaEducationala.Core.Group.Commands.AddStudentGroup;
+using PlatformaEducationala.Core.Group.Commands.DeleteGroup;
 using PlatformaEducationala.Core.Group.Commands.DeleteStudentGroup;
 using PlatformaEducationala.Core.Group.Models;
 using PlatformaEducationala.Core.Group.Queries.Get;
@@ -69,6 +70,19 @@ public class GroupsController : ApiController
         var command = new DeleteStudentGroupCommand
         {
             StudentId = studentId,
+            GroupId = groupId,
+            CurrentUserId = Guid.Parse(UserId)
+        };
+        var result = await _mediator.Send(command);
+
+        return HandleMediatorResponse(result);
+    }
+
+    [HttpDelete("{groupId}")]
+    public async Task<ActionResult<BaseResponse>> DeleteGroup([FromRoute] Guid groupId)
+    {
+        var command = new DeleteGroupCommand()
+        {
             GroupId = groupId,
             CurrentUserId = Guid.Parse(UserId)
         };

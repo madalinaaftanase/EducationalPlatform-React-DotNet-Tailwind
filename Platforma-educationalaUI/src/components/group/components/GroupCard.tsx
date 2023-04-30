@@ -1,11 +1,22 @@
 import { useNavigate } from "react-router-dom";
 import Group from "../../../models/group/Group";
+import config from "../../../config";
+import { deleteGroup } from "../../../services/groupAPI";
 
 interface CardInterface {
   group: Group;
+  init: Function;
 }
-function GroupCard({ group }: CardInterface) {
+function GroupCard({ group, init }: CardInterface) {
   const navigator = useNavigate();
+
+  const handleDeleteCard = async () => {
+    const url = `${config.baseApiUrl}/Groups/${group.id}`;
+    const response = await deleteGroup(url);
+    if (response?.responseStatus == 200) {
+      init();
+    }
+  };
 
   return (
     <div className="block max-w-sm p-6 bg-mintBlue border border-gray-200 rounded-lg shadow hover:bg-mint min-w-[30%] flex flex-row justify-between">
@@ -27,6 +38,7 @@ function GroupCard({ group }: CardInterface) {
         strokeWidth="1.5"
         stroke="currentColor"
         className="w-6 h-6 rounded-lg basis-[8%] cursor-pointer"
+        onClick={handleDeleteCard}
       >
         <path
           strokeLinecap="round"

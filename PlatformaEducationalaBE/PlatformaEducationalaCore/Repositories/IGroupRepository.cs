@@ -15,4 +15,6 @@ public interface IGroupRepository
     Task<GroupDto> GetById(Guid groupId);
     Task AddOrUpdate(GroupDto group);
     Task<List<StudentDto>> GetStudentsGroup(GetStudentsQuery query);
+
+    Task DeleteGroup(Guid groupId);
 }
