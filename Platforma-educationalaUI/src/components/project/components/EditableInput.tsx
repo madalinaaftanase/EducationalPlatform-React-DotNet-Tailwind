@@ -30,7 +30,9 @@ function EditableInput({
   const handleMouseLeave = () => {
     setIsInEditMode(false);
     setDisplayEditIcon(false);
-    handleFinishedEdit && handleFinishedEdit();
+    if (isInEditMode && handleFinishedEdit) {
+      handleFinishedEdit();
+    }
   };
 
   return (
