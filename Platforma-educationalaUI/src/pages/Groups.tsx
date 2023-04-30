@@ -34,7 +34,7 @@ function Groups() {
       </div>
       <div className="flex gap-4 flex-wrap">
         {groups.map((value) => {
-          return <GroupCard group={value} key={value.id} />;
+          return <GroupCard group={value} key={value.id} init={init}/>;
         })}
       </div>
     </div>

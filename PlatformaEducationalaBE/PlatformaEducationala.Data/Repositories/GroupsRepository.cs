@@ -97,4 +97,16 @@ public class GroupsRepository : IGroupRepository
 
         return MapperModels<Student, StudentDto>.MapList(students);
     }
+
+    public async Task DeleteGroup(Guid groupId)
+    {
+        var group = _platformDbContext.Groups.Find(groupId);
+
+        if (group != null)
+        {
+            _platformDbContext.Groups.Remove(group);
+        }
+
+        await _platformDbContext.SaveChangesAsync();
+    }
 }
