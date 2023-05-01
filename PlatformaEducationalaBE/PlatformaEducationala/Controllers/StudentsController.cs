@@ -1,12 +1,12 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using PlatformaEducationala.Core.Common;
-using PlatformaEducationala.Core.Group.Commands.DeleteStudentGroup;
+using PlatformaEducationala.Core.Project.Models;
 using PlatformaEducationala.Core.User.Commands.SaveOrUpdateStudentGroup;
 using PlatformaEducationala.Core.User.Commands.SaveStudentGroup;
 using PlatformaEducationala.Core.User.Models;
 using PlatformaEducationala.Core.User.Queries.Get;
+using PlatformaEducationala.Core.User.Queries.GetStudentsProjects;
 
 namespace PlatformaEducationala.Api.Controllers;
 
@@ -26,6 +26,20 @@ public class StudentsController : ApiController
     public async Task<ActionResult<List<StudentDto>>> Get()
     {
         var result = await _mediator.Send(new GetQuery { CurrentUserId = Guid.Parse(UserId) });
+
+        return HandleMediatorResponse(result);
+    }
+
+    [HttpGet("{studentId}/Projects")]
+    public async Task<ActionResult<List<ProjectDto>>> GetStudentsProjects([FromRoute] Guid studentId, [FromQuery(Name = "isTeacher")] bool isTeacher)
+    {
+        var query = new GetStudentProjectsQuery
+        {
+            CurrentUserId = Guid.Parse(UserId),
+            StudentId = studentId
+        };
+        query.CurrentUserId = Guid.Parse(UserId);
+        var result = await _mediator.Send(query);
 
         return HandleMediatorResponse(result);
     }

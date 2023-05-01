@@ -19,9 +19,6 @@ function SaveButton({ name, xml }: { name: string; xml: string }) {
       return;
     }
     const response = await saveProject(url, data, isTeacher);
-    if (response?.responseStatus == 200) {
-      alert("Project saved successfully");
-    }
   };
 
   return (
