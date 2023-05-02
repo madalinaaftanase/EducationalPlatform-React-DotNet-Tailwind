@@ -1,14 +1,17 @@
 import { ChangeEventHandler, useState } from "react";
 
+interface EditableInputInterface {
+  text: string;
+  handleTextChange: ChangeEventHandler<HTMLInputElement>;
+  handleFinishedEdit?: Function;
+  isVisibleForShare?: boolean;
+}
 function EditableInput({
   text,
   handleTextChange,
   handleFinishedEdit,
-}: {
-  text: string;
-  handleTextChange: ChangeEventHandler<HTMLInputElement>;
-  handleFinishedEdit?: Function;
-}) {
+  isVisibleForShare,
+}: EditableInputInterface) {
   const [displayEditIcon, setDisplayEditIcon] = useState(false);
   const [isInEditMode, setIsInEditMode] = useState(false);
 
@@ -54,7 +57,7 @@ function EditableInput({
           onClick={handleEdit}
         >
           <div>{text}</div>
-          {displayEditIcon && (
+          {displayEditIcon && isVisibleForShare && (
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

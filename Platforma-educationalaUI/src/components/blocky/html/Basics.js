@@ -2,7 +2,7 @@
 import Blockly from "blockly";
 import { generateGeneralBlock, generateGeneralBlockJS } from "./functionsBlocks";
 
-const basicColor='#f26110';
+const basicColor = "#f26110";
 
 generateGeneralBlock("paragraph", basicColor);
 generateGeneralBlockJS("paragraph", "p");
@@ -64,8 +64,7 @@ Blockly.JavaScript["h"] = function (block) {
 //br
 Blockly.Blocks["br"] = {
   init: function () {
-    this.appendDummyInput()
-      .appendField("br")
+    this.appendDummyInput().appendField("br");
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -77,6 +76,3 @@ Blockly.JavaScript["br"] = function (block) {
   return `
   <br />`;
 };
-
-
-

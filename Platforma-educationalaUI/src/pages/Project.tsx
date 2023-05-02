@@ -16,6 +16,7 @@ function Project({ isTeacherOverride }: { isTeacherOverride?: boolean }) {
   const [htmlText, setHtml] = useState("");
   const [calledDb, setCallDb] = useState(false);
   const [projectName, setProjectName] = useState("defualt");
+  const [isVisibleForShare, setIsVisibleForShare] = useState(true);
   const params = useParams();
 
   if (isTeacherOverride !== undefined) {
@@ -32,13 +33,14 @@ function Project({ isTeacherOverride }: { isTeacherOverride?: boolean }) {
       let url = `${config.baseApiUrl}/Projects/${params.id}`;
       if (params.studentId) {
         url += `?ownerId=${params.studentId}`;
+        setIsVisibleForShare(false);
       }
       const response = await getById(url);
       if (response?.responseStatus == 200 && response?.project != null) {
         setInitialXml(response.project.xml);
         setProjectName(response.project.name);
       } else {
-        // navigator("/Error");
+        navigator("/Error");
       }
       setCallDb(true);
     }
@@ -54,7 +56,7 @@ function Project({ isTeacherOverride }: { isTeacherOverride?: boolean }) {
         <BlockyMain setHtml={setHtml} xmlFromDb={initialXml} setXml={setChangeXml} />
       </section>
       <section className="bg-gray-200">
-        <RightSideLayout htmlText={htmlText} name={projectName} xml={changedXml} />
+        <RightSideLayout htmlText={htmlText} name={projectName} xml={changedXml} isVisibleForShare={isVisibleForShare}/>
       </section>
     </main>
   );

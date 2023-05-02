@@ -57,12 +57,6 @@ export default function BlockyMain({ setHtml, xmlFromDb, setXml }: BlockyMainInt
   return (
     <>
       <div className="fill-height" ref={blocklyRef} />
-      <textarea
-        id="code"
-        style={{ height: "200px", width: "400px" }}
-        value={javascriptCode}
-        readOnly
-      ></textarea>
     </>
   );
 }

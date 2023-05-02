@@ -1,8 +1,8 @@
 import Blockly from "blockly";
 // head , title, meta , body, footer , top nav
 
-function getColor(){
-  return '#f22010';
+function getColor() {
+  return "#f22010";
 }
 
 Blockly.Blocks["document"] = {
