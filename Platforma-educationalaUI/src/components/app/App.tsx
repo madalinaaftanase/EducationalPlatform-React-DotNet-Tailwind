@@ -35,6 +35,8 @@ function App() {
           <Route path="/Grupe" element={<Groups />} />
           <Route path="/Grupe/:id" element={<Group />} />
           <Route path="/Profil" element={<Profile />} />
+          <Route path="/Studenti/:id/Proiecte" element={<Projects />} />
+          <Route path="/Studenti/:studentId/Proiecte/:id" element={<Project isTeacherOverride={false} />} />
         </Routes>
       </SWRConfig>
     );

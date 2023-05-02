@@ -8,9 +8,9 @@ import config from "../config";
 import { getById } from "../services/projectAPI";
 import { UserContext } from "../hooks/UserContext";
 
-function Project() {
+function Project({ isTeacherOverride }: { isTeacherOverride?: boolean }) {
   const navigator = useNavigate();
-  const { isTeacher } = useContext(UserContext);
+  let { isTeacher } = useContext(UserContext);
   const [initialXml, setInitialXml] = useState("");
   const [changedXml, setChangeXml] = useState(initialXml);
   const [htmlText, setHtml] = useState("");
@@ -18,19 +18,27 @@ function Project() {
   const [projectName, setProjectName] = useState("defualt");
   const params = useParams();
 
+  if (isTeacherOverride !== undefined) {
+    console.log(isTeacherOverride);
+    isTeacher = isTeacherOverride;
+  }
+
   useEffect(() => {
     init();
   }, []);
 
   let init = async () => {
     if (params.id) {
-      const url = `${config.baseApiUrl}/Projects/${params.id}`;
-      const response = await getById(url, isTeacher);
+      let url = `${config.baseApiUrl}/Projects/${params.id}`;
+      if (params.studentId) {
+        url += `?ownerId=${params.studentId}`;
+      }
+      const response = await getById(url);
       if (response?.responseStatus == 200 && response?.project != null) {
         setInitialXml(response.project.xml);
         setProjectName(response.project.name);
       } else {
-        navigator("/Error");
+        // navigator("/Error");
       }
       setCallDb(true);
     }

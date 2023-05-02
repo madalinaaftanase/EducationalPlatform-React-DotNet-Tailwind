@@ -17,7 +17,7 @@ function Menu() {
 
   return (
     <button
-      className="hover:bg-green-300 focus:bg-green-300 px-3 py-1 rounded-md"
+      className="hover:bg-green-300 focus:bg-green-300 px-3 py-1 rounded-md w-[100%]"
       onClick={handleOpenDropdown}
       onBlur={handleCloseDropdown}
     >

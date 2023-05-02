@@ -21,11 +21,10 @@ export const getAll = async (url: string, isTeacher: boolean) => {
   }
 };
 
-export const getById = async (url: string, isTeacher: boolean) => {
+export const getById = async (url: string) => {
   try {
     const response = await axios.get<ProjectResponse>(url, {
       headers: { Authorization: `Bearer ${getCookie("token")}` },
-      params: { isTeacher }
     });
     return response.data;
   } catch (err) {

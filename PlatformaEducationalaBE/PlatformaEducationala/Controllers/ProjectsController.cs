@@ -33,10 +33,10 @@ public class ProjectsController : ApiController
 
     [HttpGet("{id}")]
     public async Task<ActionResult<List<ProjectDto>>> GetById([FromRoute] GetByIdQuery query,
-        [FromQuery(Name = "isTeacher")] bool isTeacher)
+        [FromQuery(Name = "ownerId")] Guid ownerId)
     {
         query.CurrentUserId = Guid.Parse(UserId);
-        query.IsTeacher = isTeacher;
+        query.OwnerId = ownerId;
         var result = await _mediator.Send(query);
 
         return HandleMediatorResponse(result);

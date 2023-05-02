@@ -1,6 +1,6 @@
 import DataTable from "react-data-table-component";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Student from "../../../models/student/Student";
 import config from "../../../config";
 import { addOrUpdateGroup, getById, getStudentsFromGroup } from "../../../services/groupAPI";
@@ -11,6 +11,12 @@ function GroupTable() {
   const { id } = useParams();
   const [students, setStudents] = useState<Student[]>([]);
   const [groupName, setGroupName] = useState("");
+  const navigator = useNavigate();
+
+  const handleStudentProjects = (student: Student) => {
+    navigator(`/Studenti/${student.id}/Proiecte`);
+  };
+
   const getColumns = () => {
     return [
       {
@@ -27,6 +33,19 @@ function GroupTable() {
         name: "Email",
         selector: (row: Student) => row.email,
         sortable: true,
+      },
+      {
+        cell: (row: Student) => (
+          <button
+            className="bg-mintBlue hover:bg-mint text-yellow px-1 py-1 font-bold border-b-4 border-mint hover:border-mintBlue rounded"
+            onClick={() => handleStudentProjects(row)}
+          >
+            Vezi proiecte
+          </button>
+        ),
+        ignoreRowClick: true,
+        allowOverflow: true,
+        button: true,
       },
     ];
   };
