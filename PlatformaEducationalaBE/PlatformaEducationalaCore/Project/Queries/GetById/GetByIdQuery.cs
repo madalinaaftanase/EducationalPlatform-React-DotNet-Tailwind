@@ -7,8 +7,9 @@ namespace PlatformaEducationala.Core.Project.Queries.GetById;
 public class GetByIdQuery : IRequest<GetByIdResponse>
 {
     public Guid CurrentUserId { get; set; }
+    public Guid? OwnerId { get; set; }
     public Guid Id { get; set; }
-    public bool IsTeacher { get; set; }
+    public bool? IsTeacher { get; set; }
 }
 
 public class GetByIdHandler : IRequestHandler<GetByIdQuery, GetByIdResponse>

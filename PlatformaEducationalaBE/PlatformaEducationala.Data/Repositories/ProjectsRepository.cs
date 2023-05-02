@@ -21,25 +21,28 @@ public class ProjectsRepository : IProjectRepository
     {
         if (query.IsTeacher)
         {
-            var teacherProjects = await _platformDbContext.Projects.Where(t => t.TeacherId.Equals(query.CurrentUserId)).ToListAsync();
+            var teacherProjects = await _platformDbContext.Projects.Where(t => t.TeacherId.Equals(query.CurrentUserId))
+                .ToListAsync();
             return MapperModels<Project, ProjectDto>.MapList(teacherProjects);
         }
+
         var studentProjects = await _platformDbContext.Projects
-                                    .Where(p => p.StudentId.Equals(query.CurrentUserId)).ToListAsync();
+            .Where(p => p.StudentId.Equals(query.CurrentUserId)).ToListAsync();
         return MapperModels<Project, ProjectDto>.MapList(studentProjects);
     }
 
     public async Task<ProjectDto> GetById(GetByIdQuery query)
     {
-        if (query.IsTeacher)
+        var ownerId = query.CurrentUserId;
+        if (query.OwnerId != Guid.Empty && query.OwnerId.HasValue)
         {
-            var teacherProject = await _platformDbContext.Projects.FirstOrDefaultAsync(p => p.Id == query.Id && p.TeacherId == query.CurrentUserId);
-            
-            return teacherProject == null ? null : MapperModels<Project, ProjectDto>.Map(teacherProject);
+            ownerId = (Guid)query.OwnerId;
         }
-        var project =
-            await _platformDbContext.Projects.FirstOrDefaultAsync(p => p.Id == query.Id && p.StudentId == query.CurrentUserId);
-        
+        var project = await _platformDbContext.Projects
+            .FirstOrDefaultAsync(p => 
+                p.Id == query.Id && 
+                (p.TeacherId == ownerId || p.StudentId == ownerId));
+
         return project == null ? null : MapperModels<Project, ProjectDto>.Map(project);
     }
 
@@ -49,13 +52,9 @@ public class ProjectsRepository : IProjectRepository
         _platformDbContext.Update(mappedProject);
 
         if (isTeacher)
-        {
             mappedProject.StudentId = null;
-        }
         else
-        {
             mappedProject.TeacherId = null;
-        }
 
         await _platformDbContext.SaveChangesAsync();
     }
