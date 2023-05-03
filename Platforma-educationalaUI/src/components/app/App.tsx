@@ -14,6 +14,7 @@ import Projects from "../../pages/Projects";
 import Groups from "../../pages/Groups";
 import Profile from "../../pages/Profile";
 import Group from "../../pages/Group";
+import About from "../../pages/About";
 
 function App() {
   const { isAuthentificated } = useContext(UserContext);
@@ -37,6 +38,7 @@ function App() {
           <Route path="/Profil" element={<Profile />} />
           <Route path="/Studenti/:id/Proiecte" element={<Projects />} />
           <Route path="/Studenti/:studentId/Proiecte/:id" element={<Project isTeacherOverride={false} />} />
+          <Route path="/Despre" element={<About />} />
         </Routes>
       </SWRConfig>
     );

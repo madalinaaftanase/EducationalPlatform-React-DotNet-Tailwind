@@ -16,7 +16,7 @@ export function Navbar() {
         <NavLink to="/Proiecte">Proiectele mele</NavLink>
         <NavLink to="/Joc">Proiect nou</NavLink>
         <NavLink to="/Grupe">Grupe</NavLink>
-        <NavLink to="/Profil">Despre</NavLink>
+        <NavLink to="/Despre">Despre</NavLink>
       </NavMenu>
       <NavBtn>
         <Menu/>
