@@ -35,7 +35,7 @@ public class CreateCommandHandler : IRequestHandler<CreateCommand, CreateRespons
             return new CreateResponse
             {
                 Errors = resultValidation.Errors
-                    .Select(x => $"Property {x.PropertyName} failed validation. Error was {x.ErrorMessage}")
+                    .Select(x => $"Proprietatea {x.PropertyName} este invalida")
                     .ToList(),
                 ResponseStatus = ResultStatus.BadRequest
             };
@@ -60,7 +60,7 @@ public class CreateCommandHandler : IRequestHandler<CreateCommand, CreateRespons
         }
         catch (Exception e)
         {
-            response.Errors = new List<string> { $"Eroare la creere{e}" };
+            response.Errors = new List<string> { $"Eroare la creere" };
             response.ResponseStatus = ResultStatus.InternalError;
         }
 

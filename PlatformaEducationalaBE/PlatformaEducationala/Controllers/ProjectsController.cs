@@ -43,9 +43,14 @@ public class ProjectsController : ApiController
     }
 
     [HttpPost("{id}/Save")]
-    public async Task<ActionResult<string>> Save([FromBody] SaveCommand command,
+    public async Task<ActionResult<string>> Save(
+        [FromRoute] Guid id,
+        [FromBody] SaveCommand command,
+        [FromQuery(Name = "ownerId")] Guid ownerId,
         [FromQuery(Name = "isTeacher")] bool isTeacher)
     {
+        command.Id = id;
+        command.OwnerId = ownerId;
         command.CurrentUserId = Guid.Parse(UserId);
         command.IsTeacher = isTeacher;
         var result = await _mediator.Send(command);

@@ -35,7 +35,7 @@ namespace PlatformaEducationala.Core.Teacher.Commands.CreateAccount
                 return new CreateTeacherAccountResponse
                 {
                     Errors = resultValidation.Errors
-                        .Select(x => $"Property {x.PropertyName} failed vaidation. Error was {x.ErrorMessage}")
+                        .Select(x => $"Proprietatea {x.PropertyName} este invalida")
                         .ToList(),
                     ResponseStatus = Enums.ResultStatus.BadRequest
                 };
@@ -45,7 +45,7 @@ namespace PlatformaEducationala.Core.Teacher.Commands.CreateAccount
             if (teacher != null)
             {
                 _logger.LogInformation("Given Email already exist");
-                result.Errors.Add("Email exist already");
+                result.Errors.Add("Adresa de email exista deja");
                 result.ResponseStatus = Enums.ResultStatus.BadRequest;
                 return result;
             }
@@ -65,7 +65,7 @@ namespace PlatformaEducationala.Core.Teacher.Commands.CreateAccount
             catch (Exception ex)
             {
                 _logger.LogError("{method} failed.Account creation failed. Errors: {err}", nameof(_teacherRepository.AddAsync), ex);
-                result.Errors.Add("Failed");
+                result.Errors.Add("Eroare.Contacteaza admin");
                 result.ResponseStatus = Enums.ResultStatus.InternalError;
                 return result;
             }

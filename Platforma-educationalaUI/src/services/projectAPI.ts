@@ -32,11 +32,11 @@ export const getById = async (url: string) => {
   }
 };
 
-export const saveProject = async (url: string, project: ProjectSave, isTeacher: boolean) => {
+export const saveProject = async (url: string, project: ProjectSave, isTeacher: boolean, ownerId?: string) => {
   try {
     const response = await axios.post<ProjectResponse>(url, project, {
       headers: { Authorization: `Bearer ${getCookie("token")}` },
-      params: { isTeacher }
+      params: { isTeacher, ownerId }
     });
     return response.data;
   } catch (err) {

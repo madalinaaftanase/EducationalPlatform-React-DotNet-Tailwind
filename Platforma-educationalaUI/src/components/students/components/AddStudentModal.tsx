@@ -29,7 +29,6 @@ function AddStudentModal({
   const handleSubmitAddButton = async () => {
     const url = `${config.baseApiUrl}/Groups/${selectedGroupId}/Students`;
     if (email) {
-      console.log(email);
       const response = await addStudentToGroup(url, email);
       setIsOpen(false);
       if (response?.responseStatus == 200) {

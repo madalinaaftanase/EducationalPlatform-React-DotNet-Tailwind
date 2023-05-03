@@ -2,13 +2,17 @@ export default interface Project {
   id: string;
   name: string;
   xml: string;
+  comment?: string;
+  grade?: number;
 }
 
 export interface ProjectSave {
   id?: string;
-  name: string;
+  name?: string;
   xml?: string;
   isTeacher?: boolean;
+  comment?: string;
+  grade?: number;
 }
 
 export interface DeleteProject {

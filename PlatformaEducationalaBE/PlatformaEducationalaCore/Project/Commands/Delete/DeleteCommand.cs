@@ -47,7 +47,7 @@ public class DeleteCommandHandler : IRequestHandler<DeleteCommand, DeleteRespons
         }
         catch (Exception e)
         {
-            response.Errors = new List<string> { $"Eroare la stergere{e}" };
+            response.Errors = new List<string> { $"Eroare la stergere" };
             response.ResponseStatus = ResultStatus.InternalError;
         }
 

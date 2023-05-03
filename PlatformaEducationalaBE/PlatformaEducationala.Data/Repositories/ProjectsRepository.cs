@@ -51,7 +51,7 @@ public class ProjectsRepository : IProjectRepository
         var mappedProject = MapperModels<ProjectDto, Project>.Map(project);
         _platformDbContext.Update(mappedProject);
 
-        if (isTeacher)
+        if (mappedProject.StudentId == Guid.Empty)
             mappedProject.StudentId = null;
         else
             mappedProject.TeacherId = null;

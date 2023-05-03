@@ -8,7 +8,10 @@ namespace PlatformaEducationala.Core.Project.Commands.Update;
         {
             RuleFor(project => project.Name)
                 .MinimumLength(8)
-                .MaximumLength(50)
-                .NotEmpty();
+                .MaximumLength(50);
+
+            RuleFor(project => project.Grade)
+                .GreaterThanOrEqualTo(0)
+                .LessThanOrEqualTo(5);
         }
     }

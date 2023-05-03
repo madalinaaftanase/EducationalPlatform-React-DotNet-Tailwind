@@ -38,7 +38,7 @@ public class CreateAccountCommandHandler : IRequestHandler<CreateStudentAccountC
             return new CreateStudentAccountResponse
             {
                 Errors = resultValidation.Errors
-                    .Select(x => $"Property {x.PropertyName} failed vaidation. Error was {x.ErrorMessage}")
+                    .Select(x => $"Proprietatea {x.PropertyName} este invalida")
                     .ToList(),
                 ResponseStatus = ResultStatus.BadRequest
             };
@@ -49,7 +49,7 @@ public class CreateAccountCommandHandler : IRequestHandler<CreateStudentAccountC
         if (student != null)
         {
             _logger.LogInformation("Given Email already exist");
-            result.Errors.Add("Email exist already");
+            result.Errors.Add("Adresa de email exista deja");
             result.ResponseStatus = ResultStatus.BadRequest;
             return result;
         }
@@ -71,7 +71,7 @@ public class CreateAccountCommandHandler : IRequestHandler<CreateStudentAccountC
         {
             _logger.LogError("{method} failed.Account creation failed. Errors: {err}",
                 nameof(_studentRepository.AddAsync), ex);
-            result.Errors.Add("Failed");
+            result.Errors.Add("Eroare.Contacteaza admin");
             result.ResponseStatus = ResultStatus.InternalError;
             return result;
         }

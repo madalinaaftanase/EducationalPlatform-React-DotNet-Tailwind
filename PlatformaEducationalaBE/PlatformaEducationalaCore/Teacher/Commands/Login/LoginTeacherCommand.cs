@@ -28,14 +28,14 @@ public class LoginTeacherCommandHandler : IRequestHandler<LoginTeacherCommand, L
 
         if (user == null)
         {
-            response.Errors.Add("User do not exist");
+            response.Errors.Add("Utilizatorul nu exista");
             response.ResponseStatus = Enums.ResultStatus.BadRequest;
             return response;
         }
         bool isValidPassword = BCrypt.Net.BCrypt.Verify(command.Password, user.Password);
         if (!isValidPassword)
         {
-            response.Errors.Add("Incorect password");
+            response.Errors.Add("Parola incorecta");
             response.ResponseStatus = Enums.ResultStatus.BadRequest;
             return response;
         }

@@ -11,7 +11,6 @@ interface CheckModalInterface {
 }
 
 function CheckModal({
-  handleCancel,
   handleConfirm,
   showModal,
   title,

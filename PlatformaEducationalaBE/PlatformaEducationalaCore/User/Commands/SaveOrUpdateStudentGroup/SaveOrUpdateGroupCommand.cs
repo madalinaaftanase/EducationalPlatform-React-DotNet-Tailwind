@@ -34,6 +34,7 @@ public class SaveGroupCommandHandler : IRequestHandler<SaveOrUpdateGroupCommand,
         if (!resultValidation.IsValid)
         {
             result.ResponseStatus = ResultStatus.BadRequest;
+            result.Errors = new List<string> { "Input invalid" };
             return result;
         }
 
@@ -42,6 +43,7 @@ public class SaveGroupCommandHandler : IRequestHandler<SaveOrUpdateGroupCommand,
         if (studentTeacher == null || studentTeacher.Id != command.CurrentUserId)
         {
             result.ResponseStatus = ResultStatus.NotAuthorized;
+            result.Errors = new List<string> { "Nu esti autorizat" };
             return result;
         }
 
@@ -51,7 +53,7 @@ public class SaveGroupCommandHandler : IRequestHandler<SaveOrUpdateGroupCommand,
         }
         catch(Exception ex)
         {
-            result.Errors = new List<string> { ex.Message };
+            result.Errors = new List<string> { "Eroare. Contacteaza admin." };
             result.ResponseStatus = ResultStatus.InternalError;
             return result;
         }

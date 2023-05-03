@@ -8,10 +8,13 @@ namespace PlatformaEducationala.Core.Project.Commands.Update;
 
 public class SaveCommand : IRequest<SaveResponse>
 {
+    public Guid? OwnerId { get; set; }
     public Guid CurrentUserId { get; set; }
     public Guid Id { get; set; }
-    public string Xml { get; set; }
-    public string Name { get; set; }
+    public string? Xml { get; set; }
+    public string? Name { get; set; }
+    public float? Grade { get; set; }
+    public string? Comment { get; set; }
     public bool IsTeacher { get; set; }
 }
 
@@ -19,10 +22,14 @@ public class SaveCommandHandler : IRequestHandler<SaveCommand, SaveResponse>
 {
     private readonly ILogger _logger;
     private readonly IProjectRepository _projectRepository;
+    private readonly IStudentRepository _studentRepository;
 
-    public SaveCommandHandler(IProjectRepository projectRepository, ILogger<SaveCommandHandler> logger)
+    public SaveCommandHandler(IProjectRepository projectRepository,
+        IStudentRepository studentRepository,
+        ILogger<SaveCommandHandler> logger)
     {
         _logger = logger;
+        _studentRepository = studentRepository;
         _projectRepository = projectRepository;
     }
 
@@ -35,6 +42,7 @@ public class SaveCommandHandler : IRequestHandler<SaveCommand, SaveResponse>
         var command_to_query = new GetByIdQuery()
         {
             CurrentUserId = command.CurrentUserId,
+            OwnerId = command.OwnerId,
             Id = command.Id,
             IsTeacher = command.IsTeacher
         };
@@ -45,7 +53,7 @@ public class SaveCommandHandler : IRequestHandler<SaveCommand, SaveResponse>
             return new SaveResponse
             {
                 Errors = resultValidation.Errors
-                    .Select(x => $"Property {x.PropertyName} failed validation. Error was {x.ErrorMessage}")
+                    .Select(x => $"Proprietatea {x.PropertyName} este invalida")
                     .ToList(),
                 ResponseStatus = ResultStatus.BadRequest
             };
@@ -59,9 +67,22 @@ public class SaveCommandHandler : IRequestHandler<SaveCommand, SaveResponse>
             response.Errors = new List<string> { "Proiectul nu a fost gasit." };
             return response;
         }
-      
-        project.Xml = command.Xml;
-        project.Name = command.Name;
+
+        if (project.StudentId == command.CurrentUserId || project.TeacherId == command.CurrentUserId)
+        {
+            project.Xml = command.Xml ?? project.Xml;
+            project.Name = command.Name ?? project.Name;
+        }
+
+        var teacher = project.StudentId != Guid.Empty
+                ? await _studentRepository.GetTeacher(project.StudentId)
+                : null;
+
+        if (teacher != null && teacher.Id == command.CurrentUserId)
+        {
+            project.Grade = command.Grade ?? project.Grade;
+            project.Comment = command.Comment ?? project.Comment;
+        }
 
         try
         {
@@ -69,7 +90,7 @@ public class SaveCommandHandler : IRequestHandler<SaveCommand, SaveResponse>
         }
         catch (Exception e)
         {
-            response.ResponseMessage = $"Eroare la update{e}";
+            response.ResponseMessage = $"Eroare la update";
             response.ResponseStatus = ResultStatus.InternalError;
         }
 

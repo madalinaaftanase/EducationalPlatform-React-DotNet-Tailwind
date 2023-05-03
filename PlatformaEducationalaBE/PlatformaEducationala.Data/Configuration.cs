@@ -22,7 +22,6 @@ public static class Configuration
         services.AddScoped<IStudentRepository, StudentsRepository>();
         services.AddScoped<ITeacherRepository, TeachersRepository>();
         services.AddScoped<IProjectRepository, ProjectsRepository>();
-        services.AddScoped<IGradeRepository, GradesRepository>();
         services.AddScoped<IGroupRepository, GroupsRepository>();
     }
 }

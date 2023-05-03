@@ -10,9 +10,22 @@ interface RightSideLayoutInterface {
   name: string;
   xml: string;
   isVisibleForShare: boolean;
+  comment: string;
+  grade: number;
+  setGrade: Function;
+  setComment: Function;
 }
 
-function RightSideLayout({ htmlText, name, xml, isVisibleForShare }: RightSideLayoutInterface) {
+function RightSideLayout({
+  htmlText,
+  name,
+  xml,
+  isVisibleForShare,
+  comment,
+  grade,
+  setGrade,
+  setComment,
+}: RightSideLayoutInterface) {
   const [selectedTab, setSelectedTab] = useState("result");
   const [newText, setNewText] = useState(name);
 
@@ -45,16 +58,23 @@ function RightSideLayout({ htmlText, name, xml, isVisibleForShare }: RightSideLa
         <button className={getClassName("html")} onClick={() => setSelectedTab("html")}>
           Html
         </button>
-        {!isVisibleForShare && (
+        {
           <button className={getClassName("teacher")} onClick={() => setSelectedTab("teacher")}>
             Profesori
           </button>
-        )}
+        }
       </div>
 
       {selectedTab == "result" && <ResultCompiler htmlText={htmlText} />}
       {selectedTab == "html" && <HTMLResult htmlText={htmlText} />}
-      {selectedTab == "teacher" && !isVisibleForShare && <TeacherSection />}
+      {selectedTab == "teacher" && (
+        <TeacherSection
+          comment={comment}
+          setComment={setComment}
+          grade={grade}
+          setGrade={setGrade}
+        />
+      )}
     </div>
   );
 }
