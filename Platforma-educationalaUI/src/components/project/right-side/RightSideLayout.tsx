@@ -60,7 +60,7 @@ function RightSideLayout({
         </button>
         {
           <button className={getClassName("teacher")} onClick={() => setSelectedTab("teacher")}>
-            Profesori
+            Evaluare
           </button>
         }
       </div>
