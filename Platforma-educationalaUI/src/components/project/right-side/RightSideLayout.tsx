@@ -34,7 +34,7 @@ function RightSideLayout({
   };
 
   const getClassName = (tabName: string) => {
-    let className = "hover:ring hover:bg-violet-300 hover:text-black p-2";
+    let className = "hover:ring hover:bg-violet-300 hover:text-black p-2 rounded";
     if (selectedTab == tabName) {
       className += " ring bg-violet-300 text-black p-2";
     }

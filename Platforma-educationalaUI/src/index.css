@@ -5,3 +5,7 @@
 svg[display="none"] {
     display: none;
   }
+
+*{
+    font-family:sans-serif
+}

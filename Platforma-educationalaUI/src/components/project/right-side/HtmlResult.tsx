@@ -35,7 +35,7 @@ function HTMLResult({ htmlText }: { htmlText: string }) {
           </svg>
         </button>
       </div>
-      <textarea id="code" className="w-full h-full" value={beautify(htmlText)} readOnly></textarea>
+      <textarea id="code" className="w-full h-[77%]" value={beautify(htmlText)} readOnly></textarea>
     </>
   );
 }
