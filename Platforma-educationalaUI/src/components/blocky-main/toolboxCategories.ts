@@ -8,7 +8,7 @@ export const toolboxCategories = {
       contents: [
         {
           kind: "category",
-          name: "Base Frame",
+          name: "Structura",
           colour: "#f22010",
           expanded: "true",
           contents: [
@@ -18,17 +18,25 @@ export const toolboxCategories = {
             },
             {
               kind: "block",
-              type: "header",
+              type: "head",
             },
             {
               kind: "block",
               type: "body",
             },
+            {
+              kind: "block",
+              type: "footer",
+            },
+            {
+              kind: "block",
+              type: "title",
+            }
           ],
         },
         {
           kind: "category",
-          name: "Basics",
+          name: "Formatare text",
           colour: "#f26110",
           expanded: "true",
           contents: [
@@ -52,11 +60,19 @@ export const toolboxCategories = {
               kind: "block",
               type: "br",
             },
+            {
+              kind: "block",
+              type: "strong",
+            },
+            {
+              kind: "block",
+              type: "u",
+            },
           ],
         },
         {
           kind: "category",
-          name: "Lists",
+          name: "Liste",
           colour: "#4fc488",
           expanded: "true",
           contents: [
@@ -92,7 +108,7 @@ export const toolboxCategories = {
         },
         {
           kind: "category",
-          name: "Forms",
+          name: "Formulare",
           colour: "#dedb2c",
           expanded: "true",
           contents: [
@@ -110,7 +126,7 @@ export const toolboxCategories = {
             },
             {
               kind: "label",
-              text: "Attributes",
+              text: "Atribute",
             },
             {
               kind: "block",
@@ -138,6 +154,43 @@ export const toolboxCategories = {
             },
           ],
         },
+        {
+          kind: "category",
+          name: "Tabele",
+          colour: "#4fc0c4",
+          expanded: "true",
+          contents: [
+            {
+              kind: "block",
+              type: "table",
+            },
+            {
+              kind: "block",
+              type: "td",
+            },
+            {
+              kind: "block",
+              type: "tr",
+            },
+            {
+              kind: "block",
+              type: "th",
+            },
+            {
+              kind: "block",
+              type: "thead",
+            },
+            
+            {
+              kind: "block",
+              type: "tbody",
+            },
+            {
+              kind: "block",
+              type: "caption",
+            },
+          ],
+        },
       ],
     },
     {
@@ -151,7 +204,7 @@ export const toolboxCategories = {
       contents: [
         {
           kind: "category",
-          name: "Basic",
+          name: "De baza",
           colour: "#e32db6",
           expanded: "true",
           contents: [

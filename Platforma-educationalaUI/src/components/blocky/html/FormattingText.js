@@ -7,6 +7,15 @@ const basicColor = "#f26110";
 generateGeneralBlock("paragraph", basicColor);
 generateGeneralBlockJS("paragraph", "p");
 
+generateGeneralBlock("br", basicColor);
+generateGeneralBlockJS("br", "br");
+
+generateGeneralBlock("strong", basicColor);
+generateGeneralBlockJS("strong", "strong");
+
+generateGeneralBlock("u", basicColor);
+generateGeneralBlockJS("u", "u");
+
 generateGeneralBlock("div", basicColor);
 generateGeneralBlockJS("div", "div");
 

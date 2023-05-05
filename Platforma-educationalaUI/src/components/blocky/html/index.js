@@ -1,4 +1,5 @@
 import "./BaseFrame";
-import "./Basics";
+import "./FormattingText";
 import "./FormsAndInputs";
 import "./Lists";
+import "./Table";

@@ -37,6 +37,8 @@ function generateGeneralBlock(id, color) {
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(color);
+      this.setTooltip("");
+      this.setHelpUrl("");
     },
   };
 }

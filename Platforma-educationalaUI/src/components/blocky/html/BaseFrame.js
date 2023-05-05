@@ -1,4 +1,5 @@
 import Blockly from "blockly";
+import { generateGeneralBlock, generateGeneralBlockJS } from "./functionsBlocks";
 // head , title, meta , body, footer , top nav
 
 function getColor() {
@@ -24,29 +25,14 @@ Blockly.JavaScript["document"] = function (block) {
   </html>`;
 };
 
-let content = generateBaseFrameComponent("body");
-let contentFunction = generateFunction("body", "body");
+generateGeneralBlock("body", getColor());
+generateGeneralBlockJS("body", "body");
 
-let header = generateBaseFrameComponent("header");
-let headerFunction = generateFunction("header", "head");
+generateGeneralBlock("footer", getColor());
+generateGeneralBlockJS("footer", "footer");
 
-function generateFunction(id, tag) {
-  Blockly.JavaScript[id] = function (block) {
-    var content = Blockly.JavaScript.statementToCode(block, "Content");
-    return `<${tag}> ${content} </${tag}>`;
-  };
-}
+generateGeneralBlock("head", getColor());
+generateGeneralBlockJS("head", "head");
 
-function generateBaseFrameComponent(id) {
-  return (Blockly.Blocks[id] = {
-    init: function () {
-      this.appendDummyInput().appendField(id);
-      this.appendStatementInput("Content").setCheck(null);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour(getColor());
-      this.setTooltip("");
-      this.setHelpUrl("");
-    },
-  });
-}
+generateGeneralBlock("title", getColor());
+generateGeneralBlockJS("title", "title");
