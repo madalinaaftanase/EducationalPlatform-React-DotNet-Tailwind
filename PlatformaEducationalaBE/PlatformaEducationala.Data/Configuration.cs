@@ -14,7 +14,10 @@ public static class Configuration
     {
         var connectionString = configuration["prodDb"];
         var conn = ConfigurationManager.AppSettings["prodDb"];
-
+        if (conn == null)
+        {
+            conn = connectionString;
+        }
 
         services.AddDbContext<PlatformDBContext>(options =>
         {
