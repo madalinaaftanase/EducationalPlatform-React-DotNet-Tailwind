@@ -1,9 +1,14 @@
 import ResultContainer from "./ResultContainer";
+import InnerHTML from "dangerously-set-html-content";
 
 function Result({ htmlText }: { htmlText: string }) {
+  if (!htmlText) {
+    return <> </>;
+  }
+
   return (
     <ResultContainer>
-      <div dangerouslySetInnerHTML={{ __html: htmlText }} />
+      <InnerHTML html={htmlText} key={htmlText} />
     </ResultContainer>
   );
 }

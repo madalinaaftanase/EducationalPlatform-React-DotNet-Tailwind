@@ -1,25 +1,25 @@
 // ul li ol dl dt dd
 import Blockly from "blockly";
 
-generateGeneralBlock("ul");
-generateGeneralBlockJS("ul", "ul");
+generateGeneralBlockWithAttributes("ul");
+generateGeneralBlockWithAttributesJS("ul", "ul");
 
-generateGeneralBlock("ol");
-generateGeneralBlockJS("ol","ol");
+generateGeneralBlockWithAttributes("ol");
+generateGeneralBlockWithAttributesJS("ol", "ol");
 
-generateGeneralBlock("li");
-generateGeneralBlockJS("li","li");
+generateGeneralBlockWithAttributes("li");
+generateGeneralBlockWithAttributesJS("li", "li");
 
-generateGeneralBlock("dl");
-generateGeneralBlockJS("dl","dl");
+generateGeneralBlockWithAttributes("dl");
+generateGeneralBlockWithAttributesJS("dl", "dl");
 
-generateGeneralBlock("dt");
-generateGeneralBlockJS("dt","dt");
+generateGeneralBlockWithAttributes("dt");
+generateGeneralBlockWithAttributesJS("dt", "dt");
 
-generateGeneralBlock("dd");
-generateGeneralBlockJS("dd","dd");
+generateGeneralBlockWithAttributes("dd");
+generateGeneralBlockWithAttributesJS("dd", "dd");
 
-function generateGeneralBlock(id) {
+function generateGeneralBlockWithAttributes(id) {
   Blockly.Blocks[id] = {
     init: function () {
       this.appendValueInput("style").setCheck(null).appendField(id);
@@ -27,12 +27,12 @@ function generateGeneralBlock(id) {
       this.setInputsInline(false);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour('#4fc488');
+      this.setColour("#4fc488");
     },
   };
 }
 
-function generateGeneralBlockJS(id, tag) {
+function generateGeneralBlockWithAttributesJS(id, tag) {
   Blockly.JavaScript[id] = function (block) {
     var content = Blockly.JavaScript.statementToCode(block, "Content");
     var styleBlock = block.getInputTargetBlock("style");

@@ -1,23 +1,26 @@
 // div , h, p, br,
 import Blockly from "blockly";
-import { generateGeneralBlock, generateGeneralBlockJS } from "./functionsBlocks";
+import {
+  generateGeneralBlockWithAttributes,
+  generateGeneralBlockWithAttributesJS,
+} from "./functionsCreateBlocks";
 
 const basicColor = "#f26110";
 
-generateGeneralBlock("paragraph", basicColor);
-generateGeneralBlockJS("paragraph", "p");
+generateGeneralBlockWithAttributes("paragraph", basicColor);
+generateGeneralBlockWithAttributesJS("paragraph", "p");
 
-generateGeneralBlock("br", basicColor);
-generateGeneralBlockJS("br", "br");
+generateGeneralBlockWithAttributes("br", basicColor);
+generateGeneralBlockWithAttributesJS("br", "br");
 
-generateGeneralBlock("strong", basicColor);
-generateGeneralBlockJS("strong", "strong");
+generateGeneralBlockWithAttributes("strong", basicColor);
+generateGeneralBlockWithAttributesJS("strong", "strong");
 
-generateGeneralBlock("u", basicColor);
-generateGeneralBlockJS("u", "u");
+generateGeneralBlockWithAttributes("u", basicColor);
+generateGeneralBlockWithAttributesJS("u", "u");
 
-generateGeneralBlock("div", basicColor);
-generateGeneralBlockJS("div", "div");
+generateGeneralBlockWithAttributes("div", basicColor);
+generateGeneralBlockWithAttributesJS("div", "div");
 
 //text
 Blockly.Blocks["regexInput"] = {

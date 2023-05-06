@@ -1,5 +1,8 @@
 import Blockly from "blockly";
-import { generateGeneralBlock, generateGeneralBlockJS } from "./functionsBlocks";
+import {
+  generateGeneralBlockWithAttributes,
+  generateGeneralBlockWithAttributesJS,
+} from "./functionsCreateBlocks";
 // head , title, meta , body, footer , top nav
 
 function getColor() {
@@ -25,14 +28,14 @@ Blockly.JavaScript["document"] = function (block) {
   </html>`;
 };
 
-generateGeneralBlock("body", getColor());
-generateGeneralBlockJS("body", "body");
+generateGeneralBlockWithAttributes("body", getColor());
+generateGeneralBlockWithAttributesJS("body", "body");
 
-generateGeneralBlock("footer", getColor());
-generateGeneralBlockJS("footer", "footer");
+generateGeneralBlockWithAttributes("footer", getColor());
+generateGeneralBlockWithAttributesJS("footer", "footer");
 
-generateGeneralBlock("head", getColor());
-generateGeneralBlockJS("head", "head");
+generateGeneralBlockWithAttributes("head", getColor());
+generateGeneralBlockWithAttributesJS("head", "head");
 
-generateGeneralBlock("title", getColor());
-generateGeneralBlockJS("title", "title");
+generateGeneralBlockWithAttributes("title", getColor());
+generateGeneralBlockWithAttributesJS("title", "title");

@@ -43,13 +43,13 @@ function generateDoubleInputsBlockJS(id) {
   };
 }
 
-// drop down 
+// drop down
 
 function generateDropDownBlock(id, options, color) {
   Blockly.Blocks[`${id}`] = {
     init: function () {
       this.appendDummyInput()
-        .appendField(`${id}:`)
+        .appendField(`${id} =`)
         .appendField(new Blockly.FieldDropdown(options), "option");
       this.setColour(`${color}`);
       this.setPreviousStatement(true, null);
@@ -108,9 +108,15 @@ function generateDropDownAndInputBlockJS(id) {
   };
 }
 
-export { generateInputsBlock, generateInputsBlockJS,
-        generateDoubleInputsBlock,  generateDoubleInputsBlockJS,
-        generateDropDownBlock, generateDropDownBlockJS,
-        generateDoubleDropDownBlock, generateDoubleDropDownBlockJS,
-        generateDropDownAndInputBlock, generateDropDownAndInputBlockJS
- };
+export {
+  generateInputsBlock,
+  generateInputsBlockJS,
+  generateDoubleInputsBlock,
+  generateDoubleInputsBlockJS,
+  generateDropDownBlock,
+  generateDropDownBlockJS,
+  generateDoubleDropDownBlock,
+  generateDoubleDropDownBlockJS,
+  generateDropDownAndInputBlock,
+  generateDropDownAndInputBlockJS,
+};

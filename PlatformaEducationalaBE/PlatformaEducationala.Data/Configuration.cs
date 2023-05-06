@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Configuration;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PlatformaEducationala.Core.Repositories;
@@ -12,11 +13,12 @@ public static class Configuration
     public static void AddDb(this IServiceCollection services, IConfiguration configuration)
     {
         var connectionString = configuration["prodDb"];
+        var conn = ConfigurationManager.AppSettings["prodDb"];
 
 
         services.AddDbContext<PlatformDBContext>(options =>
         {
-            options.UseSqlServer(connectionString);
+            options.UseSqlServer(conn);
             options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
         });
         services.AddScoped<IStudentRepository, StudentsRepository>();

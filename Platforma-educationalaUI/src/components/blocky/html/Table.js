@@ -1,27 +1,29 @@
-import Blockly from "blockly";
-import { generateGeneralBlock, generateGeneralBlockJS } from "./functionsBlocks";
+import {
+  generateGeneralBlockWithAttributes,
+  generateGeneralBlockWithAttributesJS,
+} from "./functionsCreateBlocks";
 
 function getColor() {
   return "#4fc0c4";
 }
 
-generateGeneralBlock("table", getColor());
-generateGeneralBlockJS("table", "table");
+generateGeneralBlockWithAttributes("table", getColor());
+generateGeneralBlockWithAttributesJS("table", "table");
 
-generateGeneralBlock("td", getColor());
-generateGeneralBlockJS("td", "td");
+generateGeneralBlockWithAttributes("td", getColor());
+generateGeneralBlockWithAttributesJS("td", "td");
 
-generateGeneralBlock("th", getColor());
-generateGeneralBlockJS("th", "th");
+generateGeneralBlockWithAttributes("th", getColor());
+generateGeneralBlockWithAttributesJS("th", "th");
 
-generateGeneralBlock("thead", getColor());
-generateGeneralBlockJS("thead", "thead");
+generateGeneralBlockWithAttributes("thead", getColor());
+generateGeneralBlockWithAttributesJS("thead", "thead");
 
-generateGeneralBlock("tbody", getColor());
-generateGeneralBlockJS("tbody", "tbody");
+generateGeneralBlockWithAttributes("tbody", getColor());
+generateGeneralBlockWithAttributesJS("tbody", "tbody");
 
-generateGeneralBlock("tr", getColor());
-generateGeneralBlockJS("tr", "tr");
+generateGeneralBlockWithAttributes("tr", getColor());
+generateGeneralBlockWithAttributesJS("tr", "tr");
 
-generateGeneralBlock("caption", getColor());
-generateGeneralBlockJS("caption", "caption");
+generateGeneralBlockWithAttributes("caption", getColor());
+generateGeneralBlockWithAttributesJS("caption", "caption");

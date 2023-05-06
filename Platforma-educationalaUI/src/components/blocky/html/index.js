@@ -1,3 +1,4 @@
+import "./Attributes";
 import "./BaseFrame";
 import "./FormattingText";
 import "./FormsAndInputs";
