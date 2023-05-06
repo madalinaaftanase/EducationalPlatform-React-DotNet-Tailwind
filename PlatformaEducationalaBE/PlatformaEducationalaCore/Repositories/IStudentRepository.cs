@@ -11,6 +11,7 @@ public interface IStudentRepository
     Task AddAsync(Student account);
     Task SaveOrUpdateGroup(SaveOrUpdateGroupCommand command);
     Task<Entities.Teacher> GetTeacher(Guid studentId);
+    Task<List<StudentGroup>> GetStudentsGroup(Guid groupId);
 
     
 }

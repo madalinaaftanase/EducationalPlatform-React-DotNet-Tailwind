@@ -3,6 +3,7 @@ import Student from "../student/Student";
 export default interface Group {
     id: string;
     name: string;
+    studentsCount?: number;
 }
 
 export interface GroupsResponse {

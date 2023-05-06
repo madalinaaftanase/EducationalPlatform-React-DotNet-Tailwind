@@ -20,7 +20,13 @@ function GroupSubcomponent({ groups, setGroups, setSelectedGroupId }: GroupInter
   const onInit = async () => {
     const response = await getAll(url, true);
     if (response?.responseStatus == 200) {
-      setGroups(response.groups);
+      const filteredGroups: Group[] = [];
+      response.groups.forEach((group) => {
+        if (group.studentsCount != null && group.studentsCount < 15) {
+          filteredGroups.push(group);
+        }
+      });
+      setGroups(filteredGroups);
     } else {
       navigator("/Error");
     }

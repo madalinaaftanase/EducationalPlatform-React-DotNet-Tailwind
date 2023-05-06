@@ -1,4 +1,4 @@
-import { ChangeEventHandler, useState } from "react";
+import {useState } from "react";
 import config from "../../../config";
 import { saveStudentGroup } from "../../../services/studentAPI";
 import Student from "../../../models/student/Student";
