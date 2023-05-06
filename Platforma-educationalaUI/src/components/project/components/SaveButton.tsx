@@ -13,7 +13,6 @@ function SaveButton({ name, xml }: { name: string; xml: string }) {
   let data: ProjectSave = { id: params.id, name: name, xml: xml };
 
   const onClickSave = async () => {
-    console.log(xml);
     if (!xml) {
       alert(name);
       return;

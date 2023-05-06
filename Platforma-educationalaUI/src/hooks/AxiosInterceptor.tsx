@@ -5,7 +5,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const AxiosInterceptor = ({ children }: { children: React.ReactNode }) => {
-  const navigator = useNavigate();
   useEffect(() => {
     const interceptor = axios.interceptors.response.use(
       async (response) => {
@@ -23,12 +22,11 @@ const AxiosInterceptor = ({ children }: { children: React.ReactNode }) => {
         }
         return response;
       },
-      async (error) => {
-        toast.error("Eroare", {
+      async (response) => {
+        toast.error(`Eroare! ${response.response.data.errors}`, {
           position: toast.POSITION.TOP_RIGHT,
           autoClose: 1000,
         });
-        //navigator("/Error");
       }
     );
     return () => axios.interceptors.response.eject(interceptor);
