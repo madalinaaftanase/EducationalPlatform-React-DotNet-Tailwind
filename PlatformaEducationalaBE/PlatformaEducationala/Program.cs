@@ -55,8 +55,6 @@ builder.Services.AddSwaggerGen(options =>
 builder.Configuration.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
 builder.Configuration.AddJsonFile("appsettings.Development.json", optional: true, reloadOnChange: true);
 
-builder.Services.AddDb(builder.Configuration);
-
 builder.Host.ConfigureLogging(logging =>
 {
     logging.ClearProviders();
@@ -97,6 +95,8 @@ builder.Services.AddAuthentication(options =>
 });
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+builder.Services.AddDb(builder.Configuration);
 
 var app = builder.Build();
 
