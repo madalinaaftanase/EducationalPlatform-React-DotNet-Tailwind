@@ -1,5 +1,5 @@
 import axios from "axios";
-import Student, { BasicResponse, StudentResponse, StudentsResponse } from "../models/student/Student";
+import Student, { StudentResponse, StudentsResponse } from "../models/student/Student";
 import { getCookie } from "../utilities/cookieFunctions";
 
 const GetAllStudents = async (url: string) => {
