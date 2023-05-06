@@ -47,6 +47,15 @@ public class SaveGroupCommandHandler : IRequestHandler<SaveOrUpdateGroupCommand,
             return result;
         }
 
+        var studentsGroup = await _studentRepository.GetStudentsGroup(command.NewIdGroup);
+
+        if (studentsGroup.Count > 15)
+        {
+            result.ResponseStatus = ResultStatus.BadRequest;
+            result.Errors = new List<string> { "Grupa a atins numarul maxim" };
+            return result;
+        }
+
         try
         {
             await _studentRepository.SaveOrUpdateGroup(command);

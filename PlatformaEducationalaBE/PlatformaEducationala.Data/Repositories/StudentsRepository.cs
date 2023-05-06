@@ -52,6 +52,14 @@ public class StudentsRepository : IStudentRepository
         return teacher;
     }
 
+    public async Task<List<StudentGroup>> GetStudentsGroup(Guid groupId)
+    {
+        var studentsGroup = await _platformDbContext.StudentGroups
+            .Where(g => g.GroupId == groupId)
+            .ToListAsync();
+        return studentsGroup;
+    }
+
 
     public async Task<StudentDto> GetByEmail(string email)
     {

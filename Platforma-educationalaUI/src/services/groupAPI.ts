@@ -1,7 +1,7 @@
 import axios from "axios";
 import { getCookie } from "../utilities/cookieFunctions";
 import Group, { GroupResponse, GroupStudentsResponse, GroupsResponse } from "../models/group/Group";
-import Student, { BasicResponse, StudentResponse } from "../models/student/Student";
+import { BasicResponse } from "../models/student/Student";
 import config from "../config";
 
 export const getAll = async (url: string, isTeacher: boolean) => {
