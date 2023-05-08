@@ -66,10 +66,15 @@ builder.Services.AddSpaStaticFiles(Configuration => { Configuration.RootPath = "
 
 builder.Services.AddCors();
 
-if (!builder.Environment.IsDevelopment())
+bool.TryParse(builder.Configuration["isDev"], out bool isDev);
+if (!isDev)
 {
     string instrumentationKey = builder.Configuration["AppInsightsInstrumentationKey"];
     builder.Services.AddApplicationInsightsTelemetry(instrumentationKey);
+
+    builder.Configuration.AddAzureKeyVault(
+        new Uri($"https://{builder.Configuration["KeyVaultName"]}.vault.azure.net/"),
+        new DefaultAzureCredential());
 }
 
 builder.Services.AddAuthentication(options =>
@@ -111,13 +116,6 @@ app.UseSwaggerUI(options =>
     options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
     options.RoutePrefix = string.Empty;
 });
-
-if (!app.Environment.IsDevelopment())
-{
-    builder.Configuration.AddAzureKeyVault(
-        new Uri("https://degree-kv.vault.azure.net"),
-        new DefaultAzureCredential()).Build();
-}
 
 app.UseMiddleware<AuthenticationMiddleware>();
 app.UseAuthentication();
