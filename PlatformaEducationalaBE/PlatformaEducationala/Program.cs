@@ -121,7 +121,7 @@ app.UseMiddleware<AuthenticationMiddleware>();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.UseCors(p => p.WithOrigins("http://localhost:3000")
+app.UseCors(p => p.WithOrigins("http://localhost:3000 , https://helpful-boba-5121c9.netlify.app")
     .AllowAnyOrigin()
     .AllowAnyHeader()
     .AllowAnyMethod());
