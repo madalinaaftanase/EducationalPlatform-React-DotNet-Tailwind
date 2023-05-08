@@ -1,5 +1,5 @@
 const config = {
-  baseApiUrl: process.env.NODE_ENV == "development" ? "/api" : "https://platformaeducationala.azurewebsites.net",
+  baseApiUrl: "/api",
 };
 
 const currencyFormatter = Intl.NumberFormat("en-US", {
