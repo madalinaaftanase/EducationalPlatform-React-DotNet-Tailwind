@@ -36,7 +36,7 @@ builder.Services.AddSwaggerGen(options =>
         Type = SecuritySchemeType.ApiKey,
         Scheme = "bearer"
     };
-    var securityRequirement= new OpenApiSecurityRequirement
+    var securityRequirement = new OpenApiSecurityRequirement
     {
         {
             new OpenApiSecurityScheme
@@ -66,7 +66,7 @@ builder.Host.ConfigureLogging(logging =>
 });
 builder.Services.AddMediatR(typeof(GetQuery).Assembly);
 
-builder.Services.AddSpaStaticFiles(Configuration => { Configuration.RootPath = "../Platforma-educationalaUI/build"; });
+builder.Services.AddSpaStaticFiles(Configuration => { Configuration.RootPath = "../../Platforma-educationalaUI/build"; });
 
 builder.Services.AddCors();
 
@@ -142,8 +142,9 @@ app.MapControllers();
 
 app.UseSpa(spa =>
 {
-    spa.Options.SourcePath = "../Platforma-educationalaUI/build";
+    spa.Options.SourcePath = "../../Platforma-educationalaUI/build";
     // spa.UseProxyToSpaDevelopmentServer("http://localhost:57437");
+
 });
 
 app.Run();
