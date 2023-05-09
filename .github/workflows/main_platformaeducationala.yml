@@ -15,7 +15,16 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
-
+      
+      - name: Install Node.js for UI
+        uses: actions/setup-node@v2.x
+        with:
+          node-version: '14.x'
+      - name: Install dependencies
+      - run: npm install
+      
+      - name: build app
+      - run: npm run build ./Platforma-educationalaUI
      
 
       - name: Set up .NET Core
