@@ -1,9 +1,9 @@
 name: Build and deploy Platforma Educationala
 
 env:
-  AZURE_WEBAPP_NAME: 'PlatformaEducationala'   # set this to your application's name
-  AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
-  DOTNET_VERSION: '6'                 # set this to the .NET Core version to use
+  AZURE_WEBAPP_NAME: "PlatformaEducationala" # set this to your application's name
+  AZURE_WEBAPP_PACKAGE_PATH: "." # set this to the path to your web app project, defaults to the repository root
+  DOTNET_VERSION: "6" # set this to the .NET Core version to use
 
 on:
   push:
@@ -15,23 +15,11 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
-      
-      - name: Install Node.js for UI
-        uses: actions/setup-node@v2.x
-        with:
-          node-version: '14.x'
-          
-      - name: Install dependencies
-      - run: npm install
-      
-      - name: build app
-      - run: npm run build ./Platforma-educationalaUI
-     
 
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v2
         with:
-          dotnet-version: '6.0.x'
+          dotnet-version: "6.0.x"
           include-prerelease: true
 
       - name: Build with dotnet
@@ -51,7 +39,7 @@ jobs:
     runs-on: windows-latest
     needs: build
     environment:
-      name: 'production'
+      name: "production"
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
