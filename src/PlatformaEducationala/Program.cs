@@ -11,9 +11,13 @@ using Swashbuckle.AspNetCore.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 
 builder.Services.AddControllers();
+
+builder.Services.AddRazorPages(options =>
+{
+    options.Conventions.AddPageRoute("/", "/Index");
+});
 
 builder.Services.AddSwaggerGen(options =>
 {
@@ -62,7 +66,7 @@ builder.Host.ConfigureLogging(logging =>
 });
 builder.Services.AddMediatR(typeof(GetQuery).Assembly);
 
-builder.Services.AddSpaStaticFiles(Configuration => { Configuration.RootPath = " wwwroot/spa"; });
+builder.Services.AddSpaStaticFiles(Configuration => { Configuration.RootPath = "../Platforma-educationalaUI/build"; });
 
 builder.Services.AddCors();
 
@@ -104,12 +108,16 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddDb(builder.Configuration);
 
 var app = builder.Build();
-
-app.UseDefaultFiles();
-app.UseSpaStaticFiles();
-
 app.UseRouting();
 app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseSpaStaticFiles(new StaticFileOptions
+{
+    ServeUnknownFileTypes = true,
+    DefaultContentType = "text/plain",
+    RequestPath = ""
+});
+
 app.UseSwagger();
 app.UseSwaggerUI(options =>
 {
@@ -121,12 +129,21 @@ app.UseMiddleware<AuthenticationMiddleware>();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.UseCors(p => p.WithOrigins("http://localhost:3000 , https://helpful-boba-5121c9.netlify.app")
-    .AllowAnyOrigin()
-    .AllowAnyHeader()
-    .AllowAnyMethod());
+app.UseCors();
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+        name: default,
+        pattern: "{controller}/{action=Index}/{id?}");
+});
 
 app.MapControllers();
 
-if (!app.Environment.IsDevelopment()) app.UseSpa(spa => spa.Options.SourcePath = "wwwroot/spa");
+app.UseSpa(spa =>
+{
+    spa.Options.SourcePath = "../Platforma-educationalaUI/build";
+    // spa.UseProxyToSpaDevelopmentServer("http://localhost:57437");
+});
+
 app.Run();

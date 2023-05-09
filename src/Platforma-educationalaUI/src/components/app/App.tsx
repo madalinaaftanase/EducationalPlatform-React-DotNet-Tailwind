@@ -23,7 +23,7 @@ function App() {
     return (
       <SWRConfig value={swrConfig}>
         <Navbar />
-        <Routes>
+        <Routes >
           <Route path="/Joc" element={<Project />} />
           <Route path="/" element={<Project />} />
           <Route path="/Signin" element={<Signin />} />
@@ -37,7 +37,10 @@ function App() {
           <Route path="/Grupe/:id" element={<Group />} />
           <Route path="/Profil" element={<Profile />} />
           <Route path="/Studenti/:id/Proiecte" element={<Projects />} />
-          <Route path="/Studenti/:studentId/Proiecte/:id" element={<Project isTeacherOverride={false} />} />
+          <Route
+            path="/Studenti/:studentId/Proiecte/:id"
+            element={<Project isTeacherOverride={false} />}
+          />
           <Route path="/Despre" element={<About />} />
         </Routes>
       </SWRConfig>
