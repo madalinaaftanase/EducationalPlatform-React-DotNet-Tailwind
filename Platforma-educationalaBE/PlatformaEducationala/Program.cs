@@ -66,7 +66,7 @@ builder.Host.ConfigureLogging(logging =>
 });
 builder.Services.AddMediatR(typeof(GetQuery).Assembly);
 
-builder.Services.AddSpaStaticFiles(Configuration => { Configuration.RootPath = "../../Platforma-educationalaUI/build"; });
+builder.Services.AddSpaStaticFiles(Configuration => { Configuration.RootPath = "wwwroot/spa"; });
 
 builder.Services.AddCors();
 
@@ -142,9 +142,9 @@ app.MapControllers();
 
 app.UseSpa(spa =>
 {
-    spa.Options.SourcePath = "../../Platforma-educationalaUI/build";
+    // spa.Options.SourcePath = "../../Platforma-educationalaUI/build";
     // spa.UseProxyToSpaDevelopmentServer("http://localhost:57437");
-
+    spa.Options.SourcePath = "wwwroot/spa";
 });
 
 app.Run();
