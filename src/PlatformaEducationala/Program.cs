@@ -144,7 +144,6 @@ app.UseSpa(spa =>
 {
     spa.Options.SourcePath = "../Platforma-educationalaUI/build";
     // spa.UseProxyToSpaDevelopmentServer("http://localhost:57437");
-
 });
 
 app.Run();
