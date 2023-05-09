@@ -15,6 +15,14 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
+
+      - name: Install Node.js for UI
+        uses: actions/setup-node@v2.4.4
+        with:
+          node-version: '14.x'
+      - run: npm install
+      - run: npm run build ./Platforma-educationalaUI
+
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v2
         with:
@@ -22,10 +30,10 @@ jobs:
           include-prerelease: true
 
       - name: Build with dotnet
-        run: dotnet build ./PlatformaEducationalaBE/PlatformaEducationala.sln --configuration Release
+        run: dotnet build ./Platforma-educationalaBE/PlatformaEducationala.sln --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish ./PlatformaEducationalaBE/PlatformaEducationala.sln -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        run: dotnet publish ./Platforma-educationalaBE/PlatformaEducationala.sln -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
