@@ -16,12 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install Node.js for UI
-        uses: actions/setup-node@v2.4.4
-        with:
-          node-version: '14.x'
-      - run: npm install
-      - run: npm run build ./Platforma-educationalaUI
+     
 
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v2
