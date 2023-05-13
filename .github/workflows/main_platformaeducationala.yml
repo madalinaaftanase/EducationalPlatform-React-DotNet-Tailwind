@@ -24,11 +24,11 @@ jobs:
 
       - name: Build with dotnet
         run: dotnet build ./Platforma-educationalaBE/PlatformaEducationala.sln --configuration Release
-      - name: Migration
-        run: dotnet ef database update ./Platforma-educationalaBE/PlatformaEducationala.Data
+
       - name: dotnet publish
         run: dotnet publish ./Platforma-educationalaBE/PlatformaEducationala.sln -c Release -o ${{env.DOTNET_ROOT}}/myapp
-
+      - name: Migration
+        run: dotnet ef database update ./Platforma-educationalaBE/PlatformaEducationala.Data
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
