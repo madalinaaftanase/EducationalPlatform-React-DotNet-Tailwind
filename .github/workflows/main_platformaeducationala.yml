@@ -24,7 +24,8 @@ jobs:
 
       - name: Build with dotnet
         run: dotnet build ./Platforma-educationalaBE/PlatformaEducationala.sln --configuration Release
-
+      - name: Migration
+        run: dotnet ef database update
       - name: dotnet publish
         run: dotnet publish ./Platforma-educationalaBE/PlatformaEducationala.sln -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
