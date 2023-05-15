@@ -9,7 +9,7 @@ import AxiosInterceptor from "./hooks/AxiosInterceptor";
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename="/index.html">
+    <BrowserRouter>
       <UserContextProvider>
         <AxiosInterceptor>
           <App />
