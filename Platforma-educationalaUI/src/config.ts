@@ -1,5 +1,5 @@
 const config = {
-  baseApiUrl: "https://platformaeducationala.azurewebsites.net/api",
+  baseApiUrl: "/api",
 };
 
 const currencyFormatter = Intl.NumberFormat("en-US", {
