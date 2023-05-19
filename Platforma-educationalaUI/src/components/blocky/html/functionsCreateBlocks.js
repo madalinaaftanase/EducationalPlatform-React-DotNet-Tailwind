@@ -1,6 +1,9 @@
 import Blockly from "blockly";
-// atributes
-function generateGeneralBlockWithAttributes(id, color) {
+import { blockyValidation } from "../validation";
+import { descriptionBlock } from "./description";
+
+function generateGeneralBlockWithAttributes(id, color, tooltips) {
+  console.log(id);
   Blockly.Blocks[id] = {
     init: function () {
       this.appendValueInput("attribute").setCheck(null).appendField(id);
@@ -9,12 +12,14 @@ function generateGeneralBlockWithAttributes(id, color) {
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(color);
+      this.setTooltip(`${tooltips}`);
     },
   };
 }
 
 function generateGeneralBlockWithAttributesJS(id, tag) {
   Blockly.JavaScript[id] = function (block) {
+    blockyValidation(block);
     var content = Blockly.JavaScript.statementToCode(block, "Content");
     var attributeBlock = block.getInputTargetBlock("attribute");
     var attributes = Blockly.JavaScript.blockToCode(attributeBlock);
@@ -28,7 +33,19 @@ function generateGeneralBlockWithAttributesJS(id, tag) {
   };
 }
 
+function generateBlockWithAttributesGeneral(id, tag, color) {
+  const tooltips = descriptionBlock.get(id);
+  generateGeneralBlockWithAttributes(id, color, tooltips || "");
+  generateGeneralBlockWithAttributesJS(id, tag);
+}
+
 // blocks
+function generateInputFormBlockGeneral(id, tag, color) {
+  const tooltips = descriptionBlock.get("id");
+  generateInputFormBlock(id, tag, color, tooltips || "");
+  generateInputFormBlockJS(id, tag);
+}
+
 function generateInputFormBlock(id, tag, color, tooltips) {
   Blockly.Blocks[id] = {
     init: function () {
@@ -45,14 +62,10 @@ function generateInputFormBlock(id, tag, color, tooltips) {
 
 function generateInputFormBlockJS(id, tag) {
   Blockly.JavaScript[id] = function (block) {
+    blockyValidation(block);
     let value = block.getFieldValue("value");
     return `${tag} = "${value}" `;
   };
 }
 
-export {
-  generateGeneralBlockWithAttributes,
-  generateGeneralBlockWithAttributesJS,
-  generateInputFormBlock,
-  generateInputFormBlockJS,
-};
+export { generateBlockWithAttributesGeneral, generateInputFormBlockGeneral };

@@ -1,52 +1,20 @@
 import {
-  generateInputsBlock,
-  generateInputsBlockJS,
-  generateDropDownBlock,
-  generateDropDownBlockJS,
-  generateDropDownAndInputBlock,
-  generateDropDownAndInputBlockJS,
-  generateDoubleInputsBlock,
-  generateDoubleInputsBlockJS,
+  generateInputBlockGeneral,
+  generateDropDownBlockGeneral,
+  generateDropDownAndInputBlockGeneral,
 } from "./functionsCreateBlocks";
 
-const text = "face ceva";
 const basicColor = "#e32db6";
 
-//double text
-generateDoubleInputsBlock("any", text, "#040806");
-generateDoubleInputsBlockJS("any");
-
-//color
-generateInputsBlock("color", text, basicColor);
-generateInputsBlockJS("color");
-
-//bg-color
-generateInputsBlock("background-color", text, basicColor);
-generateInputsBlockJS("background-color");
-
-//font-size
-generateInputsBlock("font-size", text, basicColor);
-generateInputsBlockJS("font-size");
-
-//height
-generateInputsBlock("height", text, basicColor);
-generateInputsBlockJS("height");
-
-//width
-generateInputsBlock("width", text, basicColor);
-generateInputsBlockJS("width");
-
-//z-index
-generateInputsBlock("z-index", text, basicColor);
-generateInputsBlockJS("z-index");
-
-//border
-generateInputsBlock("border", text, basicColor);
-generateInputsBlockJS("border");
-
-//gap
-generateInputsBlock("gap", text, basicColor);
-generateInputsBlockJS("gap");
+generateInputBlockGeneral("any", "#040806");
+generateInputBlockGeneral("color", basicColor);
+generateInputBlockGeneral("background-color", basicColor);
+generateInputBlockGeneral("font-size", basicColor);
+generateInputBlockGeneral("height", basicColor);
+generateInputBlockGeneral("width", basicColor);
+generateInputBlockGeneral("z-index", basicColor);
+generateInputBlockGeneral("border", basicColor);
+generateInputBlockGeneral("gap", basicColor);
 
 //display
 let optionsDisplay = [
@@ -57,8 +25,7 @@ let optionsDisplay = [
   ["none", "none"],
 ];
 
-generateDropDownBlock("display", optionsDisplay, basicColor);
-generateDropDownBlockJS("display");
+generateDropDownBlockGeneral("display", optionsDisplay, basicColor);
 
 let marginOptions = [
   ["margin", "margin"],
@@ -74,11 +41,8 @@ let paddingOptions = [
   ["padding-right", "padding-right"],
 ];
 
-generateDropDownAndInputBlock("margin", marginOptions, basicColor);
-generateDropDownAndInputBlockJS("margin");
-
-generateDropDownAndInputBlock("padding", paddingOptions, basicColor);
-generateDropDownAndInputBlockJS("padding");
+generateDropDownAndInputBlockGeneral("margin", marginOptions, basicColor);
+generateDropDownAndInputBlockGeneral("padding", paddingOptions, basicColor);
 
 //justify and align self
 let alignOptions = [
@@ -90,11 +54,8 @@ let alignOptions = [
   ["stretch", "stretch"],
   ["baseline", "baseline"],
 ];
-generateDropDownBlock("justify-self", alignOptions, basicColor);
-generateDropDownBlockJS("justify-self");
-
-generateDropDownBlock("align-self", alignOptions, basicColor);
-generateDropDownBlockJS("align-self");
+generateDropDownBlockGeneral("justify-self", alignOptions, basicColor);
+generateDropDownBlockGeneral("align-self", alignOptions, basicColor);
 
 //justify and align content
 let alignContentOptions = [
@@ -108,8 +69,6 @@ let alignContentOptions = [
   ["center", "center"],
   ["stretch", "stretch"],
 ];
-generateDropDownBlock("justify-content", alignContentOptions, basicColor);
-generateDropDownBlockJS("justify-content");
 
-generateDropDownBlock("align-content", alignContentOptions, basicColor);
-generateDropDownBlockJS("align-content");
+generateDropDownBlockGeneral("justify-content", alignContentOptions, basicColor);
+generateDropDownBlockGeneral("align-content", alignContentOptions, basicColor);

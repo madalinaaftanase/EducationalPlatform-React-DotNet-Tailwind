@@ -1,26 +1,22 @@
 import Blockly from "blockly";
-import {
-  generateGeneralBlockWithAttributes,
-  generateGeneralBlockWithAttributesJS,
-} from "./functionsCreateBlocks";
-// head , title, meta , body, footer , top nav
+import { blockyValidation } from "../validation";
+import { generateBlockWithAttributesGeneral } from "./functionsCreateBlocks";
 
-function getColor() {
-  return "#f22010";
-}
+const baseFrame = "#f22010";
 
 Blockly.Blocks["document"] = {
   init: function () {
     this.appendDummyInput().appendField("document");
     this.appendStatementInput("Content").setCheck(null);
     this.setInputsInline(true);
-    this.setColour(getColor());
-    this.setTooltip("");
+    this.setColour(baseFrame);
+    this.setTooltip("Elementul radacina, contine toate celalalte elemente");
     this.setHelpUrl("");
   },
 };
 
 Blockly.JavaScript["document"] = function (block) {
+  blockyValidation(block);
   var content = Blockly.JavaScript.statementToCode(block, "Content");
   return `<! DOCTYPE HTML > 
   <html>
@@ -28,14 +24,7 @@ Blockly.JavaScript["document"] = function (block) {
   </html>`;
 };
 
-generateGeneralBlockWithAttributes("body", getColor());
-generateGeneralBlockWithAttributesJS("body", "body");
-
-generateGeneralBlockWithAttributes("footer", getColor());
-generateGeneralBlockWithAttributesJS("footer", "footer");
-
-generateGeneralBlockWithAttributes("head", getColor());
-generateGeneralBlockWithAttributesJS("head", "head");
-
-generateGeneralBlockWithAttributes("title", getColor());
-generateGeneralBlockWithAttributesJS("title", "title");
+generateBlockWithAttributesGeneral("body", "body", baseFrame);
+generateBlockWithAttributesGeneral("footer", "footer", baseFrame);
+generateBlockWithAttributesGeneral("head", "head", baseFrame);
+generateBlockWithAttributesGeneral("title", "title", baseFrame);

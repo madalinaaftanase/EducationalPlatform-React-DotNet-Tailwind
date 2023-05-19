@@ -1,20 +1,12 @@
 import {
-  generateInputsBlock,
-  generateInputsBlockJS,
-  generateDoubleDropDownBlock,
-  generateDoubleDropDownBlockJS,
+  generateDoubleDropDownBlockGeneral,
+  generateInputBlockGeneral,
 } from "./functionsCreateBlocks";
 
 const borderColor = "#d266ed";
-const text = "ceva";
 
-//border-color
-generateInputsBlock("border-color", text, borderColor);
-generateInputsBlockJS("border-color");
-
-//border-radius
-generateInputsBlock("border-radius", text, borderColor);
-generateInputsBlockJS("border-radius");
+generateInputBlockGeneral("border-color", borderColor);
+generateInputBlockGeneral("border-radius", borderColor);
 
 //borders
 let borderStyleTypes = [
@@ -54,18 +46,5 @@ let borderWidthOptions = [
   ["thick", "thick"],
 ];
 
-generateDoubleDropDownBlock(
-  "borderStyle",
-  borderStyleTypes,
-  borderStyleOptions,
-  borderColor
-);
-generateDoubleDropDownBlockJS("borderStyle");
-
-generateDoubleDropDownBlock(
-  "borderWidth",
-  borderWidthTypes,
-  borderWidthOptions,
-  borderColor
-);
-generateDoubleDropDownBlockJS("borderWidth");
+generateDoubleDropDownBlockGeneral("borderStyle", borderStyleTypes, borderStyleOptions, borderColor);
+generateDoubleDropDownBlockGeneral("borderWidth", borderWidthTypes, borderWidthOptions, borderColor);

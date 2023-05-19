@@ -1,54 +1,33 @@
 import {
-    generateInputsBlock,
-    generateInputsBlockJS,
-    generateDropDownBlock,
-    generateDropDownBlockJS,
-    generateDropDownAndInputBlock,
-    generateDropDownAndInputBlockJS,
-    generateDoubleInputsBlock,
-    generateDoubleInputsBlockJS,
-  } from "./functionsCreateBlocks";
+  generateDropDownAndInputBlockGeneral,
+  generateInputBlockGeneral,
+} from "./functionsCreateBlocks";
 
-const gridColor ='#66eda1';
-const text="lalal"
-//https://learncssgrid.com/
+const gridColor = "#66eda1";
 
-let gapOptions =[
-    ["grid-row-gap","grid-row-gap"],
-    ["grid-column-gap","grid-column-gap"],
-    ["grid-gap","grid-gap"],
-]
+let gapOptions = [
+  ["grid-row-gap", "grid-row-gap"],
+  ["grid-column-gap", "grid-column-gap"],
+  ["grid-gap", "grid-gap"],
+];
 
-generateDropDownAndInputBlock("grid-gap", gapOptions, gridColor);
-generateDropDownAndInputBlockJS("grid-gap");
+let posOptions = [
+  ["grid-row-start", "grid-row-start"],
+  ["grid-row-end", "grid-row-end"],
+  ["grid-column-start", "grid-column-start"],
+  ["grid-column-end", "grid-column-end"],
+];
 
-generateInputsBlock("grid-auto-rows", text, gridColor);
-generateInputsBlockJS("grid-auto-rows");
+generateDropDownAndInputBlockGeneral("grid-gap", gapOptions, gridColor);
+generateDropDownAndInputBlockGeneral("grid-position", posOptions, gridColor);
 
-generateInputsBlock("grid-auto-flow", text, gridColor);
-generateInputsBlockJS("grid-auto-flow");
-//pozitionare
-generateInputsBlock("grid-template-rows", text, gridColor);
-generateInputsBlockJS("grid-template-rows");
+generateInputBlockGeneral("grid-auto-rows", gridColor);
+generateInputBlockGeneral("grid-auto-flow", gridColor);
+generateInputBlockGeneral("grid-template-rows", gridColor);
+generateInputBlockGeneral("grid-template-columns", gridColor);
+generateInputBlockGeneral("grid-area", gridColor);
+generateInputBlockGeneral("grid-row", gridColor);
+generateInputBlockGeneral("grid-column", gridColor);
 
-generateInputsBlock("grid-template-columns", text, gridColor);
-generateInputsBlockJS("grid-template-columns");
 
-generateInputsBlock("grid-area", text, gridColor);
-generateInputsBlockJS("grid-area");
 
-generateInputsBlock("grid-row", text, gridColor);
-generateInputsBlockJS("grid-row");
-
-generateInputsBlock("grid-column", text, gridColor);
-generateInputsBlockJS("grid-column");
-
-let posOptions =[
-    ["grid-row-start","grid-row-start"],
-    ["grid-row-end","grid-row-end"],
-    ["grid-column-start","grid-column-start"],
-    ["grid-column-end","grid-column-end"],
-]
-
-generateDropDownAndInputBlock("grid-position", posOptions, gridColor);
-generateDropDownAndInputBlockJS("grid-position");

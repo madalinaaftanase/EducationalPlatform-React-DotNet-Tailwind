@@ -1,26 +1,14 @@
-// div , h, p, br,
 import Blockly from "blockly";
-import {
-  generateGeneralBlockWithAttributes,
-  generateGeneralBlockWithAttributesJS,
-} from "./functionsCreateBlocks";
+import { blockyValidation } from "../validation";
+import { generateBlockWithAttributesGeneral } from "./functionsCreateBlocks";
 
 const basicColor = "#f26110";
 
-generateGeneralBlockWithAttributes("paragraph", basicColor);
-generateGeneralBlockWithAttributesJS("paragraph", "p");
-
-generateGeneralBlockWithAttributes("br", basicColor);
-generateGeneralBlockWithAttributesJS("br", "br");
-
-generateGeneralBlockWithAttributes("strong", basicColor);
-generateGeneralBlockWithAttributesJS("strong", "strong");
-
-generateGeneralBlockWithAttributes("u", basicColor);
-generateGeneralBlockWithAttributesJS("u", "u");
-
-generateGeneralBlockWithAttributes("div", basicColor);
-generateGeneralBlockWithAttributesJS("div", "div");
+generateBlockWithAttributesGeneral("paragraph", "p", basicColor);
+generateBlockWithAttributesGeneral("br", "br", basicColor);
+generateBlockWithAttributesGeneral("strong", "strong", basicColor);
+generateBlockWithAttributesGeneral("u", "u", basicColor);
+generateBlockWithAttributesGeneral("div", "div", basicColor);
 
 //text
 Blockly.Blocks["regexInput"] = {
@@ -35,6 +23,7 @@ Blockly.Blocks["regexInput"] = {
 };
 
 Blockly.JavaScript["regexInput"] = function (block) {
+  blockyValidation(block);
   let value_regex = block.getFieldValue("regex");
   return value_regex;
 };
@@ -63,6 +52,7 @@ Blockly.Blocks["h"] = {
 };
 
 Blockly.JavaScript["h"] = function (block) {
+  blockyValidation(block);
   var option = block.getFieldValue("optionH");
   var content = Blockly.JavaScript.statementToCode(block, "Content");
   var styleBlock = block.getInputTargetBlock("style");
@@ -85,6 +75,7 @@ Blockly.Blocks["br"] = {
 };
 
 Blockly.JavaScript["br"] = function (block) {
+  blockyValidation(block);
   return `
   <br />`;
 };

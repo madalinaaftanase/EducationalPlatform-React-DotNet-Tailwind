@@ -1,29 +1,11 @@
-import {
-  generateGeneralBlockWithAttributes,
-  generateGeneralBlockWithAttributesJS,
-} from "./functionsCreateBlocks";
+import { generateBlockWithAttributesGeneral } from "./functionsCreateBlocks";
 
-function getColor() {
-  return "#4fc0c4";
-}
+const listColor = "#4fc0c4";
 
-generateGeneralBlockWithAttributes("table", getColor());
-generateGeneralBlockWithAttributesJS("table", "table");
-
-generateGeneralBlockWithAttributes("td", getColor());
-generateGeneralBlockWithAttributesJS("td", "td");
-
-generateGeneralBlockWithAttributes("th", getColor());
-generateGeneralBlockWithAttributesJS("th", "th");
-
-generateGeneralBlockWithAttributes("thead", getColor());
-generateGeneralBlockWithAttributesJS("thead", "thead");
-
-generateGeneralBlockWithAttributes("tbody", getColor());
-generateGeneralBlockWithAttributesJS("tbody", "tbody");
-
-generateGeneralBlockWithAttributes("tr", getColor());
-generateGeneralBlockWithAttributesJS("tr", "tr");
-
-generateGeneralBlockWithAttributes("caption", getColor());
-generateGeneralBlockWithAttributesJS("caption", "caption");
+generateBlockWithAttributesGeneral("table", "table", listColor);
+generateBlockWithAttributesGeneral("td", "td", listColor);
+generateBlockWithAttributesGeneral("th", "th", listColor);
+generateBlockWithAttributesGeneral("thead", "thead", listColor);
+generateBlockWithAttributesGeneral("tbody", "tbody", listColor);
+generateBlockWithAttributesGeneral("tr", "tr", listColor);
+generateBlockWithAttributesGeneral("caption", "caption", listColor);

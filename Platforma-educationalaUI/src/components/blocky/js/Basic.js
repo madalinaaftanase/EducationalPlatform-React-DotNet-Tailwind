@@ -1,5 +1,6 @@
 import Blockly from "blockly";
 import { generateDomBlock } from "./functionsCreateBlocks.js";
+import { blockyValidation } from "../validation.ts";
 
 const color = "#4fc0c4";
 
@@ -14,6 +15,7 @@ Blockly.Blocks["script"] = {
 };
 
 Blockly.JavaScript["script"] = function (block) {
+  blockyValidation(block);
   var content = Blockly.JavaScript.statementToCode(block, "Content");
   return `<script> ${content} </script>`;
 };
@@ -32,6 +34,7 @@ Blockly.Blocks["GetElementById"] = {
 };
 
 Blockly.JavaScript["GetElementById"] = function (block) {
+  blockyValidation(block);
   var content = Blockly.JavaScript.statementToCode(block, "Content");
   let id = block.getFieldValue("id");
   return `
@@ -48,6 +51,7 @@ Blockly.Blocks["OnClick"] = {
 };
 
 Blockly.JavaScript["OnClick"] = function (block) {
+  blockyValidation(block);
   var content = Blockly.JavaScript.statementToCode(block, "Content");
   return `.onclick = function(){alert('test')}`;
 };
