@@ -10,6 +10,7 @@ const allowedChildrenMap: Record<string, string[]> = {
     "tr": ["th", "td"],
     "ul": ["li"],
     "ol": ["li"],
+    "select": ["option"]
 }
 
 function unplugInvalidChildren(startingChild: Blockly.Block, validCheck: (block: Blockly.Block) => boolean) {

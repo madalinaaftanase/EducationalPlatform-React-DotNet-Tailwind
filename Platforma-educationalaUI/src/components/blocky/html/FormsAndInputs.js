@@ -3,10 +3,13 @@ import { generateBlockWithAttributesGeneral } from "./functionsCreateBlocks";
 import { blockyValidation } from "../validation";
 import { descriptionBlock } from "./description";
 
-const formColor = "#dedb2c";
+const formColor = "#d266ed";
 
 generateBlockWithAttributesGeneral("form", "form", formColor);
 generateBlockWithAttributesGeneral("label", "label", formColor);
+generateBlockWithAttributesGeneral("button", "button", formColor);
+generateBlockWithAttributesGeneral("option", "option", formColor);
+generateBlockWithAttributesGeneral("select", "select", formColor);
 
 Blockly.JavaScript[`type`] = function (block) {
   blockyValidation(block);

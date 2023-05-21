@@ -35,7 +35,7 @@ const htmlCategories = {
     {
       kind: "category",
       name: "Atribute",
-      colour: "#84a671",
+      colour: "#f7ad45",
       expanded: "true",
       contents: [
         {
@@ -106,6 +106,26 @@ const htmlCategories = {
           kind: "block",
           type: "u",
         },
+        {
+          kind: "block",
+          type: "mark",
+        },
+        {
+          kind: "block",
+          type: "em",
+        },
+        {
+          kind: "block",
+          type: "i",
+        },
+        {
+          kind: "block",
+          type: "big",
+        },
+        {
+          kind: "block",
+          type: "small",
+        },
       ],
     },
     {
@@ -146,8 +166,8 @@ const htmlCategories = {
     },
     {
       kind: "category",
-      name: "Formulare",
-      colour: "#dedb2c",
+      name: "Formular",
+      colour: "#d266ed",
       expanded: "true",
       contents: [
         {
@@ -161,6 +181,18 @@ const htmlCategories = {
         {
           kind: "block",
           type: "label",
+        },
+        {
+          kind: "block",
+          type: "button",
+        },
+        {
+          kind: "block",
+          type: "option",
+        },
+        {
+          kind: "block",
+          type: "select",
         },
       ],
     },
@@ -198,6 +230,70 @@ const htmlCategories = {
         {
           kind: "block",
           type: "caption",
+        },
+      ],
+    },
+    {
+      kind: "category",
+      name: "Multimedia",
+      colour: "#5f96c9",
+      expanded: "true",
+      contents: [
+        {
+          kind: "block",
+          type: "figure",
+        },
+        {
+          kind: "block",
+          type: "figcaption",
+        },
+        {
+          kind: "block",
+          type: "audio",
+        },
+        {
+          kind: "block",
+          type: "video",
+        },
+        {
+          kind: "block",
+          type: "img",
+        },
+      ],
+    },
+    {
+      kind: "category",
+      name: "Organizare",
+      colour: "#f2e018",
+      expanded: "true",
+      contents: [
+        {
+          kind: "block",
+          type: "div",
+        },
+        {
+          kind: "block",
+          type: "article",
+        },
+        {
+          kind: "block",
+          type: "section",
+        },
+        {
+          kind: "block",
+          type: "nav",
+        },
+        {
+          kind: "block",
+          type: "header",
+        },
+        {
+          kind: "block",
+          type: "aside",
+        },
+        {
+          kind: "block",
+          type: "main",
         },
       ],
     },

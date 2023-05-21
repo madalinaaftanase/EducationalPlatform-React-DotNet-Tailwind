@@ -17,9 +17,10 @@ export function Navbar() {
         <NavLink to="/Joc">Proiect nou</NavLink>
         <NavLink to="/Grupe">Grupe</NavLink>
         <NavLink to="/Despre">Despre</NavLink>
+        <NavLink to="/Antreneaza">Antreneaza-te</NavLink>
       </NavMenu>
       <NavBtn>
-        <Menu/>
+        <Menu />
       </NavBtn>
     </Nav>
   );

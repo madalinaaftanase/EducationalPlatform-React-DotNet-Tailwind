@@ -3,12 +3,16 @@ import { blockyValidation } from "../validation";
 import { generateBlockWithAttributesGeneral } from "./functionsCreateBlocks";
 
 const basicColor = "#f26110";
-
+//mark,i, em, big, small, button, option, select, nav,main,aside,section,header,article,figure,audio, video, img
 generateBlockWithAttributesGeneral("paragraph", "p", basicColor);
 generateBlockWithAttributesGeneral("br", "br", basicColor);
 generateBlockWithAttributesGeneral("strong", "strong", basicColor);
+generateBlockWithAttributesGeneral("mark", "mark", basicColor);
 generateBlockWithAttributesGeneral("u", "u", basicColor);
-generateBlockWithAttributesGeneral("div", "div", basicColor);
+generateBlockWithAttributesGeneral("i", "i", basicColor);
+generateBlockWithAttributesGeneral("em", "em", basicColor);
+generateBlockWithAttributesGeneral("big", "big", basicColor);
+generateBlockWithAttributesGeneral("small", "small", basicColor);
 
 //text
 Blockly.Blocks["regexInput"] = {

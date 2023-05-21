@@ -3,7 +3,7 @@ import { generateInputFormBlockGeneral } from "./functionsCreateBlocks";
 import { generateDropDownBlockGeneral } from "../css/functionsCreateBlocks";
 import { blockyValidation } from "../validation";
 
-const attributeColor = "#84a671";
+const attributeColor = "#f7ad45";
 const tooltips = "";
 const typeOptions = [
   ["text", "text"],
