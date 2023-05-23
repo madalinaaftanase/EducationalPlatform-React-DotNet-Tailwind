@@ -52,12 +52,11 @@ Blockly.JavaScript["style"] = function (block) {
 };
 
 generateDropDownBlockGeneral("type", typeOptions, attributeColor);
-generateInputFormBlockGeneral("id", "id", "#4fc0c4", tooltips);
-generateInputFormBlockGeneral("heightAttr", "height", attributeColor, tooltips);
-generateInputFormBlockGeneral("src", "src", attributeColor, tooltips);
-generateInputFormBlockGeneral("alt", "alt", attributeColor, tooltips);
+generateInputFormBlockGeneral("id", "id", "#4fc0c4");
+generateInputFormBlockGeneral("heightAttr", "height", attributeColor);
+generateInputFormBlockGeneral("src", "src", attributeColor);
+generateInputFormBlockGeneral("alt", "alt", attributeColor);
 
-// one world e.g. required...
 Blockly.Blocks["parameter"] = {
   init: function () {
     this.appendDummyInput().appendField(new Blockly.FieldTextInput("scrie aici"), "value");

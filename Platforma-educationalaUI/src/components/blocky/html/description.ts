@@ -44,5 +44,9 @@ export const descriptionBlock: Map<string, string> = new Map([
     ["audio", "Element pentru redarea audio pe o pagina web."],
     ["video", "Element pentru redarea videoclipurilor pe o pagina web."],
     ["img", "Element pentru afisarea unei imagini pe o pagina web."],
-    ["figcaption", "Descriere pentru conținutul elementului figure"]
+    ["figcaption", "Descriere pentru conținutul elementului figure."],
+    ["id", "Identifica în mod unic un element HTML."],
+    ["src", "Specifica sursa (URL-ul) imaginii."],
+    ["alt", "Ofera o descriere alternativă pentru o imagine."],
+    ["heightAttr", "Determina inaltimea elementului"],
 ]);

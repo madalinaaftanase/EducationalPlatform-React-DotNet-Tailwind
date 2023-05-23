@@ -1,7 +1,7 @@
 export const descriptionCSS: Map<string, string> = new Map([
     ["color", "Culoarea textului"],
     ["background-color", "Defineste culoare de fundal"],
-    ["font-size", "Controleaza dimensiunea fontului"],
+    ["font-size", "Controleaza dimensiunea fontuluiv pentru textul unui element"],
     ["height", "Determina inaltimea elementului"],
     ["width", "Determina latimea elementului"],
     ["z-index", "Determina ordinea de suprapunere a elementelor"],
@@ -26,5 +26,10 @@ export const descriptionCSS: Map<string, string> = new Map([
     ["grid-row", "Liniile grilei pe care un element ar trebui sa le acopere vertical intr-un layout de grila."],
     ["grid-column", "Liniile grilei pe care un element ar trebui sa le acopere orizontal intr-un layout de grila."],
     ["grid-position", "Pozitia unui element de grila intr-un layout de grila."],
-    ["", ""],
+    ["type", "Tipul de conținut al elementului."],
+    ["font-family", "Specifica familia de fonturi utilizată pentru textul unui element."],
+    ["font-weight", "Specifica grosimea fontului pentru textul unui element."],
+    ["text-align", "Specifica alinierea orizontală a textului în cadrul unui element."],
+    ["line-height", "Specifica inaltimea liniei pentru textul unui element."],
+    ["text-decoration", "Stilizarea decorului textului."],
 ]);

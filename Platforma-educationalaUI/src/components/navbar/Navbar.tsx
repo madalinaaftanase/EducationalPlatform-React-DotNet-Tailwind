@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { UserContext } from "../../hooks/UserContext";
-import { Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink, Logo, LogoCode } from "./NavbarElements";
+import { Nav, NavLink, Bars, NavMenu, NavBtn, Logo, LogoCode } from "./NavbarElements";
 import Menu from "./components/Menu";
 
 export function Navbar() {

@@ -3,7 +3,7 @@ import { useContext } from "react";
 
 import { UserContext } from "../../../hooks/UserContext";
 
-function DropdownMenu({ setIsOpen }: { setIsOpen: Function }) {
+function DropdownMenu({ setIsOpen }: { setIsOpen: Function; }) {
   const navigator = useNavigate();
   const { isTeacher } = useContext(UserContext);
 
@@ -27,17 +27,17 @@ function DropdownMenu({ setIsOpen }: { setIsOpen: Function }) {
   };
 
   return (
-    <div className="shadow-lg bg-green-300 absolute z-50 rounded-md mt-1.5 -ml-4">
+    <div className="rounded-md mt-2 w-full">
       <div>
         <div
-          className="block px-1 py-2 w-36 text-sm text-gray-700 hover:bg-navbar hover:text-gray-900 hover:rounded-md"
+          className="block px-1 py-2 w-full text-sm text-gray-700 hover:bg-navbar hover:text-gray-900 hover:rounded-md border-t"
           onClick={handleProfile}
         >
           Profilul meu
         </div>
         {isTeacher && (
           <div
-            className="block px-1 py-2 w-36 text-sm text-gray-700 hover:bg-navbar hover:text-gray-900"
+            className="block px-1 py-2 text-sm text-gray-700 hover:bg-navbar hover:text-gray-900"
             onClick={handleStudents}
           >
             Studentii mei
@@ -45,7 +45,7 @@ function DropdownMenu({ setIsOpen }: { setIsOpen: Function }) {
         )}
 
         <div
-          className="block px-1 py-2 w-36 text-sm text-gray-700 hover:bg-navbar hover:text-gray-900 mt-1 border-t hover:rounded-md"
+          className="block px-1 py-2 text-sm text-gray-700 hover:bg-navbar hover:text-gray-900 mt-1 border-t hover:rounded-md"
           onClick={handleLogout}
         >
           Iesire cont

@@ -71,7 +71,7 @@ function generateBlockWithAttributesGeneral(id, tag, color) {
 
 // blocks
 function generateInputFormBlockGeneral(id, tag, color) {
-  const tooltips = descriptionBlock.get("id");
+  const tooltips = descriptionBlock.get(id);
   generateInputFormBlock(id, tag, color, tooltips || "");
   generateInputFormBlockJS(id, tag);
 }

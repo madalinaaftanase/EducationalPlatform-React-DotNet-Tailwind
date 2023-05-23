@@ -317,31 +317,11 @@ const cssCategories = {
         },
         {
           kind: "block",
-          type: "color",
-        },
-        {
-          kind: "block",
           type: "background-color",
         },
         {
           kind: "block",
-          type: "font-size",
-        },
-        {
-          kind: "block",
           type: "display",
-        },
-        {
-          kind: "block",
-          type: "gap",
-        },
-        {
-          kind: "block",
-          type: "margin",
-        },
-        {
-          kind: "block",
-          type: "padding",
         },
         {
           kind: "block",
@@ -354,10 +334,6 @@ const cssCategories = {
         {
           kind: "block",
           type: "z-index",
-        },
-        {
-          kind: "block",
-          type: "border",
         },
         {
           kind: "block",
@@ -463,7 +439,7 @@ const cssCategories = {
     },
     {
       kind: "category",
-      name: "Border",
+      name: "Bordura",
       colour: "#d266ed",
       expanded: "true",
       contents: [
@@ -489,6 +465,62 @@ const cssCategories = {
         },
       ],
     },
+    {
+      kind: "category",
+      name: "Spatiere",
+      colour: "#f7ad45",
+      expanded: "true",
+      contents: [
+        {
+          kind: "block",
+          type: "margin",
+        },
+        {
+          kind: "block",
+          type: "padding",
+        },
+        {
+          kind: "block",
+          type: "gap",
+        },
+      ],
+    },
+    {
+      kind: "category",
+      name: "Stilizare text",
+      colour: "#f77997",
+      expanded: "true",
+      contents: [
+        {
+          kind: "block",
+          type: "font-size",
+        },
+        {
+          kind: "block",
+          type: "font-family",
+        },
+        {
+          kind: "block",
+          type: "font-weight",
+        },
+        {
+          kind: "block",
+          type: "color",
+        },
+        {
+          kind: "block",
+          type: "text-align",
+        },
+        {
+          kind: "block",
+          type: "text-decoration",
+        },
+        {
+          kind: "block",
+          type: "line-height",
+        },
+      ],
+    },
   ],
 }
 
@@ -501,7 +533,7 @@ const javascriptCategories =
     {
       kind: "category",
       name: "De baza",
-      colour: "`#4fc0c4",
+      colour: "#4fc0c4",
       expanded: "true",
       contents: [
         {
