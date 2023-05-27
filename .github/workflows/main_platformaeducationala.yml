@@ -9,8 +9,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - './Platforma-educationalaBE/**'
 
 jobs:
   build:
