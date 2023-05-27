@@ -18,22 +18,32 @@ public class DeleteStudentGroupCommandHandler : IRequestHandler<DeleteStudentGro
     private readonly ILogger _logger;
     private readonly IGroupRepository _groupRepository;
     private readonly IStudentRepository _studentRepository;
+    private readonly ITeacherRepository _teacherRepository;
 
     public DeleteStudentGroupCommandHandler(IGroupRepository groupRepository,
         ILogger<DeleteStudentGroupCommandHandler> logger,
-        IStudentRepository studentRepository)
+        IStudentRepository studentRepository,
+        ITeacherRepository teacherRepository)
     {
         _logger = logger;
         _groupRepository = groupRepository;
+        _teacherRepository = teacherRepository;
         _studentRepository = studentRepository;
     }
 
     public async Task<BaseResponse> Handle(DeleteStudentGroupCommand command, CancellationToken cancellationToken)
     {
         var response = new BaseResponse();
-        var teacher = await _studentRepository.GetTeacher(command.StudentId);
+        var teacher = await _teacherRepository.GetById(command.CurrentUserId);
+            
+        if (teacher == null)
+        {
+            response.ResponseStatus = ResultStatus.NotAuthorized;
+            return response;
+        }
 
-        if (teacher.Id != command.CurrentUserId)
+        var group = teacher.Groups.FirstOrDefault(g => g.Id == command.GroupId);
+        if (group == null)
         {
             response.ResponseStatus = ResultStatus.NotAuthorized;
             return response;

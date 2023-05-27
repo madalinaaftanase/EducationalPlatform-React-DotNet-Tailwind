@@ -2,11 +2,13 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PlatformaEducationala.Core.Project.Models;
+using PlatformaEducationala.Core.Teacher.Models;
 using PlatformaEducationala.Core.User.Commands.SaveOrUpdateStudentGroup;
 using PlatformaEducationala.Core.User.Commands.SaveStudentGroup;
 using PlatformaEducationala.Core.User.Models;
 using PlatformaEducationala.Core.User.Queries.Get;
 using PlatformaEducationala.Core.User.Queries.GetStudentsProjects;
+using PlatformaEducationala.Core.User.Queries.GetStudentTeachers;
 
 namespace PlatformaEducationala.Api.Controllers;
 
@@ -31,16 +33,28 @@ public class StudentsController : ApiController
     }
 
     [HttpGet("{studentId}/Projects")]
-    public async Task<ActionResult<List<ProjectDto>>> GetStudentsProjects([FromRoute] Guid studentId, [FromQuery(Name = "isTeacher")] bool isTeacher)
+    public async Task<ActionResult<List<ProjectDto>>> GetStudentsProjects([FromRoute] Guid studentId,
+        [FromQuery(Name = "isTeacher")] bool isTeacher)
     {
         var query = new GetStudentProjectsQuery
         {
             CurrentUserId = Guid.Parse(UserId),
             StudentId = studentId
         };
-        query.CurrentUserId = Guid.Parse(UserId);
         var result = await _mediator.Send(query);
 
+        return HandleMediatorResponse(result);
+    }
+
+    [HttpGet("{studentId}/Teachers")]
+    public async Task<ActionResult<List<TeacherDto>>> GetStudentTeachers([FromRoute] Guid studentId)
+    {
+        var query = new GetStudentTeachersQuery
+        {
+            CurrentUserId = Guid.Parse(UserId)
+        };
+
+        var result = await _mediator.Send(query);
         return HandleMediatorResponse(result);
     }
 
@@ -56,5 +70,4 @@ public class StudentsController : ApiController
 
         return HandleMediatorResponse(result);
     }
-
 }

@@ -4,17 +4,20 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { saveProject } from "../../../services/projectAPI";
 import config from "../../../config";
+import Notify from "./Notify";
 
 function TeacherSection({
   comment,
   grade,
   setGrade,
   setComment,
+  projectName
 }: {
   comment: string;
   grade: number;
   setGrade: Function;
   setComment: Function;
+  projectName: string;
 }) {
   const [isEditable, setIsEditable] = useState(false);
   const { id, studentId } = useParams();
@@ -52,6 +55,7 @@ function TeacherSection({
 
   return (
     <div className="p-2">
+      <div className="flex justify-between">
       <ReactStars
         count={5}
         onChange={ratingChanged}
@@ -61,6 +65,8 @@ function TeacherSection({
         value={grade}
         key={key}
       />
+      <Notify projectName={projectName} />
+      </div>
       <div className="pb-1">Comentarii</div>
 
       <textarea

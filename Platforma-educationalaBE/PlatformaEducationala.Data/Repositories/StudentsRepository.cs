@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PlatformaEducationala.Core.Entities;
 using PlatformaEducationala.Core.Repositories;
+using PlatformaEducationala.Core.Teacher.Models;
 using PlatformaEducationala.Core.User.Commands.SaveOrUpdateStudentGroup;
 using PlatformaEducationala.Core.User.Models;
 using PlatformaEducationala.Data.Context;
@@ -39,17 +40,17 @@ public class StudentsRepository : IStudentRepository
         await _platformDbContext.SaveChangesAsync();
     }
 
-    public Task<Teacher> GetTeacher(Guid studentId)
+    public async Task<List<TeacherDto>> GetTeachers(Guid studentId)
     {
-        var teacher = _platformDbContext.Teachers
+        var teachers = await _platformDbContext.Teachers
             .Include(t => t.Groups)
             .ThenInclude(sg => sg.StudentGroups)
             .Where(t => t.Groups
                 .Any(g => g.StudentGroups
-                    .FirstOrDefault(sg => sg.Student.Id == studentId) != null))
-            .FirstOrDefaultAsync();
+                    .FirstOrDefault(sg => sg.Student.Id == studentId) != null)).ToListAsync();
 
-        return teacher;
+
+        return MapperModels<Teacher, TeacherDto>.MapList(teachers);
     }
 
     public async Task<List<StudentGroup>> GetStudentsGroup(Guid groupId)

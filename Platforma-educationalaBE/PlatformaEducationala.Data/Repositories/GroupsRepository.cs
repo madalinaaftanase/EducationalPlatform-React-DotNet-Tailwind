@@ -5,6 +5,7 @@ using PlatformaEducationala.Core.Group.Models;
 using PlatformaEducationala.Core.Group.Queries.Get;
 using PlatformaEducationala.Core.Group.Queries.GetStudents;
 using PlatformaEducationala.Core.Repositories;
+using PlatformaEducationala.Core.Teacher.Models;
 using PlatformaEducationala.Core.User.Models;
 using PlatformaEducationala.Data.Context;
 
@@ -75,8 +76,25 @@ public class GroupsRepository : IGroupRepository
 
     public async Task<GroupDto> GetById(Guid id)
     {
-        var group = await _platformDbContext.Groups.FirstOrDefaultAsync(g => g.Id == id);
-        return MapperModels<Group, GroupDto>.Map(group);
+        var group = await _platformDbContext.Groups
+            .Where(g => g.Id == id)
+            .Include(t => t.Teacher)
+            .Select(g => new GroupDto
+            {
+                Id = g.Id,
+                TeacherId = g.TeacherId,
+                Name = g.Name,
+                Teacher = new TeacherDto
+                {
+                    Email = g.Teacher.Email,
+                    Firstname = g.Teacher.Firstname,
+                    Lastname = g.Teacher.Lastname,
+                    Id = g.Teacher.Id
+                }
+            })
+            .FirstOrDefaultAsync();
+
+        return group;
     }
 
     public async Task Update(GroupDto group)
@@ -98,8 +116,7 @@ public class GroupsRepository : IGroupRepository
         var students = await _platformDbContext.Students
             .Include(s => s.StudentGroups)
             .ThenInclude(sg => sg.Group)
-            .Where(s => s.StudentGroups.Any(sg =>
-                sg.Group.TeacherId == query.CurrentUserId && sg.GroupId == query.GroupId))
+            .Where(s => s.StudentGroups.Any(sg => sg.GroupId == query.GroupId))
             .ToListAsync();
 
         return MapperModels<Student, StudentDto>.MapList(students);

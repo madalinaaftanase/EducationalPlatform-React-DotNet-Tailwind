@@ -73,6 +73,8 @@ function RightSideLayout({
           setComment={setComment}
           grade={grade}
           setGrade={setGrade}
+          projectName = {name}
+
         />
       )}
     </div>

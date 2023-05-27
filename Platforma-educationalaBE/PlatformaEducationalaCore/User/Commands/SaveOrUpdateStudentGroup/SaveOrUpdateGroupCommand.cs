@@ -17,12 +17,14 @@ public class SaveOrUpdateGroupCommand : IRequest<SaveOrUpdateGroupResponse>
 public class SaveGroupCommandHandler : IRequestHandler<SaveOrUpdateGroupCommand, SaveOrUpdateGroupResponse>
 {
     private readonly IStudentRepository _studentRepository;
+    private readonly ITeacherRepository _teacherRepository;
     private readonly ILogger _logger;
 
-    public SaveGroupCommandHandler(IStudentRepository studentRepository, ILogger<SaveGroupCommandHandler> logger)
+    public SaveGroupCommandHandler(IStudentRepository studentRepository, ILogger<SaveGroupCommandHandler> logger, ITeacherRepository teacherRepository)
     {
             _logger= logger;
             _studentRepository= studentRepository;
+            _teacherRepository= teacherRepository;
     }
 
     public async Task<SaveOrUpdateGroupResponse> Handle(SaveOrUpdateGroupCommand command, CancellationToken cancellationToken)
@@ -38,7 +40,7 @@ public class SaveGroupCommandHandler : IRequestHandler<SaveOrUpdateGroupCommand,
             return result;
         }
 
-        var studentTeacher = await _studentRepository.GetTeacher(command.StudentId);
+        var studentTeacher = await _teacherRepository.GetById(command.CurrentUserId);
 
         if (studentTeacher == null || studentTeacher.Id != command.CurrentUserId)
         {

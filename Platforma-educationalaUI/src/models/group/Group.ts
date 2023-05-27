@@ -1,9 +1,12 @@
 import Student from "../student/Student";
+import Teacher from "../teacher/Teacher";
 
 export default interface Group {
     id: string;
     name: string;
     studentsCount?: number;
+    teacher?: Teacher;
+
 }
 
 export interface GroupsResponse {

@@ -29,9 +29,10 @@ public class GetStudentProjectsHandler : IRequestHandler<GetStudentProjectsQuery
     public async Task<GetStudentProjectsResponse> Handle(GetStudentProjectsQuery query, CancellationToken cancellationToken)
     {
         var response = new GetStudentProjectsResponse();
-        var studentTeacher = await _studentRepository.GetTeacher(query.StudentId);
+        var studentTeachers = await _studentRepository.GetTeachers(query.StudentId);
+        var isAllowed = studentTeachers.Any(s => s.Id == query.CurrentUserId);
 
-        if (studentTeacher.Id != query.CurrentUserId)
+        if (!isAllowed)
         {
             response.ResponseStatus = ResultStatus.NotAuthorized;
             return response;

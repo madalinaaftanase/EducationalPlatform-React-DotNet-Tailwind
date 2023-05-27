@@ -29,11 +29,6 @@ public class GetByIdQueryHandler : IRequestHandler<GetByIdQuery, GetByIdResponse
         var response = new GetByIdResponse();
         var group = await _groupRepository.GetById(query.GroupId);
 
-        if (group.TeacherId != query.CurrentUserId)
-        {
-            response.ResponseStatus = ResultStatus.NotAuthorized;
-        }
-
         response.Group=group;
         return response;
     }

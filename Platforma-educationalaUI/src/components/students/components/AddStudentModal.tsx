@@ -1,6 +1,6 @@
 import CancelButton from "../../common/CancelButton";
 import GenericModal from "../../common/GenericModal";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import GroupSubcomponent from "./GroupSubcomponent";
 import Group from "../../../models/group/Group";
 import config from "../../../config";
@@ -23,8 +23,13 @@ function AddStudentModal({
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const email = e.target.value;
     setEmail(email);
-    setIsDisable(email.length === 0);
   };
+
+  useEffect(() => {
+    if (email && selectedGroupId) {
+      setIsDisable(false);
+    }
+  }, [selectedGroupId, email]);
 
   const handleSubmitAddButton = async () => {
     const url = `${config.baseApiUrl}/Groups/${selectedGroupId}/Students`;

@@ -3,7 +3,7 @@ import { useContext } from "react";
 
 import { UserContext } from "../../../hooks/UserContext";
 
-function DropdownMenu({ setIsOpen }: { setIsOpen: Function; }) {
+function DropdownMenu({ setIsOpen }: { setIsOpen: Function }) {
   const navigator = useNavigate();
   const { isTeacher } = useContext(UserContext);
 
@@ -43,9 +43,8 @@ function DropdownMenu({ setIsOpen }: { setIsOpen: Function; }) {
             Studentii mei
           </div>
         )}
-
         <div
-          className="block px-1 py-2 text-sm text-gray-700 hover:bg-navbar hover:text-gray-900 mt-1 border-t hover:rounded-md"
+          className="block px-1 py-2 text-sm text-gray-700 hover:bg-navbar hover:text-gray-900 border-t hover:rounded-md mt-2"
           onClick={handleLogout}
         >
           Iesire cont

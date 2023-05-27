@@ -7,6 +7,7 @@ namespace PlatformaEducationala.Core.Repositories
     public interface ITeacherRepository
     {
         Task<TeacherEntity> GetByEmail(string email);
+        Task<TeacherEntity> GetById(Guid id);
         Task AddAsync(TeacherEntity teacher);
         Task<List<StudentTableDto>> GetStudents(GetStudentsQuery query);
     }

@@ -22,15 +22,15 @@ public class SaveCommandHandler : IRequestHandler<SaveCommand, SaveResponse>
 {
     private readonly ILogger _logger;
     private readonly IProjectRepository _projectRepository;
-    private readonly IStudentRepository _studentRepository;
+    private readonly ITeacherRepository _teacherRepository;
 
     public SaveCommandHandler(IProjectRepository projectRepository,
-        IStudentRepository studentRepository,
+        ITeacherRepository teacherRepository,
         ILogger<SaveCommandHandler> logger)
     {
         _logger = logger;
-        _studentRepository = studentRepository;
         _projectRepository = projectRepository;
+        _teacherRepository = teacherRepository;
     }
 
     public async Task<SaveResponse> Handle(SaveCommand command, CancellationToken cancellationToken)
@@ -75,10 +75,10 @@ public class SaveCommandHandler : IRequestHandler<SaveCommand, SaveResponse>
         }
 
         var teacher = project.StudentId != Guid.Empty
-                ? await _studentRepository.GetTeacher(project.StudentId)
+                ? await _teacherRepository.GetById(command.CurrentUserId)
                 : null;
 
-        if (teacher != null && teacher.Id == command.CurrentUserId)
+        if (teacher != null)
         {
             project.Grade = command.Grade ?? project.Grade;
             project.Comment = command.Comment ?? project.Comment;

@@ -17,6 +17,15 @@ public class TeachersRepository : ITeacherRepository
         _platformDbContext = platformDbContext;
     }
 
+    public async Task<Teacher> GetById(Guid teacherId)
+    {
+        var teacher = await _platformDbContext.Teachers
+            .Include(t => t.Groups)
+            .FirstOrDefaultAsync(t => t.Id == teacherId);
+
+        return teacher;
+    }
+
     public async Task AddAsync(Teacher teacher)
     {
         await _platformDbContext.Teachers.AddAsync(teacher);
@@ -33,10 +42,10 @@ public class TeachersRepository : ITeacherRepository
             {
                 Email = s.Email,
                 Firstname = s.Firstname,
-                GroupName = s.StudentGroups.FirstOrDefault().Group.Name,
+                GroupName = s.StudentGroups.Where(sg => sg.Group.TeacherId == query.TeacherId).FirstOrDefault().Group.Name,
                 Lastname = s.Lastname,
                 Id = s.Id,
-                GroupId = s.StudentGroups.FirstOrDefault().Group.Id
+                GroupId = s.StudentGroups.Where(sg => sg.Group.TeacherId == query.TeacherId).FirstOrDefault().Group.Id
             })
             .ToListAsync();
 
