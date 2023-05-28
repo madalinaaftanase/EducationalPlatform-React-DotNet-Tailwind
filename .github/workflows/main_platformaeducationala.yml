@@ -8,7 +8,7 @@ env:
 on:
   push:
     branches:
-      - features/LimitStudentsto15
+      - main
   workflow_dispatch:
 
 jobs:
@@ -27,7 +27,7 @@ jobs:
         run: dotnet build ./Platforma-educationalaBE/PlatformaEducationala.sln --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish ./Platforma-educationalaBE/PlatformaEducationala.sln -c Release -o `${{env.DOTNET_ROOT}}\myapp`
+        run: dotnet publish ./Platforma-educationalaBE/PlatformaEducationala.sln -c Release -o ${{env.DOTNET_ROOT}}/myapp
       
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
@@ -51,9 +51,8 @@ jobs:
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
-        uses: azure/webapps-deploy@v2
+        uses: azure/webapps-deploy@v3
         with:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
-          slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_39A116D4E9574B0D9F9980FA702BC6EE }}
           package: .
