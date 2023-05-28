@@ -8,7 +8,7 @@ env:
 on:
   push:
     branches:
-      - features/LimitStudentsto15
+      - main
   workflow_dispatch:
 
 jobs:
@@ -28,7 +28,7 @@ jobs:
 
       - name: dotnet publish
         run: dotnet publish ./Platforma-educationalaBE/PlatformaEducationala.sln -c Release -o ${{env.DOTNET_ROOT}}/myapp
-      
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
