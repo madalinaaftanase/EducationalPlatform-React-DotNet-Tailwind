@@ -1,6 +1,6 @@
 function ResultContainer({ children }: { children: React.ReactNode }) {
   return (
-    <div className="border-gray-400 border-4 h-[83%] rounded overflow-y-auto">
+    <div className="abc border-gray-400 border-4 h-[83%] rounded overflow-y-auto">
       <div className=" bg-gray-300 border-b-2 border-gray-400">
         <div className="bg-gray-200 flex justify-between w-[30%] rounded border-b-2 border-gray-400">
           <span>&nbsp; PaginaMea</span>
@@ -57,7 +57,7 @@ function ResultContainer({ children }: { children: React.ReactNode }) {
           <span className="bg-gray-100 pr-24 rounded pl-2"> https://localhost:3000/PaginaMea</span>
         </div>
       </div>
-      <div>{children}</div>
+      <div className="h-full">{children}</div>
     </div>
   );
 }

@@ -54,11 +54,11 @@ function Project({ isTeacherOverride }: { isTeacherOverride?: boolean }) {
   }
 
   return (
-    <main className="grid grid-rows-2  md:grid-cols-[3fr_2fr]">
+    <main className="grid grid-rows-2 h-[90vh] md:grid-cols-[3fr_2fr]">
       <section>
         <BlockyMain setHtml={setHtml} xmlFromDb={initialXml} setXml={setChangeXml} />
       </section>
-      <section className="bg-gray-200">
+      <section>
         <RightSideLayout
           htmlText={htmlText}
           name={projectName}

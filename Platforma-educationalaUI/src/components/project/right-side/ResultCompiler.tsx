@@ -1,5 +1,4 @@
 import ResultContainer from "./ResultContainer";
-import InnerHTML from "dangerously-set-html-content";
 
 function Result({ htmlText }: { htmlText: string }) {
   if (!htmlText) {
@@ -8,7 +7,7 @@ function Result({ htmlText }: { htmlText: string }) {
 
   return (
     <ResultContainer>
-      <InnerHTML html={htmlText} key={htmlText} />
+      <iframe className="w-full h-full" srcDoc={htmlText} />
     </ResultContainer>
   );
 }

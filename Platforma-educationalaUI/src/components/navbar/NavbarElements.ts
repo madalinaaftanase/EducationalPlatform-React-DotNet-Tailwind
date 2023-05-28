@@ -6,7 +6,7 @@ import code from "../../images/code.png"
 
 export const Nav = styled.nav`
   background: #53bf9d;
-  height: 80px;
+  height: 10vh;
   display: flex;
   justify-content: space-between;
   padding: 0.5rem calc((100vw - 1200px) / 2);

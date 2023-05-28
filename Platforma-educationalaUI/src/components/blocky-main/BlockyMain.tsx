@@ -12,7 +12,6 @@ interface BlockyMainInterface {
 
 export default function BlockyMain({ setHtml, xmlFromDb, setXml }: BlockyMainInterface) {
   const blocklyRef = useRef(null);
-  const [javascriptCode, setJavascriptCode] = useState("");
   const initialXml = '<xml xmlns="http://www.w3.org/1999/xhtml"></xml>';
 
   function workspaceDidChange(workspace: WorkspaceSvg) {
@@ -22,10 +21,7 @@ export default function BlockyMain({ setHtml, xmlFromDb, setXml }: BlockyMainInt
     } else {
       workspace.scrollbar.setContainerVisible(false);
     }
-    setJavascriptCode(code);
     setHtml(code);
-    //to do
-    // when save button is clicked save xml and put in db
     var xml = Blockly.Xml.workspaceToDom(workspace);
     var xmlText = Blockly.Xml.domToText(xml);
     setXml(xmlText);
@@ -42,6 +38,7 @@ export default function BlockyMain({ setHtml, xmlFromDb, setXml }: BlockyMainInt
         colour: "#ccc",
         snap: true,
       },
+      css: true,
     },
     onWorkspaceChange: workspaceDidChange,
     onImportXmlError: () => console.log("eroare xml import"),
@@ -53,6 +50,11 @@ export default function BlockyMain({ setHtml, xmlFromDb, setXml }: BlockyMainInt
     if (!workspace) return;
     workspace.scrollbar.setContainerVisible(false);
   }, [workspace]);
+
+  useEffect(() => {
+    if (!blocklyRef.current) return;
+    (document.getElementsByClassName("injectionDiv")[0] as any).style.height = "89.5vh";
+  }, [blocklyRef]);
 
   return (
     <>

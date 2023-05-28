@@ -13,7 +13,6 @@
     "axios": "^0.27.2",
     "blockly": "^5.20210325.0",
     "bootstrap": "^5.2.0",
-    "dangerously-set-html-content": "^1.0.13",
     "flowbite": "^1.6.3",
     "flowbite-react": "^0.3.8",
     "http-proxy-middleware": "^2.0.6",

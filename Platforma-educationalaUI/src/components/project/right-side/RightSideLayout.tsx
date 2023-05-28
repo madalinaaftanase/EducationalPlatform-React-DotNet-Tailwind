@@ -42,8 +42,8 @@ function RightSideLayout({
   };
 
   return (
-    <div className="fill-height">
-      <div className="flex justify-between p-2">
+    <div className="right-side">
+      <div className="flex justify-between p-2 bg-gray-200">
         <EditableInput
           text={newText}
           handleTextChange={handleTextChange}
@@ -73,8 +73,7 @@ function RightSideLayout({
           setComment={setComment}
           grade={grade}
           setGrade={setGrade}
-          projectName = {name}
-
+          projectName={name}
         />
       )}
     </div>
