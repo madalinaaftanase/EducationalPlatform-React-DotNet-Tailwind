@@ -5,6 +5,7 @@ import { createProject } from "../../../services/projectAPI";
 
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../../hooks/UserContext";
+import Button from "../../navbar/components/Button";
 
 function AddButton() {
   const navigator = useNavigate();
@@ -22,10 +23,7 @@ function AddButton() {
   };
 
   return (
-    <button
-      className="bg-mintBlue hover:bg-mint text-yellow font-bold py-2 px-4 border-b-4 border-mint hover:border-mintBlue rounded"
-      onClick={handleOnClick}
-    >
+    <Button variant="yellow" onClick={handleOnClick}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -36,7 +34,7 @@ function AddButton() {
       >
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
       </svg>
-    </button>
+    </Button>
   );
 }
 

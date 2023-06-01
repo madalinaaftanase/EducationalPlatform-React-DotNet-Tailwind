@@ -94,7 +94,7 @@ function generateInputFormBlockJS(id, tag) {
   Blockly.JavaScript[id] = function (block) {
     blockyValidation(block);
     let value = block.getFieldValue("value");
-    return `${tag} = "${value}" `;
+    return `${tag}="${value}" `;
   };
 }
 

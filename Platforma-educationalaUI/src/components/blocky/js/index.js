@@ -1,2 +1,3 @@
 import "./Basic";
-import "./ElementById";
+import "./OnClick";
+import "./OnClickActions";

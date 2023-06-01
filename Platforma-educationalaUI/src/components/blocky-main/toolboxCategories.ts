@@ -313,10 +313,6 @@ const cssCategories = {
       contents: [
         {
           kind: "block",
-          type: "any",
-        },
-        {
-          kind: "block",
           type: "background-color",
         },
         {
@@ -544,12 +540,71 @@ const javascriptCategories =
           kind: "block",
           type: "GetElementById",
         },
-        {
-          kind: "block",
-          type: "OnClick",
-        },
       ]
     },
+    {
+      kind: "category",
+      name: "Evenimente Mouse",
+      colour: "#4fc0f4",
+      expanded: "true",
+      contents: [{
+        kind: "block",
+        type: "onClick",
+      },
+      {
+        kind: "block",
+        type: "onMouseDown",
+      },
+      {
+        kind: "block",
+        type: "onMouseEnter",
+      },
+      {
+        kind: "block",
+        type: "onMouseLeave",
+      },
+      {
+        kind: "block",
+        type: "onMouseMove",
+      },
+      {
+        kind: "block",
+        type: "onMouseOut",
+      },
+      {
+        kind: "block",
+        type: "onMouseOver",
+      },
+      {
+        kind: "block",
+        type: "onMouseUp",
+      },]
+    },
+    {
+      kind: "category",
+      name: "Modificare de continut",
+      colour: "#f7ad45",
+      expanded: "true",
+      contents: [{
+        kind: "block",
+        type: "inner html",
+      },
+      {
+        kind: "block",
+        type: "regexInput",
+      },]
+    },
+    {
+      kind: "category",
+      name: "Stilizare",
+      colour: "#4440f4",
+      expanded: "true",
+      contents: [{
+        kind: "block",
+        type: "styleProp",
+      },
+      ]
+    }
   ],
 }
 

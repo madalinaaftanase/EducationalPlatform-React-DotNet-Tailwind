@@ -1,41 +1,40 @@
 import Blockly from "blockly";
 import { blockyValidation } from "../validation.ts";
 
-const color = "#4fc0c4";
+const color = "#f7fd45";
 
-Blockly.Blocks["script"] = {
+Blockly.Blocks["styleProp"] = {
   init: function () {
-    this.appendDummyInput().appendField("script");
+    this.appendDummyInput().appendField("style");
     this.appendStatementInput("Content").setCheck(null);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(color);
+    this.setInputsInline(false);
   },
 };
 
-Blockly.JavaScript["script"] = function (block) {
+Blockly.JavaScript["styleProp"] = function (block) {
   blockyValidation(block);
   var content = Blockly.JavaScript.statementToCode(block, "Content");
-  return `<script> ${content} </script>`;
+  return `.style.${content.trim().replace(" ", "").replace(":", '="').replace(";", '";')}
+  `;
 };
 
-Blockly.Blocks["GetElementById"] = {
+Blockly.Blocks["inner html"] = {
   init: function () {
-    this.appendDummyInput()
-      .appendField("Get Document By ")
-      .appendField(new Blockly.FieldTextInput("id"), "id");
-
+    this.appendDummyInput().appendField("innerHTML");
     this.appendStatementInput("Content").setCheck(null);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(color);
+    this.setInputsInline(false);
   },
 };
 
-Blockly.JavaScript["GetElementById"] = function (block) {
+Blockly.JavaScript["inner html"] = function (block) {
   blockyValidation(block);
   var content = Blockly.JavaScript.statementToCode(block, "Content");
-  let id = block.getFieldValue("id");
-  return `
-      document.getElementById('${id}')${content.trim()}`;
+  return `.innerHTML="${content.trim()}";
+  `;
 };

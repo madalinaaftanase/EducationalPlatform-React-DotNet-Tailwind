@@ -6,6 +6,7 @@ import Group from "../models/group/Group";
 import { UserContext } from "../hooks/UserContext";
 import GroupCard from "../components/group/components/GroupCard";
 import AddGroupModal from "../components/group/components/AddGroupModal";
+import Button from "../components/navbar/components/Button";
 
 function Groups() {
   const url = `${config.baseApiUrl}/Groups`;
@@ -35,10 +36,7 @@ function Groups() {
       <div className="flex justify-between">
         <h1>Grupele tale:</h1>
         {isTeacher && (
-          <button
-            className="bg-mintBlue hover:bg-mint text-yellow font-bold py-2 px-4 border-b-4 border-mint hover:border-mintBlue rounded"
-            onClick={handleAddGroup}
-          >
+          <Button variant="yellow" onClick={handleAddGroup}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -49,7 +47,7 @@ function Groups() {
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
             </svg>
-          </button>
+          </Button>
         )}
       </div>
       <div className="flex gap-4 flex-wrap">

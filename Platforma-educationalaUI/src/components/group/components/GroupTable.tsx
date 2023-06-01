@@ -9,6 +9,7 @@ import EditableInput from "../../project/components/EditableInput";
 import Group from "../../../models/group/Group";
 import { UserContext } from "../../../hooks/UserContext";
 import Teacher from "../../../models/teacher/Teacher";
+import Button from "../../navbar/components/Button";
 
 function GroupTable() {
   const { id } = useParams();
@@ -41,12 +42,9 @@ function GroupTable() {
       },
       {
         cell: (row: Student) => (
-          <button
-            className="bg-mintBlue hover:bg-mint text-yellow px-1 py-1 font-bold border-b-4 border-mint hover:border-mintBlue rounded"
-            onClick={() => handleStudentProjects(row)}
-          >
-            Vezi proiecte
-          </button>
+          <Button variant="general" onClick={() => handleStudentProjects(row)}>
+            <span> Vezi proiecte</span>
+          </Button>
         ),
         ignoreRowClick: true,
         allowOverflow: true,

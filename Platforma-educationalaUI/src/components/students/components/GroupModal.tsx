@@ -1,4 +1,4 @@
-import {useState } from "react";
+import { useState } from "react";
 import config from "../../../config";
 import { saveStudentGroup } from "../../../services/studentAPI";
 import Student from "../../../models/student/Student";
@@ -7,6 +7,7 @@ import { useNavigate } from "react-router";
 import GenericModal from "../../common/GenericModal";
 import CancelButton from "../../common/CancelButton";
 import GroupSubcomponent from "./GroupSubcomponent";
+import Button from "../../navbar/components/Button";
 
 function GroupModal({
   isOpen,
@@ -51,14 +52,9 @@ function GroupModal({
         setSelectedGroupId={setSelectedGroupId}
       />
       <div className="flex space-x-2 rounded-b">
-        <button
-          data-modal-hide="defaultModal"
-          type="button"
-          className="bg-mintBlue hover:bg-mint text-yellow px-2 py-1 font-bold border-b-4 border-mint hover:border-mintBlue rounded"
-          onClick={handleSubmit}
-        >
-          Salveaza
-        </button>
+        <Button data-modal-hide="defaultModal" variant="general" onClick={handleSubmit}>
+          <span> Salveaza </span>
+        </Button>
         <CancelButton setIsOpen={setIsOpen} text={"Anuleaza"} />
       </div>
     </GenericModal>

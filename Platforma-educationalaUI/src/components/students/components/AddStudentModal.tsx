@@ -5,6 +5,7 @@ import GroupSubcomponent from "./GroupSubcomponent";
 import Group from "../../../models/group/Group";
 import config from "../../../config";
 import { addStudentToGroup } from "../../../services/groupAPI";
+import Button from "../../navbar/components/Button";
 
 function AddStudentModal({
   isOpen,
@@ -55,14 +56,9 @@ function AddStudentModal({
           />
         </div>
         <div className="flex gap-x-3 ">
-          <button
-            type="button"
-            className="bg-mintBlue hover:bg-mint text-yellow px-2 py-1 font-bold border-b-4 border-mint hover:border-mintBlue rounded disabled:opacity-75"
-            onClick={handleSubmitAddButton}
-            disabled={isDisable}
-          >
-            Adauga
-          </button>
+          <Button variant="general" onClick={handleSubmitAddButton} disabled={isDisable}>
+            <span>Adauga</span>
+          </Button>
           <CancelButton setIsOpen={setIsOpen} text={"Anuleaza"} />
         </div>
       </div>

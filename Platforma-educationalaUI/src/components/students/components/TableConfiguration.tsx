@@ -1,4 +1,5 @@
 import Student from "../../../models/student/Student";
+import Button from "../../navbar/components/Button";
 
 export const getColumns = (
   handleStudentGroup: (student: Student) => void,
@@ -27,12 +28,9 @@ export const getColumns = (
     },
     {
       cell: (row: Student) => (
-        <button
-          className="bg-mintBlue hover:bg-mint text-yellow px-1 py-1 font-bold border-b-4 border-mint hover:border-mintBlue rounded"
-          onClick={() => handleStudentGroup(row)}
-        >
-          Editeaza grupa
-        </button>
+        <Button variant="general" onClick={() => handleStudentGroup(row)}>
+          <span>Editeaza</span>
+        </Button>
       ),
       ignoreRowClick: true,
       allowOverflow: true,

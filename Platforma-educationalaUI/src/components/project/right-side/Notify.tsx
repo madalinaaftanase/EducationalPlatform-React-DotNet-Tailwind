@@ -8,6 +8,7 @@ import config from "../../../config";
 import { getTeachersByStudent } from "../../../services/studentAPI";
 import { sendNotification } from "../../../services/notificationAPI";
 import { getUserId, getUserName } from "../../../utilities/decodeJwt";
+import Button from "../../navbar/components/Button";
 
 function Notify({ projectName }: { projectName: string }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -54,14 +55,14 @@ function Notify({ projectName }: { projectName: string }) {
 
   return (
     <>
-      <button
-        className="flex bg-mintBlue hover:bg-mint text-yellow px-3 items-center font-bold border-b-4 border-mint hover:border-mintBlue rounded"
+      <Button
+        variant="orange"
         onClick={() => {
           setIsModalOpen(true);
         }}
       >
         <span>Notificare profesor</span>
-      </button>
+      </Button>
       <GenericModal showModal={isModalOpen}>
         {hasTeachers && (
           <div className="flex gap-8">

@@ -5,26 +5,25 @@ import logoImg from "../../images/dog-logo.png";
 import code from "../../images/code.png"
 
 export const Nav = styled.nav`
-  background: #53bf9d;
+  background: #82C3EC;
   height: 10vh;
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem calc((100vw - 1200px) / 2);
+  padding: 0.5rem calc((100vw - 1400px) / 2);
   z-index: 10;
 `;
 
 export const NavLink = styled(Link)`
-  color: #573391;
+  color: #000000;
   display: flex;
   align-items: center;
   text-decoration: none;
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
-  font-size: large;
-  font-weigh: bold;
   &.active {
-    color: #eb5353;
+    color: #1363DF;
+    font-weight: bold;
   }
 `;
 

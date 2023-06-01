@@ -7,7 +7,11 @@ function Result({ htmlText }: { htmlText: string }) {
 
   return (
     <ResultContainer>
-      <iframe className="w-full h-full" srcDoc={htmlText} />
+      <iframe
+        className="w-full h-full"
+        srcDoc={htmlText}
+        sandbox="allow-scripts allow-popups allow-same-origin"
+      />
     </ResultContainer>
   );
 }

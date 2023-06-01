@@ -9,6 +9,7 @@ import GroupModal from "./GroupModal";
 import CheckModalRemove from "../../common/CheckAlert";
 import AddStudentModal from "./AddStudentModal";
 import { deleteStudentFromGroup } from "../../../services/groupAPI";
+import Button from "../../navbar/components/Button";
 
 function StudentsTable() {
   const navigator = useNavigate();
@@ -86,12 +87,9 @@ function StudentsTable() {
       <div className="w-full flex justify-between items-center mb-2">
         <h2>Studenti:</h2>
         <div className="flex gap-x-4 items-center">
-          <button
-            className="bg-yellow-200 hover:bg-gray-500 px-3 py-1 border-b-4 border-gray-700 hover:border-gray-700 rounded font-semibold"
-            onClick={handleAddNewStudent}
-          >
-            Adauga un student
-          </button>
+          <Button variant="yellow" onClick={handleAddNewStudent}>
+            <span>Adauga un student</span>
+          </Button>
           <input
             className="p-1 w-1/2 rounded-lg"
             onChange={handleFilterChange}

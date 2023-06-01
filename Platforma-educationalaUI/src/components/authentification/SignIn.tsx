@@ -4,6 +4,7 @@ import logoImg from "../../images/dog-logo.png";
 import { CreateAccount } from "../../services/userAPI";
 import FormField from "./FormField";
 import { useNavigate } from "react-router-dom";
+import Button from "../navbar/components/Button";
 
 function SignIn() {
   const navigator = useNavigate();
@@ -121,13 +122,9 @@ function SignIn() {
           </div>
           {errors && <span className="text-red-500">{errors}</span>}
           <div className="pt-8">
-            <button
-              type="submit"
-              value="submit"
-              className="bg-purple-500 hover:bg-purple-400 text-white py-2 px-4 border-b-4 border-purple-900 hover:border-purple-500 rounded"
-            >
-              Inregistrare
-            </button>
+            <Button type="submit" value="submit" variant="yellow">
+              <span>Inregistrare</span>
+            </Button>
             <p className="text-sm font-semibold mt-2 pt-1 mb-0">
               Ai deja un cont?&nbsp;
               <a

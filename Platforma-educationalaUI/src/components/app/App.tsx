@@ -16,6 +16,7 @@ import Profile from "../../pages/Profile";
 import Group from "../../pages/Group";
 import About from "../../pages/About";
 import UnityGame from "../../pages/UnityGame";
+import Home from "../../pages/Home";
 
 function App() {
   const { isAuthentificated } = useContext(UserContext);
@@ -43,7 +44,7 @@ function App() {
             element={<Project isTeacherOverride={false} />}
           />
           <Route path="/Despre" element={<About />} />
-          <Route path="/Antreneaza" element={<UnityGame  />} />
+          <Route path="/Antreneaza" element={<UnityGame />} />
         </Routes>
       </SWRConfig>
     );
@@ -51,12 +52,14 @@ function App() {
 
   return (
     <SWRConfig value={swrConfig}>
+      <Navbar />
       <Routes>
-        <Route path="/" element={<Signin />} />
+        <Route path="/" element={<Home />} />
         <Route path="/Signin" element={<Signin />} />
         <Route path="/Login/Student" element={<LoginPage />} />
         <Route path="/Login/Profesor" element={<LoginPage />} />
         <Route path="/Error" element={<ErrorResponse />} />
+        <Route path="/Despre" element={<About />} />
       </Routes>
     </SWRConfig>
   );

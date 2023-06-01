@@ -5,6 +5,7 @@ import config from "../../../config";
 import { ProjectSave } from "../../../models/project/Project";
 import { saveProject } from "../../../services/projectAPI";
 import { UserContext } from "../../../hooks/UserContext";
+import Button from "../../navbar/components/Button";
 
 function SaveButton({ name, xml }: { name: string; xml: string }) {
   const params = useParams();
@@ -21,12 +22,9 @@ function SaveButton({ name, xml }: { name: string; xml: string }) {
   };
 
   return (
-    <button
-      className="bg-mintBlue hover:bg-mint text-yellow font-bold py-2 px-4 border-b-4 border-mint hover:border-mintBlue rounded"
-      onClick={onClickSave}
-    >
-      Salveaza Proiect
-    </button>
+    <Button variant="general" onClick={onClickSave}>
+      <span>Salveaza Proiect</span>
+    </Button>
   );
 }
 

@@ -35,7 +35,7 @@ Blockly.JavaScript["regexInput"] = function (block) {
 //h
 Blockly.Blocks["h"] = {
   init: function () {
-    this.appendValueInput("style")
+    this.appendValueInput("attribute")
       .setCheck(null)
       .appendField(
         new Blockly.FieldDropdown([
@@ -59,10 +59,10 @@ Blockly.JavaScript["h"] = function (block) {
   blockyValidation(block);
   var option = block.getFieldValue("optionH");
   var content = Blockly.JavaScript.statementToCode(block, "Content");
-  var styleBlock = block.getInputTargetBlock("style");
-  var style = Blockly.JavaScript.blockToCode(styleBlock);
-  if (style) {
-    return `<${option} style=${style}> ${content} </${option}>`;
+  var attributeBlock = block.getInputTargetBlock("attribute");
+  var attributes = Blockly.JavaScript.blockToCode(attributeBlock);
+  if (attributes) {
+    return `<${option}${attributes}> ${content} </${option}>`;
   }
   return `<${option}> ${content} </${option}>`;
 };

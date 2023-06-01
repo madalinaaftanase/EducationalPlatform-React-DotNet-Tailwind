@@ -5,6 +5,7 @@ import { UserContext } from "../../hooks/UserContext";
 import logoImg from "../../images/dog-logo.png";
 import { LoginAccount } from "../../services/userAPI";
 import FormField from "./FormField";
+import Button from "../navbar/components/Button";
 
 function Login() {
   const { setToken, setUsername, setIsTeacher, setIdTeacher } = useContext(UserContext);
@@ -92,13 +93,9 @@ function Login() {
           </div>
           {errors && <span className="text-red-600">{errors}</span>}
           <div className="pt-8">
-            <button
-              type="submit"
-              value="submit"
-              className="bg-purple-500 hover:bg-purple-400 text-white py-2 px-4 border-b-4 border-purple-900 hover:border-purple-500 rounded"
-            >
-              Login
-            </button>
+            <Button type="submit" variant="yellow" value="submit">
+              <span> Login</span>
+            </Button>
             {isStudent && (
               <p className="text-sm font-semibold mt-2 pt-1 mb-0">
                 Esti profesor?&nbsp;

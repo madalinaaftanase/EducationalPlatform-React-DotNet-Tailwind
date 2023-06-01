@@ -4,6 +4,7 @@ import { useState } from "react";
 import config from "../../../config";
 import Group from "../../../models/group/Group";
 import { addOrUpdateGroup } from "../../../services/groupAPI";
+import Button from "../../navbar/components/Button";
 
 function AddGroupModal({
   isOpen,
@@ -42,14 +43,9 @@ function AddGroupModal({
         <input onChange={handleInput} placeholder="grupa z" className="p-1" />
       </div>
       <div className="flex gap-4">
-        <button
-          type="button"
-          className="bg-mintBlue hover:bg-mint text-yellow px-2 py-1 font-bold border-b-4 border-mint hover:border-mintBlue rounded disabled:opacity-75"
-          onClick={handleConfirm}
-          disabled={isDisable}
-        >
-          Adauga
-        </button>
+        <Button variant="general" onClick={handleConfirm} disabled={isDisable}>
+          <span>Adauga</span>
+        </Button>
         <CancelButton setIsOpen={setIsOpen} text={"Anuleaza"} />
       </div>
     </GenericModal>
