@@ -5,9 +5,10 @@ import { Nav, NavLink, Bars, NavMenu, NavBtn, Logo, LogoCode } from "./NavbarEle
 import Menu from "./components/Menu";
 import { useLocation } from "react-router-dom";
 import Button from "./components/Button";
+import EditorHtml from "../../pages/EditorHtml";
 
 export function Navbar() {
-  const { isAuthentificated } = useContext(UserContext);
+  const { isAuthentificated, isTeacher } = useContext(UserContext);
   const { pathname } = useLocation();
   const navigator = useNavigate();
 
@@ -25,9 +26,10 @@ export function Navbar() {
         <Bars />
         <NavMenu>
           <NavLink to="/Proiecte">Proiectele mele</NavLink>
+          {isTeacher &&<NavLink to="/Editor">Editor</NavLink>}
           <NavLink to="/Joc">Proiect nou</NavLink>
           <NavLink to="/Grupe">Grupe</NavLink>
-          <NavLink to="/Antreneaza">Antreneaza-te</NavLink>
+          {!isTeacher && <NavLink to="/Antreneaza">Antreneaza-te</NavLink>}
         </NavMenu>
         <NavBtn>
           <Menu />

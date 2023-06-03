@@ -122,7 +122,7 @@ function SignIn() {
           </div>
           {errors && <span className="text-red-500">{errors}</span>}
           <div className="pt-8">
-            <Button type="submit" value="submit" variant="yellow">
+            <Button type="submit" value="submit" variant="purple">
               <span>Inregistrare</span>
             </Button>
             <p className="text-sm font-semibold mt-2 pt-1 mb-0">

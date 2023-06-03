@@ -1,6 +1,0 @@
-1. set timeout, set interval
-2. x
-	-> animation?
-	-> change variable
-3. variables
-5. show errors

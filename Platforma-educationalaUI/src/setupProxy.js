@@ -8,8 +8,17 @@ module.exports = function (app) {
       changeOrigin: true,
     })
   );
+
   app.use(
     "/sendMail",
+    createProxyMiddleware({
+      target: "https://osdkt9tre1.execute-api.eu-central-1.amazonaws.com/dev",
+      changeOrigin: true,
+    })
+  );
+  
+  app.use(
+    "/sendHomework",
     createProxyMiddleware({
       target: "https://osdkt9tre1.execute-api.eu-central-1.amazonaws.com/dev",
       changeOrigin: true,

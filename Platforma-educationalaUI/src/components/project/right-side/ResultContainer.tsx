@@ -1,10 +1,37 @@
+import { useState } from "react";
+import Button from "../../navbar/components/Button";
+
 function ResultContainer({ children }: { children: React.ReactNode }) {
+  const [isFullScreen, setIsFullScreen] = useState(false);
+
+  const toggleFullScreen = () => {
+    setIsFullScreen((prev) => !prev);
+  };
+
+  const fullScreenStyle = {
+    position: "absolute",
+    inset: 0,
+    height: "100vh",
+    background: "white",
+    zIndex: 100,
+  };
+  const style = isFullScreen ? fullScreenStyle : {};
+
   return (
-    <div className="abc border-gray-400 border-4 h-[83%] rounded overflow-y-auto">
+    <div
+      className="bg-white border-gray-400 border-4 h-[83%] rounded overflow-y-auto"
+      style={style}
+    >
       <div className=" bg-gray-300 border-b-2 border-gray-400">
-        <div className="bg-gray-200 flex justify-between w-[30%] rounded border-b-2 border-gray-400">
-          <span>&nbsp; PaginaMea</span>
-          <span className="px-2">x</span>
+        <div className="flex flex-start">
+          <div className="bg-gray-200 flex justify-between w-[30%] rounded border-b-2 border-gray-400">
+            <span>&nbsp; PaginaMea</span>
+            <span className="px-2">x</span>
+          </div>
+          <div className="flex-1" />
+          <Button variant="general" onClick={toggleFullScreen}>
+            Mergi {!isFullScreen ? "Fullscreen" : "Normal"}
+          </Button>
         </div>
         <div className="flex gap-2 items-center border-t-2 border-gray-200 ">
           <div className="pr-4 flex gap-1 ">

@@ -93,7 +93,7 @@ function Login() {
           </div>
           {errors && <span className="text-red-600">{errors}</span>}
           <div className="pt-8">
-            <Button type="submit" variant="yellow" value="submit">
+            <Button type="submit" variant="purple" value="submit">
               <span> Login</span>
             </Button>
             {isStudent && (

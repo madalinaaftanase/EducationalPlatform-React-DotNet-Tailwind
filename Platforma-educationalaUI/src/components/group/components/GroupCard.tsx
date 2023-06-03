@@ -26,7 +26,7 @@ function GroupCard({ group, init }: CardInterface) {
   }
 
   return (
-    <div className="block max-w-sm p-6 bg-mintBlue border border-gray-200 rounded-lg shadow hover:bg-mint min-w-[30%] flex flex-row justify-between">
+    <div className="block max-w-sm p-6 bg-[#C0DEFF] rounded-lg shadow hover:bg-[#F6E3C5] min-w-[30%] flex flex-row justify-between">
       <div>
         <h5
           className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white cursor-pointer"
@@ -43,7 +43,7 @@ function GroupCard({ group, init }: CardInterface) {
           viewBox="0 0 24 24"
           strokeWidth="1.5"
           stroke="currentColor"
-          className="w-6 h-6 rounded-lg basis-[8%] cursor-pointer"
+          className="w-6 h-6 rounded-lg basis-[8%] cursor-pointer hover:text-red-700"
           onClick={handleDeleteCard}
         >
           <path

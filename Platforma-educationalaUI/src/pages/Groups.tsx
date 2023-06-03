@@ -14,6 +14,7 @@ function Groups() {
   const navigator = useNavigate();
   const [groups, setGroups] = useState<Group[]>([]);
   const [isAddGroupModalOpen, setAddGroupModalOpen] = useState(false);
+  
   useEffect(() => {
     init();
   }, [isTeacher]);

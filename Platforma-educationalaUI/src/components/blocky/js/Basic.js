@@ -37,5 +37,53 @@ Blockly.JavaScript["GetElementById"] = function (block) {
   var content = Blockly.JavaScript.statementToCode(block, "Content");
   let id = block.getFieldValue("id");
   return `
-      document.getElementById('${id}')${content.trim()}`;
+    document.getElementById('${id}')${content.trim()}`;
+};
+
+Blockly.Blocks["Set Timeout"] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField("Set Timeout")
+      .appendField(new Blockly.FieldTextInput(5), "Seconds")
+      .appendField("Seconds");
+
+    this.appendStatementInput("Content").setCheck(null);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(color);
+  },
+};
+
+Blockly.JavaScript["Set Timeout"] = function (block) {
+  blockyValidation(block);
+  var content = Blockly.JavaScript.statementToCode(block, "Content");
+  let seconds = Number(block.getFieldValue("Seconds"));
+  return `
+    setTimeout(() => {
+      ${content.trim()}
+    }, ${seconds * 1000});`;
+};
+
+Blockly.Blocks["Set Interval"] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField("Set Interval")
+      .appendField(new Blockly.FieldTextInput(5), "Seconds")
+      .appendField("Seconds");
+
+    this.appendStatementInput("Content").setCheck(null);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(color);
+  },
+};
+
+Blockly.JavaScript["Set Interval"] = function (block) {
+  blockyValidation(block);
+  var content = Blockly.JavaScript.statementToCode(block, "Content");
+  let seconds = Number(block.getFieldValue("Seconds"));
+  return `
+    setInterval(() => {
+      ${content.trim()}
+    }, ${seconds * 1000});`;
 };

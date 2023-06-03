@@ -540,6 +540,14 @@ const javascriptCategories =
           kind: "block",
           type: "GetElementById",
         },
+        {
+          kind: "block",
+          type: "Set Timeout",
+        },
+        {
+          kind: "block",
+          type: "Set Interval"
+        },
       ]
     },
     {

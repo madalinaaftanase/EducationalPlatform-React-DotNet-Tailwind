@@ -20,7 +20,7 @@ const allowedParents: Record<string, string[]> = {
     "style": ["attributes"],
     "script": ["document"],
     "styleProp": ["GetElementById"],
-    "GetElementById": ["script", "onClick", "onMouseUp", "onMouseOver", "onMouseOut", "onMouseMove", "onMouseLeave", "onMouseEnter", "onMouseDown", "inner html"],
+    "GetElementById": ["script", "onClick", "onMouseUp", "onMouseOver", "onMouseOut", "onMouseMove", "onMouseLeave", "onMouseEnter", "onMouseDown", "inner html", "Set Timeout", "Set Interval"],
     "inner html": ["GetElementById"]
 }
 

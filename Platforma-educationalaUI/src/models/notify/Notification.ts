@@ -4,3 +4,11 @@ export default interface Notification {
     studentName: string;
     linkProject?: string;
 }
+
+export interface HomeworkNotification {
+    teacherEmail: string;
+    studentName: string;
+    studentEmail: string;
+    message?: string;
+    photo: string;
+}
