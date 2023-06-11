@@ -14,10 +14,10 @@ function HTMLResult({ htmlText }: { htmlText: string }) {
 
   return (
     <>
-      <div className="flex justify-end items-end mr-2">
+      <div className="flex justify-end items-end mr-2 p-1">
         <Button onClick={handleDownloadFile} variant="orange">
           <div className="flex gap-1">
-            <span>Descarca</span>
+            <span >Descarca</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

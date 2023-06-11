@@ -14,8 +14,7 @@ generateBlockWithAttributesGeneral("em", "em", basicColor);
 generateBlockWithAttributesGeneral("big", "big", basicColor);
 generateBlockWithAttributesGeneral("small", "small", basicColor);
 
-//text
-Blockly.Blocks["regexInput"] = {
+Blockly.Blocks["text"] = {
   init: function () {
     this.appendDummyInput()
       .appendField("text:")
@@ -26,7 +25,7 @@ Blockly.Blocks["regexInput"] = {
   },
 };
 
-Blockly.JavaScript["regexInput"] = function (block) {
+Blockly.JavaScript["text"] = function (block) {
   blockyValidation(block);
   let value_regex = block.getFieldValue("regex");
   return value_regex;

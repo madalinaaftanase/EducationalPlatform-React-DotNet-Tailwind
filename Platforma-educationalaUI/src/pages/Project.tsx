@@ -7,6 +7,7 @@ import RightSideLayout from "../components/project/right-side/RightSideLayout";
 import config from "../config";
 import { getById } from "../services/projectAPI";
 import { UserContext } from "../hooks/UserContext";
+import Student from "../models/student/Student";
 
 function Project({ isTeacherOverride }: { isTeacherOverride?: boolean }) {
   const navigator = useNavigate();
@@ -19,6 +20,7 @@ function Project({ isTeacherOverride }: { isTeacherOverride?: boolean }) {
   const [isVisibleForShare, setIsVisibleForShare] = useState(true);
   const [comment, setComment] = useState("");
   const [grade, setGrade] = useState(0);
+  const [students, setStudents] = useState<Student[]>([]);
   const params = useParams();
 
   if (isTeacherOverride !== undefined) {
@@ -42,6 +44,7 @@ function Project({ isTeacherOverride }: { isTeacherOverride?: boolean }) {
         setComment(response.project.comment ?? "");
         setGrade(response.project.grade ?? 0);
         setProjectName(response.project.name);
+        setStudents(response.project.students || []);
       } else {
         navigator("/Error");
       }
@@ -68,6 +71,8 @@ function Project({ isTeacherOverride }: { isTeacherOverride?: boolean }) {
           grade={grade}
           setGrade={setGrade}
           setComment={setComment}
+          students={students}
+          refetch={init}
         />
       </section>
     </main>

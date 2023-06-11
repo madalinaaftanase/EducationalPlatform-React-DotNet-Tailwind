@@ -54,7 +54,7 @@ public class GroupsRepository : IGroupRepository
 
     public async Task AddStudentGroup(Guid studentId, Guid groupId)
     {
-        var studentGroup = _platformDbContext.StudentGroups.Find(studentId, groupId);
+        var studentGroup = await _platformDbContext.StudentGroups.FindAsync(studentId, groupId);
         if (studentGroup != null) return;
 
         var newStudentGroup = new StudentGroup

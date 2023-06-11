@@ -68,13 +68,13 @@ public class SaveCommandHandler : IRequestHandler<SaveCommand, SaveResponse>
             return response;
         }
 
-        if (project.StudentId == command.CurrentUserId || project.TeacherId == command.CurrentUserId)
+        if (project.Students.Any(s => s.Id == command.CurrentUserId) || project.TeacherId == command.CurrentUserId)
         {
             project.Xml = command.Xml ?? project.Xml;
             project.Name = command.Name ?? project.Name;
         }
 
-        var teacher = project.StudentId != Guid.Empty
+        var teacher = project.Students.Count > 0
                 ? await _teacherRepository.GetById(command.CurrentUserId)
                 : null;
 

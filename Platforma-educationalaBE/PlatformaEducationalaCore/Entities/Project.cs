@@ -7,8 +7,6 @@ namespace PlatformaEducationala.Core.Entities;
         public string Name { get; set; }
         public string Xml { get; set; }
         public float? Grade { get; set; }
-        public Guid? StudentId { get; set; }
-        public Student Student { get; set; }
         public Guid? TeacherId { get; set; }
         public Teacher Teacher { get; set; }
         public string? Comment { get; set; }

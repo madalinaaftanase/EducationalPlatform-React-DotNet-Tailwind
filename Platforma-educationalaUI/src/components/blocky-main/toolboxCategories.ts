@@ -84,7 +84,7 @@ const htmlCategories = {
         },
         {
           kind: "block",
-          type: "regexInput",
+          type: "text",
         },
         {
           kind: "block",
@@ -599,7 +599,7 @@ const javascriptCategories =
       },
       {
         kind: "block",
-        type: "regexInput",
+        type: "text",
       },]
     },
     {

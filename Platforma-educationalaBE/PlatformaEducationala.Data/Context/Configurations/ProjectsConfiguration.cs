@@ -11,7 +11,6 @@ public class ProjectsConfiguration : IEntityTypeConfiguration<Project>
         builder.Property(x => x.Id).IsRequired();
         builder.Property(x => x.Name).IsRequired();
         builder.Property(x => x.Xml).IsRequired(false);
-        builder.HasOne(x => x.Student).WithMany(x => x.Projects).HasForeignKey(x => x.StudentId).IsRequired(false);
         builder.HasOne(x => x.Teacher).WithMany(x => x.Projects).HasForeignKey(x => x.TeacherId).IsRequired(false);
     }
 }

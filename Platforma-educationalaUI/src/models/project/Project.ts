@@ -1,9 +1,12 @@
+import Student from "../student/Student";
+
 export default interface Project {
   id: string;
   name: string;
   xml: string;
   comment?: string;
   grade?: number;
+  students?: Student[]
 }
 
 export interface ProjectSave {

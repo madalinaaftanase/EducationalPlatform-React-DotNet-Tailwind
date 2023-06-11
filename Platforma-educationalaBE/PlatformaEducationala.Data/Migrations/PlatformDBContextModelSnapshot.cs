@@ -58,9 +58,6 @@ namespace PlatformaEducationala.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("StudentId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<Guid?>("TeacherId")
                         .HasColumnType("uniqueidentifier");
 
@@ -68,8 +65,6 @@ namespace PlatformaEducationala.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("StudentId");
 
                     b.HasIndex("TeacherId");
 
@@ -175,15 +170,9 @@ namespace PlatformaEducationala.Data.Migrations
 
             modelBuilder.Entity("PlatformaEducationala.Core.Entities.Project", b =>
                 {
-                    b.HasOne("PlatformaEducationala.Core.Entities.Student", "Student")
-                        .WithMany("Projects")
-                        .HasForeignKey("StudentId");
-
                     b.HasOne("PlatformaEducationala.Core.Entities.Teacher", "Teacher")
                         .WithMany("Projects")
                         .HasForeignKey("TeacherId");
-
-                    b.Navigation("Student");
 
                     b.Navigation("Teacher");
                 });
@@ -238,8 +227,6 @@ namespace PlatformaEducationala.Data.Migrations
 
             modelBuilder.Entity("PlatformaEducationala.Core.Entities.Student", b =>
                 {
-                    b.Navigation("Projects");
-
                     b.Navigation("StudentGroups");
 
                     b.Navigation("StudentProjects");

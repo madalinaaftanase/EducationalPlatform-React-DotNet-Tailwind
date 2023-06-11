@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.Extensions.Logging;
+using PlatformaEducationala.Core.Entities;
 using PlatformaEducationala.Core.Enums;
 using PlatformaEducationala.Core.Repositories;
 
@@ -51,11 +52,15 @@ public class CreateCommandHandler : IRequestHandler<CreateCommand, CreateRespons
             };
 
             if (command.IsTeacher)
+            {
                 project.TeacherId = command.CurrentUserId;
+                await _projectRepository.CreateAsync(project, null);
+            }
             else
-                project.StudentId = command.CurrentUserId;
+            {
+                await _projectRepository.CreateAsync(project, command.CurrentUserId);
+            }
 
-            await _projectRepository.CreateAsync(project);
             response.Id = id;
         }
         catch (Exception e)

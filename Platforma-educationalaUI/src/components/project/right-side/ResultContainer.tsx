@@ -30,7 +30,7 @@ function ResultContainer({ children }: { children: React.ReactNode }) {
           </div>
           <div className="flex-1" />
           <Button variant="general" onClick={toggleFullScreen}>
-            Mergi {!isFullScreen ? "Fullscreen" : "Normal"}
+            {!isFullScreen ? "Fullscreen" : "Minimizeaza"}
           </Button>
         </div>
         <div className="flex gap-2 items-center border-t-2 border-gray-200 ">
@@ -81,7 +81,7 @@ function ResultContainer({ children }: { children: React.ReactNode }) {
             />
           </svg>
 
-          <span className="bg-gray-100 pr-24 rounded pl-2"> https://localhost:3000/PaginaMea</span>
+          <span className="bg-gray-100 pr-24 rounded pl-2"> https://PaginaMea</span>
         </div>
       </div>
       <div className="h-full">{children}</div>

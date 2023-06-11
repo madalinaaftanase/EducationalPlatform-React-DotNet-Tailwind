@@ -7,6 +7,7 @@ import {
   ProjectsResponse,
 } from "../models/project/Project";
 import { getCookie } from "../utilities/cookieFunctions";
+import { BasicResponse } from "../models/student/Student";
 
 export const getAll = async (url: string, isTeacher: boolean) => {
   var token = getCookie("token");
@@ -72,5 +73,16 @@ export const createProject = async (url: string, data: ProjectSave, isTeacher: b
     return response.data;
   } catch (err) {
     if (axios.isAxiosError(err)) return err.response?.data as CreateProjectResponse;
+  }
+};
+
+export const addStudentToProject = async (url: string, email: string) => {
+  try {
+    const response = await axios.post(url, { email }, {
+      headers: { Authorization: `Bearer ${getCookie("token")}` },
+    });
+    return response.data;
+  } catch (err) {
+    if (axios.isAxiosError(err)) return err.response?.data as BasicResponse;
   }
 };

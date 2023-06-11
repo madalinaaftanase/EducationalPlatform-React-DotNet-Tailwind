@@ -12,8 +12,8 @@ using PlatformaEducationala.Data.Context;
 namespace PlatformaEducationala.Data.Migrations
 {
     [DbContext(typeof(PlatformDBContext))]
-    [Migration("20230213161549_redoTables")]
-    partial class redoTables
+    [Migration("20230603135406_CreateTables")]
+    partial class CreateTables
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,25 +23,6 @@ namespace PlatformaEducationala.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
-
-            modelBuilder.Entity("PlatformaEducationala.Core.Entities.Grade", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("TecherId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("Value")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("TecherId");
-
-                    b.ToTable("Grades");
-                });
 
             modelBuilder.Entity("PlatformaEducationala.Core.Entities.Group", b =>
                 {
@@ -69,14 +50,17 @@ namespace PlatformaEducationala.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("GradeId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("Comment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<float?>("Grade")
+                        .HasColumnType("real");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("StudentId")
+                    b.Property<Guid?>("TeacherId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Xml")
@@ -84,9 +68,7 @@ namespace PlatformaEducationala.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("GradeId");
-
-                    b.HasIndex("StudentId");
+                    b.HasIndex("TeacherId");
 
                     b.ToTable("Projects");
                 });
@@ -102,11 +84,11 @@ namespace PlatformaEducationala.Data.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("FirstName")
+                    b.Property<string>("Firstname")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("LastName")
+                    b.Property<string>("Lastname")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -134,6 +116,21 @@ namespace PlatformaEducationala.Data.Migrations
                     b.ToTable("StudentGroups");
                 });
 
+            modelBuilder.Entity("PlatformaEducationala.Core.Entities.StudentProject", b =>
+                {
+                    b.Property<Guid>("StudentId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ProjectId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("StudentId", "ProjectId");
+
+                    b.HasIndex("ProjectId");
+
+                    b.ToTable("StudentProjects");
+                });
+
             modelBuilder.Entity("PlatformaEducationala.Core.Entities.Teacher", b =>
                 {
                     b.Property<Guid>("Id")
@@ -145,11 +142,11 @@ namespace PlatformaEducationala.Data.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("FirstName")
+                    b.Property<string>("Firstname")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("LastName")
+                    b.Property<string>("Lastname")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -160,17 +157,6 @@ namespace PlatformaEducationala.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Teachers");
-                });
-
-            modelBuilder.Entity("PlatformaEducationala.Core.Entities.Grade", b =>
-                {
-                    b.HasOne("PlatformaEducationala.Core.Entities.Teacher", "Teacher")
-                        .WithMany("Grades")
-                        .HasForeignKey("TecherId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Teacher");
                 });
 
             modelBuilder.Entity("PlatformaEducationala.Core.Entities.Group", b =>
@@ -186,19 +172,11 @@ namespace PlatformaEducationala.Data.Migrations
 
             modelBuilder.Entity("PlatformaEducationala.Core.Entities.Project", b =>
                 {
-                    b.HasOne("PlatformaEducationala.Core.Entities.Grade", "Grade")
+                    b.HasOne("PlatformaEducationala.Core.Entities.Teacher", "Teacher")
                         .WithMany("Projects")
-                        .HasForeignKey("GradeId");
+                        .HasForeignKey("TeacherId");
 
-                    b.HasOne("PlatformaEducationala.Core.Entities.Student", "Student")
-                        .WithMany("Projects")
-                        .HasForeignKey("StudentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Grade");
-
-                    b.Navigation("Student");
+                    b.Navigation("Teacher");
                 });
 
             modelBuilder.Entity("PlatformaEducationala.Core.Entities.StudentGroup", b =>
@@ -220,9 +198,23 @@ namespace PlatformaEducationala.Data.Migrations
                     b.Navigation("Student");
                 });
 
-            modelBuilder.Entity("PlatformaEducationala.Core.Entities.Grade", b =>
+            modelBuilder.Entity("PlatformaEducationala.Core.Entities.StudentProject", b =>
                 {
-                    b.Navigation("Projects");
+                    b.HasOne("PlatformaEducationala.Core.Entities.Project", "Project")
+                        .WithMany("StudentProjects")
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PlatformaEducationala.Core.Entities.Student", "Student")
+                        .WithMany("StudentProjects")
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Project");
+
+                    b.Navigation("Student");
                 });
 
             modelBuilder.Entity("PlatformaEducationala.Core.Entities.Group", b =>
@@ -230,18 +222,23 @@ namespace PlatformaEducationala.Data.Migrations
                     b.Navigation("StudentGroups");
                 });
 
+            modelBuilder.Entity("PlatformaEducationala.Core.Entities.Project", b =>
+                {
+                    b.Navigation("StudentProjects");
+                });
+
             modelBuilder.Entity("PlatformaEducationala.Core.Entities.Student", b =>
                 {
-                    b.Navigation("Projects");
-
                     b.Navigation("StudentGroups");
+
+                    b.Navigation("StudentProjects");
                 });
 
             modelBuilder.Entity("PlatformaEducationala.Core.Entities.Teacher", b =>
                 {
-                    b.Navigation("Grades");
-
                     b.Navigation("Groups");
+
+                    b.Navigation("Projects");
                 });
 #pragma warning restore 612, 618
         }

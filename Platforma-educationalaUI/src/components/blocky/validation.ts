@@ -1,18 +1,18 @@
 import Blockly from "blockly";
 
 const allowedChildren: Record<string, string[]> = {
-    "document": ["head", "body", "script"],
-    "form": ["input", "label"],
-    "head": ["title", "div"],
-    "table": ["thead", "tbody", "caption", "tr"],
-    "tbody": ["tr"],
-    "thead": ["tr"],
-    "tr": ["th", "td"],
-    "ul": ["li"],
-    "ol": ["li"],
-    "select": ["option"],
+    "document": ["head", "body", "script", "attributes"],
+    "form": ["input", "label", "div", "button", "attributes"],
+    "head": ["title", "div", "attributes"],
+    "table": ["thead", "tbody", "caption", "tr", "attributes"],
+    "tbody": ["tr", "attributes"],
+    "thead": ["tr", "attributes"],
+    "tr": ["th", "td", "attributes"],
+    "ul": ["li", "attributes"],
+    "ol": ["li", "attributes"],
+    "select": ["option", "attributes"],
     "GetElementById": ["onClick", "onMouseUp", "onMouseOver", "onMouseOut", "onMouseMove", "onMouseLeave", "onMouseEnter", "onMouseDown", "styleProp", "inner html"],
-    "inner html": ["regexInput"]
+    "inner html": ["text"]
 }
 
 const allowedParents: Record<string, string[]> = {
@@ -32,7 +32,7 @@ function unplugInvalidChildren(startingChild: Blockly.Block, validCheck: (block:
     let block = startingChild
     while (block) {
         if (!validCheck(block)) {
-            console.log(`Child ${block.type} not ok for parent ${startingChild.getSurroundParent().type}`)
+            localStorage.setItem("warning", `${block.type} nu poate fi pus in ${startingChild.getSurroundParent().type}`)
             block.unplug(false)
             // block.setWarningText("Elementul nu poate fi atasat aici")
             return;

@@ -4,6 +4,8 @@ import SaveButton from "../components/SaveButton";
 import HTMLResult from "./HtmlResult";
 import ResultCompiler from "./ResultCompiler";
 import TeacherSection from "./TeacherSection";
+import ColaboratorsSection from "./ColaboratorsSection";
+import Student from "../../../models/student/Student";
 
 interface RightSideLayoutInterface {
   htmlText: string;
@@ -14,6 +16,8 @@ interface RightSideLayoutInterface {
   grade: number;
   setGrade: Function;
   setComment: Function;
+  students: Student[];
+  refetch: Function;
 }
 
 function RightSideLayout({
@@ -25,6 +29,8 @@ function RightSideLayout({
   grade,
   setGrade,
   setComment,
+  students,
+  refetch,
 }: RightSideLayoutInterface) {
   const [selectedTab, setSelectedTab] = useState("result");
   const [newText, setNewText] = useState(name);
@@ -58,11 +64,15 @@ function RightSideLayout({
         <button className={getClassName("html")} onClick={() => setSelectedTab("html")}>
           Html
         </button>
-        {
-          <button className={getClassName("teacher")} onClick={() => setSelectedTab("teacher")}>
-            Evaluare
-          </button>
-        }
+        <button className={getClassName("teacher")} onClick={() => setSelectedTab("teacher")}>
+          Evaluare
+        </button>
+        <button
+          className={getClassName("colaboratori")}
+          onClick={() => setSelectedTab("colaboratori")}
+        >
+          Colaboratori
+        </button>
       </div>
 
       {selectedTab == "result" && <ResultCompiler htmlText={htmlText} />}
@@ -75,6 +85,9 @@ function RightSideLayout({
           setGrade={setGrade}
           projectName={name}
         />
+      )}
+      {selectedTab == "colaboratori" && (
+        <ColaboratorsSection students={students} refetch={refetch} />
       )}
     </div>
   );
