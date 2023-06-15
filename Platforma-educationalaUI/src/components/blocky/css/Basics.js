@@ -1,13 +1,13 @@
 import {
   generateInputBlockGeneral,
   generateDropDownBlockGeneral,
-  generateDropDownAndInputBlockGeneral,
+  generateInputColorBlockGeneral,
 } from "./functionsCreateBlocks";
 
 const basicColor = "#e32db6";
 
 generateInputBlockGeneral("any", "#040806");
-generateInputBlockGeneral("background-color", basicColor);
+generateInputColorBlockGeneral("background-color", basicColor);
 generateInputBlockGeneral("height", basicColor);
 generateInputBlockGeneral("width", basicColor);
 generateInputBlockGeneral("z-index", basicColor);

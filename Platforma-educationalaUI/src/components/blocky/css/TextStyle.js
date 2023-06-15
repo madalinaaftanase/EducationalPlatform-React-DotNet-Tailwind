@@ -1,10 +1,14 @@
-import { generateDropDownBlockGeneral, generateInputBlockGeneral } from "./functionsCreateBlocks";
+import {
+  generateDropDownBlockGeneral,
+  generateInputBlockGeneral,
+  generateInputColorBlockGeneral,
+} from "./functionsCreateBlocks";
 const textStyleColor = "#f77997";
 
 generateInputBlockGeneral("font-size", textStyleColor);
 generateInputBlockGeneral("font-family", textStyleColor);
 generateInputBlockGeneral("font-weight", textStyleColor);
-generateInputBlockGeneral("color", textStyleColor);
+generateInputColorBlockGeneral("color", textStyleColor);
 generateInputBlockGeneral("text-align", textStyleColor);
 generateInputBlockGeneral("line-height", textStyleColor);
 

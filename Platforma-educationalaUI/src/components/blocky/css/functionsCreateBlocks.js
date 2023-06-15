@@ -16,6 +16,21 @@ function generateInputsBlock(id, tooltips, color) {
   };
 }
 
+function generateInputColorBlock(id, tooltips, color) {
+  Blockly.Blocks[id] = {
+    init: function () {
+      this.appendDummyInput()
+        .appendField(`${id}: `)
+        .appendField(new Blockly.FieldColour("scrie aici"), "value");
+      this.setNextStatement(true, null);
+      this.setPreviousStatement(true, null);
+      this.setColour(`${color}`);
+      this.setTooltip(`${tooltips}`);
+    },
+  };
+}
+
+// same code as generateInputColorBlock
 function generateInputsBlockJS(id) {
   Blockly.JavaScript[id] = function (block) {
     blockyValidation(block);
@@ -27,6 +42,12 @@ function generateInputsBlockJS(id) {
 function generateInputBlockGeneral(id, color) {
   const tooltips = descriptionCSS.get(id);
   generateInputsBlock(id, tooltips || "", color);
+  generateInputsBlockJS(id);
+}
+
+function generateInputColorBlockGeneral(id, color) {
+  const tooltips = descriptionCSS.get(id);
+  generateInputColorBlock(id, tooltips || "", color);
   generateInputsBlockJS(id);
 }
 
@@ -154,4 +175,5 @@ export {
   generateDropDownBlockGeneral,
   generateDoubleDropDownBlockGeneral,
   generateDropDownAndInputBlockGeneral,
+  generateInputColorBlockGeneral,
 };

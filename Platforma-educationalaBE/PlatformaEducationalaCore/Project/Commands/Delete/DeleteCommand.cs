@@ -27,13 +27,13 @@ public class DeleteCommandHandler : IRequestHandler<DeleteCommand, DeleteRespons
     public async Task<DeleteResponse> Handle(DeleteCommand command, CancellationToken cancellationToken)
     {
         var response = new DeleteResponse();
-        var command_to_query = new GetByIdQuery()
+        var project = await _projectRepository.GetById(new GetByIdQuery()
         {
             CurrentUserId = command.CurrentUserId,
             Id = command.Id,
             IsTeacher = command.IsTeacher
-        };
-        var project = await _projectRepository.GetById(command_to_query);
+        });
+
         if (project == null)
         {
             response.Errors = new List<string> { "Proiectul nu a fost gasit" };
@@ -43,7 +43,14 @@ public class DeleteCommandHandler : IRequestHandler<DeleteCommand, DeleteRespons
 
         try
         {
-            _projectRepository.DeleteAsync(project);
+            if (project.Students.Count == 1)
+            {
+               await _projectRepository.DeleteAsync(project);
+            }
+            else
+            {
+               await _projectRepository.RemoveStudent(command.CurrentUserId, project.Id);
+            }
         }
         catch (Exception e)
         {

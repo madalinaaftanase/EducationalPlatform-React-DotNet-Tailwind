@@ -1,6 +1,5 @@
 import { useState, useEffect, useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-
 import BlockyMain from "../components/blocky-main/BlockyMain";
 import LoadingSpinner from "../components/common/LoadingSpinner";
 import RightSideLayout from "../components/project/right-side/RightSideLayout";
@@ -16,7 +15,7 @@ function Project({ isTeacherOverride }: { isTeacherOverride?: boolean }) {
   const [changedXml, setChangeXml] = useState(initialXml);
   const [htmlText, setHtml] = useState("");
   const [calledDb, setCallDb] = useState(false);
-  const [projectName, setProjectName] = useState("defualt");
+  const [projectName, setProjectName] = useState("default");
   const [isVisibleForShare, setIsVisibleForShare] = useState(true);
   const [comment, setComment] = useState("");
   const [grade, setGrade] = useState(0);
@@ -29,7 +28,7 @@ function Project({ isTeacherOverride }: { isTeacherOverride?: boolean }) {
 
   useEffect(() => {
     init();
-  }, []);
+  }, [params.id]);
 
   let init = async () => {
     if (params.id) {
@@ -57,7 +56,7 @@ function Project({ isTeacherOverride }: { isTeacherOverride?: boolean }) {
   }
 
   return (
-    <main className="grid grid-rows-2 h-[90vh] md:grid-cols-[3fr_2fr]">
+    <main className="grid grid-rows-2 h-[90vh] md:grid-cols-[3fr_2fr]" key={projectName}>
       <section>
         <BlockyMain setHtml={setHtml} xmlFromDb={initialXml} setXml={setChangeXml} />
       </section>

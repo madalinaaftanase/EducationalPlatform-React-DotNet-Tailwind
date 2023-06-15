@@ -42,6 +42,9 @@ function unplugInvalidChildren(startingChild: Blockly.Block, validCheck: (block:
 }
 
 export function blockyValidation(block: Blockly.BlockSvg) {
+    const isDragInProgress = localStorage.getItem("isDragInProgress") === "true"
+    if (isDragInProgress) return
+
     const { type: blockName } = block
 
     const parent = block.getSurroundParent()

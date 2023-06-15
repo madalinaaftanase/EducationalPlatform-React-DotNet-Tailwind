@@ -38,15 +38,12 @@ public class ProjectsRepository : IProjectRepository
     {
         var ownerId = query.CurrentUserId;
 
-        if (query.OwnerId != Guid.Empty && query.OwnerId.HasValue)
-        {
-            ownerId = (Guid)query.OwnerId;
-        }
+        if (query.OwnerId != Guid.Empty && query.OwnerId.HasValue) ownerId = (Guid)query.OwnerId;
 
         var project = await _platformDbContext.Projects
             .Include(p => p.StudentProjects)
             .ThenInclude(sp => sp.Student)
-            .Select(p=> new ProjectDto
+            .Select(p => new ProjectDto
             {
                 Id = p.Id,
                 Name = p.Name,
@@ -62,8 +59,8 @@ public class ProjectsRepository : IProjectRepository
                     Email = sp.Student.Email
                 }).ToList()
             })
-            .FirstOrDefaultAsync(p => 
-                p.Id == query.Id && 
+            .FirstOrDefaultAsync(p =>
+                p.Id == query.Id &&
                 (p.TeacherId == ownerId || p.Students.Any(sp => sp.Id == ownerId)));
 
         return project;
@@ -90,13 +87,11 @@ public class ProjectsRepository : IProjectRepository
     public async Task CreateAsync(Project project, Guid? studentId)
     {
         if (studentId.HasValue)
-        {
-            await _platformDbContext.StudentProjects.AddAsync(new StudentProject()
+            await _platformDbContext.StudentProjects.AddAsync(new StudentProject
             {
                 ProjectId = project.Id,
                 StudentId = studentId.Value
             });
-        }
         await _platformDbContext.AddAsync(project);
         await _platformDbContext.SaveChangesAsync();
     }
@@ -106,13 +101,21 @@ public class ProjectsRepository : IProjectRepository
         var studentProject = await _platformDbContext.StudentProjects.FindAsync(studentId, projectId);
         if (studentProject != null) return;
 
-        var newStudentProject = new StudentProject()
+        var newStudentProject = new StudentProject
         {
             StudentId = studentId,
             ProjectId = projectId
         };
 
-         _platformDbContext.StudentProjects.Add(newStudentProject);
-         await _platformDbContext.SaveChangesAsync();
+        _platformDbContext.StudentProjects.Add(newStudentProject);
+        await _platformDbContext.SaveChangesAsync();
+    }
+
+    public async Task RemoveStudent(Guid studentId, Guid projectId)
+    {
+        var studentProject = await _platformDbContext.StudentProjects.FindAsync(studentId, projectId);
+        if (studentProject != null) _platformDbContext.StudentProjects.Remove(studentProject);
+
+        await _platformDbContext.SaveChangesAsync();
     }
 }

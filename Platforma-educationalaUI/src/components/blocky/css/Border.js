@@ -1,11 +1,12 @@
 import {
   generateDoubleDropDownBlockGeneral,
   generateInputBlockGeneral,
+  generateInputColorBlockGeneral,
 } from "./functionsCreateBlocks";
 
 const borderColor = "#d266ed";
 
-generateInputBlockGeneral("border-color", borderColor);
+generateInputColorBlockGeneral("border-color", borderColor);
 generateInputBlockGeneral("border-radius", borderColor);
 
 //borders
@@ -46,5 +47,15 @@ let borderWidthOptions = [
   ["thick", "thick"],
 ];
 
-generateDoubleDropDownBlockGeneral("borderStyle", borderStyleTypes, borderStyleOptions, borderColor);
-generateDoubleDropDownBlockGeneral("borderWidth", borderWidthTypes, borderWidthOptions, borderColor);
+generateDoubleDropDownBlockGeneral(
+  "borderStyle",
+  borderStyleTypes,
+  borderStyleOptions,
+  borderColor
+);
+generateDoubleDropDownBlockGeneral(
+  "borderWidth",
+  borderWidthTypes,
+  borderWidthOptions,
+  borderColor
+);

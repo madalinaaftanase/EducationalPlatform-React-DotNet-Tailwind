@@ -1,4 +1,4 @@
-import { ChangeEventHandler, useEffect, useState } from "react";
+import { ChangeEventHandler, useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import GenericModal from "../../common/GenericModal";
@@ -9,6 +9,7 @@ import { getTeachersByStudent } from "../../../services/studentAPI";
 import { sendNotification } from "../../../services/notificationAPI";
 import { getUserId, getUserName } from "../../../utilities/decodeJwt";
 import Button from "../../navbar/components/Button";
+import { UserContext } from "../../../hooks/UserContext";
 
 function Notify({ projectName }: { projectName: string }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -17,6 +18,7 @@ function Notify({ projectName }: { projectName: string }) {
   const [teachers, setTeachers] = useState<Teacher[]>([]);
   const hasTeachers = teachers.length > 0;
   const { id } = useParams();
+  const { isTeacher } = useContext(UserContext);
 
   useEffect(() => {
     init();
@@ -55,14 +57,16 @@ function Notify({ projectName }: { projectName: string }) {
 
   return (
     <>
-      <Button
-        variant="orange"
-        onClick={() => {
-          setIsModalOpen(true);
-        }}
-      >
-        <span>Notificare profesor</span>
-      </Button>
+      {!isTeacher && (
+        <Button
+          variant="orange"
+          onClick={() => {
+            setIsModalOpen(true);
+          }}
+        >
+          <span>Notificare profesor</span>
+        </Button>
+      )}
       <GenericModal showModal={isModalOpen}>
         {hasTeachers && (
           <div className="flex gap-8">

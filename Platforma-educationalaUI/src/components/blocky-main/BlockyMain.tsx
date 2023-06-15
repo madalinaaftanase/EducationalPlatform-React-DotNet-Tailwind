@@ -46,6 +46,14 @@ export default function BlockyMain({ setHtml, xmlFromDb, setXml }: BlockyMainInt
     onDispose: () => console.log("deleting workspace"),
   });
 
+  workspace?.addChangeListener((event: any) => {
+    if (event.type === "drag" || event.type === "selected") {
+      localStorage.setItem("isDragInProgress", "true");
+    } else if (event.type === "move") {
+      localStorage.setItem("isDragInProgress", "false");
+    }
+  });
+
   useEffect(() => {
     if (!workspace) return;
     workspace.scrollbar.setContainerVisible(false);

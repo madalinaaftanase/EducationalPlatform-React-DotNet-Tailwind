@@ -12,5 +12,6 @@ namespace PlatformaEducationala.Core.Repositories;
         Task DeleteAsync(ProjectDto project);
         Task CreateAsync(Entities.Project project, Guid? studentId);
         Task AddStudent(Guid studentId, Guid projectId);
-
+    
+        Task RemoveStudent(Guid studentId, Guid projectId);
     }

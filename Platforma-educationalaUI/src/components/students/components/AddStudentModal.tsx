@@ -48,7 +48,7 @@ function AddStudentModal({
       <h5>Introdu adresa de email</h5>
       <div className="flex flex-col ">
         <div className="flex items-center">
-          <input onChange={handleInput} placeholder="Email student" className="p-1" />
+          <input onChange={handleInput} placeholder="Email student" className="p-1 mr-2" />
           <GroupSubcomponent
             groups={groups}
             setGroups={setGroups}
