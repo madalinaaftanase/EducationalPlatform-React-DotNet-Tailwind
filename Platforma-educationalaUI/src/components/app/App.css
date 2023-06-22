@@ -5,3 +5,7 @@
 .right-side {
   height: 88.5vh;
 }
+
+input[type='file'] {
+  width: 6.25rem;
+}

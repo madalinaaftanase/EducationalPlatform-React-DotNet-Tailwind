@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PlatformaEducationala.Data.Context;
 
@@ -11,9 +12,10 @@ using PlatformaEducationala.Data.Context;
 namespace PlatformaEducationala.Data.Migrations
 {
     [DbContext(typeof(PlatformDBContext))]
-    partial class PlatformDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230618081851_addHomeworktable")]
+    partial class addHomeworktable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -52,9 +54,6 @@ namespace PlatformaEducationala.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("ProjectId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<Guid>("StudentId")
                         .HasColumnType("uniqueidentifier");
 
@@ -62,10 +61,6 @@ namespace PlatformaEducationala.Data.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ProjectId")
-                        .IsUnique()
-                        .HasFilter("[ProjectId] IS NOT NULL");
 
                     b.HasIndex("StudentId");
 
@@ -202,10 +197,6 @@ namespace PlatformaEducationala.Data.Migrations
 
             modelBuilder.Entity("PlatformaEducationala.Core.Entities.Homework", b =>
                 {
-                    b.HasOne("PlatformaEducationala.Core.Entities.Project", "Project")
-                        .WithOne("Homework")
-                        .HasForeignKey("PlatformaEducationala.Core.Entities.Homework", "ProjectId");
-
                     b.HasOne("PlatformaEducationala.Core.Entities.Student", "Student")
                         .WithMany("Homeworks")
                         .HasForeignKey("StudentId")
@@ -217,8 +208,6 @@ namespace PlatformaEducationala.Data.Migrations
                         .HasForeignKey("TeacherId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Project");
 
                     b.Navigation("Student");
 
@@ -279,8 +268,6 @@ namespace PlatformaEducationala.Data.Migrations
 
             modelBuilder.Entity("PlatformaEducationala.Core.Entities.Project", b =>
                 {
-                    b.Navigation("Homework");
-
                     b.Navigation("StudentProjects");
                 });
 

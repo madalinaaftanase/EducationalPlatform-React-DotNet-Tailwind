@@ -41,9 +41,16 @@ public class DeleteCommandHandler : IRequestHandler<DeleteCommand, DeleteRespons
             return response;
         }
 
+        if (!command.IsTeacher && project.Homework !=null)
+        {
+            response.Errors = new List<string> { "Proiectul are o tema atasata" };
+            response.ResponseStatus = ResultStatus.BadRequest;
+            return response;
+        }
+
         try
         {
-            if (project.Students.Count == 1)
+            if (command.IsTeacher || project.Students.Count == 1)
             {
                await _projectRepository.DeleteAsync(project);
             }

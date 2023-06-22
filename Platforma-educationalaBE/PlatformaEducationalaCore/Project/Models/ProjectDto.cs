@@ -1,4 +1,5 @@
 ﻿
+using PlatformaEducationala.Core.Homework.Models;
 using PlatformaEducationala.Core.User.Models;
 
 namespace PlatformaEducationala.Core.Project.Models;
@@ -11,5 +12,6 @@ namespace PlatformaEducationala.Core.Project.Models;
         public string? Comment { get; set; }
         public float? Grade { get; set; }
 
+        public HomeworkDto? Homework { get; set; }
         public ICollection<StudentDto> Students { get; set; }
 }

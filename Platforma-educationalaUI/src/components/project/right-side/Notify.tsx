@@ -10,8 +10,9 @@ import { sendNotification } from "../../../services/notificationAPI";
 import { getUserId, getUserName } from "../../../utilities/decodeJwt";
 import Button from "../../navbar/components/Button";
 import { UserContext } from "../../../hooks/UserContext";
+import Homework from "../../../models/homework/Homework";
 
-function Notify({ projectName }: { projectName: string }) {
+function Notify({ projectName, homework }: { projectName: string, homework: Homework | undefined }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [userId, setUserId] = useState(getUserId());
   const [selectedTeacher, setSelectedTeacher] = useState<Teacher>();

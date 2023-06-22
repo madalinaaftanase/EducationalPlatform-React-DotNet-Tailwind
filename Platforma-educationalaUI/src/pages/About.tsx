@@ -2,7 +2,7 @@ import Question from "../components/about/components/Question";
 import placeholderImg from "../images/placeholder.jpg";
 function About() {
   return (
-    <div className="px-[10%] pt-4">
+    <div className="px-[10%] pt-4 bg-[#F8F6F4] h-auto pb-4">
       <h1>Despre aplicatie</h1>
       <div className="flex justify-center mt-16 gap-x-2">
         <div>
@@ -25,8 +25,8 @@ function About() {
         <img src={placeholderImg} />
       </div>
       <div className="mt-4 flex gap-x-2">
-        <div className="bg-green-100 ring-2 ring-green-400 rounded w-[50%]">
-          <h5 className="bg-green-300 p-2">Pentru Parinti</h5>
+        <div className="bg-blue-100 ring-2 ring-blue-400 rounded w-[50%]">
+          <h5 className="bg-blue-300 p-2">Pentru Parinti</h5>
           <Question text={"De ce sa imi las copilul sa foloseasca platforma?"} />
           <p className="px-1">
             Platforma ofera oportunitatea copiilor de a invata programarea web intr-un mod
@@ -44,8 +44,8 @@ function About() {
           <Question text={"Cat costa?"} />
           <p className="px-1">Vesti bune, platforma este gratuita pentru toti utilizatorii.</p>
         </div>
-        <div className="bg-green-100 ring-2 ring-green-400 rounded w-[50%]">
-          <h5 className="bg-green-300 p-2">Pentru Profesori</h5>
+        <div className="bg-blue-100 ring-2 ring-blue-400 rounded w-[50%]">
+          <h5 className="bg-blue-300 p-2">Pentru Profesori</h5>
           <Question text={"De ce sa folosesc platforma?"} />
           <p className="px-1">
             Deoarece este conceputa pentru a face programarea accesibila pentru toti elevii,
@@ -67,7 +67,6 @@ function About() {
           </p>
         </div>
       </div>
-      <div className="mb-4"></div>
     </div>
   );
 }

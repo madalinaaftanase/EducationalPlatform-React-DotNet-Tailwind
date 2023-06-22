@@ -1,6 +1,7 @@
 import React from "react";
 import GenericModal from "./GenericModal";
 import CancelButton from "./CancelButton";
+import Button from "../navbar/components/Button";
 
 interface CheckModalInterface {
   handleConfirm: () => void;
@@ -18,14 +19,9 @@ function CheckModal({
 }: CheckModalInterface) {
   return (
     <GenericModal showModal={showModal}>
-      <h5 className="text-black">{title}</h5>
-      <div className="flex justify-center gap-4">
-        <button
-          className="bg-gray-300 hover:bg-gray-500 py-2 px-4 border-b-4 border-gray-800 hover:border-gray-700 rounded"
-          onClick={handleConfirm}
-        >
-          Da, sunt sigur
-        </button>
+      <h5 className="text-black mb-8">{title}</h5>
+      <div className="flex justify-start gap-4">
+        <Button variant={"general"} onClick={handleConfirm}>  Da, sunt sigur</Button>
         <CancelButton setIsOpen={setShowModal} text={"Nu, anuleaza"} />
       </div>
     </GenericModal>

@@ -1,3 +1,4 @@
+import Homework from "../homework/Homework";
 import Student from "../student/Student";
 
 export default interface Project {
@@ -7,6 +8,7 @@ export default interface Project {
   comment?: string;
   grade?: number;
   students?: Student[]
+  homework?: Homework
 }
 
 export interface ProjectSave {

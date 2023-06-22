@@ -10,7 +10,7 @@ export const sendNotification = async (url: string, notification: Notification) 
     }
 }
 
-export const sendHomework = async (url: string, notification: HomeworkNotification) => {
+export const sendHomeworkEmail = async (url: string, notification: HomeworkNotification) => {
     try {
         const response = await axios.post(url, notification)
         return response;

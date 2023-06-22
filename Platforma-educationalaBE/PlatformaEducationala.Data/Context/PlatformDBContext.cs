@@ -13,6 +13,8 @@ public class PlatformDBContext : DbContext
     public DbSet<Group> Groups { get; set; }
     public DbSet<StudentGroup> StudentGroups { get; set; }
     public DbSet<StudentProject> StudentProjects { get; set; }
+
+    public DbSet<Homework> Homeworks { get; set; }
     public PlatformDBContext(DbContextOptions<PlatformDBContext> options) : base(options)
     {
     }

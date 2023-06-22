@@ -18,7 +18,7 @@ Blockly.Blocks["document"] = {
 Blockly.JavaScript["document"] = function (block) {
   blockyValidation(block);
   var content = Blockly.JavaScript.statementToCode(block, "Content");
-  return `<! DOCTYPE HTML > 
+  return `<!DOCTYPE HTML> 
   <html>
    ${content} 
   </html>`;

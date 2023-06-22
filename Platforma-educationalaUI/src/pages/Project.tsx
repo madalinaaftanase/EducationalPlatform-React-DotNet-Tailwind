@@ -7,6 +7,7 @@ import config from "../config";
 import { getById } from "../services/projectAPI";
 import { UserContext } from "../hooks/UserContext";
 import Student from "../models/student/Student";
+import Homework from "../models/homework/Homework";
 
 function Project({ isTeacherOverride }: { isTeacherOverride?: boolean }) {
   const navigator = useNavigate();
@@ -20,6 +21,7 @@ function Project({ isTeacherOverride }: { isTeacherOverride?: boolean }) {
   const [comment, setComment] = useState("");
   const [grade, setGrade] = useState(0);
   const [students, setStudents] = useState<Student[]>([]);
+  const [homework, setHomework] = useState<Homework>();
   const params = useParams();
 
   if (isTeacherOverride !== undefined) {
@@ -39,11 +41,13 @@ function Project({ isTeacherOverride }: { isTeacherOverride?: boolean }) {
       }
       const response = await getById(url);
       if (response?.responseStatus == 200 && response?.project != null) {
-        setInitialXml(response.project.xml);
-        setComment(response.project.comment ?? "");
-        setGrade(response.project.grade ?? 0);
-        setProjectName(response.project.name);
-        setStudents(response.project.students || []);
+        const { xml, comment, grade, name, students, homework } = response.project;
+        setInitialXml(xml);
+        setComment(comment ?? "");
+        setGrade(grade ?? 0);
+        setProjectName(name);
+        setStudents(students || []);
+        setHomework(homework);
       } else {
         navigator("/Error");
       }
@@ -56,7 +60,7 @@ function Project({ isTeacherOverride }: { isTeacherOverride?: boolean }) {
   }
 
   return (
-    <main className="grid grid-rows-2 h-[90vh] md:grid-cols-[3fr_2fr]" key={projectName}>
+    <main className="grid grid-rows-2 h-[90vh] md:grid-cols-[3fr_2fr] bg-[#F8F6F4] h-[90vh]" key={projectName}>
       <section>
         <BlockyMain setHtml={setHtml} xmlFromDb={initialXml} setXml={setChangeXml} />
       </section>
@@ -72,6 +76,7 @@ function Project({ isTeacherOverride }: { isTeacherOverride?: boolean }) {
           setComment={setComment}
           students={students}
           refetch={init}
+          homework={homework}
         />
       </section>
     </main>

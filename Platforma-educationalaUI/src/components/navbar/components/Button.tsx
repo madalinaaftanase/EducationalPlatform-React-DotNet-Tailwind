@@ -7,16 +7,18 @@ interface ButtonInterface {
   disabled?: boolean;
   type?: "submit" | "button" | "reset";
   value?: string;
+  className?: string;
 }
-function Button({ variant: type, onClick, children, disabled }: ButtonInterface) {
+
+function Button({ variant: type, onClick, children, disabled, className }: ButtonInterface) {
   const getClassName = (type: string) => {
-    let className =
-      "py-1 px-3 rounded shadow-md font-bold disabled:opacity-50 disabled:cursor-not-allowed";
+    className +=
+      " py-1 px-3 rounded shadow-md font-bold disabled:opacity-50 disabled:cursor-not-allowed";
     if (type == "general") {
       return `${className} bg-blue-200 hover:bg-blue-300 text-black `;
     }
     if (type === "yellow") {
-      return `${className} bg-[#FFE15D] hover:bg-[#FFD93D]`;
+      return `${className} bg-[#FFDD83] hover:bg-[#FFD93D]`;
     }
     if (type === "red") {
       return `${className} bg-[#E0144C] hover:bg-[#CD104D]`;

@@ -83,7 +83,7 @@ function StudentsTable() {
   };
 
   return (
-    <div className="border border-green-400 bg-gray-300 m-2 p-2 rounded-lg shadow-sm">
+    <div className="border border-green-400 bg-gray-300 m-2 p-2 rounded-lg shadow-sm" >
       <div className="w-full flex justify-between items-center mb-2">
         <h2>Studenti:</h2>
         <div className="flex gap-x-4 items-center">

@@ -14,7 +14,7 @@ function Groups() {
   const navigator = useNavigate();
   const [groups, setGroups] = useState<Group[]>([]);
   const [isAddGroupModalOpen, setAddGroupModalOpen] = useState(false);
-  
+
   useEffect(() => {
     init();
   }, [isTeacher]);
@@ -33,7 +33,7 @@ function Groups() {
   };
 
   return (
-    <div className="flex flex-col p-8 gap-4">
+    <div className="flex flex-col p-8 gap-4 bg-[#F8F6F4] h-[90vh]">
       <div className="flex justify-between">
         <h1>Grupele tale:</h1>
         {isTeacher && (
@@ -56,6 +56,10 @@ function Groups() {
           return <GroupCard group={value} key={value.id} init={init} />;
         })}
       </div>
+      <div className="flex justify-center">
+        {groups.length === 0 && <div>Nu ai nicio grupa</div>}
+      </div>
+
       <AddGroupModal isOpen={isAddGroupModalOpen} setIsOpen={setAddGroupModalOpen} init={init} />
     </div>
   );

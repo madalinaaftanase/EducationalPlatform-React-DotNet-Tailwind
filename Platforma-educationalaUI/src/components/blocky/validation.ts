@@ -51,14 +51,12 @@ export function blockyValidation(block: Blockly.BlockSvg) {
     if (parent) {
         const { type: parentName } = parent
         if (allowedParents[blockName] && !allowedParents[blockName].includes(parentName)) {
-            console.log(`Parent ${parentName} not ok for child ${blockName}`)
             block.unplug(false)
-            // block.setWarningText("Elementul nu poate fi atasat aici")
         }
     }
 
     const child = block.childBlocks_[0]
-    if (child && allowedChildren[blockName]) {
+    if (child && allowedChildren[blockName]) { // blockul are copil si are un entry in allowedChildren
         unplugInvalidChildren(child, (block) => allowedChildren[blockName].includes(block.type))
     }
 

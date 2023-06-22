@@ -6,6 +6,7 @@ import ResultCompiler from "./ResultCompiler";
 import TeacherSection from "./TeacherSection";
 import ColaboratorsSection from "./ColaboratorsSection";
 import Student from "../../../models/student/Student";
+import Homework from "../../../models/homework/Homework";
 
 interface RightSideLayoutInterface {
   htmlText: string;
@@ -18,6 +19,7 @@ interface RightSideLayoutInterface {
   setComment: Function;
   students: Student[];
   refetch: Function;
+  homework: Homework | undefined;
 }
 
 function RightSideLayout({
@@ -31,6 +33,7 @@ function RightSideLayout({
   setComment,
   students,
   refetch,
+  homework,
 }: RightSideLayoutInterface) {
   const [selectedTab, setSelectedTab] = useState("result");
   const [newText, setNewText] = useState(name);
@@ -84,6 +87,9 @@ function RightSideLayout({
           grade={grade}
           setGrade={setGrade}
           projectName={name}
+          homework={homework}
+          students={students}
+          refetch={refetch}
         />
       )}
       {selectedTab == "colaboratori" && (

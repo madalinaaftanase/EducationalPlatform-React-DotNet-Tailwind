@@ -32,9 +32,8 @@ export function Navbar() {
   if (isAuthentificated) {
     return (
       <Nav>
-        <NavLink to="/">
-          <LogoCode />
-          <Logo />
+        <NavLink to="/About">
+        <Logo />
         </NavLink>
         <Bars />
         <NavMenu>
@@ -44,6 +43,7 @@ export function Navbar() {
             Proiect nou
           </NavLink>
           <NavLink to="/Grupe">Grupe</NavLink>
+          <NavLink to="/Despre">Despre</NavLink>
         </NavMenu>
         <NavBtn>
           <Menu />
@@ -56,7 +56,6 @@ export function Navbar() {
     <Nav className="justify-between">
       <div className="flex ">
         <NavLink to="/">
-          <LogoCode />
           <Logo />
         </NavLink>
         <NavLink to="/Despre">Despre</NavLink>

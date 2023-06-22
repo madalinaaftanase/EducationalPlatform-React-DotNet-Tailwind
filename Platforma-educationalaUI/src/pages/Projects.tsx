@@ -18,7 +18,7 @@ function Projects() {
 
   useEffect(() => {
     init();
-  }, [isTeacher,id]);
+  }, [isTeacher, id]);
 
   let init = async () => {
     if (id) {
@@ -34,7 +34,7 @@ function Projects() {
   };
 
   return (
-    <div className="flex flex-col p-8 gap-4">
+    <div className="flex flex-col p-8 gap-4 bg-[#F8F6F4] h-[90vh]">
       <div className="flex justify-between">
         <h1>{projectPageTitle}</h1>
         <AddButton />
@@ -43,6 +43,9 @@ function Projects() {
         {projects.map((value) => {
           return <Card project={value} key={value.id} fetchData={init} />;
         })}
+      </div>
+      <div className="flex justify-center">
+        {projects.length === 0 && <div>Nu ai niciun proiect</div>}
       </div>
     </div>
   );

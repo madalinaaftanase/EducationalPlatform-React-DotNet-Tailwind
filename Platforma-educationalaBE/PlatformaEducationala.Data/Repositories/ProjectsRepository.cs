@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PlatformaEducationala.Core.Entities;
+using PlatformaEducationala.Core.Homework.Models;
 using PlatformaEducationala.Core.Project.Models;
 using PlatformaEducationala.Core.Project.Queries.Get;
 using PlatformaEducationala.Core.Project.Queries.GetById;
@@ -43,6 +44,7 @@ public class ProjectsRepository : IProjectRepository
         var project = await _platformDbContext.Projects
             .Include(p => p.StudentProjects)
             .ThenInclude(sp => sp.Student)
+            .Include(p => p.Homework)
             .Select(p => new ProjectDto
             {
                 Id = p.Id,
@@ -57,7 +59,16 @@ public class ProjectsRepository : IProjectRepository
                     Firstname = sp.Student.Firstname,
                     Lastname = sp.Student.Lastname,
                     Email = sp.Student.Email
-                }).ToList()
+                }).ToList(),
+                Homework = p.Homework == null
+                    ? null
+                    : new HomeworkDto
+                    {
+                        Id = p.Homework.Id,
+                        Name = p.Homework.Name,
+                        TeacherId = p.Homework.Id,
+                        StudentId = p.Homework.StudentId
+                    }
             })
             .FirstOrDefaultAsync(p =>
                 p.Id == query.Id &&
@@ -80,6 +91,7 @@ public class ProjectsRepository : IProjectRepository
     public async Task DeleteAsync(ProjectDto project)
     {
         var mappedProject = MapperModels<ProjectDto, Project>.Map(project);
+
         _platformDbContext.Projects.Remove(mappedProject);
         await _platformDbContext.SaveChangesAsync();
     }

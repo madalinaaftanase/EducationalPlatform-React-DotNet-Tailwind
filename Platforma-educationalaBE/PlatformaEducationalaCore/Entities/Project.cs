@@ -11,4 +11,5 @@ namespace PlatformaEducationala.Core.Entities;
         public Teacher Teacher { get; set; }
         public string? Comment { get; set; }
         public ICollection<StudentProject> StudentProjects { get; set; }
+        public Homework? Homework { get; set; }
 }
