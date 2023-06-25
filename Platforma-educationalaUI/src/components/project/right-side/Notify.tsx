@@ -12,7 +12,13 @@ import Button from "../../navbar/components/Button";
 import { UserContext } from "../../../hooks/UserContext";
 import Homework from "../../../models/homework/Homework";
 
-function Notify({ projectName, homework }: { projectName: string, homework: Homework | undefined }) {
+function Notify({
+  projectName,
+  homework,
+}: {
+  projectName: string;
+  homework: Homework | undefined;
+}) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [userId, setUserId] = useState(getUserId());
   const [selectedTeacher, setSelectedTeacher] = useState<Teacher>();
@@ -84,14 +90,13 @@ function Notify({ projectName, homework }: { projectName: string, homework: Home
               })}
             </select>
             <div className="flex gap-2">
-              <button
-                type="button"
-                className="bg-mintBlue hover:bg-mint text-yellow px-2 py-1 font-bold border-b-4 border-mint hover:border-mintBlue rounded disabled:opacity-75"
+              <Button
+                variant={"general"}
                 onClick={handleSendNotification}
                 disabled={!selectedTeacher}
               >
                 Notifica
-              </button>
+              </Button>
               <CancelButton setIsOpen={setIsModalOpen} text={"Anuleaza"} />
             </div>
           </div>

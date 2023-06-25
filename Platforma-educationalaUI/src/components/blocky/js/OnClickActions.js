@@ -17,7 +17,17 @@ Blockly.Blocks["styleProp"] = {
 Blockly.JavaScript["styleProp"] = function (block) {
   blockyValidation(block);
   var content = Blockly.JavaScript.statementToCode(block, "Content");
-  return `.style.${content.trim().replace(" ", "").replace(":", '="').replace(";", '";')}
+  content = content.trim().replace(" ", "").replace(":", '="').replace(";", '";').split("");
+
+  // schimba din background-color in backgroundColor
+  while (content.includes("-")) {
+    const index = content.indexOf("-");
+    content.splice(index, 1);
+    content[index] = content[index].toUpperCase();
+  }
+  content = content.join("");
+
+  return `.style.${content}
   `;
 };
 

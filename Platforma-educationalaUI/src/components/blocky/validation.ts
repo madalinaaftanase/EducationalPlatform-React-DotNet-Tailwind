@@ -28,11 +28,13 @@ const onlyOneChild: string[] = [
     "styleProp", "GetElementById"
 ]
 
-function unplugInvalidChildren(startingChild: Blockly.Block, validCheck: (block: Blockly.Block) => boolean) {
+function unplugInvalidChildren(startingChild: Blockly.Block, parentBlockName: string, validCheck: (block: Blockly.Block) => boolean) {
+    const isInteriorBlock = (block: Blockly.Block) => block.getSurroundParent()?.type === parentBlockName
     let block = startingChild
+
     while (block) {
-        if (!validCheck(block)) {
-            localStorage.setItem("warning", `${block.type} nu poate fi pus in ${startingChild.getSurroundParent().type}`)
+        if (isInteriorBlock(block) && !validCheck(block)) {
+            localStorage.setItem("warning", `${block.type} nu poate fi pus in ${parentBlockName}`)
             block.unplug(false)
             // block.setWarningText("Elementul nu poate fi atasat aici")
             return;
@@ -57,12 +59,12 @@ export function blockyValidation(block: Blockly.BlockSvg) {
 
     const child = block.childBlocks_[0]
     if (child && allowedChildren[blockName]) { // blockul are copil si are un entry in allowedChildren
-        unplugInvalidChildren(child, (block) => allowedChildren[blockName].includes(block.type))
+        unplugInvalidChildren(child, blockName, (block) => allowedChildren[blockName].includes(block.type))
     }
 
     const hasItemBefore = block.getParent()?.type !== parent?.type
     if (parent && hasItemBefore && onlyOneChild.includes(parent.type)) {
-        console.log(parent.type, "can have only one child!")
+        localStorage.setItem("warning", `${parent.type} poate avea un singur block in interior`)
         block.unplug(false)
     }
 }

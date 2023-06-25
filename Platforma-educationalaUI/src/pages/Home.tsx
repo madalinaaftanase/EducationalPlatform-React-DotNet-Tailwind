@@ -26,7 +26,7 @@ function Home() {
         </div>
         <div className="p-8 font-bold">
           <h3 className="pb-4">Ce poti face?</h3>
-          <TextContainer imgPath={wheel1} text={"Invata CSS,HTML,JavaScript"} />
+          <TextContainer imgPath={wheel1} text={"Invata CSS, HTML, JavaScript"} />
           <TextContainer imgPath={wheel2} text={"Colaboreaza in echipa"} />
           <TextContainer imgPath={wheel1} text={"Creaza proiecte web"} />
           <TextContainer imgPath={wheel2} text={"Primeste feedback si evaluare"} />

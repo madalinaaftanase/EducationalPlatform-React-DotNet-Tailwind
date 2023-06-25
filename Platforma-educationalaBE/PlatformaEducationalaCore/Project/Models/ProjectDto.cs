@@ -3,7 +3,7 @@ using PlatformaEducationala.Core.Homework.Models;
 using PlatformaEducationala.Core.User.Models;
 
 namespace PlatformaEducationala.Core.Project.Models;
-    public class ProjectDto
+    public class ProjectDto: Entities.Project
     {
         public Guid Id { get; set; }
         public string Name { get; set; }

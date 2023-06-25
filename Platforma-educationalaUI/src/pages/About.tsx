@@ -1,5 +1,5 @@
 import Question from "../components/about/components/Question";
-import placeholderImg from "../images/placeholder.jpg";
+import placeholderImg from "../images/demo.gif"
 function About() {
   return (
     <div className="px-[10%] pt-4 bg-[#F8F6F4] h-auto pb-4">
@@ -22,7 +22,7 @@ function About() {
             cei care doresc sa-si dezvolte abilitatile in domeniul web-ului.
           </p>
         </div>
-        <img src={placeholderImg} />
+        <img className="w-[50%] h-[20%]" src={placeholderImg} />
       </div>
       <div className="mt-4 flex gap-x-2">
         <div className="bg-blue-100 ring-2 ring-blue-400 rounded w-[50%]">

@@ -127,9 +127,8 @@ function SendHomeworkModal({ showModal, setShowModal, projectHtmlCode }: Props) 
         photo: await file2Base64(selectedImage),
       };
       sendHomeworkEmail("/sendHomework", notification);
-      addHomework(homeworkName, selectedGroup?.id!);
     }
-
+    addHomework(homeworkName, selectedGroup?.id!);
     setShowModal(false);
   };
 

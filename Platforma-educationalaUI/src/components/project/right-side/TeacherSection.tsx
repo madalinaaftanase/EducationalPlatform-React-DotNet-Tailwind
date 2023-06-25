@@ -106,7 +106,7 @@ function TeacherSection({
       />
 
       {!homework && isOwner && (
-        <div className="flex flex-col gap-2 p-1 mt-2">
+        <div className="flex flex-col gap-3 p-2 mt-2 bg-gray-200">
           <div> Nu există temă asociată cu acest proiect.</div>
           {availableHomeworks.length > 0 && (
             <>

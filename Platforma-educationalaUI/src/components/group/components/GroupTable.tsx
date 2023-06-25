@@ -119,7 +119,7 @@ function GroupTable() {
         )}
         {!isTeacher && <h3>{groupName}</h3>}
       </div>
-      {!isTeacher && <p>Teacher: {`${teacher?.firstname} ${teacher?.lastname}`}</p>}
+      {!isTeacher && <p>Profesor: {`${teacher?.firstname} ${teacher?.lastname}`}</p>}
 
       <DataTable
         columns={isTeacher ? getTeacherColumns() : getStudentColumns()}

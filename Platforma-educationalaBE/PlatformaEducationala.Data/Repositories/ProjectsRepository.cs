@@ -79,13 +79,29 @@ public class ProjectsRepository : IProjectRepository
 
     public async Task UpdateAsync(ProjectDto project, bool isTeacher)
     {
-        var mappedProject = MapperModels<ProjectDto, Project>.Map(project);
+        var mappedProject = new Project
+        {
+            Id = project.Id,
+            Name = project.Name,
+            Xml = project.Xml,
+            TeacherId = project?.TeacherId,
+            Comment = project?.Comment,
+            Grade = project?.Grade
+        };
+
         _platformDbContext.Update(mappedProject);
 
         if (mappedProject.TeacherId == Guid.Empty)
             mappedProject.TeacherId = null;
 
-        await _platformDbContext.SaveChangesAsync();
+        try
+        {
+            await _platformDbContext.SaveChangesAsync();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.ToString());
+        }
     }
 
     public async Task DeleteAsync(ProjectDto project)
