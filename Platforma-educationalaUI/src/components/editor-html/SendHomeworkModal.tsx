@@ -126,7 +126,7 @@ function SendHomeworkModal({ showModal, setShowModal, projectHtmlCode }: Props) 
         message: messageHomework,
         photo: await file2Base64(selectedImage),
       };
-      sendHomeworkEmail("/sendHomework", notification);
+      sendHomeworkEmail(notification);
     }
     addHomework(homeworkName, selectedGroup?.id!);
     setShowModal(false);

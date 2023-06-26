@@ -51,8 +51,7 @@ function Notify({
       linkProject: projectURL,
     };
 
-    const url = "/sendMail";
-    const response = sendNotification(url, notification);
+    const response = sendNotification(notification);
     setIsModalOpen(false);
   };
 
